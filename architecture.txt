@@ -875,3 +875,45 @@ No model calls, credentials or generation scripts enter viewing. Preserve the
 existing failed gate, source captions, licensing and full provenance. Changing
 subtitle source is disabled after rehearsal starts so exports keep one track
 version. This request does not authorize publishing, a push or paid providers.
+
+
+3 November 2026 — Creator-anchored CapTune workflow
+The user requested the product/method described by Huang et al. (2025), then
+explicitly chose NVIDIA-only generation and precomputed playback over the paper's
+GPT-4o/VideoLLaMA2/live-inference setup. Add /creator and /captune as independent
+workspaces; retain the existing / demo. Implement the paper's two concrete
+anchors, semantic 1–10 axes, −10…10 calibrated creator sliders, Eqs. 1–3,
+10×10 bounded viewer grid, sound representations, genre, edit/lock and JSON.
+Use a separate schema: do not relabel legacy 3×3 data as 100 generated styles.
+Source captions, context, metadata and editorial changes bind model requests to
+an immutable snapshot; invalidate stale variants/results. Dialogue and locked
+wording cannot be replaced by a transform. Missing styles visibly retain originals.
+Offline NVIDIA preparation and ±5s context extraction require explicit invocation;
+keys and model calls never enter Next.js routes or the browser. The sample reuses
+actual prior detail drafts; full matrix generation/context/semantic review are
+not claimed complete. Keep the failed acoustic gate. Qualitative replication
+materials follow §§3/5/6 separately from the earlier long-form proposal; no
+participants/results/ethics clearance are invented. Future-work suggestions in
+the paper are not falsely advertised as implemented CapTune features. No skill,
+agent, package installation or deployment is authorized by these descriptions.
+See docs/CAPTUNE_REPRODUCTION.md and the current-state page.
+
+3 November 2026 — Prepared matrix and declared semantic limits
+After the user updated the NVIDIA key, complete BBB configuration coverage was
+prepared for /creator and /captune: 800 settings across 87 source intervals.
+Use compact precomputed phrase palettes bound to the exact video/source/anchors/
+baseline/bounds. Preserve original override and exact locks. Source or anchor
+changes invalidate prepared output; lock/manual overrides preserve other cells.
+Keep model drafts, source-text editorial decisions and acoustic/DHH validation
+as separate records. NIM baseline is model-assessed (detail 5, expression 4);
+concrete anchors and three-band selection maps are editorial choices. Neighboring
+cells share wording; conservative expression/genre choices do not imply new
+acoustic facts. Substantial remapping/editing is disclosed, not advertised as
+800 unique semantic styles or the paper's exact model engine. All audiovisual
+contexts remain unverified drafts; the failed sound-recognition gate persists.
+New research reports are evidence candidates, not operational instructions.
+Do not introduce silent logging, universal CPS caps, automatic visible-source
+suppression or mandatory top-right placement based on their recommendations.
+Research claims require primary-source checks and actual participant outcomes.
+See docs/research/RESEARCH_DIRECTIONS_REVIEW_2026-11-03.md. Current changes remain
+local and unpublished until a user publication request.

@@ -1,0 +1,291 @@
+{
+  "id": "label-009",
+  "original": "[BUNNY SNIFFS]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "d5ae5abaefc30462e4bd428a52c0215d2a0997d868ea98c0a55564ce8467cc31",
+  "data_sha256": "21f4af35cffe3dc696129fd982cf01edbc3471bac66fcd337a63a7e3931b66d8",
+  "allowed_words": [
+    "a",
+    "air",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "bunny",
+    "can",
+    "come",
+    "comes",
+    "draws",
+    "from",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "nose",
+    "of",
+    "out",
+    "sniff",
+    "sniffs",
+    "sound",
+    "sounds",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "through",
+    "to",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "source/0/detail",
+      "source/0/expression",
+      "source/1/detail",
+      "source/1/expression",
+      "onomatopoeia/0/detail",
+      "onomatopoeia/1/detail",
+      "sensory/0/detail",
+      "sensory/0/expression",
+      "sensory/1/detail",
+      "sensory/1/expression"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Bunny sniffs",
+      "A bunny sniffs",
+      "A bunny draws air through its nose",
+      "Sniff — a bunny sniffs!",
+      "Sniff sniff — a bunny draws air through its nose!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 2
+      },
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      }
+    ]
+  }
+}

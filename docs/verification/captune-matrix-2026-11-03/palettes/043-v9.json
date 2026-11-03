@@ -1,0 +1,256 @@
+{
+  "id": "label-043",
+  "original": "[GRASS RUSTLING]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "a97113e1f1420088f2906f46df31225703ec3cd0ab3c6afb0410bb20c56353ba",
+  "data_sha256": "41808b9bcf5d787bebd72031ee5937377864827fda0ae113c43fa3a7de5a26a2",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "can",
+    "come",
+    "comes",
+    "from",
+    "grass",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "rustle",
+    "rustles",
+    "rustling",
+    "sound",
+    "sounds",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "to",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "source/0/detail",
+      "source/0/expression",
+      "source/1/detail",
+      "source/1/expression",
+      "onomatopoeia/0/detail",
+      "onomatopoeia/1/detail",
+      "sensory/0/detail",
+      "sensory/0/expression",
+      "sensory/1/detail",
+      "sensory/1/expression"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Rustling",
+      "Grass rustles",
+      "Grass makes rustling sounds",
+      "Rustling!",
+      "Grass rustles!",
+      "Grass makes rustling sounds!",
+      "Rustle — rustling!",
+      "Grass rustles — rustle!",
+      "Grass makes rustling sounds — rustle!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 2
+      },
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 6
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 7
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      }
+    ]
+  }
+}

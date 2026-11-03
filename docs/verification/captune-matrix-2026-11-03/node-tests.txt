@@ -1,0 +1,54 @@
+
+> scene-captions@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+✔ cue boundaries exclude ended captions and preserve simultaneous sounds (5.24575ms)
+✔ baseline and Show Original always preserve the original (0.39575ms)
+✔ adaptation is cached selection and does not mutate saved preferences (0.201792ms)
+✔ malformed and incomplete annotation files are rejected (2.894875ms)
+✔ alternate representation falls back to descriptive when unavailable (0.323625ms)
+✔ failed audio generation cannot activate unreviewed candidates (0.642917ms)
+✔ bundled captions preserve every licensed source interval and simultaneous event (7.929166ms)
+✔ source-derived adaptation discloses its caption-density proxy (4.756417ms)
+✔ adaptation never exceeds the viewer's detail limit (0.345208ms)
+✔ generated captions and fetched comparison remain separate with shared timings (5.476791ms)
+✔ review packet exposes missing styles and cannot convert an incomplete matrix into reviewed output (7.110084ms)
+✔ source-text receipt is snapshot-bound, group-complete and explicitly not an acoustic or participant approval (6.496083ms)
+✔ CapTune Eq 1 reproduces original zero and Fig 3 semantic values; recalibration preserves the current slider position (0.615208ms)
+✔ CapTune Eqs 2–3 match paper example and handle fixed axes and negative changes (0.519042ms)
+✔ SRT ingestion keeps dialogue separate and preserves overlapping cues and context boundaries (6.630209ms)
+✔ anchored prompts include both concrete examples, current text, scene context, exact ratios and viewer modes (0.697833ms)
+✔ dialogue and locked wording survive transformations, while missing styles fall back explicitly (1.023667ms)
+✔ duplicate, missing and unknown output IDs are rejected; editorial changes invalidate caches and stale envelopes (4.407042ms)
+✔ creator bounds constrain grid and language interpretations; invalid configurations cannot render (0.774917ms)
+✔ paired coder agreement computes Cohen kappa without inventing independent coding or undefined certainty (0.207583ms)
+✔ inverse slider mapping keeps loaded anchors and cross-axis calibration in sync (0.126708ms)
+✔ creator result sets concrete anchor captions and recalibrates the other semantic axis without moving its slider (1.479709ms)
+✔ context results are snapshot-bound, preserve cue identity and remain drafts rather than sound truth (1.357125ms)
+✔ experimental opt-in cannot claim review, success or reference-free sourced input (10.897416ms)
+✔ an experimental track cannot attach to a different film or edit (3.134375ms)
+✔ empty experimental output does not masquerade as a missing or verified source track (0.251042ms)
+✔ big-buck-bunny: complete media-only export stays separate and all three SRTs match its generated data (7.130375ms)
+✔ sintel: complete media-only export stays separate and all three SRTs match its generated data (5.951542ms)
+✔ tears-of-steel: complete media-only export stays separate and all three SRTs match its generated data (4.130583ms)
+✔ sintel preserves official dialogue, timing and provenance without inventing sounds (7.343334ms)
+✔ tears-of-steel preserves official dialogue, timing and provenance without inventing sounds (3.520542ms)
+✔ dialogue validation rejects duplicate IDs and intervals outside the selected film (6.580375ms)
+✔ event recording validates event types and stores relative elapsed time (2.160083ms)
+✔ rehearsal event buffer stays bounded (0.808917ms)
+✔ rehearsal snapshots keep stopped duration and the complete caption override state (0.350167ms)
+✔ source-guided richness cannot change event identity, timing or simultaneous sound coverage (8.485916ms)
+✔ source-guided richness cannot attach to another film or remove source credit (2.671167ms)
+✔ new source-guided wording cannot claim independent generation or completed review (5.687917ms)
+✔ new source-guided exports keep all pinned intervals and preserve every richness level (9.63575ms)
+✔ SubRip preserves BOM/CRLF multiline sound cues and millisecond timing (1.814584ms)
+✔ SubRip rejects broken blocks, reversed intervals, duplicate IDs and invalid timestamps (0.342417ms)
+✔ SubRip accepts multiple blank separators without dropping official dialogue (0.10275ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 205.862042

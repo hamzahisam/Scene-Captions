@@ -2,6 +2,28 @@
 
 Adaptive non-speech captions for Deaf and hard-of-hearing (DHH) viewers of long-form video.
 
+## Creator-anchored workflow (3 November 2026)
+
+Open `/creator` to author caption anchors and `/captune` for the 10×10 viewer.
+The implementation follows CapTune’s two-anchor workflow and Equations 1–3,
+with the user-approved differences of **NVIDIA-only offline preparation** and
+**no inference during viewing**. It includes SRT/configuration import, edit/lock,
+context and baseline preparation, three sound representations, genre alignment,
+comparison, and offline natural-language preference interpretation. The BBB
+sample now covers all **800 settings × 87 cue intervals**, using NVIDIA phrase
+drafts and substantial recorded source-text editing. Three detail/expression
+bands share wording across neighboring cells; this is not 800 distinct semantic
+styles or an exact reproduction of the paper’s engine. Full listening and DHH
+validation remain pending. Imported projects still show originals for missing
+styles. No participant study has run.
+
+See [setup, feature traceability and limits](docs/CAPTUNE_REPRODUCTION.md) and
+[the qualitative replication protocol](docs/research/CAPTUNE_REPLICATION_PROTOCOL.md).
+See [generation/review evidence](docs/verification/captune-matrix-2026-11-03/README.md)
+and [the review of the supplied research reports](docs/research/RESEARCH_DIRECTIONS_REVIEW_2026-11-03.md).
+The existing three-level player remains at `/`. These changes are local until
+separately requested for publication.
+
 ## Starting or continuing work
 
 Read this README, [architecture.txt](architecture.txt) and the required

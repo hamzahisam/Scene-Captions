@@ -1,0 +1,23 @@
+{
+  "gridCells": 100,
+  "actualPreparedOverlay": true,
+  "keyboardGrid": true,
+  "representationsAndGenre": true,
+  "allEightModeGenreProfilesPrepared": true,
+  "selectedSrtIntervals": 87,
+  "creatorLockPreservesMatrix": true,
+  "anchorEditInvalidatesMatrix": true,
+  "restorePreparedSample": true,
+  "profilePersistence": true,
+  "creatorImportExport": true,
+  "manualEditAndLock": true,
+  "mixedDialoguePreserved": true,
+  "contextReviewSaved": true,
+  "boundsEnforced": true,
+  "storageQuotaVisible": true,
+  "mobileOverflow": false,
+  "methodology": true,
+  "pageErrors": [],
+  "limits": "Actual prepared sample overlays and synthetic fixture mechanics. No cloud inference, listening/DHH validation, or participant research.",
+  "viewingModelRequests": 0
+}

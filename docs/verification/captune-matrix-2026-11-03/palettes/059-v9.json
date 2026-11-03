@@ -1,0 +1,328 @@
+{
+  "id": "label-059",
+  "original": "[TRAPS SNAPPING]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "754f9591ec1691d417da6d700f6a58dac147fb59dc1326ab3ba633baafa939d3",
+  "data_sha256": "eb32dd6aa48232189f2351de017047c895e06205557876e1b9bde8a5a6a117c7",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "can",
+    "come",
+    "comes",
+    "from",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "keep",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "ping",
+    "repeated",
+    "snap",
+    "snapping",
+    "sound",
+    "sounds",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "to",
+    "traps",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "source/0/detail",
+      "source/0/expression",
+      "source/1/detail",
+      "source/1/expression",
+      "onomatopoeia/0/expression",
+      "onomatopoeia/1/expression",
+      "sensory/0/detail",
+      "sensory/0/expression",
+      "sensory/1/detail",
+      "sensory/1/expression"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Snapping",
+      "Traps snap",
+      "Traps keep snapping",
+      "Traps make repeated snapping sounds",
+      "Snap — traps snap!",
+      "Snap snap — traps keep snapping!",
+      "Snap snap snap — traps make repeated snapping sounds!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 2
+      },
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 6
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 6
+      },
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 6
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      }
+    ]
+  }
+}

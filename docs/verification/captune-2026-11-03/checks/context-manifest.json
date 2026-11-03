@@ -1,0 +1,17 @@
+{
+  "paper": "CapTune \u00a74.2.1",
+  "project_sha256": "9974cca0006aa1b2395cb221840366f934b4e28395ba3046b80b1a1d76ce83a0",
+  "video_sha256": "738e2f999860553d056dd79c952f58f63cbb73892a57c72342ce9e5330d9d2d7",
+  "paper_model": "DAMO-NLP-SG/VideoLLaMA2.1-7B-AV",
+  "configured_model": null,
+  "prompt": "Can you describe the visual and audio content in this video clip?",
+  "inference_performed": false,
+  "clips": [
+    {
+      "id": "bbb-sdh-001",
+      "start": 0,
+      "end": 7.4990000000000006,
+      "context_status": "missing"
+    }
+  ]
+}

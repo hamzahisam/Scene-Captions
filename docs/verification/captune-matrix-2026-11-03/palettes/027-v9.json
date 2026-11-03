@@ -1,0 +1,238 @@
+{
+  "id": "label-027",
+  "original": "[SQUIRREL SNAPS FINGERS]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "4f781f57cb090e04d710c5a9e6a68a4708d1d3a8a81abb59d1d3c6dde463b5d4",
+  "data_sha256": "8cf493644d509dbb05ad52eb544cfbce27dbc6bb89cba0319317a484fb28f018",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "can",
+    "come",
+    "comes",
+    "finger",
+    "fingers",
+    "from",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "snap",
+    "snaps",
+    "sound",
+    "sounds",
+    "squirrel",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "to",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "source/0/detail",
+      "source/0/expression",
+      "source/1/detail",
+      "source/1/expression",
+      "onomatopoeia/0/detail",
+      "onomatopoeia/0/expression",
+      "onomatopoeia/1/detail",
+      "onomatopoeia/1/expression",
+      "sensory/0/detail",
+      "sensory/0/expression",
+      "sensory/1/detail",
+      "sensory/1/expression"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Snaps fingers",
+      "A squirrel snaps fingers",
+      "Squirrel makes a finger snap",
+      "Snap — snaps fingers!",
+      "Snap — a squirrel snaps fingers!",
+      "Snap — squirrel makes a finger snap!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 2
+      },
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      }
+    ]
+  }
+}

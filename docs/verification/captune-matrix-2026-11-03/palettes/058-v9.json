@@ -1,0 +1,234 @@
+{
+  "id": "label-058",
+  "original": "[TRAPS SNAP]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "6de206e641961eee33008901618f4506901a7626135692936ddad8b96e9b7233",
+  "data_sha256": "a98f6c7afe00b95e1b7e3620ec1d64bec138b70d6b40014361ff2aaf45c7dcf7",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "can",
+    "come",
+    "comes",
+    "from",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "ping",
+    "snap",
+    "snapping",
+    "sound",
+    "sounds",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "to",
+    "traps",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "default/0/detail",
+      "default/1/detail",
+      "source/0/detail",
+      "source/0/expression",
+      "source/1/detail",
+      "source/1/expression",
+      "onomatopoeia/0/detail",
+      "onomatopoeia/1/detail",
+      "sensory/0/detail",
+      "sensory/1/detail"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Snapping",
+      "Traps snap",
+      "Traps make snapping sounds",
+      "Snap — traps snap!",
+      "Snap — traps make snapping sounds!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          1
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 2
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "authorization-text-control-v1",
+  "request_sha256": "1a132f407e0bfba1d5d30384ac8ac0a189699f0f4ae6963a9d13d70f4012471f",
+  "payload": {
+    "model": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+    "stream": false,
+    "temperature": 0.2,
+    "max_tokens": 32,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer the user briefly."
+      },
+      {
+        "role": "user",
+        "content": "\"Return the word ready. No other text.\""
+      }
+    ]
+  },
+  "attempts": 1,
+  "http_status": 403,
+  "error": "{\"status\":403,\"title\":\"Forbidden\",\"detail\":\"Authorization failed\"}",
+  "seconds": 0.62
+}

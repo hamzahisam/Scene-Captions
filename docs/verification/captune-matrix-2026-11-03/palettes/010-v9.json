@@ -1,0 +1,237 @@
+{
+  "id": "label-010",
+  "original": "[EARS POP]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "7a7939ed16a823baa0b125f77b2ea8b088fe613bbe2fe3562f8a0d5ad80ca57e",
+  "data_sha256": "627f6cbcda05d8d89191c8398f723ed978a2102d36b42d42f5d0162a17fd42d8",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "can",
+    "come",
+    "comes",
+    "ears",
+    "from",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "ping",
+    "pop",
+    "popping",
+    "sound",
+    "sounds",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "to",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "source/0/detail",
+      "source/0/expression",
+      "source/1/detail",
+      "source/1/expression",
+      "onomatopoeia/0/detail",
+      "onomatopoeia/0/expression",
+      "onomatopoeia/1/detail",
+      "onomatopoeia/1/expression",
+      "sensory/0/detail",
+      "sensory/0/expression",
+      "sensory/1/detail",
+      "sensory/1/expression"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Ears pop",
+      "Ears make a pop",
+      "Ears make popping sounds",
+      "Pop — ears pop!",
+      "Pop — ears make a pop!",
+      "Pop — ears make popping sounds!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 2
+      },
+      {
+        "detail": [
+          1,
+          3
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          4,
+          6
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          7,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      }
+    ]
+  }
+}

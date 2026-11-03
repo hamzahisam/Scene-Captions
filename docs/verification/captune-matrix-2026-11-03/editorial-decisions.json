@@ -1,0 +1,1098 @@
+{
+  "reviewer": "main-session assistant",
+  "review_kind": "source-text-editorial",
+  "limits": "No independent/human listening, original-creator approval, DHH study or factual validation of audiovisual model context. Conventional phonetic spellings are stylizations, not audio transcriptions. Numeric style placement is an editorial choice, not a verified semantic measurement.",
+  "selection_policy": {
+    "detail_bands": [
+      [
+        1,
+        3
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        7,
+        10
+      ]
+    ],
+    "expression": "Neutral through 5; higher settings use simple emphasis/punctuation. No sound loudness or character/viewer feeling is inferred.",
+    "source_mode": "Keeps the actor/object when provided; source and sensory wording may coincide when no further property is supported.",
+    "genre_alignment": "Animation presentation may choose a reviewed conventional sound imitation alongside the unchanged source label. It is editorial styling, not inferred genre acoustics.",
+    "onop_fallback": "Keeps ordinary source text where an approved sound imitation is unavailable.",
+    "mapping_edits": "Regenerate selection regions from explicitly reviewed phrase triples to repair collapsed or misoriented model draft controls; retain every raw model map in the request ledger."
+  },
+  "labels": [
+    {
+      "index": 0,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 1,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 2,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 3,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        6,
+        7,
+        8
+      ],
+      "text_edits": {
+        "2": "A bird makes chirping calls",
+        "8": "Tweet — a bird makes chirping calls!"
+      },
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 4,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 5,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        6,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 6,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 7,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        6,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 8,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        6,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 9,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 10,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 11,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 12,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {
+        "2": "A cracking sound from the bunny's neck",
+        "5": "Crack — a cracking sound from the bunny's neck!"
+      },
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 13,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 14,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 15,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        6,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 16,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        6,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 17,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 18,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        7,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 19,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 20,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        7,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 21,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        7,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 22,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {
+        "2": "A squirrel makes squeaking sounds",
+        "5": "Squeak — a squirrel makes squeaking sounds!"
+      },
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 23,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Compared every generated unique phrase with the original sound reference and its ordinary meaning. Approved source-safe wording and conventional imitations; no new acoustic traits or emotional effects accepted. Grammar edits and selection remapping are editorial, not untreated model output."
+    },
+    {
+      "index": 24,
+      "approved": true,
+      "neutral_indices": [
+        1,
+        4,
+        3
+      ],
+      "onomatopoeia_indices": [
+        6,
+        6,
+        7
+      ],
+      "text_edits": {
+        "3": "The squirrel makes angry squeaking sounds",
+        "7": "Squeak — the squirrel makes angry squeaking sounds!"
+      },
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 25,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {
+        "2": "A nut makes a dull thud",
+        "4": "Thud — a nut makes a dull thud!"
+      },
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 26,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 27,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        4,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 28,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 29,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 30,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 31,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 32,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 33,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 34,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        6,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 35,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 36,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {
+        "3": "Whoosh — nuts whoosh!"
+      },
+      "note": "Compared every unique NIM phrase against its source. Kept sound/actor and supplied affect only; conventional imitations are not acoustic transcriptions. Repaired wording/actor clarity without adding sound facts; selection remapping is editorial."
+    },
+    {
+      "index": 37,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {
+        "4": "Thud — nuts make dull hit sounds!"
+      },
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented."
+    },
+    {
+      "index": 38,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented."
+    },
+    {
+      "index": 39,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented."
+    },
+    {
+      "index": 40,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented.",
+      "rejected_text_indices": [
+        6,
+        7,
+        8
+      ],
+      "rejection_reason": "No melody/rhythm syllables verified; ta-ta-ta is not source-supported. Use clear music labels as the onomatopoeia fallback."
+    },
+    {
+      "index": 41,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        2,
+        3
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {
+        "2": "Curious music plays"
+      },
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented.",
+      "rejected_text_indices": [
+        1
+      ],
+      "rejection_reason": "Prefer the simpler word curious to inquisitive in generated variants."
+    },
+    {
+      "index": 42,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented."
+    },
+    {
+      "index": 43,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        7,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented."
+    },
+    {
+      "index": 44,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {
+        "4": "Ping — bow string makes a ping!"
+      },
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented."
+    },
+    {
+      "index": 45,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {
+        "3": "Snap — a vine snaps!",
+        "4": "Snap — a vine makes a snap!"
+      },
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented."
+    },
+    {
+      "index": 46,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {
+        "4": "Sniff — squirrels draw air through their noses!"
+      },
+      "note": "Every unique phrase checked against the source. Music style/mood remains a credited source interpretation, never inferred instruments, tempo, volume or reader emotions. Grammar and sound-imitation placement corrected where needed; missing acoustic properties are not invented."
+    },
+    {
+      "index": 47,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        7,
+        7,
+        8
+      ],
+      "text_edits": {},
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 48,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        5
+      ],
+      "text_edits": {
+        "5": "Creak — ropes make a creaking sound!"
+      },
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 49,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {
+        "2": "A squirrel is squeaking in pain",
+        "4": "Squeak — a squirrel is squeaking in pain!"
+      },
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 50,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 51,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 52,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 53,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 54,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 55,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {
+        "3": "Squeal — a squirrel squeals!",
+        "4": "Squeal — a squirrel makes a squeal!"
+      },
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 56,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 57,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {
+        "3": "Snap — a twig snaps!",
+        "4": "Snap — a small branch snaps!"
+      },
+      "note": "Reviewed each generated phrase against the original source and common-word definitions. Preserved plural actors, sound types, and source-listed pain/ordering interpretation. Corrected squeak/squeal category drift, grammar and imitation placement; no inferred acoustic traits or feelings added."
+    },
+    {
+      "index": 58,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Checked every unique phrase against the original. Preserved plural/ongoing snapping and source music-style interpretation; reduced conventional imitation repetitions to avoid implying measured event counts. No extra audio trait or plot event is accepted."
+    },
+    {
+      "index": 59,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        3
+      ],
+      "onomatopoeia_indices": [
+        4,
+        5,
+        6
+      ],
+      "text_edits": {
+        "5": "Snap — traps keep snapping!",
+        "6": "Snap — traps make repeated snapping sounds!"
+      },
+      "note": "Checked every unique phrase against the original. Preserved plural/ongoing snapping and source music-style interpretation; reduced conventional imitation repetitions to avoid implying measured event counts. No extra audio trait or plot event is accepted."
+    },
+    {
+      "index": 60,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Checked every unique phrase against the original. Preserved plural/ongoing snapping and source music-style interpretation; reduced conventional imitation repetitions to avoid implying measured event counts. No extra audio trait or plot event is accepted."
+    },
+    {
+      "index": 61,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {},
+      "note": "Checked every unique phrase against the original. Preserved plural/ongoing snapping and source music-style interpretation; reduced conventional imitation repetitions to avoid implying measured event counts. No extra audio trait or plot event is accepted."
+    },
+    {
+      "index": 62,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        3,
+        4
+      ],
+      "text_edits": {},
+      "note": "Checked every unique phrase against the original. Preserved plural/ongoing snapping and source music-style interpretation; reduced conventional imitation repetitions to avoid implying measured event counts. No extra audio trait or plot event is accepted."
+    },
+    {
+      "index": 63,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Checked every unique phrase against the original. Preserved plural/ongoing snapping and source music-style interpretation; reduced conventional imitation repetitions to avoid implying measured event counts. No extra audio trait or plot event is accepted.",
+      "rejected_text_indices": [
+        3,
+        4
+      ],
+      "rejection_reason": "Wind blowing does not verify a whooshing quality. Keep source-worded wind captions as the onomatopoeia fallback."
+    },
+    {
+      "index": 64,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Checked every unique phrase against the original. Preserved plural/ongoing snapping and source music-style interpretation; reduced conventional imitation repetitions to avoid implying measured event counts. No extra audio trait or plot event is accepted.",
+      "rejected_text_indices": [
+        3,
+        5,
+        7
+      ],
+      "rejection_reason": "Use simpler source-derived winning/victory wording rather than triumphant in generated variants; it describes music style, not a proved plot victory."
+    },
+    {
+      "index": 65,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [
+        3,
+        4,
+        5
+      ],
+      "text_edits": {
+        "4": "Flap — bird wings flap!",
+        "5": "Flap — a bird makes flapping sounds!"
+      },
+      "note": "Checked every unique phrase against the original. Preserved plural/ongoing snapping and source music-style interpretation; reduced conventional imitation repetitions to avoid implying measured event counts. No extra audio trait or plot event is accepted."
+    },
+    {
+      "index": 66,
+      "approved": true,
+      "neutral_indices": [
+        0,
+        1,
+        2
+      ],
+      "onomatopoeia_indices": [],
+      "text_edits": {},
+      "note": "Reviewed all generated phrases. Splat denotes the source-listed impact only; no surface, wetness, cause or new actor inferred. Ordinary source wording serves the sound-imitation fallback."
+    }
+  ]
+}

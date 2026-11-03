@@ -1,0 +1,360 @@
+{
+  "id": "label-019",
+  "original": "[APPLE CORE THUDS]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "5ca49e02ba00ce97f42be5e9f3a7c02082916bd3b0b4245b7fc24749df315e20",
+  "data_sha256": "a3f32426e604af629788a1ed97a05bcf81f9759c347afc43170072dc306c5612",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "apple",
+    "are",
+    "as",
+    "be",
+    "can",
+    "come",
+    "comes",
+    "core",
+    "dull",
+    "from",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "sound",
+    "sounds",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "thud",
+    "thuds",
+    "to",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "default/0/detail",
+      "default/1/detail",
+      "source/0/detail",
+      "source/1/detail",
+      "onomatopoeia/0/detail",
+      "onomatopoeia/1/detail",
+      "sensory/0/detail",
+      "sensory/1/detail"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Apple core thuds",
+      "An apple core thuds",
+      "Apple core makes a dull thud",
+      "Thud — apple core thuds!",
+      "Thud — an apple core thuds!",
+      "Thud — apple core makes a dull thud!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          1,
+          2
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          3,
+          4
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          5,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          2
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          3,
+          4
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          5,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          2
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          3,
+          4
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          5,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          1,
+          2
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          3,
+          4
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          5,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      }
+    ]
+  }
+}

@@ -39,3 +39,40 @@ _Avoid_: Calling cue density measured scene complexity or cognitive load.
 **Rehearsal**: An opt-in technical trial of the app and its export flow. It is not an approved participant study or research evidence.
 
 **Human-review receipt**: A record binding a reviewer’s stated listening, timing, wording, simultaneous-event, reading-time and per-variant decisions to exact video/caption/cue content. Completeness checking is not proof of sound correctness, independent review, participant approval or automatic installation. A partial packet cannot approve a whole track.
+
+
+## Creator-anchored workflow (3 November 2026)
+
+**Creator anchor**: A concrete lower or upper caption example, with semantic
+values for detail and expressiveness, defining acceptable transformations.
+Anchors are editorial constraints, not proof of acoustic correctness.
+
+**Transformation space**: The rectangle between the lower and upper semantic
+anchor values. The new anchored viewer has a 10×10 grid; this is separate from
+the older three-level viewer.
+
+**Semantic baseline**: Estimated detail and expressiveness values for the original
+caption set, each between 1 and 10. Model-assessed and manually assigned values
+are explicitly distinguished.
+
+**Anchored interpolation**: Positioning a requested setting between concrete
+examples (r) and expressing its signed change from the current setting (δ), as
+in CapTune Equations 2–3. The ratios guide model prompts; they are not accuracy
+measurements or guarantees of meaning preservation.
+
+**Prepared style**: Cached wording for an exact detail, expressiveness,
+representation and genre combination. A missing style stays on the original
+caption with an explanation. No approximate text interpolation is invented.
+
+**Compact matrix**: A precomputed phrase table with explicit rectangular setting
+ranges. The BBB sample covers 800 configurations with three editorial detail
+bands and three expression bands; neighboring cells repeat. Coverage counts
+are not counts of distinct meanings, acoustic validation or DHH approval.
+
+**Creator lock**: Exact manual/original wording protected from model replacement.
+Dialogue is protected separately. Original-caption override remains available.
+
+**Current cue preview**: In the current three-level player, preferences apply
+immediately. Cue preview pauses briefly to inspect the already applied setting;
+it no longer represents an unsaved draft requiring Apply. Earlier preview
+entries above describe the historical interaction.

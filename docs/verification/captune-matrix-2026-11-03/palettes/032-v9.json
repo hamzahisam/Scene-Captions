@@ -1,0 +1,181 @@
+{
+  "id": "label-032",
+  "original": "[BUTTERFLY SPLATS]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "3b14d3946c8937377b8e2264d435885925f69d2a94fb656e52b1f1f2fb7bed4d",
+  "data_sha256": "37077461810c46fa4da754dcea8cb5c4ed80ae63628cc9e8be73e88a74d8877a",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "butterfly",
+    "can",
+    "come",
+    "comes",
+    "from",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "sound",
+    "sounds",
+    "splat",
+    "splats",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "to",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "default/0/detail",
+      "default/1/detail",
+      "source/0/detail",
+      "source/0/expression",
+      "source/1/detail",
+      "source/1/expression",
+      "onomatopoeia/0/detail",
+      "onomatopoeia/1/detail",
+      "sensory/0/detail",
+      "sensory/0/expression",
+      "sensory/1/detail",
+      "sensory/1/expression"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Butterfly splats",
+      "A butterfly splats",
+      "A butterfly makes a splat",
+      "Splat — a butterfly splats!",
+      "Splat! A butterfly makes a splat!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          1
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 2
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          1
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      }
+    ]
+  }
+}

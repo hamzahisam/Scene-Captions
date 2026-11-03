@@ -21,6 +21,7 @@ Start with the [project README](../README.md), [architecture](../architecture.tx
 | Model/service capability notes | [NVIDIA candidates](integrations/NVIDIA_MODELS.md) |
 | Offline generation and corresponding-audio checks | [tooling guide](../scripts/generation/README.md); failed candidates never overwrite playback |
 | Research references, verification limits and PDFs | [RESEARCH_INDEX.md](RESEARCH_INDEX.md), `research/` |
+| Consolidated research questions: revalidation, extensions and candidate contributions | [43-question catalogue](research/RESEARCH_QUESTIONS.md) |
 | Original project pitch | [proposal slides](research/proposals/SceneCaptions_Project_Proposal.pptx) and [idea document](research/proposals/SceneCaptions-Project-Idea.docx) |
 | Refreshed committed structural map | [CODEBASE_MAP.md](CODEBASE_MAP.md); verify input hashes before relying on it |
 | Verification history | [verification overview](verification/README.md) and [latest investigation evidence](verification/investigation-2026-10-24/README.md) |
@@ -77,3 +78,21 @@ Existing root documentation guides under `docs/` keep their stable paths. Do not
 - After moves, update links, script output paths and handoff pointers. Preserve raw log content and document execution-time path changes in the run index. Mark affected static maps/reports stale; do not relabel a historical check as fresh.
 - Document study-relevant fixes and unresolved decisions in current state. Append crucial architecture decisions; preserve earlier log entries.
 - Check internal links and affected script syntax after organization-only changes. Run behavior/build tests when the actual change warrants them.
+
+
+## Creator-anchored workflow
+
+[CapTune reproduction and setup](CAPTUNE_REPRODUCTION.md) maps the paper's product
+features and formulas to the independent implementation. The separate
+[qualitative replication protocol](research/CAPTUNE_REPLICATION_PROTOCOL.md)
+follows its creator/DHH research procedure; it is not the earlier long-form
+randomized study. [Implementation checks](verification/captune-2026-11-03/README.md)
+distinguish tested mechanics from ungenerated styles and unverified captions.
+The follow-up [matrix preparation evidence](verification/captune-matrix-2026-11-03/README.md)
+records full configuration coverage, substantial editorial remapping and pending
+acoustic/DHH review. [Research directions review](research/RESEARCH_DIRECTIONS_REVIEW_2026-11-03.md)
+screens the four supplied reports and proposes bounded questions, not completed
+studies or automatic authorization to implement recommendations.
+The subsequent [research angles and app-improvement priorities](research/RESEARCH_ANGLES_AND_APP_IMPROVEMENTS_2026-11-03.md)
+review `SceneCaptions-research-review.md`, verify selected new primary findings,
+and distinguish proposed event/override/exposure features from current behavior.

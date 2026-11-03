@@ -1,0 +1,185 @@
+{
+  "id": "label-004",
+  "original": "[WINGS FLAP]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "aed94ec3f8029b224750a54ab7097c98f65ac1c404ebc0e64c0801279da8b7e6",
+  "data_sha256": "3325c55a2c8c621b835595c5922b1e32c80e41bb30b6e82ae15253f6e674d178",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "can",
+    "come",
+    "comes",
+    "flap",
+    "flapping",
+    "from",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "ping",
+    "sound",
+    "sounds",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "to",
+    "wings",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "default/0/detail",
+      "default/1/detail",
+      "source/0/detail",
+      "source/0/expression",
+      "source/1/detail",
+      "source/1/expression",
+      "onomatopoeia/0/detail",
+      "onomatopoeia/0/expression",
+      "onomatopoeia/1/detail",
+      "onomatopoeia/1/expression",
+      "sensory/0/detail",
+      "sensory/0/expression",
+      "sensory/1/detail",
+      "sensory/1/expression"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Wings flapping",
+      "Wings flap",
+      "Flapping sounds of wings",
+      "Flap — wings flapping!",
+      "Flap — wings flap!",
+      "Flap — flapping sounds of wings!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          1
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          1
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 2
+      }
+    ]
+  }
+}

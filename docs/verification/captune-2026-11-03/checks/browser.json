@@ -1,0 +1,18 @@
+{
+  "gridCells": 100,
+  "actualPreparedOverlay": 3,
+  "keyboardGrid": true,
+  "representationsAndGenre": true,
+  "missingStyleFallback": true,
+  "profilePersistence": true,
+  "creatorImportExport": true,
+  "manualEditAndLock": true,
+  "mixedDialoguePreserved": true,
+  "contextReviewSaved": true,
+  "boundsEnforced": true,
+  "storageQuotaVisible": true,
+  "mobileOverflow": false,
+  "methodology": true,
+  "pageErrors": [],
+  "limits": "Synthetic fixture edits test mechanics only. No cloud inference, listening/DHH validation, or participant research."
+}

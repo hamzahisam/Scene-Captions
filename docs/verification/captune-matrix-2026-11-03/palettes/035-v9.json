@@ -1,0 +1,215 @@
+{
+  "id": "label-035",
+  "original": "[BUNNY GULPS]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "7b1ea4f5362a67f27fed38608e41986f436297ff57e251584734ea785ec8277c",
+  "data_sha256": "24c2fb4b18bfe86446a61b2d8f0c466bc33f2f4cc5659716c43669941ace2163",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "bunny",
+    "can",
+    "come",
+    "comes",
+    "from",
+    "gulp",
+    "gulps",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "sound",
+    "sounds",
+    "swallows",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "to",
+    "with"
+  ],
+  "review_flags": {
+    "unknown_words": [],
+    "collapsed_endpoints": [
+      "default/0/detail",
+      "default/1/detail",
+      "source/0/detail",
+      "source/1/detail",
+      "onomatopoeia/0/detail",
+      "onomatopoeia/1/detail",
+      "sensory/0/detail",
+      "sensory/1/detail"
+    ]
+  },
+  "palette": {
+    "texts": [
+      "Bunny gulps",
+      "A bunny gulps",
+      "Bunny swallows with a gulp",
+      "Gulp — bunny gulps!",
+      "Gulp — a bunny gulps!",
+      "Gulp — bunny swallows with a gulp!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          1
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          1
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          1
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          1,
+          1
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          1,
+          10
+        ],
+        "expression": [
+          2,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0,
+          1
+        ],
+        "text": 5
+      }
+    ]
+  }
+}

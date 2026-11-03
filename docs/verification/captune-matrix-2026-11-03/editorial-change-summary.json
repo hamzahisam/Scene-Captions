@@ -1,0 +1,588 @@
+{
+  "reviewer": "main-session assistant",
+  "kind": "source-text-editorial",
+  "changed_atomic_style_cells": 44373,
+  "changes": [
+    {
+      "index": 0,
+      "reference": "[SERENE MUSIC]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 608,
+      "grammar_edits": {}
+    },
+    {
+      "index": 1,
+      "reference": "[BROOK BABBLES]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 731,
+      "grammar_edits": {}
+    },
+    {
+      "index": 2,
+      "reference": "[FLY BUZZES]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 680,
+      "grammar_edits": {}
+    },
+    {
+      "index": 3,
+      "reference": "[BIRD TWEETS]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 728,
+      "grammar_edits": {
+        "2": "A bird makes chirping calls",
+        "8": "Tweet — a bird makes chirping calls!"
+      }
+    },
+    {
+      "index": 4,
+      "reference": "[WINGS FLAP]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 728,
+      "grammar_edits": {}
+    },
+    {
+      "index": 5,
+      "reference": "[THUD]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 6,
+      "reference": "[SQUIRREL LAUGHS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 644,
+      "grammar_edits": {}
+    },
+    {
+      "index": 7,
+      "reference": "[SNORES]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 476,
+      "grammar_edits": {}
+    },
+    {
+      "index": 8,
+      "reference": "[BUNNY SNORES]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 800,
+      "grammar_edits": {}
+    },
+    {
+      "index": 9,
+      "reference": "[BUNNY SNIFFS]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 650,
+      "grammar_edits": {}
+    },
+    {
+      "index": 10,
+      "reference": "[EARS POP]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 11,
+      "reference": "[BUNNY YAWNS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 656,
+      "grammar_edits": {}
+    },
+    {
+      "index": 12,
+      "reference": "[BUNNY CRACKS NECK]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 710,
+      "grammar_edits": {
+        "2": "A cracking sound from the bunny's neck",
+        "5": "Crack — a cracking sound from the bunny's neck!"
+      }
+    },
+    {
+      "index": 13,
+      "reference": "[BUNNY SNIFFS DEEPLY]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 668,
+      "grammar_edits": {}
+    },
+    {
+      "index": 14,
+      "reference": "[BUNNY SIGHS]",
+      "original_unique_texts": 3,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 15,
+      "reference": "[APPLE THUDS]",
+      "original_unique_texts": 12,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 380,
+      "grammar_edits": {}
+    },
+    {
+      "index": 16,
+      "reference": "[TREE RUSTLES SUSPICIOUSLY]",
+      "original_unique_texts": 12,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 584,
+      "grammar_edits": {}
+    },
+    {
+      "index": 17,
+      "reference": "[APPLE CRUNCHES]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 18,
+      "reference": "[LEAVES RUSTLE]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 19,
+      "reference": "[APPLE CORE THUDS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 692,
+      "grammar_edits": {}
+    },
+    {
+      "index": 20,
+      "reference": "[SQUIRREL SCUTTLES]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 644,
+      "grammar_edits": {}
+    },
+    {
+      "index": 21,
+      "reference": "[BRANCHES RUSTLE]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 650,
+      "grammar_edits": {}
+    },
+    {
+      "index": 22,
+      "reference": "[SQUIRREL SQUEAKS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 710,
+      "grammar_edits": {
+        "2": "A squirrel makes squeaking sounds",
+        "5": "Squeak — a squirrel makes squeaking sounds!"
+      }
+    },
+    {
+      "index": 23,
+      "reference": "[NUT CRUNCHING]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 668,
+      "grammar_edits": {}
+    },
+    {
+      "index": 24,
+      "reference": "[SQUIRREL SQUEAKS ANGRILY]",
+      "original_unique_texts": 8,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 773,
+      "grammar_edits": {
+        "3": "The squirrel makes angry squeaking sounds",
+        "7": "Squeak — the squirrel makes angry squeaking sounds!"
+      }
+    },
+    {
+      "index": 25,
+      "reference": "[NUT THUDS]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 710,
+      "grammar_edits": {
+        "2": "A nut makes a dull thud",
+        "4": "Thud — a nut makes a dull thud!"
+      }
+    },
+    {
+      "index": 26,
+      "reference": "[SQUIRRELS LAUGHING]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 27,
+      "reference": "[SQUIRREL SNAPS FINGERS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 695,
+      "grammar_edits": {}
+    },
+    {
+      "index": 28,
+      "reference": "[NUT WHOOSHES]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 668,
+      "grammar_edits": {}
+    },
+    {
+      "index": 29,
+      "reference": "[NUTS THUDDING]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 560,
+      "grammar_edits": {}
+    },
+    {
+      "index": 30,
+      "reference": "[NUTS WHOOSHING]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 31,
+      "reference": "[SUSPENSFUL MUSIC]",
+      "original_unique_texts": 3,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 32,
+      "reference": "[BUTTERFLY SPLATS]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 713,
+      "grammar_edits": {}
+    },
+    {
+      "index": 33,
+      "reference": "[DRAMATIC MUSIC]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 608,
+      "grammar_edits": {}
+    },
+    {
+      "index": 34,
+      "reference": "[SQUIRREL CLAPS]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 35,
+      "reference": "[BUNNY GULPS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 752,
+      "grammar_edits": {}
+    },
+    {
+      "index": 36,
+      "reference": "[CONKERS WHOOSH]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 680,
+      "grammar_edits": {
+        "3": "Whoosh — nuts whoosh!"
+      }
+    },
+    {
+      "index": 37,
+      "reference": "[CONKERS THUD]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 644,
+      "grammar_edits": {
+        "4": "Thud — nuts make dull hit sounds!"
+      }
+    },
+    {
+      "index": 38,
+      "reference": "[MOTIVATIONAL MUSIC]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 320,
+      "grammar_edits": {}
+    },
+    {
+      "index": 39,
+      "reference": "[JOVIAL MUSIC]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 608,
+      "grammar_edits": {}
+    },
+    {
+      "index": 40,
+      "reference": "[MILITARY MUSIC]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 608,
+      "grammar_edits": {}
+    },
+    {
+      "index": 41,
+      "reference": "[INQUISITIVE MUSIC]",
+      "original_unique_texts": 4,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 728,
+      "grammar_edits": {
+        "2": "Curious music plays"
+      }
+    },
+    {
+      "index": 42,
+      "reference": "[MUSIC CRESCENDOS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 626,
+      "grammar_edits": {}
+    },
+    {
+      "index": 43,
+      "reference": "[GRASS RUSTLING]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 668,
+      "grammar_edits": {}
+    },
+    {
+      "index": 44,
+      "reference": "[BOW STRING PINGS]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 650,
+      "grammar_edits": {
+        "4": "Ping — bow string makes a ping!"
+      }
+    },
+    {
+      "index": 45,
+      "reference": "[VINE SNAPS]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 716,
+      "grammar_edits": {
+        "3": "Snap — a vine snaps!",
+        "4": "Snap — a vine makes a snap!"
+      }
+    },
+    {
+      "index": 46,
+      "reference": "[SQUIRRELS SNIFFING]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 669,
+      "grammar_edits": {
+        "4": "Sniff — squirrels draw air through their noses!"
+      }
+    },
+    {
+      "index": 47,
+      "reference": "[SQUIRREL SQUEAKS ORDERS]",
+      "original_unique_texts": 9,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 48,
+      "reference": "[ROPES CREAK]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 650,
+      "grammar_edits": {
+        "5": "Creak — ropes make a creaking sound!"
+      }
+    },
+    {
+      "index": 49,
+      "reference": "[SQUIRREL SQUEAKS IN PAIN]",
+      "original_unique_texts": 4,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 713,
+      "grammar_edits": {
+        "2": "A squirrel is squeaking in pain",
+        "4": "Squeak — a squirrel is squeaking in pain!"
+      }
+    },
+    {
+      "index": 50,
+      "reference": "[NUT CRUNCHES]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 687,
+      "grammar_edits": {}
+    },
+    {
+      "index": 51,
+      "reference": "[ROCK CRASHES]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 626,
+      "grammar_edits": {}
+    },
+    {
+      "index": 52,
+      "reference": "[LOG CRUNCHES]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 626,
+      "grammar_edits": {}
+    },
+    {
+      "index": 53,
+      "reference": "[LOG THUDS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 620,
+      "grammar_edits": {}
+    },
+    {
+      "index": 54,
+      "reference": "[TRAP PINGS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 662,
+      "grammar_edits": {}
+    },
+    {
+      "index": 55,
+      "reference": "[SQUIRREL SQUEALS]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 727,
+      "grammar_edits": {
+        "3": "Squeal — a squirrel squeals!",
+        "4": "Squeal — a squirrel makes a squeal!"
+      }
+    },
+    {
+      "index": 56,
+      "reference": "[WINGS POP]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 687,
+      "grammar_edits": {}
+    },
+    {
+      "index": 57,
+      "reference": "[TWIG SNAPS]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 650,
+      "grammar_edits": {
+        "3": "Snap — a twig snaps!",
+        "4": "Snap — a small branch snaps!"
+      }
+    },
+    {
+      "index": 58,
+      "reference": "[TRAPS SNAP]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 693,
+      "grammar_edits": {}
+    },
+    {
+      "index": 59,
+      "reference": "[TRAPS SNAPPING]",
+      "original_unique_texts": 7,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 737,
+      "grammar_edits": {
+        "5": "Snap — traps keep snapping!",
+        "6": "Snap — traps make repeated snapping sounds!"
+      }
+    },
+    {
+      "index": 60,
+      "reference": "[BRANCHES SNAP]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 693,
+      "grammar_edits": {}
+    },
+    {
+      "index": 61,
+      "reference": "[WINGS FLAPPING]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 62,
+      "reference": "[BRANCH CREAKING]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 15,
+      "changed_cell_wordings_or_selection": 686,
+      "grammar_edits": {}
+    },
+    {
+      "index": 63,
+      "reference": "[WIND BLOWS]",
+      "original_unique_texts": 5,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 704,
+      "grammar_edits": {}
+    },
+    {
+      "index": 64,
+      "reference": "[TRIUMPHANT MUSIC]",
+      "original_unique_texts": 8,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 722,
+      "grammar_edits": {}
+    },
+    {
+      "index": 65,
+      "reference": "[BIRD FLAPPING]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 18,
+      "changed_cell_wordings_or_selection": 707,
+      "grammar_edits": {
+        "4": "Flap — bird wings flap!",
+        "5": "Flap — a bird makes flapping sounds!"
+      }
+    },
+    {
+      "index": 66,
+      "reference": "[POOP SPLATS]",
+      "original_unique_texts": 6,
+      "edited_unique_texts": 9,
+      "changed_cell_wordings_or_selection": 434,
+      "grammar_edits": {}
+    }
+  ]
+}

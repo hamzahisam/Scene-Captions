@@ -1,0 +1,221 @@
+[
+  {
+    "cue": "bbb-sdh-001",
+    "clip_sha256": "d2ca5b09f2f69e4b3701e267a051b4dd2c1ee381860e4b6eafdb40f668c70257",
+    "window": {
+      "start": 0,
+      "end": 7.4990000000000006
+    },
+    "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+    "payload": {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "stream": false,
+      "temperature": 0.2,
+      "max_tokens": 2048,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Can you describe the visual and audio content in this video clip?"
+            },
+            {
+              "type": "video_url",
+              "video_url": {
+                "url": {
+                  "inline_media_sha256": "745d7e1ade4254565290c5081d2013e413fae43d6c81a00939eb887c93c0698a",
+                  "data_uri_characters": 691382,
+                  "prefix": "data:video/mp4;base64"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "wire_sha256": "c0b08395818c230a5980d1bc5d7413514cb9578e7dc3b0a4ace1e42c64cff5ff",
+    "wire_bytes": 691738,
+    "attempts": 1,
+    "http_status": 422,
+    "error": "{\"error\": {\"message\": \"media could not be screened\"}}",
+    "response_headers": {
+      "Nvcf-Reqid": "d9c60476-d776-4beb-bf88-c4530f65c91b",
+      "X-Request-Id": "072f4deb-badb-47a7-972c-bd91110c538b"
+    },
+    "seconds": 5.706
+  },
+  {
+    "cue": "bbb-sdh-020",
+    "clip_sha256": "5ff65ae8ddd31e905cb50bcddfbf3048127a4cfbc65962d0c5ddb976ad0ea955",
+    "window": {
+      "start": 78.624,
+      "end": 88.624
+    },
+    "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+    "payload": {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "stream": false,
+      "temperature": 0.2,
+      "max_tokens": 2048,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Can you describe the visual and audio content in this video clip?"
+            },
+            {
+              "type": "video_url",
+              "video_url": {
+                "url": {
+                  "inline_media_sha256": "b099992486505f3f3acb96601c26b29bfa4f8614cc0dcbd0ff08d9b12c8354db",
+                  "data_uri_characters": 894642,
+                  "prefix": "data:video/mp4;base64"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "wire_sha256": "5a72cafb3774e7ff86c93c5db388cf01d559a6bddbc2a597d6c2cdf1cac0d540",
+    "wire_bytes": 894998,
+    "attempts": 1,
+    "http_status": 200,
+    "response_headers": {
+      "Nvcf-Reqid": "d3d64290-9a48-4cb4-8598-2ea00872ef4d",
+      "Nvcf-Status": "fulfilled",
+      "Server": "Python/3.12 aiohttp/3.14.5",
+      "X-Request-Id": "e0502120-4096-496f-8b74-9ac7c97b6663"
+    },
+    "response": {
+      "id": "chatcmpl-dca470ee-5a09-4fad-a504-b71a6d8532f2",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "content": "The video shows a large white rabbit with long ears standing in a grassy field, with a butterfly fluttering around its head. The rabbit looks surprised, then smiles and claps its hands. The background includes green trees, distant mountains, and a clear sky. The audio features a dramatic orchestral score with a choir, followed by a loud crash and a brief silence.",
+            "role": "assistant",
+            "reasoning_content": null
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "created": 1793715410,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "service_tier": null,
+      "system_fingerprint": null,
+      "object": "chat.completion",
+      "usage": {
+        "prompt_tokens": 2643,
+        "completion_tokens": 76,
+        "total_tokens": 2719,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      }
+    },
+    "seconds": 6.056
+  },
+  {
+    "cue": "bbb-sdh-061",
+    "clip_sha256": "be87429a18271458a2840adca276606ebc94efc9c7dbf0b846c6cdea3e5656f3",
+    "window": {
+      "start": 332.124,
+      "end": 342.124
+    },
+    "endpoint": "https://integrate.api.nvidia.com/v1/chat/completions",
+    "payload": {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "stream": false,
+      "temperature": 0.2,
+      "max_tokens": 2048,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      },
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Can you describe the visual and audio content in this video clip?"
+            },
+            {
+              "type": "video_url",
+              "video_url": {
+                "url": {
+                  "inline_media_sha256": "958325a8a350996e0348e1c802b9d0969c6ed5d67f900044341a94d7c588da9e",
+                  "data_uri_characters": 885494,
+                  "prefix": "data:video/mp4;base64"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "wire_sha256": "04d3dc313649a0f24f253b6c5147ef6c4ac0d88bdfd16fda426caff7b51a264e",
+    "wire_bytes": 885850,
+    "attempts": 1,
+    "http_status": 200,
+    "response_headers": {
+      "Nvcf-Reqid": "ad22d43f-5542-4985-b339-549edaa39fa7",
+      "Nvcf-Status": "fulfilled",
+      "Server": "Python/3.12 aiohttp/3.14.5",
+      "X-Request-Id": "c7f3865f-cde3-44ea-a6fc-0e079cc284d0"
+    },
+    "response": {
+      "id": "chatcmpl-a6038480-6f9e-4a8c-a468-8613b5f34409",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "content": "The video shows a cartoon squirrel holding an acorn, swinging on a rope, and then a close-up of its face. The audio includes a door opening and closing, followed by a loud bang.",
+            "role": "assistant",
+            "reasoning_content": null
+          },
+          "finish_reason": "stop",
+          "logprobs": null
+        }
+      ],
+      "created": 1793715416,
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+      "service_tier": null,
+      "system_fingerprint": null,
+      "object": "chat.completion",
+      "usage": {
+        "prompt_tokens": 2643,
+        "completion_tokens": 42,
+        "total_tokens": 2685,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        }
+      }
+    },
+    "seconds": 5.151
+  }
+]

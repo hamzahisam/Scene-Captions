@@ -1,0 +1,25 @@
+{
+  "private_value_scan": "passed",
+  "changed_files_scanned": 230,
+  "client_bundle_files_scanned": 27,
+  "private_values_compared": 1,
+  "python_syntax": "all captune scripts parsed",
+  "named_skills_used": [],
+  "agents_used": 0,
+  "published": false,
+  "node_tests": {
+    "passed": 49,
+    "failed": 0
+  },
+  "offline_python_tests": {
+    "passed": 48,
+    "failed": 0,
+    "transport": "mocked"
+  },
+  "typecheck": "passed",
+  "production_build": "passed",
+  "browser": "browser.json",
+  "legacy_browser": "legacy-browser.json",
+  "temporary_server": "stopped",
+  "limitations": "Technical/source-text validation only; acoustic accuracy, fine-grained semantic quality and DHH benefit remain unverified."
+}

@@ -1,0 +1,22 @@
+{
+  "recorded_requests": 166,
+  "http_status": {
+    "200": 162,
+    "403": 2,
+    "none": 1,
+    "422": 1
+  },
+  "models": {
+    "nvidia/nemotron-3-ultra-550b-a55b": 77,
+    "nvidia/nemotron-3.5-super-vl-120b-a12b": 2,
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": 87
+  },
+  "records_with_token_usage": 162,
+  "reported_token_usage": {
+    "prompt_tokens": 407996,
+    "completion_tokens": 81988,
+    "total_tokens": 489984
+  },
+  "elapsed_request_seconds_sum": 2143.901,
+  "limits": "Request elapsed times are summed, not wall-clock duration. Usage totals cover only responses returning token usage. Free entitlement, remaining quota and monetary cost are not verified. Two HTTP403 records precede the user key update. context-pilot is a subset of context-full and is counted once."
+}

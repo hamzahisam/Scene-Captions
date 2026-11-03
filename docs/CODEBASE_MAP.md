@@ -1,5 +1,7 @@
 # Codebase map
 
+**3 November 2026 freshness note:** this snapshot also predates the independent creator-anchored workflow under `src/lib/captune/`, `src/components/captune/`, `/creator`, `/captune` and offline `scripts/captune/`. It also predates the compact matrix, preparation/review tools and real-data checks. It does not map those modules. Inspect them directly; no mapping skill or refresh was requested.
+
 **28 October 2026 freshness note:** the snapshot predates the new optional media-only subtitle selector, experimental metadata/binding guards, source-guided richness option/coverage guards, and offline full-film/source-rewrite generators. Inspect those changed files directly; no mapping skill or refresh was requested. The graph below remains a historical orientation aid.
 
 Refreshed **26 October 2026** for the caption-free NIM investigation. The manifest covers **79 code/config/test files, 436 nodes and 1,019 edges**. All recorded input hashes matched after final code edits. Graphifyy 0.9.92 used local deterministic AST extraction with `parallel=False`: zero semantic/model calls, no agents, providers, watchers or MCP services.

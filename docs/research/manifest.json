@@ -22,5 +22,32 @@
     "sha256": "dd00e605fd69e3e45b4143f147a95649e9f47a52fb983313e1d1bd212fcd3f5a",
     "source": "https://arxiv.org/pdf/2604.24954v2",
     "license": "CC BY 4.0; arXiv v2 license link checked 2026-10-26"
+  },
+  "bru-garcia-2024-sound-consistency.pdf": {
+    "title": "Control the Stream of Sounds",
+    "year": 2024,
+    "bytes": 365413,
+    "sha256": "bd78ccb75344bada0aef50465562d6ce3c1c0798e91840ca5597e6babd87a2ef",
+    "source": "https://link.springer.com/content/pdf/10.1007/978-3-031-60049-4_23.pdf",
+    "retrieved": "2026-11-03",
+    "review_status": "Relevant publisher/author text checked; not claiming a complete full-paper review."
+  },
+  "arroyo-chavez-2024-caption-customization.pdf": {
+    "title": "Customization of Closed Captions via Large Language Models",
+    "year": 2024,
+    "bytes": 958176,
+    "sha256": "f0e6820d20c9e34ce002cb58676e3b6278665ad064d50e6489f5398fb074db82",
+    "source": "https://link.springer.com/content/pdf/10.1007/978-3-031-62849-8_7.pdf",
+    "retrieved": "2026-11-03",
+    "review_status": "Relevant publisher/author text checked; not claiming a complete full-paper review."
+  },
+  "wang-2025-audio-text-bias.pdf": {
+    "title": "When Audio and Text Disagree: Revealing Text Bias in Large Audio-Language Models",
+    "year": 2025,
+    "bytes": 349348,
+    "sha256": "e7be2605e9f43068f9552ac7a85f1cc7608f5d37b59eaf2616aa28c090102204",
+    "source": "https://aclanthology.org/2025.emnlp-main.246.pdf",
+    "retrieved": "2026-11-03",
+    "review_status": "Relevant publisher/author text checked; not claiming a complete full-paper review."
   }
 }

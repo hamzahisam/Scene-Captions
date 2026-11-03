@@ -1,0 +1,9 @@
+{
+  "last_label": 66,
+  "failures": [
+    {
+      "label": 8,
+      "error": "NVIDIA HTTP unavailable: caption generation is not authenticated/completed. No candidate accepted; details retained in the report."
+    }
+  ]
+}

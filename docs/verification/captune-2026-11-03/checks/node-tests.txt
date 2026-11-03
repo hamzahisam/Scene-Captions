@@ -1,0 +1,52 @@
+
+> scene-captions@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+✔ cue boundaries exclude ended captions and preserve simultaneous sounds (5.067209ms)
+✔ baseline and Show Original always preserve the original (0.374459ms)
+✔ adaptation is cached selection and does not mutate saved preferences (0.206542ms)
+✔ malformed and incomplete annotation files are rejected (1.190625ms)
+✔ alternate representation falls back to descriptive when unavailable (0.378042ms)
+✔ failed audio generation cannot activate unreviewed candidates (0.574833ms)
+✔ bundled captions preserve every licensed source interval and simultaneous event (5.00125ms)
+✔ source-derived adaptation discloses its caption-density proxy (10.396167ms)
+✔ adaptation never exceeds the viewer's detail limit (0.546209ms)
+✔ generated captions and fetched comparison remain separate with shared timings (9.019292ms)
+✔ CapTune Eq 1 reproduces original zero and Fig 3 semantic values; recalibration preserves the current slider position (0.620208ms)
+✔ CapTune Eqs 2–3 match paper example and handle fixed axes and negative changes (0.49025ms)
+✔ SRT ingestion keeps dialogue separate and preserves overlapping cues and context boundaries (3.974708ms)
+✔ anchored prompts include both concrete examples, current text, scene context, exact ratios and viewer modes (0.65475ms)
+✔ dialogue and locked wording survive transformations, while missing styles fall back explicitly (1.198083ms)
+✔ duplicate, missing and unknown output IDs are rejected; editorial changes invalidate caches and stale envelopes (2.238292ms)
+✔ creator bounds constrain grid and language interpretations; invalid configurations cannot render (0.71125ms)
+✔ paired coder agreement computes Cohen kappa without inventing independent coding or undefined certainty (0.17775ms)
+✔ inverse slider mapping keeps loaded anchors and cross-axis calibration in sync (0.115583ms)
+✔ creator result sets concrete anchor captions and recalibrates the other semantic axis without moving its slider (6.4715ms)
+✔ context results are snapshot-bound, preserve cue identity and remain drafts rather than sound truth (5.97375ms)
+✔ experimental opt-in cannot claim review, success or reference-free sourced input (11.386959ms)
+✔ an experimental track cannot attach to a different film or edit (7.461875ms)
+✔ empty experimental output does not masquerade as a missing or verified source track (0.284834ms)
+✔ big-buck-bunny: complete media-only export stays separate and all three SRTs match its generated data (11.267542ms)
+✔ sintel: complete media-only export stays separate and all three SRTs match its generated data (5.466791ms)
+✔ tears-of-steel: complete media-only export stays separate and all three SRTs match its generated data (3.820625ms)
+✔ sintel preserves official dialogue, timing and provenance without inventing sounds (6.182ms)
+✔ tears-of-steel preserves official dialogue, timing and provenance without inventing sounds (2.533459ms)
+✔ dialogue validation rejects duplicate IDs and intervals outside the selected film (11.901334ms)
+✔ event recording validates event types and stores relative elapsed time (2.541042ms)
+✔ rehearsal event buffer stays bounded (0.441334ms)
+✔ rehearsal snapshots keep stopped duration and the complete caption override state (0.374ms)
+✔ source-guided richness cannot change event identity, timing or simultaneous sound coverage (16.523958ms)
+✔ source-guided richness cannot attach to another film or remove source credit (4.166084ms)
+✔ new source-guided wording cannot claim independent generation or completed review (3.4ms)
+✔ new source-guided exports keep all pinned intervals and preserve every richness level (8.845417ms)
+✔ SubRip preserves BOM/CRLF multiline sound cues and millisecond timing (1.071166ms)
+✔ SubRip rejects broken blocks, reversed intervals, duplicate IDs and invalid timestamps (0.31925ms)
+✔ SubRip accepts multiple blank separators without dropping official dialogue (0.091041ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 206.013667

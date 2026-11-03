@@ -1,0 +1,611 @@
+{
+  "id": "label-001",
+  "original": "[BROOK BABBLES]",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "request_sha256": "3a8fd06e9f89e6dff49d4463edd14c4501de5fcc7046a68e2ae2c3c7359738af",
+  "data_sha256": "4d1b35787e8b0d0bb7354cc5de845a9aeef18217fa4489486d23f10325095fb8",
+  "allowed_words": [
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "babbles",
+    "be",
+    "blub",
+    "brook",
+    "bubbles",
+    "bubbling",
+    "can",
+    "come",
+    "comes",
+    "from",
+    "heard",
+    "hearing",
+    "in",
+    "is",
+    "it",
+    "its",
+    "let",
+    "lets",
+    "make",
+    "makes",
+    "making",
+    "of",
+    "out",
+    "sound",
+    "sounds",
+    "stream",
+    "that",
+    "the",
+    "their",
+    "there",
+    "these",
+    "this",
+    "to",
+    "water",
+    "with"
+  ],
+  "palette": {
+    "texts": [
+      "Bubbling water",
+      "A stream makes bubbling sounds",
+      "A stream makes bubbling sounds!",
+      "Brook babbles",
+      "Brook makes bubbling sounds",
+      "Brook makes bubbling sounds!",
+      "Blub brook babbles",
+      "Blub brook makes bubbling sounds",
+      "Blub brook makes bubbling sounds!",
+      "Water bubbling",
+      "Bubbling water sounds",
+      "Bubbling water sounds!"
+    ],
+    "regions": [
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 2
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 1
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 0
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "default"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 2
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 4
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 3
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "source"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 5
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 6
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 7
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 6
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 8
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 6
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 7
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 6
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "onomatopoeia"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 8
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 9
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 10
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 9
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          0
+        ],
+        "text": 11
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 9
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          1,
+          5
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 10
+      },
+      {
+        "detail": [
+          1,
+          5
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 9
+      },
+      {
+        "detail": [
+          6,
+          10
+        ],
+        "expression": [
+          6,
+          10
+        ],
+        "modes": [
+          "sensory"
+        ],
+        "genre": [
+          1
+        ],
+        "text": 11
+      }
+    ]
+  }
+}

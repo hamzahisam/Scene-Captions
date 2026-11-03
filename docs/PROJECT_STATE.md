@@ -1,3 +1,116 @@
+# Research follow-up: recurrence, overlap and predictable controls — 3 November 2026
+
+Read all 402 lines of the newly supplied `SceneCaptions-research-review.md`.
+Selected primary-source checks confirm episode-level sound wording inconsistency,
+mixed preferences for AI-condensed TV captions, text bias under audio/text
+conflict, and prior 20-minute movie-viewing research. These do not demonstrate
+our app's DHH benefit. The current implementation differs from the report's old
+brief: complete edited matrix coverage, a 10×10 anchored grid, no verified motif
+links, no scene-only override expiry and no per-caption exposure log. BBB is
+about 9:56 in this exact edit, rather than the report's cited 10:34 encode.
+
+Saved [prioritized research questions and concrete app proposals](research/RESEARCH_ANGLES_AND_APP_IMPROVEMENTS_2026-11-03.md).
+Primary candidate: delayed recognition of recurring sounds with false-match
+foils and spoiler-safe labels. Secondary candidates protect simultaneous clues
+and clarify temporary-control expiry. Three relevant primary PDFs were added
+with hashes/source URLs. This follow-up changes documentation/research assets
+only: no new app behavior, model calls, logging activation, named skill, agent,
+study, push or deployment. Earlier verification results below are historical,
+not newly rerun tests for this documentation-only work.
+
+# Complete configuration coverage; semantic/listening limits remain — 3 November 2026
+
+After the user replaced the key, NVIDIA generation succeeded. `/creator` and
+`/captune` now load a hash-bound compact BBB matrix: 800 settings × 87 intervals,
+69,513 generated-and-edited cue/settings plus 87 original-baseline combinations,
+zero missing. NIM assessed baseline detail 5 / expression 4. All 67 atomic labels
+have model phrase/selection drafts and recorded main-session source-text review.
+44,373 of 53,600 atomic assignments/wordings changed editorially, including
+remapping into three detail and three expression bands. Adjacent cells repeat;
+expression mainly changes wording/punctuation. This is not 800 distinct
+semantic styles or exact reproduction of the paper's model behavior.
+
+All 87 audiovisual contexts were attempted: 86 completions and one HTTP422.
+Unsupported claims keep every context draft unverified. Full listening,
+original-creator approval, independent human review and DHH evaluation remain
+pending; the failed acoustic gate is unchanged. The 1,317-group source-text
+receipt is complete, with 10,568 repeated reading-rate flags from an unvalidated
+heuristic. The earlier `/` three-level viewer remains available and unchanged.
+
+49 Node / 48 offline Python tests, types, production build and new/legacy browser
+regressions pass. All actual cue/settings resolve; overlays, modes, exports,
+creator locks, source-edit invalidation, sample restore, narrow bounds, mixed
+dialogue, quota errors and mobile layout pass. No model call occurs during
+viewing. No deployment or push occurred. See [generation evidence](verification/captune-matrix-2026-11-03/README.md).
+
+Read all four newly supplied reports. Three address SceneCaptions; the fourth
+is an unrelated carbon-pricing/healthcare mock report. Primary-source checks
+confirm Omni's non-speech scope limitation but correct the Chinese reading-speed
+study attribution, universal cap/placement claims and unsupported novelty claims.
+Proposed next work: consistent plain wording, explainable adaptation and a
+transparent generator-error audit. No new report recommendation was automatically
+implemented or used to authorize cloud inference/logging.
+See [research directions review](research/RESEARCH_DIRECTIONS_REVIEW_2026-11-03.md).
+
+# Historical initial attempt: NVIDIA authorization blocked — 3 November 2026
+
+The user explicitly requested generating/reviewing the remaining matrix, retaining
+NVIDIA-only and offline playback. Two actual NIM requests (Ultra baseline task and
+small Super VL text-only authorization control) both returned HTTP 403 with
+“Authorization failed.” There is one configured NVIDIA_API_KEY in .env, no process
+environment override, correct nvapi prefix and no whitespace. No new captions or
+model context were generated. A replacement active key was requested privately;
+no paid fallback, automatic authorization retry, installation, agent or deployment.
+
+Prepared all 87 ±5s audiovisual context clips from the exact-hash local film.
+Every derived file matches its manifest hash and retains video/audio; requested
+windows match the paper's cue-start rule. Largest container-duration difference
+is 36.655 ms from encoding. This is file/timing verification, not listening review.
+Added a source/context/text-group review packet and strict completeness checker:
+it exposes 69,252 missing cue/style combinations and never promotes pending
+checks into acoustic, original-creator or DHH approval. Two new receipt tests bring
+the Node suite to 42 passing tests; types pass. Existing playback data is unchanged.
+See [full preparation/authentication evidence](verification/captune-matrix-2026-11-03/README.md).
+Resume the recorded baseline with `--retry-failed` only after the key is updated;
+keep earlier failed request records intact. No running generation job is pending.
+
+# Creator-anchored paper workflow — 3 November 2026
+
+The user requested CapTune’s product/method, then explicitly retained NVIDIA-only
+preparation and no viewing-time model calls. New `/creator` and `/captune`
+workspaces independently implement its two-anchor model, Equations 1–3, calibrated
+creator sliders, constrained 10×10 grid, edit/lock, dialogue preservation, three
+sound representations plus default, genre, SRT/config/result import/export,
+context/baseline and natural-language preference preparation. The existing `/`
+three-level demonstration remains available and its removed buttons stay removed.
+
+The full 18-page paper was read, including references/appendices; figures and
+Equation 1 were inspected. The authors’ current README mentions GPT‑5 whereas
+the paper uses GPT‑4o. No authors’ code was copied. Our NIM/offline runtime and
+JSON schema are declared differences, not exact authors’ software compatibility.
+The paper’s qualitative creator/DHH protocol is documented separately from the
+older randomized long-form proposal, at `/captune/methodology` and in the
+[replication materials](research/CAPTUNE_REPLICATION_PROTOCOL.md).
+
+The sample has its original captions and three real prior detail drafts, not a
+complete matrix, meaningful generated expressiveness/genre/sensory variants or
+reviewed audiovisual context. Unprepared styles visibly retain originals and
+cannot be exported as fully transformed SRT. Full-matrix preparation is a bounded,
+explicit CLI operation; no new live cloud inference, new model/runtime install,
+participant study, named skill, agent, push or deployment was performed. Model
+transport was mocked in offline checks; current NIM entitlement/quality is not
+verified by these checks. The failed audio-recognition gate is unchanged.
+
+40 Node and 48 offline Python tests pass, along with types/build and browser
+checks of both new workspaces and the existing viewer. Grid keyboard operation,
+actual prepared overlays, narrow-bound project imports, locks, mixed dialogue,
+metadata/context/export, 390 CSS-pixel layout and persistence were checked.
+Context clipping was exercised on the exact-hash local BBB file. Manual review
+fixed a bounds/import crash, hidden-input horizontal overflow and odd-dimension
+encoding failure. These are technical tests, not acoustic/DHH validation. Maps
+and Fallow snapshots remain stale; see [evidence](verification/captune-2026-11-03/README.md)
+and [complete setup/traceability](CAPTUNE_REPRODUCTION.md).
+
 # Richness applies immediately — 28 October 2026
 
 Essential, Balanced, Rich and the detail slider now apply immediately through

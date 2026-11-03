@@ -1,0 +1,11 @@
+{
+  "project_sha256": "4a69defefcf3f3e6d76c86818a7fcd8984508faa32d9cd1a8ad2c25c5a9fbd5c",
+  "reviewer": "main-session assistant",
+  "review_kind": "source-text-editorial",
+  "groups": 1317,
+  "complete_source_text_receipt": true,
+  "acoustic_validation": "unverified",
+  "dhh_study": "not-conducted",
+  "reading_flags": 10568,
+  "receipt_sha256": "a24049703922f13f0f1e82e04036ca5b57059337033bbde5e6e71ee61eb027f3"
+}

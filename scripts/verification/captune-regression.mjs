@@ -1,0 +1,74 @@
+async (page) => {
+ const fs=await import('node:fs');
+ const base=new URL(page.url()).origin;const assert=(v,m)=>{if(!v)throw Error(m)};const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(`${base}/captune`,{waitUntil:'domcontentloaded'});
+ await page.waitForFunction(()=>Object.keys(document.querySelector('.anchor-grid button')||{}).some(k=>k.startsWith('__reactProps')));
+ assert(await page.locator('.anchor-grid button').count()===100,'Grid is not 10×10');
+ await page.waitForFunction(()=>document.querySelector('video')?.readyState>=1);
+ await page.locator('.creator-cue').nth(1).click();
+ const sample=JSON.parse(fs.readFileSync('data/captune/big-buck-bunny.json','utf8')),cue=sample.cues[1];
+ for(const [detail,expression,expected] of [[1,1,'Bubbling water\nBuzzing fly'],[10,10,'A stream makes bubbling sounds!\nA fly makes a buzzing sound!']]){
+  await page.getByRole('button',{name:`Detail ${detail}, expressiveness ${expression}`,exact:true}).click();
+  await page.waitForFunction(t=>document.querySelector('.caption-lines')?.textContent===t,expected);
+ }
+ await page.getByRole('button',{name:'Detail 10, expressiveness 2',exact:true}).click();
+ const cell=page.getByRole('button',{name:'Detail 10, expressiveness 2',exact:true});await cell.focus();await page.keyboard.press('ArrowUp');await page.keyboard.press('Enter');
+ assert(await page.getByRole('button',{name:'Detail 10, expressiveness 3',exact:true}).getAttribute('aria-pressed')==='true','Keyboard grid selection failed');
+ await page.getByRole('button',{name:'Detail 10, expressiveness 10',exact:true}).click();
+ await page.getByRole('combobox',{name:'Sound representation',exact:true}).selectOption('onomatopoeia');
+ await page.waitForFunction(()=>document.querySelector('.caption-lines')?.textContent==='Blub — a stream makes bubbling sounds!\nBzzz — a fly makes a buzzing sound!');
+ for(const mode of ['source','sensory','default','onomatopoeia'])for(const genre of [false,true]){
+  await page.getByRole('combobox',{name:'Sound representation',exact:true}).selectOption(mode);
+  await page.getByRole('checkbox',{name:'Align wording with the video’s genre'}).setChecked(genre);
+  assert((await page.locator('.section-title').filter({hasText:'Compare wording'}).textContent()).includes('87/87'),'Prepared style coverage missing');
+  assert(!(await page.locator('.anchor-pair').first().textContent()).includes('not prepared'),'Prepared style fell back');
+ }
+ await page.getByRole('combobox',{name:'Sound representation',exact:true}).selectOption('sensory');
+ const [srt]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'Download selected SRT',exact:true}).click()]);
+ const srtPath='artifacts/captune-matrix-2026-11-03/browser-selected.srt';await srt.saveAs(srtPath);const srtText=fs.readFileSync(srtPath,'utf8');assert((srtText.match(/ --> /g)||[]).length===87,'Selected SRT missing intervals');assert(srtText.includes('A stream makes bubbling sounds!\nA fly makes a buzzing sound!'),'Selected SRT lost simultaneous sounds');
+ const before=JSON.parse(await page.evaluate(()=>localStorage.getItem('scenecaptions.anchored-profile.v1')));assert(before.genre&&before.representation==='sensory','Viewer settings did not persist');
+ await page.getByRole('button',{name:'Show original captions',exact:true}).click();
+ await page.waitForFunction(t=>document.querySelector('.caption-lines')?.textContent===t,cue.original);
+ await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'artifacts/captune-matrix-2026-11-03/viewer.png',fullPage:true});
+ await page.goto(`${base}/creator`,{waitUntil:'domcontentloaded'});
+ await page.waitForFunction(()=>Object.keys(document.querySelector('.creator-cue')||{}).some(k=>k.startsWith('__reactProps')));
+ await page.getByRole('textbox',{name:'Manual wording',exact:false}).fill('[QA locked source wording]');
+ await page.getByRole('checkbox',{name:'Lock wording',exact:true}).check();
+ const locked=JSON.parse(await page.evaluate(()=>localStorage.getItem('scenecaptions.anchored-project.v1')));assert(locked.prepared_matrix&&locked.cues[0].locked,'Creator lock erased prepared matrix');
+ await page.getByRole('textbox',{name:'Lower anchor wording',exact:true}).fill('[QA changed anchor]');
+ const invalidated=JSON.parse(await page.evaluate(()=>localStorage.getItem('scenecaptions.anchored-project.v1')));assert(!invalidated.prepared_matrix,'Changed anchor retained stale matrix');
+ await page.getByRole('button',{name:'Open prepared sample',exact:true}).click();
+ await page.waitForFunction(()=>JSON.parse(localStorage.getItem('scenecaptions.anchored-project.v1')||'{}').prepared_matrix);
+ await page.getByLabel('Open captions / project',{exact:false}).setInputFiles('artifacts/captune-2026-11-03/fixture.srt');
+ await page.waitForFunction(()=>document.querySelector('.anchor-toolbar')?.textContent.includes('2 sound cues'));
+ await page.getByRole('textbox',{name:'Manual wording',exact:false}).fill('[Creator locked wording]');
+ await page.getByRole('checkbox',{name:'Lock wording',exact:true}).check();
+ await page.getByRole('textbox',{name:'Lower anchor wording',exact:true}).fill('[A simple door sound]');
+ await page.getByRole('textbox',{name:'Audio-visual scene context',exact:true}).fill('TEST FIXTURE: A visible door. No audio inference performed.');
+ await page.getByRole('checkbox',{name:'I checked this context against the video',exact:false}).check();
+ const [exported]=await Promise.all([page.waitForEvent('download'),page.getByRole('button',{name:'Export configuration JSON',exact:true}).click()]);
+ await exported.saveAs('artifacts/captune-matrix-2026-11-03/creator-export.json');
+ const config=JSON.parse(fs.readFileSync('artifacts/captune-matrix-2026-11-03/creator-export.json','utf8'));
+ assert(config.cues[0].locked&&config.cues[0].edited==='[Creator locked wording]','Lock/edit missing from export');
+ assert(config.cues[0].dialogue==='Hello there.','Mixed dialogue lost');assert(config.cues[0].lower==='[A simple door sound]','Anchor text missing');
+ assert(config.cues[0].context.status==='reviewed','Explicit creator context review not saved');
+ config.bounds.upper={detail:7,expression:6};fs.writeFileSync('artifacts/captune-matrix-2026-11-03/bounded-fixture.json',JSON.stringify(config));
+ await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'artifacts/captune-matrix-2026-11-03/creator.png',fullPage:true});
+ await page.goto(`${base}/captune`,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.querySelector('.anchor-toolbar')?.textContent.includes('fixture'));await page.getByLabel('Import configuration',{exact:false}).setInputFiles('artifacts/captune-matrix-2026-11-03/bounded-fixture.json');
+ await page.waitForFunction(()=>document.querySelector('.anchor-toolbar')?.textContent.includes('fixture'));
+ await page.waitForFunction(()=>document.querySelector('[data-detail="8"][data-expression="5"]')?.disabled);assert(await page.getByRole('button',{name:'Detail 8, expressiveness 5',exact:true}).isDisabled(),'Creator bounds not enforced');
+ await page.getByLabel('Open matching MP4',{exact:false}).setInputFiles('artifacts/captune-2026-11-03/fixture.mp4');
+ await page.waitForFunction(()=>document.querySelector('video')?.readyState>=1);
+ await page.locator('.creator-cue').first().click();
+ await page.waitForFunction(()=>document.querySelector('.caption-lines')?.textContent.includes('[Creator locked wording]'));
+ assert((await page.locator('.caption-lines').textContent()).includes('Hello there.'),'Locked NSI removed dialogue');
+ await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile overflow');await page.screenshot({path:'artifacts/captune-matrix-2026-11-03/mobile.png',fullPage:true});
+ await page.goto(`${base}/captune/methodology`,{waitUntil:'domcontentloaded'});assert(await page.getByRole('heading',{name:'DHH viewer evaluation · §6',exact:true}).count()===1,'Paper methodology missing');
+ await page.addInitScript(()=>{const original=Storage.prototype.setItem;Storage.prototype.setItem=function(key,value){if(key==='scenecaptions.anchored-project.v1')throw new DOMException('test quota','QuotaExceededError');return original.call(this,key,value);};});
+ await page.goto(`${base}/creator`,{waitUntil:'domcontentloaded'});
+ await page.waitForFunction(()=>document.querySelector('.anchor-toolbar')?.textContent.includes('2 sound cues'));
+ await page.getByRole('textbox',{name:'Manual wording',exact:false}).fill('[QA storage-quota edit]');
+ await page.getByRole('alert').filter({hasText:'Browser storage is full or unavailable'}).waitFor();
+ assert(errors.length===0,errors.join('; '));
+ return {gridCells:100,actualPreparedOverlay:true,keyboardGrid:true,representationsAndGenre:true,allEightModeGenreProfilesPrepared:true,selectedSrtIntervals:87,creatorLockPreservesMatrix:true,anchorEditInvalidatesMatrix:true,restorePreparedSample:true,profilePersistence:true,creatorImportExport:true,manualEditAndLock:true,mixedDialoguePreserved:true,contextReviewSaved:true,boundsEnforced:true,storageQuotaVisible:true,mobileOverflow:false,methodology:true,pageErrors:errors,limits:'Actual prepared sample overlays and synthetic fixture mechanics. No cloud inference, listening/DHH validation, or participant research.'};
+}

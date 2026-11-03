@@ -1,0 +1,533 @@
+{
+  "video_sha256": "738e2f999860553d056dd79c952f58f63cbb73892a57c72342ce9e5330d9d2d7",
+  "clips": 87,
+  "max_duration_error_seconds": 0.036655,
+  "clip_hashes_and_paper_windows_match": true,
+  "all_have_audio_and_video": true,
+  "NVIDIA_context_generation": false,
+  "listening_review": false,
+  "checked": [
+    {
+      "cue": "bbb-sdh-001",
+      "duration_error_seconds": 0.001,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-002",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-003",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-004",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-005",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-006",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-007",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-008",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-009",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-010",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-011",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-012",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-013",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-014",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-015",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-016",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-017",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-018",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-019",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-020",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-021",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-022",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-023",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-024",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-025",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-026",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-027",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-028",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-029",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-030",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-031",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-032",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-033",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-034",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-035",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-036",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-037",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-038",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-039",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-040",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-041",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-042",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-043",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-044",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-045",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-046",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-047",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-048",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-049",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-050",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-051",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-052",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-053",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-054",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-055",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-056",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-057",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-058",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-059",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-060",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-061",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-062",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-063",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-064",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-065",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-066",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-067",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-068",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-069",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-070",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-071",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-072",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-073",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-074",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-075",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-076",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-077",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-078",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-079",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-080",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-081",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-082",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-083",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-084",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-085",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-086",
+      "duration_error_seconds": 0.0,
+      "hash_matches": true,
+      "audio_and_video": true
+    },
+    {
+      "cue": "bbb-sdh-087",
+      "duration_error_seconds": 0.036655,
+      "hash_matches": true,
+      "audio_and_video": true
+    }
+  ]
+}
