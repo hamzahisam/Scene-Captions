@@ -572,12 +572,12 @@
     {
       "video_id": "soar",
       "cues": 49,
-      "sha256": "bf94577a72bbf97fa1dc4659531ac6beac87db4e89a32d3d52c388c5a7e136a4"
+      "sha256": "2373fff7f26a5fc671acd6c2e7c316b07012d6dbace9d0937cc04249bcf40441"
     },
     {
       "video_id": "brain-divided",
       "cues": 18,
-      "sha256": "41d14d1388a1ad78548de10fa54b6bc8c7313d9473707b2585881caa9c271528"
+      "sha256": "98bfae263812c9036f8fbdb6153e5609e3734f3cd3a8e9177d49e0b588fe861a"
     }
   ]
 }

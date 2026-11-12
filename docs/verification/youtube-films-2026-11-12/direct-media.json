@@ -1,0 +1,34 @@
+[
+  {
+    "film": "soar",
+    "url": "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/soar.mp4",
+    "http_status": 206,
+    "content_type": "video/mp4",
+    "content_range": "bytes 0-31/21407540",
+    "prefix_matches_local": true,
+    "sha256": "aa694a8eeac5c6c58e707478086fb9b72a99aeebdce1e08fe33a03352bc20bff",
+    "bytes": 21407540,
+    "duration_seconds": 374.352109,
+    "width": 1280,
+    "height": 720,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_language": "Original audio"
+  },
+  {
+    "film": "brain-divided",
+    "url": "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/brain-divided.mp4",
+    "http_status": 206,
+    "content_type": "video/mp4",
+    "content_range": "bytes 0-31/18971026",
+    "prefix_matches_local": true,
+    "sha256": "6857e9d3613b288cc99f210a6bed193340155bfa8a90faa06af9d0e9e3c07e5d",
+    "bytes": 18971026,
+    "duration_seconds": 301.395011,
+    "width": 1280,
+    "height": 720,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_language": "English (US) original"
+  }
+]

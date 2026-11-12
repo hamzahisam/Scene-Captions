@@ -70,10 +70,15 @@ def main():
         source_path = ROOT / f'data/sources/youtube/{identity}.json'
         source = read(source_path)
         track = {'schema_version': 1, 'video_id': identity, 'title': source['title'], 'source_url': source['source_url'],
-            'license': 'All rights reserved · YouTube playback', 'attribution': source['attribution'],
+            'license': 'Copyright retained by the respective filmmakers', 'attribution': source['attribution'],
             'duration_seconds': source['duration_seconds'], 'annotation_status': 'draft',
             'generated_with': {'kind': 'source-assisted', 'model': result['model'], 'method': 'NVIDIA wording preparation using reviewed source-text phrases; main-session editorial checks. '+source['timing_method'], 'prompt_version': 'youtube-source-phrases-v1', 'quality_gate': 'unverified', 'wording_style': 'simple-source-richness',
                 'caption_source': {'url': source['source_url'], 'author': 'TheCGBros · YouTube English caption contributors', 'license': 'Copyright retained by the respective creators; publisher-hosted playback', 'revision': 'English transcript exported 2026-11-12; reconstructed display intervals', 'sha256': source['transcript_sha256']}}, 'cues': []}
+        if source.get('media'):
+            track['generated_with']['source_sha256'] = source['media']['sha256']
+        if source.get('dialogue'):
+            track['dialogue'] = source['dialogue']
+            track['dialogue_source'] = source['dialogue_source']
         for cue in source['cues']:
             references = cue['reference_text'].split('\n')
             track['cues'].append({**cue, 'sound_key': cue['cue_id'], 'levels': [[levels_by_reference[r][d] for r in references] for d in range(3)]})

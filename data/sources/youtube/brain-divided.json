@@ -2,13 +2,13 @@
   "video_id": "brain-divided",
   "youtube_id": "JuyB7NO0EYY",
   "title": "Brain Divided",
-  "duration_seconds": 302,
-  "attribution": "Josiah Haworth, Joon Shik Song & Joon Soo Song \u00b7 Ringling College of Art and Design \u00b7 TheCGBros",
+  "duration_seconds": 301.395011,
+  "attribution": "Josiah Haworth, Joon Shik Song & Joon Soo Song · Ringling College of Art and Design · TheCGBros",
   "source_url": "https://www.youtube.com/watch?v=JuyB7NO0EYY",
   "caption_language": "en",
   "caption_kind": "authored or unspecified",
   "transcript_sha256": "cedbff2d3205d0530cf52b7d9fe6d59bab5c465b22753a06b4a17cc24efbece9",
-  "timing_method": "Whole-second starts from the YouTube transcript export. Derived display ends are the next distinct sound-caption start or six seconds, whichever is earlier. Original cue offsets/milliseconds are not supplied by that export; timing remains an unverified reconstruction. Spoken dialogue remains available through the original YouTube captions.",
+  "timing_method": "Whole-second starts from the YouTube transcript export. Derived display ends are the next distinct sound-caption start or six seconds, whichever is earlier. Original cue offsets/milliseconds are not supplied by that export; timing remains an unverified reconstruction. Spoken dialogue is retained separately from the original English VTT and displayed without personalization.",
   "cues": [
     {
       "cue_id": "brain-divided-sound-001",
@@ -117,6 +117,367 @@
       "start_s": 289,
       "end_s": 295,
       "reference_text": "[Alert Alarm Sounds]"
+    }
+  ],
+  "media": {
+    "sha256": "6857e9d3613b288cc99f210a6bed193340155bfa8a90faa06af9d0e9e3c07e5d",
+    "bytes": 18971026,
+    "duration_seconds": 301.395011,
+    "width": 1280,
+    "height": 720,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_language": "English (US) original",
+    "url": "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/brain-divided.mp4"
+  },
+  "dialogue_source": {
+    "url": "https://www.youtube.com/watch?v=JuyB7NO0EYY",
+    "author": "TheCGBros · YouTube English caption contributors",
+    "license": "Copyright retained by the respective creators",
+    "sha256": "87617e353b168bdb5a2c1317c0a2e0b48c47141f40992efa096ba75eff5f062d"
+  },
+  "dialogue": [
+    {
+      "cue_id": "brain-divided-dialogue-001",
+      "start_s": 22.6,
+      "end_s": 23.1,
+      "text": "Hmm?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-002",
+      "start_s": 29.88,
+      "end_s": 30.38,
+      "text": "Hmm?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-003",
+      "start_s": 34.2,
+      "end_s": 34.78,
+      "text": "Ahh..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-004",
+      "start_s": 48.0,
+      "end_s": 50.32,
+      "text": "Hi...ahh... John?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-005",
+      "start_s": 52.22,
+      "end_s": 53.3,
+      "text": "Sorry I'm Late"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-006",
+      "start_s": 53.8,
+      "end_s": 54.92,
+      "text": "Ahhh"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-007",
+      "start_s": 60.12,
+      "end_s": 62.52,
+      "text": "Um..Hi... you mus...you must be Scarlet..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-008",
+      "start_s": 62.9,
+      "end_s": 66.22,
+      "text": "Yeah it's...Uh... Nice to meet you"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-009",
+      "start_s": 71.22,
+      "end_s": 73.38,
+      "text": "The pleasure is all mine..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-010",
+      "start_s": 82.28,
+      "end_s": 85.03999999999999,
+      "text": "Oh! Ahh.. here...Ah..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-011",
+      "start_s": 85.36,
+      "end_s": 86.4,
+      "text": "Take a seat..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-012",
+      "start_s": 86.84,
+      "end_s": 87.84,
+      "text": "Yeah sure..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-013",
+      "start_s": 89.32,
+      "end_s": 92.0,
+      "text": "Yeah, I hope you're hungry cuz I already ordered our food..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-014",
+      "start_s": 92.3,
+      "end_s": 94.3,
+      "text": "Oh great I'm starving..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-015",
+      "start_s": 94.3,
+      "end_s": 97.02000000000001,
+      "text": "I got us something that's low in carbs and high in antioxidants..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-016",
+      "start_s": 97.18,
+      "end_s": 98.46000000000001,
+      "text": "So you won't get fat..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-017",
+      "start_s": 98.53999999999999,
+      "end_s": 99.96000000000001,
+      "text": "Excuse me?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-018",
+      "start_s": 104.02000000000001,
+      "end_s": 106.25999999999999,
+      "text": "Hmm...Looks like you don't have that problem..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-019",
+      "start_s": 106.28,
+      "end_s": 108.94,
+      "text": "Have you done some modeling? You've got amazing eyes..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-020",
+      "start_s": 110.78,
+      "end_s": 112.2,
+      "text": "[Garbled Words] Sweet as..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-021",
+      "start_s": 112.25999999999999,
+      "end_s": 113.36,
+      "text": "Accent!!"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-022",
+      "start_s": 114.2,
+      "end_s": 115.47999999999999,
+      "text": "That's French isn't it?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-023",
+      "start_s": 117.22,
+      "end_s": 117.84,
+      "text": "Umm..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-024",
+      "start_s": 117.86,
+      "end_s": 119.18,
+      "text": "No"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-025",
+      "start_s": 119.18,
+      "end_s": 120.4,
+      "text": "More like Wisconsin"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-026",
+      "start_s": 120.72,
+      "end_s": 122.36,
+      "text": "Pure born cheese-head here..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-027",
+      "start_s": 123.44,
+      "end_s": 125.84,
+      "text": "Have you ever had any cheese from Wisconsin?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-028",
+      "start_s": 125.84,
+      "end_s": 129.56,
+      "text": "Oh!  Ah...No...cheese makes me gassy..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-029",
+      "start_s": 133.42,
+      "end_s": 134.82,
+      "text": "Oh!  Dinners here."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-030",
+      "start_s": 135.54,
+      "end_s": 138.06,
+      "text": "Let's Spice things up..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-031",
+      "start_s": 139.7,
+      "end_s": 142.4,
+      "text": "I hope you're excited for the main course..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-032",
+      "start_s": 142.6,
+      "end_s": 143.96,
+      "text": "I know I am..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-033",
+      "start_s": 145.3,
+      "end_s": 147.04,
+      "text": "Dinner is served."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-034",
+      "start_s": 162.04,
+      "end_s": 164.0,
+      "text": "Oh my God are you okay?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-035",
+      "start_s": 165.6,
+      "end_s": 166.94,
+      "text": "Hey my songs playing..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-036",
+      "start_s": 181.22,
+      "end_s": 184.36,
+      "text": "Hah, hah... time for some real dancing..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-037",
+      "start_s": 185.12,
+      "end_s": 187.12,
+      "text": "Olé... Spin move...Oooh..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-038",
+      "start_s": 188.12,
+      "end_s": 189.86,
+      "text": "Jazz hands..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-039",
+      "start_s": 194.86,
+      "end_s": 195.46,
+      "text": "What do you say?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-040",
+      "start_s": 196.24,
+      "end_s": 197.62,
+      "text": "Time for some dessert?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-041",
+      "start_s": 200.4,
+      "end_s": 200.9,
+      "text": "Arghh!"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-042",
+      "start_s": 203.88,
+      "end_s": 205.88,
+      "text": "Ah! What's wrong with you?!"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-043",
+      "start_s": 207.34,
+      "end_s": 208.56,
+      "text": "[Scralet Mutters]...All the same"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-044",
+      "start_s": 226.12,
+      "end_s": 227.32,
+      "text": "Wa, wa, wait Scarlet!"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-045",
+      "start_s": 227.5,
+      "end_s": 228.28,
+      "text": "What do you want?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-046",
+      "start_s": 228.52,
+      "end_s": 231.4,
+      "text": "Scarlet look...I'm sorry I was an idiot back there..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-047",
+      "start_s": 231.54,
+      "end_s": 232.8,
+      "text": "Yeah...You were..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-048",
+      "start_s": 233.42000000000002,
+      "end_s": 235.42000000000002,
+      "text": "What was all that?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-049",
+      "start_s": 241.3,
+      "end_s": 247.42,
+      "text": "Look... I, I...  know I seem crazy... but, but...my\nmind was all over the place trying to be"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-050",
+      "start_s": 247.42,
+      "end_s": 252.14,
+      "text": "someone I thought you'd like... but I'd\nlike to show you the real me..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-051",
+      "start_s": 252.14,
+      "end_s": 255.12,
+      "text": "Uh...I don't know..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-052",
+      "start_s": 255.76,
+      "end_s": 257.54,
+      "text": "We could go dancing..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-053",
+      "start_s": 260.72,
+      "end_s": 262.88,
+      "text": "I like the sound of that..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-054",
+      "start_s": 263.02,
+      "end_s": 266.14,
+      "text": "Did you have anything... else In mind?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-055",
+      "start_s": 276.86,
+      "end_s": 280.58,
+      "text": "So... how about that second date?"
+    },
+    {
+      "cue_id": "brain-divided-dialogue-056",
+      "start_s": 286.46,
+      "end_s": 287.44,
+      "text": "Forget dating..."
+    },
+    {
+      "cue_id": "brain-divided-dialogue-057",
+      "start_s": 288.06,
+      "end_s": 289.44,
+      "text": "Let's start a family!"
     }
   ]
 }

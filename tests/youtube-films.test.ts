@@ -15,7 +15,9 @@ for (const [id, count] of [["soar", 49], ["brain-divided", 18]] as const) {
     assert.match(data.generated_with.method, /not exact|not supplied/);
     assert.equal(data.annotation_status, "draft");
     assert.equal(data.generated_with.quality_gate, "unverified");
-    assert.equal(data.generated_with.source_sha256, undefined, "No invented hash of publisher-hosted movie bytes");
+    assert.equal(data.generated_with.source_sha256, source.media.sha256, "Caption track binds the prepared MP4 bytes");
+    assert.deepEqual(data.dialogue || [], source.dialogue);
+    assert.ok(source.media.height >= 720);
     assert.equal(data.generated_with.caption_source?.sha256, source.transcript_sha256);
     assert.equal(data.generated_with.expression_method, "punctuation-only");
     assert.equal(data.generated_with.scene_load_method, "cue-density");

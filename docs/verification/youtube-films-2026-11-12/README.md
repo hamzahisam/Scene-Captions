@@ -1,3 +1,13 @@
+# Follow-up: direct MP4 playback
+
+User correction: no YouTube streaming. Both videos were downloaded from the same caption-matched public edits, remuxed without re-encoding or trimming, and uploaded to the existing Vercel Blob media store. Native playback replaces the embed entirely; there is no YouTube script/iframe. Film/source credits remain. New media totals 40,378,566 bytes. No plan upgrade or model call was made. yt-dlp 2026.10.26 was installed in `/Users/hamza/runtimes/scenecaptions-media`; existing ffmpeg performed faststart remuxing. No global Python/PATH changes were made.
+
+`direct-media.json` records MP4 SHA-256, codecs, dimensions, exact duration, URLs and HTTP 206 checks. English VTT files (trailing whitespace normalized) are pinned beside source manifests. Brain Divided's 57 spoken cues retain original wording and timing, independent of sound preferences. Soar sound/vocalization labels remain in its existing generated sound track. Sound timings have not been upgraded to precise VTT boundaries in this correction.
+
+Browser checks confirmed advancing native playback for both films, zero iframes, keyboard seeking and simultaneous original dialogue/generated sound captions at 0:50 in Brain Divided. Tests and production build pass. The earlier YouTube-embed account below describes the superseded release.
+
+---
+
 # Two full short films and viewer controls
 
 ## Sources and implementation

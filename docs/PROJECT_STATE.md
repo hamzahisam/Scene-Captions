@@ -1,3 +1,9 @@
+# Direct video playback correction — 12 November 2026
+
+The user rejected YouTube streaming. Both new films now play as native MP4s from the existing Vercel Blob store, using the same player as the original catalogue. The YouTube embed component, API loader and embed styles were removed. Public videos total 40,378,566 bytes, with H.264 1280×720 picture, original English AAC audio, retained credits and faststart metadata; no cropping or timing edits. Decoded durations are 374.352109 and 301.395011 seconds. Sound-caption wording/preferences remain prepared offline. Brain Divided retains 57 original dialogue cues from its downloaded English VTT; Soar's vocalizations remain in its existing sound track, avoiding duplicate overlays.
+
+See [direct media verification](verification/youtube-films-2026-11-12/direct-media.json). Both URLs return HTTP 206 with video/mp4 and matching local byte prefixes. Browser verification confirmed both native players advance, no iframe exists, and Brain Divided's original dialogue and generated sound caption display together at 0:50. Sound-caption display intervals remain the earlier approximate transcript reconstruction; full listening/fine timing review remains incomplete. The prior embed release below is historical and superseded.
+
 # Viewer catalogue update — 12 November 2026
 
 The main viewer now includes complete publisher-hosted YouTube story films **Soar (6:15)** and **Brain Divided (5:02)**, alongside the three existing titles. Their exported English captions supply 49 and 18 non-speech intervals respectively, with Essential, Balanced and Rich generated wording. Dialogue stays available through YouTube captions. No movie reuploads were made.
