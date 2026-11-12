@@ -11,14 +11,14 @@ async (page) => {
   const track = await response.json();
   await page.locator('video').evaluate(v=>{v.pause();v.currentTime=83.8});
   await page.waitForFunction(()=>Math.abs(document.querySelector('video').currentTime-83.8)<.05);
-  const source = page.getByRole('button',{name:'Use source-guided captions',exact:true});
+  const source = page.getByRole('button',{name:'Use our generated subtitles',exact:true});
   const removed = page.getByRole('button',{name:/^Use (existing captions|media-only AI subtitles)$/});
   assert(await removed.count()===0,'Removed subtitle buttons are visible');
   assert(await source.getAttribute('aria-pressed')==='true','Source-guided captions are not the default');
   await source.focus();await page.keyboard.press('Enter');
   assert(await source.getAttribute('aria-pressed')==='true','Source mode not selected');
   assert(Math.abs(await page.locator('video').evaluate(v=>v.currentTime)-83.8)<.05,'Source switch changed playback time');
-  await page.getByText('Simple source-guided captions selected.',{exact:true}).waitFor();
+  await page.getByText('Our generated subtitles.',{exact:true}).waitFor();
   const checked=[];
   for(const id of ['bbb-sdh-002','bbb-sdh-020','bbb-sdh-054','bbb-sdh-061']) {
     const index=track.cues.findIndex(c=>c.cue_id===id),cue=track.cues[index];
@@ -52,7 +52,7 @@ async (page) => {
     await page.getByLabel('Choose a film',{exact:true}).selectOption(id);
     assert(await source.count()===0,`${id}: source-only sound expansion must be unavailable`);
     assert(await removed.count()===0,'Removed subtitle buttons returned on film switch');
-    assert(await page.locator('[aria-label="Subtitle source"]').count()===0,'Empty source picker shown');
+    assert(await page.locator('[aria-label="Generated subtitles"]').count()===0,'Empty source picker shown');
     assert(await page.locator('.watch-heading h2').textContent().then(text=>text.includes(id==='sintel'?'Sintel':'Tears of Steel')),'Film switch did not load selected title');
   }
   await page.getByLabel('Choose a film',{exact:true}).selectOption('big-buck-bunny');await source.click();
