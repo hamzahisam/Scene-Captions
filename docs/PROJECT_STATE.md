@@ -1,3 +1,9 @@
+# Hair Love replaces Brain Divided — 12 November 2026
+
+User approved **Hair Love (about 6:48)** as the second additional film. It plays directly from the existing media store through the native player. Brain Divided is removed from the catalogue. Hair Love includes 15 prepared sound cues (14 original non-speech intervals plus a singing summary) and 26 fixed dialogue cues. Sound/dialogue retain original millisecond VTT timings; song lyrics are omitted. Essential/Balanced/Rich wording, punctuation-only expression, density adaptation and preview are available. A single bounded NVIDIA wording request used 987 reported tokens; no viewing-time calls. Listening/readability review remains incomplete.
+
+Validation: 53 tests and production build pass; browser playback, three presets, dialogue, preview and absence of iframes/upload inputs verified. See [Hair Love evidence](verification/hair-love-2026-11-12/README.md). The earlier Brain Divided catalogue accounts below are historical and superseded. Historical source maps remain stale for the new catalogue/datasets; no graph/audit regeneration was performed.
+
 # Direct video playback correction — 12 November 2026
 
 The user rejected YouTube streaming. Both new films now play as native MP4s from the existing Vercel Blob store, using the same player as the original catalogue. The YouTube embed component, API loader and embed styles were removed. Public videos total 40,378,566 bytes, with H.264 1280×720 picture, original English AAC audio, retained credits and faststart metadata; no cropping or timing edits. Decoded durations are 374.352109 and 301.395011 seconds. Sound-caption wording/preferences remain prepared offline. Brain Divided retains 57 original dialogue cues from its downloaded English VTT; Soar's vocalizations remain in its existing sound track, avoiding duplicate overlays.

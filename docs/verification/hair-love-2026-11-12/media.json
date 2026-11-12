@@ -1,0 +1,15 @@
+{
+  "sha256": "123848a50ba85f51887f0d9add2c1f8c2aeaf33c83a51ef9fffdee5e2235414a",
+  "bytes": 26522877,
+  "duration_seconds": 407.881723,
+  "width": 1280,
+  "height": 720,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "audio_language": "English original",
+  "url": "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/hair-love.mp4",
+  "http_status": 206,
+  "content_type": "video/mp4",
+  "content_range": "bytes 0-31/26522877",
+  "prefix_matches_local": true
+}

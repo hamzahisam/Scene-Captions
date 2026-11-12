@@ -1,0 +1,59 @@
+1
+00:00:00,120 --> 00:00:03,120
+[Musical sounds are heard.]
+
+2
+00:00:25,030 --> 00:00:26,080
+[A cat makes a meowing sound.]
+
+3
+00:00:27,150 --> 00:00:29,100
+[Someone makes a yawning sound.]
+
+4
+00:00:37,110 --> 00:00:38,110
+[A cat makes a meowing sound.]
+
+5
+00:01:22,050 --> 00:01:24,050
+[A voice hums without words.]
+
+6
+00:01:43,030 --> 00:01:44,030
+[A breath is let out in a sigh.]
+
+7
+00:02:06,130 --> 00:02:07,130
+[Air blows from a hair dryer.]
+
+8
+00:02:17,000 --> 00:02:20,000
+[Musical sounds are heard.]
+
+9
+00:02:41,080 --> 00:02:42,080
+[Voices make cheering sounds.]
+
+10
+00:02:49,180 --> 00:02:50,180
+[Gasping sounds come from the audience.]
+
+11
+00:02:54,000 --> 00:02:55,000
+[Voices make cheering sounds.]
+
+12
+00:02:56,040 --> 00:02:57,040
+[Groaning sounds come from the audience.]
+
+13
+00:03:06,030 --> 00:03:08,020
+[A breath is let out in a sigh.]
+
+14
+00:03:20,070 --> 00:03:21,070
+[Small sniffing sounds are heard.]
+
+15
+00:06:11,110 --> 00:06:46,160
+[A voice sings along with the music.]

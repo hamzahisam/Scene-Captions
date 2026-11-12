@@ -1,0 +1,101 @@
+[
+  {
+    "id": "hair-sound-01",
+    "reference": "[music playing]",
+    "approved_phrases": [
+      "Music",
+      "Music plays",
+      "Musical sounds are heard"
+    ]
+  },
+  {
+    "id": "hair-sound-02",
+    "reference": "[meows]",
+    "approved_phrases": [
+      "Meowing",
+      "A cat meows",
+      "A cat makes a meowing sound"
+    ]
+  },
+  {
+    "id": "hair-sound-03",
+    "reference": "[yawns]",
+    "approved_phrases": [
+      "Yawning",
+      "A yawn is heard",
+      "Someone makes a yawning sound"
+    ]
+  },
+  {
+    "id": "hair-sound-04",
+    "reference": "[humming]",
+    "approved_phrases": [
+      "Humming",
+      "Someone hums",
+      "A voice hums without words"
+    ]
+  },
+  {
+    "id": "hair-sound-05",
+    "reference": "[sighs]",
+    "approved_phrases": [
+      "Sighing",
+      "A sigh is heard",
+      "A breath is let out in a sigh"
+    ]
+  },
+  {
+    "id": "hair-sound-06",
+    "reference": "[hair dryer blowing]",
+    "approved_phrases": [
+      "Hair dryer",
+      "A hair dryer blows",
+      "Air blows from a hair dryer"
+    ]
+  },
+  {
+    "id": "hair-sound-07",
+    "reference": "[cheering]",
+    "approved_phrases": [
+      "Cheering",
+      "Cheers are heard",
+      "Voices make cheering sounds"
+    ]
+  },
+  {
+    "id": "hair-sound-08",
+    "reference": "[audience gasps]",
+    "approved_phrases": [
+      "Audience gasps",
+      "The audience gasps",
+      "Gasping sounds come from the audience"
+    ]
+  },
+  {
+    "id": "hair-sound-09",
+    "reference": "[audience groans]",
+    "approved_phrases": [
+      "Audience groans",
+      "The audience groans",
+      "Groaning sounds come from the audience"
+    ]
+  },
+  {
+    "id": "hair-sound-10",
+    "reference": "[sniffles]",
+    "approved_phrases": [
+      "Sniffling",
+      "Sniffles are heard",
+      "Small sniffing sounds are heard"
+    ]
+  },
+  {
+    "id": "hair-sound-11",
+    "reference": "[singing]",
+    "approved_phrases": [
+      "Singing",
+      "A song is sung",
+      "A voice sings along with the music"
+    ]
+  }
+]

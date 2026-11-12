@@ -1,0 +1,301 @@
+{
+  "video_id": "hair-love",
+  "title": "Hair Love",
+  "source_url": "https://www.youtube.com/watch?v=kNw8V_Fkw28",
+  "attribution": "Sony Pictures Animation · Matthew A. Cherry, Everett Downing Jr. and Bruce W. Smith",
+  "duration_seconds": 407.881723,
+  "transcript_sha256": "fad364171345b7ba1ed5f42135d78c99d01c664e41c1fe124854370e979a79f1",
+  "filtered_caption_sha256": "622a5e55350b839ba5ab72d854d8a10e593125131ba8f20aa6c9ac02ce13ff24",
+  "timing_method": "Original millisecond intervals from the English VTT retained. One singing interval spans the source song-caption intervals; song lyrics are omitted. Listening and readability review not completed.",
+  "media": {
+    "sha256": "123848a50ba85f51887f0d9add2c1f8c2aeaf33c83a51ef9fffdee5e2235414a",
+    "bytes": 26522877,
+    "duration_seconds": 407.881723,
+    "width": 1280,
+    "height": 720,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_language": "English original",
+    "url": "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/hair-love.mp4"
+  },
+  "dialogue": [
+    {
+      "cue_id": "hair-love-dialogue-001",
+      "start_s": 88.01,
+      "end_s": 90.0,
+      "text": "Angela: Just took a little bit\nof work"
+    },
+    {
+      "cue_id": "hair-love-dialogue-002",
+      "start_s": 90.0,
+      "end_s": 92.03,
+      "text": "and a whole lot of love."
+    },
+    {
+      "cue_id": "hair-love-dialogue-003",
+      "start_s": 92.03,
+      "end_s": 93.03,
+      "text": "Muah."
+    },
+    {
+      "cue_id": "hair-love-dialogue-004",
+      "start_s": 95.15,
+      "end_s": 98.06,
+      "text": "Are you ready to do this?\nAll right."
+    },
+    {
+      "cue_id": "hair-love-dialogue-005",
+      "start_s": 98.06,
+      "end_s": 100.19,
+      "text": "Here we go."
+    },
+    {
+      "cue_id": "hair-love-dialogue-006",
+      "start_s": 100.19,
+      "end_s": 103.03,
+      "text": "See?\nNow wasn't that easy?"
+    },
+    {
+      "cue_id": "hair-love-dialogue-007",
+      "start_s": 215.17,
+      "end_s": 218.11,
+      "text": "See?\nNow wasn't that easy?"
+    },
+    {
+      "cue_id": "hair-love-dialogue-008",
+      "start_s": 218.11,
+      "end_s": 220.11,
+      "text": "All it takes\nis some confidence"
+    },
+    {
+      "cue_id": "hair-love-dialogue-009",
+      "start_s": 220.11,
+      "end_s": 222.11,
+      "text": "and a willingness\nto get started."
+    },
+    {
+      "cue_id": "hair-love-dialogue-010",
+      "start_s": 222.11,
+      "end_s": 224.17,
+      "text": "And even though\nI'm not there,"
+    },
+    {
+      "cue_id": "hair-love-dialogue-011",
+      "start_s": 224.17,
+      "end_s": 227.11,
+      "text": "I'll guide you\nthrough this."
+    },
+    {
+      "cue_id": "hair-love-dialogue-012",
+      "start_s": 227.11,
+      "end_s": 229.2,
+      "text": "I want to thank\nmy very special assistant,"
+    },
+    {
+      "cue_id": "hair-love-dialogue-013",
+      "start_s": 229.2,
+      "end_s": 234.2,
+      "text": "my daughter Zuri, for helping me\nwith today's vlog like always."
+    },
+    {
+      "cue_id": "hair-love-dialogue-014",
+      "start_s": 234.2,
+      "end_s": 238.01,
+      "text": "And remember, the road\nahead might look rough,"
+    },
+    {
+      "cue_id": "hair-love-dialogue-015",
+      "start_s": 238.01,
+      "end_s": 240.12,
+      "text": "but you can make the journey\nwith a little bit of work"
+    },
+    {
+      "cue_id": "hair-love-dialogue-016",
+      "start_s": 240.12,
+      "end_s": 242.16,
+      "text": "and a whole lot of love."
+    },
+    {
+      "cue_id": "hair-love-dialogue-017",
+      "start_s": 242.16,
+      "end_s": 243.16,
+      "text": "Muah."
+    },
+    {
+      "cue_id": "hair-love-dialogue-018",
+      "start_s": 254.06,
+      "end_s": 256.12,
+      "text": "Are you ready to do this?"
+    },
+    {
+      "cue_id": "hair-love-dialogue-019",
+      "start_s": 256.12,
+      "end_s": 258.1,
+      "text": "All right.\nHere we go."
+    },
+    {
+      "cue_id": "hair-love-dialogue-020",
+      "start_s": 258.1,
+      "end_s": 261.17,
+      "text": "First you want to moisturize\nthese beautiful thick curls"
+    },
+    {
+      "cue_id": "hair-love-dialogue-021",
+      "start_s": 261.17,
+      "end_s": 265.11,
+      "text": "with a leave-in conditioner, which\nwill also help detangle the kinks."
+    },
+    {
+      "cue_id": "hair-love-dialogue-022",
+      "start_s": 265.11,
+      "end_s": 269.2,
+      "text": "Now, part all your hair\ninto sections and clip it away."
+    },
+    {
+      "cue_id": "hair-love-dialogue-023",
+      "start_s": 275.17,
+      "end_s": 277.23,
+      "text": "You're doing an amazing job."
+    },
+    {
+      "cue_id": "hair-love-dialogue-024",
+      "start_s": 283.06,
+      "end_s": 284.22,
+      "text": "Yay!\nYou did it!"
+    },
+    {
+      "cue_id": "hair-love-dialogue-025",
+      "start_s": 284.22,
+      "end_s": 286.15,
+      "text": "That was so much fun."
+    },
+    {
+      "cue_id": "hair-love-dialogue-026",
+      "start_s": 288.06,
+      "end_s": 290.05,
+      "text": "I knew you could do it."
+    }
+  ],
+  "cues": [
+    {
+      "cue_id": "hair-love-sound-001",
+      "start_s": 0.12,
+      "end_s": 3.12,
+      "reference_text": "( music playing )",
+      "phrase_key": "music playing",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-002",
+      "start_s": 25.03,
+      "end_s": 26.08,
+      "reference_text": "( meows )",
+      "phrase_key": "meows",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-003",
+      "start_s": 27.15,
+      "end_s": 29.1,
+      "reference_text": "( yawns )",
+      "phrase_key": "yawns",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-004",
+      "start_s": 37.11,
+      "end_s": 38.11,
+      "reference_text": "( meows )",
+      "phrase_key": "meows",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-005",
+      "start_s": 82.05,
+      "end_s": 84.05,
+      "reference_text": "( humming )",
+      "phrase_key": "humming",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-006",
+      "start_s": 103.03,
+      "end_s": 104.03,
+      "reference_text": "( sighs )",
+      "phrase_key": "sighs",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-007",
+      "start_s": 126.13,
+      "end_s": 127.13,
+      "reference_text": "( hair dryer blowing )",
+      "phrase_key": "hair dryer blowing",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-008",
+      "start_s": 137.0,
+      "end_s": 140.0,
+      "reference_text": "( music playing )",
+      "phrase_key": "music playing",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-009",
+      "start_s": 161.08,
+      "end_s": 162.08,
+      "reference_text": "( cheering )",
+      "phrase_key": "cheering",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-010",
+      "start_s": 169.18,
+      "end_s": 170.18,
+      "reference_text": "( audience gasps )",
+      "phrase_key": "audience gasps",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-011",
+      "start_s": 174.0,
+      "end_s": 175.0,
+      "reference_text": "( cheering )",
+      "phrase_key": "cheering",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-012",
+      "start_s": 176.04,
+      "end_s": 177.04,
+      "reference_text": "( audience groans )",
+      "phrase_key": "audience groans",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-013",
+      "start_s": 186.03,
+      "end_s": 188.02,
+      "reference_text": "( sighs )",
+      "phrase_key": "sighs",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-014",
+      "start_s": 200.07,
+      "end_s": 201.07,
+      "reference_text": "( sniffles )",
+      "phrase_key": "sniffles",
+      "basis": "original English caption interval"
+    },
+    {
+      "cue_id": "hair-love-sound-015",
+      "start_s": 371.11,
+      "end_s": 406.16,
+      "reference_text": "[Singing]",
+      "phrase_key": "singing",
+      "basis": "Song cue derived from music-note markers in the original English captions; lyrics omitted"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import sintel from "../../data/captions/sintel.json";
 import tears from "../../data/captions/tears-of-steel.json";
 import simpleBunny from "../../data/source-assisted-captions/big-buck-bunny-controls.json";
 import soar from "../../data/source-assisted-captions/soar.json";
+import hairLove from "../../data/source-assisted-captions/hair-love.json";
 import { videoSchema } from "@/lib/captions";
 import { sourceAssistedTrackFor } from "@/lib/source-captions";
 import { Header } from "@/components/header";
@@ -27,6 +28,7 @@ export default function Home() {
     { data: videoSchema.parse(sintel), source: mediaSource("SINTEL_VIDEO_URL", "/media/sintel.mp4"), poster: "/media/sintel-poster.jpg", credit: "Blender Foundation · 2010" },
     { data: videoSchema.parse(tears), source: mediaSource("TEARS_OF_STEEL_VIDEO_URL", "/media/tears-of-steel.mp4"), poster: "/media/tears-of-steel-poster.jpg", credit: "Blender Foundation · 2012" },
     { data: videoSchema.parse(soar), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/soar.mp4", poster: "/media/soar-poster.jpg", credit: "Alyce Tzue · TheCGBros" },
+    { data: videoSchema.parse(hairLove), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/hair-love.mp4", poster: "/media/hair-love-poster.jpg", credit: "Sony Pictures Animation · 2019" },
   ];
   return <><Header /><ScreeningRoom films={films} /></>;
 }

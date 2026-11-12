@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "video_id": "hair-love",
+  "title": "Hair Love",
+  "source_url": "https://www.youtube.com/watch?v=kNw8V_Fkw28",
+  "license": "Copyright retained by the respective filmmakers",
+  "attribution": "Sony Pictures Animation · Matthew A. Cherry, Everett Downing Jr. and Bruce W. Smith",
+  "duration_seconds": 407.881723,
+  "annotation_status": "draft",
+  "dialogue": [
+    {
+      "cue_id": "hair-love-dialogue-001",
+      "start_s": 88.01,
+      "end_s": 90.0,
+      "text": "Angela: Just took a little bit\nof work"
+    },
+    {
+      "cue_id": "hair-love-dialogue-002",
+      "start_s": 90.0,
+      "end_s": 92.03,
+      "text": "and a whole lot of love."
+    },
+    {
+      "cue_id": "hair-love-dialogue-003",
+      "start_s": 92.03,
+      "end_s": 93.03,
+      "text": "Muah."
+    },
+    {
+      "cue_id": "hair-love-dialogue-004",
+      "start_s": 95.15,
+      "end_s": 98.06,
+      "text": "Are you ready to do this?\nAll right."
+    },
+    {
+      "cue_id": "hair-love-dialogue-005",
+      "start_s": 98.06,
+      "end_s": 100.19,
+      "text": "Here we go."
+    },
+    {
+      "cue_id": "hair-love-dialogue-006",
+      "start_s": 100.19,
+      "end_s": 103.03,
+      "text": "See?\nNow wasn't that easy?"
+    },
+    {
+      "cue_id": "hair-love-dialogue-007",
+      "start_s": 215.17,
+      "end_s": 218.11,
+      "text": "See?\nNow wasn't that easy?"
+    },
+    {
+      "cue_id": "hair-love-dialogue-008",
+      "start_s": 218.11,
+      "end_s": 220.11,
+      "text": "All it takes\nis some confidence"
+    },
+    {
+      "cue_id": "hair-love-dialogue-009",
+      "start_s": 220.11,
+      "end_s": 222.11,
+      "text": "and a willingness\nto get started."
+    },
+    {
+      "cue_id": "hair-love-dialogue-010",
+      "start_s": 222.11,
+      "end_s": 224.17,
+      "text": "And even though\nI'm not there,"
+    },
+    {
+      "cue_id": "hair-love-dialogue-011",
+      "start_s": 224.17,
+      "end_s": 227.11,
+      "text": "I'll guide you\nthrough this."
+    },
+    {
+      "cue_id": "hair-love-dialogue-012",
+      "start_s": 227.11,
+      "end_s": 229.2,
+      "text": "I want to thank\nmy very special assistant,"
+    },
+    {
+      "cue_id": "hair-love-dialogue-013",
+      "start_s": 229.2,
+      "end_s": 234.2,
+      "text": "my daughter Zuri, for helping me\nwith today's vlog like always."
+    },
+    {
+      "cue_id": "hair-love-dialogue-014",
+      "start_s": 234.2,
+      "end_s": 238.01,
+      "text": "And remember, the road\nahead might look rough,"
+    },
+    {
+      "cue_id": "hair-love-dialogue-015",
+      "start_s": 238.01,
+      "end_s": 240.12,
+      "text": "but you can make the journey\nwith a little bit of work"
+    },
+    {
+      "cue_id": "hair-love-dialogue-016",
+      "start_s": 240.12,
+      "end_s": 242.16,
+      "text": "and a whole lot of love."
+    },
+    {
+      "cue_id": "hair-love-dialogue-017",
+      "start_s": 242.16,
+      "end_s": 243.16,
+      "text": "Muah."
+    },
+    {
+      "cue_id": "hair-love-dialogue-018",
+      "start_s": 254.06,
+      "end_s": 256.12,
+      "text": "Are you ready to do this?"
+    },
+    {
+      "cue_id": "hair-love-dialogue-019",
+      "start_s": 256.12,
+      "end_s": 258.1,
+      "text": "All right.\nHere we go."
+    },
+    {
+      "cue_id": "hair-love-dialogue-020",
+      "start_s": 258.1,
+      "end_s": 261.17,
+      "text": "First you want to moisturize\nthese beautiful thick curls"
+    },
+    {
+      "cue_id": "hair-love-dialogue-021",
+      "start_s": 261.17,
+      "end_s": 265.11,
+      "text": "with a leave-in conditioner, which\nwill also help detangle the kinks."
+    },
+    {
+      "cue_id": "hair-love-dialogue-022",
+      "start_s": 265.11,
+      "end_s": 269.2,
+      "text": "Now, part all your hair\ninto sections and clip it away."
+    },
+    {
+      "cue_id": "hair-love-dialogue-023",
+      "start_s": 275.17,
+      "end_s": 277.23,
+      "text": "You're doing an amazing job."
+    },
+    {
+      "cue_id": "hair-love-dialogue-024",
+      "start_s": 283.06,
+      "end_s": 284.22,
+      "text": "Yay!\nYou did it!"
+    },
+    {
+      "cue_id": "hair-love-dialogue-025",
+      "start_s": 284.22,
+      "end_s": 286.15,
+      "text": "That was so much fun."
+    },
+    {
+      "cue_id": "hair-love-dialogue-026",
+      "start_s": 288.06,
+      "end_s": 290.05,
+      "text": "I knew you could do it."
+    }
+  ],
+  "dialogue_source": {
+    "url": "https://www.youtube.com/watch?v=kNw8V_Fkw28",
+    "author": "Sony Pictures Animation · original English captions",
+    "license": "Copyright retained by the respective creators",
+    "sha256": "622a5e55350b839ba5ab72d854d8a10e593125131ba8f20aa6c9ac02ce13ff24"
+  },
+  "generated_with": {
+    "kind": "source-assisted",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "method": "NVIDIA wording preparation using main-session source-text-reviewed phrases. Original millisecond intervals from the English VTT retained. One singing interval spans the source song-caption intervals; song lyrics are omitted. Listening and readability review not completed.",
+    "prompt_version": "hair-love-source-phrases-v1",
+    "quality_gate": "unverified",
+    "wording_style": "simple-source-richness",
+    "source_sha256": "123848a50ba85f51887f0d9add2c1f8c2aeaf33c83a51ef9fffdee5e2235414a",
+    "caption_source": {
+      "url": "https://www.youtube.com/watch?v=kNw8V_Fkw28",
+      "author": "Sony Pictures Animation · original English captions",
+      "license": "Copyright retained by the respective creators",
+      "sha256": "622a5e55350b839ba5ab72d854d8a10e593125131ba8f20aa6c9ac02ce13ff24",
+      "revision": "English VTT retrieved 2026-11-12; original sound/dialogue intervals; song lyrics omitted"
+    },
+    "expression_method": "punctuation-only",
+    "expressiveness": "source-anchored",
+    "scene_load_method": "cue-density",
+    "export_basename": "hair-love"
+  },
+  "cues": [
+    {
+      "cue_id": "hair-love-sound-001",
+      "start_s": 0.12,
+      "end_s": 3.12,
+      "reference_text": "( music playing )",
+      "sound_key": "hair-love-sound-001",
+      "grid": {
+        "1-1": "[Music]",
+        "1-2": "[Music.]",
+        "1-3": "[Music!]",
+        "2-1": "[Music plays]",
+        "2-2": "[Music plays.]",
+        "2-3": "[Music plays!]",
+        "3-1": "[Musical sounds are heard]",
+        "3-2": "[Musical sounds are heard.]",
+        "3-3": "[Musical sounds are heard!]"
+      },
+      "original_text": "[Music plays.]",
+      "representations": {
+        "plain": "[Music]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-002",
+      "start_s": 25.03,
+      "end_s": 26.08,
+      "reference_text": "( meows )",
+      "sound_key": "hair-love-sound-002",
+      "grid": {
+        "1-1": "[Meowing]",
+        "1-2": "[Meowing.]",
+        "1-3": "[Meowing!]",
+        "2-1": "[A cat meows]",
+        "2-2": "[A cat meows.]",
+        "2-3": "[A cat meows!]",
+        "3-1": "[A cat makes a meowing sound]",
+        "3-2": "[A cat makes a meowing sound.]",
+        "3-3": "[A cat makes a meowing sound!]"
+      },
+      "original_text": "[A cat meows.]",
+      "representations": {
+        "plain": "[Meowing]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-003",
+      "start_s": 27.15,
+      "end_s": 29.1,
+      "reference_text": "( yawns )",
+      "sound_key": "hair-love-sound-003",
+      "grid": {
+        "1-1": "[Yawning]",
+        "1-2": "[Yawning.]",
+        "1-3": "[Yawning!]",
+        "2-1": "[A yawn is heard]",
+        "2-2": "[A yawn is heard.]",
+        "2-3": "[A yawn is heard!]",
+        "3-1": "[Someone makes a yawning sound]",
+        "3-2": "[Someone makes a yawning sound.]",
+        "3-3": "[Someone makes a yawning sound!]"
+      },
+      "original_text": "[A yawn is heard.]",
+      "representations": {
+        "plain": "[Yawning]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-004",
+      "start_s": 37.11,
+      "end_s": 38.11,
+      "reference_text": "( meows )",
+      "sound_key": "hair-love-sound-004",
+      "grid": {
+        "1-1": "[Meowing]",
+        "1-2": "[Meowing.]",
+        "1-3": "[Meowing!]",
+        "2-1": "[A cat meows]",
+        "2-2": "[A cat meows.]",
+        "2-3": "[A cat meows!]",
+        "3-1": "[A cat makes a meowing sound]",
+        "3-2": "[A cat makes a meowing sound.]",
+        "3-3": "[A cat makes a meowing sound!]"
+      },
+      "original_text": "[A cat meows.]",
+      "representations": {
+        "plain": "[Meowing]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-005",
+      "start_s": 82.05,
+      "end_s": 84.05,
+      "reference_text": "( humming )",
+      "sound_key": "hair-love-sound-005",
+      "grid": {
+        "1-1": "[Humming]",
+        "1-2": "[Humming.]",
+        "1-3": "[Humming!]",
+        "2-1": "[Someone hums]",
+        "2-2": "[Someone hums.]",
+        "2-3": "[Someone hums!]",
+        "3-1": "[A voice hums without words]",
+        "3-2": "[A voice hums without words.]",
+        "3-3": "[A voice hums without words!]"
+      },
+      "original_text": "[Someone hums.]",
+      "representations": {
+        "plain": "[Humming]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-006",
+      "start_s": 103.03,
+      "end_s": 104.03,
+      "reference_text": "( sighs )",
+      "sound_key": "hair-love-sound-006",
+      "grid": {
+        "1-1": "[Sighing]",
+        "1-2": "[Sighing.]",
+        "1-3": "[Sighing!]",
+        "2-1": "[A sigh is heard]",
+        "2-2": "[A sigh is heard.]",
+        "2-3": "[A sigh is heard!]",
+        "3-1": "[A breath is let out in a sigh]",
+        "3-2": "[A breath is let out in a sigh.]",
+        "3-3": "[A breath is let out in a sigh!]"
+      },
+      "original_text": "[A sigh is heard.]",
+      "representations": {
+        "plain": "[Sighing]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-007",
+      "start_s": 126.13,
+      "end_s": 127.13,
+      "reference_text": "( hair dryer blowing )",
+      "sound_key": "hair-love-sound-007",
+      "grid": {
+        "1-1": "[Hair dryer]",
+        "1-2": "[Hair dryer.]",
+        "1-3": "[Hair dryer!]",
+        "2-1": "[A hair dryer blows]",
+        "2-2": "[A hair dryer blows.]",
+        "2-3": "[A hair dryer blows!]",
+        "3-1": "[Air blows from a hair dryer]",
+        "3-2": "[Air blows from a hair dryer.]",
+        "3-3": "[Air blows from a hair dryer!]"
+      },
+      "original_text": "[A hair dryer blows.]",
+      "representations": {
+        "plain": "[Hair dryer]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-008",
+      "start_s": 137.0,
+      "end_s": 140.0,
+      "reference_text": "( music playing )",
+      "sound_key": "hair-love-sound-008",
+      "grid": {
+        "1-1": "[Music]",
+        "1-2": "[Music.]",
+        "1-3": "[Music!]",
+        "2-1": "[Music plays]",
+        "2-2": "[Music plays.]",
+        "2-3": "[Music plays!]",
+        "3-1": "[Musical sounds are heard]",
+        "3-2": "[Musical sounds are heard.]",
+        "3-3": "[Musical sounds are heard!]"
+      },
+      "original_text": "[Music plays.]",
+      "representations": {
+        "plain": "[Music]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-009",
+      "start_s": 161.08,
+      "end_s": 162.08,
+      "reference_text": "( cheering )",
+      "sound_key": "hair-love-sound-009",
+      "grid": {
+        "1-1": "[Cheering]",
+        "1-2": "[Cheering.]",
+        "1-3": "[Cheering!]",
+        "2-1": "[Cheers are heard]",
+        "2-2": "[Cheers are heard.]",
+        "2-3": "[Cheers are heard!]",
+        "3-1": "[Voices make cheering sounds]",
+        "3-2": "[Voices make cheering sounds.]",
+        "3-3": "[Voices make cheering sounds!]"
+      },
+      "original_text": "[Cheers are heard.]",
+      "representations": {
+        "plain": "[Cheering]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-010",
+      "start_s": 169.18,
+      "end_s": 170.18,
+      "reference_text": "( audience gasps )",
+      "sound_key": "hair-love-sound-010",
+      "grid": {
+        "1-1": "[Audience gasps]",
+        "1-2": "[Audience gasps.]",
+        "1-3": "[Audience gasps!]",
+        "2-1": "[The audience gasps]",
+        "2-2": "[The audience gasps.]",
+        "2-3": "[The audience gasps!]",
+        "3-1": "[Gasping sounds come from the audience]",
+        "3-2": "[Gasping sounds come from the audience.]",
+        "3-3": "[Gasping sounds come from the audience!]"
+      },
+      "original_text": "[The audience gasps.]",
+      "representations": {
+        "plain": "[Audience gasps]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-011",
+      "start_s": 174.0,
+      "end_s": 175.0,
+      "reference_text": "( cheering )",
+      "sound_key": "hair-love-sound-011",
+      "grid": {
+        "1-1": "[Cheering]",
+        "1-2": "[Cheering.]",
+        "1-3": "[Cheering!]",
+        "2-1": "[Cheers are heard]",
+        "2-2": "[Cheers are heard.]",
+        "2-3": "[Cheers are heard!]",
+        "3-1": "[Voices make cheering sounds]",
+        "3-2": "[Voices make cheering sounds.]",
+        "3-3": "[Voices make cheering sounds!]"
+      },
+      "original_text": "[Cheers are heard.]",
+      "representations": {
+        "plain": "[Cheering]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-012",
+      "start_s": 176.04,
+      "end_s": 177.04,
+      "reference_text": "( audience groans )",
+      "sound_key": "hair-love-sound-012",
+      "grid": {
+        "1-1": "[Audience groans]",
+        "1-2": "[Audience groans.]",
+        "1-3": "[Audience groans!]",
+        "2-1": "[The audience groans]",
+        "2-2": "[The audience groans.]",
+        "2-3": "[The audience groans!]",
+        "3-1": "[Groaning sounds come from the audience]",
+        "3-2": "[Groaning sounds come from the audience.]",
+        "3-3": "[Groaning sounds come from the audience!]"
+      },
+      "original_text": "[The audience groans.]",
+      "representations": {
+        "plain": "[Audience groans]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-013",
+      "start_s": 186.03,
+      "end_s": 188.02,
+      "reference_text": "( sighs )",
+      "sound_key": "hair-love-sound-013",
+      "grid": {
+        "1-1": "[Sighing]",
+        "1-2": "[Sighing.]",
+        "1-3": "[Sighing!]",
+        "2-1": "[A sigh is heard]",
+        "2-2": "[A sigh is heard.]",
+        "2-3": "[A sigh is heard!]",
+        "3-1": "[A breath is let out in a sigh]",
+        "3-2": "[A breath is let out in a sigh.]",
+        "3-3": "[A breath is let out in a sigh!]"
+      },
+      "original_text": "[A sigh is heard.]",
+      "representations": {
+        "plain": "[Sighing]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-014",
+      "start_s": 200.07,
+      "end_s": 201.07,
+      "reference_text": "( sniffles )",
+      "sound_key": "hair-love-sound-014",
+      "grid": {
+        "1-1": "[Sniffling]",
+        "1-2": "[Sniffling.]",
+        "1-3": "[Sniffling!]",
+        "2-1": "[Sniffles are heard]",
+        "2-2": "[Sniffles are heard.]",
+        "2-3": "[Sniffles are heard!]",
+        "3-1": "[Small sniffing sounds are heard]",
+        "3-2": "[Small sniffing sounds are heard.]",
+        "3-3": "[Small sniffing sounds are heard!]"
+      },
+      "original_text": "[Sniffles are heard.]",
+      "representations": {
+        "plain": "[Sniffling]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "hair-love-sound-015",
+      "start_s": 371.11,
+      "end_s": 406.16,
+      "reference_text": "[Singing]",
+      "sound_key": "hair-love-sound-015",
+      "grid": {
+        "1-1": "[Singing]",
+        "1-2": "[Singing.]",
+        "1-3": "[Singing!]",
+        "2-1": "[A song is sung]",
+        "2-2": "[A song is sung.]",
+        "2-3": "[A song is sung!]",
+        "3-1": "[A voice sings along with the music]",
+        "3-2": "[A voice sings along with the music.]",
+        "3-3": "[A voice sings along with the music!]"
+      },
+      "original_text": "[A song is sung.]",
+      "representations": {
+        "plain": "[Singing]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    }
+  ]
+}

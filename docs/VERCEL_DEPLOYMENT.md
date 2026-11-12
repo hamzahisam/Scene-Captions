@@ -37,3 +37,7 @@ For future releases, use a clean source checkout with `.vercelignore`, the linke
 ## Direct short films — 12 November 2026
 
 Soar and Brain Divided now use native playback from stable public URLs in the existing Blob store. Their two MP4s add 40,378,566 bytes; no YouTube embed/API remains. The catalogue pins public playback URLs in `src/app/page.tsx`; no additional environment variables are needed. Prepared 720p media stays outside Git. Posters, caption source records, media hashes and original English VTT files are tracked. See [media verification](verification/youtube-films-2026-11-12/direct-media.json). Source references still point to their publishers; caption display is entirely within our own player.
+
+## Hair Love replacement — 12 November 2026
+
+The approved replacement is Hair Love. Its stable public Blob MP4 adds 26,522,877 bytes and uses the existing native player, caption controls and public hosting. Brain Divided is absent from the film selector. Its old cached media is retained rather than purged. Source hashes, exact duration, HTTP range checks and caption preparation are recorded in [Hair Love verification](verification/hair-love-2026-11-12/README.md). No new service, hosting plan or environment variable is required.
