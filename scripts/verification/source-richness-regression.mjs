@@ -6,7 +6,7 @@ async (page) => {
   await page.goto(base, {waitUntil:"domcontentloaded"});
   await page.setViewportSize({width:1440,height:1100});
   await page.waitForFunction(() => document.querySelector('video')?.readyState >= 1);
-  const response = await page.request.get(base+'/research/source-richness/big-buck-bunny.json');
+  const response = await page.request.get(base+'/research/source-richness/big-buck-bunny-controls.json');
   assert(response.ok(),'Source-guided track missing');
   const track = await response.json();
   await page.locator('video').evaluate(v=>{v.pause();v.currentTime=83.8});
@@ -19,6 +19,7 @@ async (page) => {
   assert(await source.getAttribute('aria-pressed')==='true','Source mode not selected');
   assert(Math.abs(await page.locator('video').evaluate(v=>v.currentTime)-83.8)<.05,'Source switch changed playback time');
   await page.getByText('Our generated subtitles.',{exact:true}).waitFor();
+  await page.getByRole('switch', {name:'Follow cue density'}).uncheck();
   const checked=[];
   for(const id of ['bbb-sdh-002','bbb-sdh-020','bbb-sdh-054','bbb-sdh-061']) {
     const index=track.cues.findIndex(c=>c.cue_id===id),cue=track.cues[index];
@@ -27,7 +28,7 @@ async (page) => {
       const preset=page.getByRole('button',{name:label,exact:true});await preset.click();
       assert(await preset.getAttribute('aria-pressed')==='true','Conservative preset pressed state is wrong');
       assert(await page.getByRole('button',{name:/^(Apply preferences|Preferences applied)$/}).count()===0,'Manual Apply button is still present');
-      await page.waitForFunction(text=>document.querySelector('.caption-lines')?.textContent===text,cue.grid[`${detail}-2`]);
+      await page.waitForFunction(text=>document.querySelector('.caption-lines')?.textContent===text,cue.grid[`${detail}-${detail}`]);
       assert(await page.evaluate(d=>JSON.parse(localStorage.getItem('scenecaptions.profile.v1')).detail===d,detail),'Richness did not save automatically');
     }
     await page.getByRole('button',{name:'Show reference',exact:true}).click();
@@ -47,7 +48,7 @@ async (page) => {
   await page.setViewportSize({width:390,height:844});
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile overflow');
   await page.screenshot({path:'artifacts/source-richness-ui/mobile.png',fullPage:true});
-  for(const d of [1,2,3])assert((await page.request.get(`${base}/research/source-richness/big-buck-bunny-detail-${d}.srt`)).ok(),'Missing SRT');
+  for(const d of [1,2,3])assert((await page.request.get(`${base}/research/source-richness/big-buck-bunny-controls-detail-${d}.srt`)).ok(),'Missing SRT');
   for(const id of ['sintel','tears-of-steel']) {
     await page.getByLabel('Choose a film',{exact:true}).selectOption(id);
     assert(await source.count()===0,`${id}: source-only sound expansion must be unavailable`);

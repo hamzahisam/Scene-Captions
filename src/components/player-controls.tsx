@@ -4,7 +4,7 @@ import { Icon } from "./icon";
 import type { useVideoPlayback } from "./hooks/use-video-playback";
 
 export function PlayerControls({ playback, baseline, hasCaptions, showOriginal, onOriginal, generatedBaseline = false, experimental = false }: {
-  playback: ReturnType<typeof useVideoPlayback>; baseline: boolean; hasCaptions: boolean;
+  playback: Pick<ReturnType<typeof useVideoPlayback>, "time" | "duration" | "ready" | "playing" | "muted" | "playbackRate" | "toggle" | "seek" | "toggleMute" | "changeRate" | "fullscreen">; baseline: boolean; hasCaptions: boolean;
   showOriginal: boolean; onOriginal: () => void; generatedBaseline?: boolean; experimental?: boolean;
 }) {
   const { time, duration, ready, playing, muted, playbackRate, toggle, seek, toggleMute, changeRate, fullscreen } = playback;

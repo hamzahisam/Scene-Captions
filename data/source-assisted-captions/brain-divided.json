@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "video_id": "brain-divided",
+  "title": "Brain Divided",
+  "source_url": "https://www.youtube.com/watch?v=JuyB7NO0EYY",
+  "license": "All rights reserved · YouTube playback",
+  "attribution": "Josiah Haworth, Joon Shik Song & Joon Soo Song · Ringling College of Art and Design · TheCGBros",
+  "duration_seconds": 302,
+  "annotation_status": "draft",
+  "generated_with": {
+    "kind": "source-assisted",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "method": "NVIDIA wording preparation using reviewed source-text phrases; main-session editorial checks. Whole-second starts from the YouTube transcript export. Derived display ends are the next distinct sound-caption start or six seconds, whichever is earlier. Original cue offsets/milliseconds are not supplied by that export; timing remains an unverified reconstruction. Spoken dialogue remains available through the original YouTube captions.",
+    "prompt_version": "youtube-source-phrases-v1",
+    "quality_gate": "unverified",
+    "wording_style": "simple-source-richness",
+    "caption_source": {
+      "url": "https://www.youtube.com/watch?v=JuyB7NO0EYY",
+      "author": "TheCGBros · YouTube English caption contributors",
+      "license": "Copyright retained by the respective creators; publisher-hosted playback",
+      "revision": "English transcript exported 2026-11-12; reconstructed display intervals",
+      "sha256": "cedbff2d3205d0530cf52b7d9fe6d59bab5c465b22753a06b4a17cc24efbece9"
+    },
+    "expression_method": "punctuation-only",
+    "expressiveness": "source-anchored",
+    "scene_load_method": "cue-density",
+    "export_basename": "brain-divided"
+  },
+  "cues": [
+    {
+      "cue_id": "brain-divided-sound-001",
+      "start_s": 35,
+      "end_s": 40,
+      "reference_text": "[Loud Snoring]",
+      "sound_key": "brain-divided-sound-001",
+      "grid": {
+        "1-1": "[Loud snoring]",
+        "1-2": "[Loud snoring.]",
+        "1-3": "[Loud snoring!]",
+        "2-1": "[Loud snores are heard]",
+        "2-2": "[Loud snores are heard.]",
+        "2-3": "[Loud snores are heard!]",
+        "3-1": "[Noisy breathing in sleep makes loud snores]",
+        "3-2": "[Noisy breathing in sleep makes loud snores.]",
+        "3-3": "[Noisy breathing in sleep makes loud snores!]"
+      },
+      "original_text": "[Loud snores are heard.]",
+      "representations": {
+        "plain": "[Loud snoring]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-002",
+      "start_s": 40,
+      "end_s": 46,
+      "reference_text": "[Loud Kissing]",
+      "sound_key": "brain-divided-sound-002",
+      "grid": {
+        "1-1": "[Loud kissing]",
+        "1-2": "[Loud kissing.]",
+        "1-3": "[Loud kissing!]",
+        "2-1": "[Loud kissing sounds]",
+        "2-2": "[Loud kissing sounds.]",
+        "2-3": "[Loud kissing sounds!]",
+        "3-1": "[Kissing makes loud smacking sounds]",
+        "3-2": "[Kissing makes loud smacking sounds.]",
+        "3-3": "[Kissing makes loud smacking sounds!]"
+      },
+      "original_text": "[Loud kissing sounds.]",
+      "representations": {
+        "plain": "[Loud kissing]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-003",
+      "start_s": 46,
+      "end_s": 50,
+      "reference_text": "[Sigh]",
+      "sound_key": "brain-divided-sound-003",
+      "grid": {
+        "1-1": "[Sighing]",
+        "1-2": "[Sighing.]",
+        "1-3": "[Sighing!]",
+        "2-1": "[A sigh is let out]",
+        "2-2": "[A sigh is let out.]",
+        "2-3": "[A sigh is let out!]",
+        "3-1": "[A breath is let out in a sigh]",
+        "3-2": "[A breath is let out in a sigh.]",
+        "3-3": "[A breath is let out in a sigh!]"
+      },
+      "original_text": "[A sigh is let out.]",
+      "representations": {
+        "plain": "[Sighing]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-004",
+      "start_s": 50,
+      "end_s": 55,
+      "reference_text": "[Sexy Music Playing]",
+      "sound_key": "brain-divided-sound-004",
+      "grid": {
+        "1-1": "[Sultry music]",
+        "1-2": "[Sultry music.]",
+        "1-3": "[Sultry music!]",
+        "2-1": "[Sultry music plays]",
+        "2-2": "[Sultry music plays.]",
+        "2-3": "[Sultry music plays!]",
+        "3-1": "[Music plays with a sultry mood]",
+        "3-2": "[Music plays with a sultry mood.]",
+        "3-3": "[Music plays with a sultry mood!]"
+      },
+      "original_text": "[Sultry music plays.]",
+      "representations": {
+        "plain": "[Sultry music]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-005",
+      "start_s": 55,
+      "end_s": 57,
+      "reference_text": "[Boing/Spring Sound!]",
+      "sound_key": "brain-divided-sound-005",
+      "grid": {
+        "1-1": "[Boing]",
+        "1-2": "[Boing.]",
+        "1-3": "[Boing!]",
+        "2-1": "[A spring goes boing]",
+        "2-2": "[A spring goes boing.]",
+        "2-3": "[A spring goes boing!]",
+        "3-1": "[A spring-like boing sound is heard]",
+        "3-2": "[A spring-like boing sound is heard.]",
+        "3-3": "[A spring-like boing sound is heard!]"
+      },
+      "original_text": "[A spring goes boing.]",
+      "representations": {
+        "plain": "[Boing]",
+        "onomatopoeic": "[Boing — Boing]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-006",
+      "start_s": 57,
+      "end_s": 63,
+      "reference_text": "[Wolf Howl]\n[Panting]",
+      "sound_key": "brain-divided-sound-006",
+      "grid": {
+        "1-1": "[Wolf howls]\n[Panting]",
+        "1-2": "[Wolf howls.]\n[Panting.]",
+        "1-3": "[Wolf howls!]\n[Panting!]",
+        "2-1": "[A wolf lets out a howl]\n[Panting breaths are heard]",
+        "2-2": "[A wolf lets out a howl.]\n[Panting breaths are heard.]",
+        "2-3": "[A wolf lets out a howl!]\n[Panting breaths are heard!]",
+        "3-1": "[A wolf makes a howling call]\n[Breathing comes in panting breaths]",
+        "3-2": "[A wolf makes a howling call.]\n[Breathing comes in panting breaths.]",
+        "3-3": "[A wolf makes a howling call!]\n[Breathing comes in panting breaths!]"
+      },
+      "original_text": "[A wolf lets out a howl.]\n[Panting breaths are heard.]",
+      "representations": {
+        "plain": "[Wolf howls]\n[Panting]",
+        "onomatopoeic": "[Ting ting — Wolf howls / Panting]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-007",
+      "start_s": 109,
+      "end_s": 115,
+      "reference_text": "[Scarlet] Nervous Laughter",
+      "sound_key": "brain-divided-sound-007",
+      "grid": {
+        "1-1": "[Nervous laughter]",
+        "1-2": "[Nervous laughter.]",
+        "1-3": "[Nervous laughter!]",
+        "2-1": "[Scarlet laughs nervously]",
+        "2-2": "[Scarlet laughs nervously.]",
+        "2-3": "[Scarlet laughs nervously!]",
+        "3-1": "[Scarlet lets out nervous laughter]",
+        "3-2": "[Scarlet lets out nervous laughter.]",
+        "3-3": "[Scarlet lets out nervous laughter!]"
+      },
+      "original_text": "[Scarlet laughs nervously.]",
+      "representations": {
+        "plain": "[Nervous laughter]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-008",
+      "start_s": 115,
+      "end_s": 121,
+      "reference_text": "[John] Nervous chuckle",
+      "sound_key": "brain-divided-sound-008",
+      "grid": {
+        "1-1": "[Nervous chuckle]",
+        "1-2": "[Nervous chuckle.]",
+        "1-3": "[Nervous chuckle!]",
+        "2-1": "[John chuckles nervously]",
+        "2-2": "[John chuckles nervously.]",
+        "2-3": "[John chuckles nervously!]",
+        "3-1": "[John lets out a nervous chuckle]",
+        "3-2": "[John lets out a nervous chuckle.]",
+        "3-3": "[John lets out a nervous chuckle!]"
+      },
+      "original_text": "[John chuckles nervously.]",
+      "representations": {
+        "plain": "[Nervous chuckle]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-009",
+      "start_s": 130,
+      "end_s": 131,
+      "reference_text": "[Biting sound]",
+      "sound_key": "brain-divided-sound-009",
+      "grid": {
+        "1-1": "[Biting sound]",
+        "1-2": "[Biting sound.]",
+        "1-3": "[Biting sound!]",
+        "2-1": "[A biting sound is heard]",
+        "2-2": "[A biting sound is heard.]",
+        "2-3": "[A biting sound is heard!]",
+        "3-1": "[A bite makes a biting sound]",
+        "3-2": "[A bite makes a biting sound.]",
+        "3-3": "[A bite makes a biting sound!]"
+      },
+      "original_text": "[A biting sound is heard.]",
+      "representations": {
+        "plain": "[Biting sound]",
+        "onomatopoeic": "[Ting ting — Biting sound]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-010",
+      "start_s": 131,
+      "end_s": 137,
+      "reference_text": "[Evil Laugh]",
+      "sound_key": "brain-divided-sound-010",
+      "grid": {
+        "1-1": "[Evil laughter]",
+        "1-2": "[Evil laughter.]",
+        "1-3": "[Evil laughter!]",
+        "2-1": "[An evil laugh is heard]",
+        "2-2": "[An evil laugh is heard.]",
+        "2-3": "[An evil laugh is heard!]",
+        "3-1": "[A voice lets out an evil laugh]",
+        "3-2": "[A voice lets out an evil laugh.]",
+        "3-3": "[A voice lets out an evil laugh!]"
+      },
+      "original_text": "[An evil laugh is heard.]",
+      "representations": {
+        "plain": "[Evil laughter]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-011",
+      "start_s": 152,
+      "end_s": 158,
+      "reference_text": "[Sexy Flute Playing]",
+      "sound_key": "brain-divided-sound-011",
+      "grid": {
+        "1-1": "[Sultry flute]",
+        "1-2": "[Sultry flute.]",
+        "1-3": "[Sultry flute!]",
+        "2-1": "[Sultry flute music plays]",
+        "2-2": "[Sultry flute music plays.]",
+        "2-3": "[Sultry flute music plays!]",
+        "3-1": "[A flute plays music with a sultry mood]",
+        "3-2": "[A flute plays music with a sultry mood.]",
+        "3-3": "[A flute plays music with a sultry mood!]"
+      },
+      "original_text": "[Sultry flute music plays.]",
+      "representations": {
+        "plain": "[Sultry flute]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-012",
+      "start_s": 169,
+      "end_s": 173,
+      "reference_text": "[Scarlet] Chuckles",
+      "sound_key": "brain-divided-sound-012",
+      "grid": {
+        "1-1": "[Chuckling]",
+        "1-2": "[Chuckling.]",
+        "1-3": "[Chuckling!]",
+        "2-1": "[Scarlet chuckles]",
+        "2-2": "[Scarlet chuckles.]",
+        "2-3": "[Scarlet chuckles!]",
+        "3-1": "[Scarlet lets out a chuckle]",
+        "3-2": "[Scarlet lets out a chuckle.]",
+        "3-3": "[Scarlet lets out a chuckle!]"
+      },
+      "original_text": "[Scarlet chuckles.]",
+      "representations": {
+        "plain": "[Chuckling]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-013",
+      "start_s": 173,
+      "end_s": 179,
+      "reference_text": "[Angry Growl]",
+      "sound_key": "brain-divided-sound-013",
+      "grid": {
+        "1-1": "[Angry growl]",
+        "1-2": "[Angry growl.]",
+        "1-3": "[Angry growl!]",
+        "2-1": "[An angry growl is heard]",
+        "2-2": "[An angry growl is heard.]",
+        "2-3": "[An angry growl is heard!]",
+        "3-1": "[A growling sound expresses anger]",
+        "3-2": "[A growling sound expresses anger.]",
+        "3-3": "[A growling sound expresses anger!]"
+      },
+      "original_text": "[An angry growl is heard.]",
+      "representations": {
+        "plain": "[Angry growl]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-014",
+      "start_s": 209,
+      "end_s": 210,
+      "reference_text": "[Alarm Sounds]",
+      "sound_key": "brain-divided-sound-014",
+      "grid": {
+        "1-1": "[Alarm]",
+        "1-2": "[Alarm.]",
+        "1-3": "[Alarm!]",
+        "2-1": "[An alarm sounds]",
+        "2-2": "[An alarm sounds.]",
+        "2-3": "[An alarm sounds!]",
+        "3-1": "[An alarm makes a warning sound]",
+        "3-2": "[An alarm makes a warning sound.]",
+        "3-3": "[An alarm makes a warning sound!]"
+      },
+      "original_text": "[An alarm sounds.]",
+      "representations": {
+        "plain": "[Alarm]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-015",
+      "start_s": 210,
+      "end_s": 216,
+      "reference_text": "[Nervous Worried Sounds]",
+      "sound_key": "brain-divided-sound-015",
+      "grid": {
+        "1-1": "[Worried sounds]",
+        "1-2": "[Worried sounds.]",
+        "1-3": "[Worried sounds!]",
+        "2-1": "[Nervous worried sounds]",
+        "2-2": "[Nervous worried sounds.]",
+        "2-3": "[Nervous worried sounds!]",
+        "3-1": "[Sounds convey nervousness and worry]",
+        "3-2": "[Sounds convey nervousness and worry.]",
+        "3-3": "[Sounds convey nervousness and worry!]"
+      },
+      "original_text": "[Nervous worried sounds.]",
+      "representations": {
+        "plain": "[Worried sounds]"
+      },
+      "scene_load": "balanced",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-016",
+      "start_s": 268,
+      "end_s": 274,
+      "reference_text": "[Ding Sound]",
+      "sound_key": "brain-divided-sound-016",
+      "grid": {
+        "1-1": "[Ding]",
+        "1-2": "[Ding.]",
+        "1-3": "[Ding!]",
+        "2-1": "[A ding sounds]",
+        "2-2": "[A ding sounds.]",
+        "2-3": "[A ding sounds!]",
+        "3-1": "[A ringing ding is heard]",
+        "3-2": "[A ringing ding is heard.]",
+        "3-3": "[A ringing ding is heard!]"
+      },
+      "original_text": "[A ding sounds.]",
+      "representations": {
+        "plain": "[Ding]",
+        "onomatopoeic": "[Ding — Ding]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-017",
+      "start_s": 282,
+      "end_s": 288,
+      "reference_text": "[Screams of Joy]",
+      "sound_key": "brain-divided-sound-017",
+      "grid": {
+        "1-1": "[Joyful screams]",
+        "1-2": "[Joyful screams.]",
+        "1-3": "[Joyful screams!]",
+        "2-1": "[Screams of joy are heard]",
+        "2-2": "[Screams of joy are heard.]",
+        "2-3": "[Screams of joy are heard!]",
+        "3-1": "[Voices let out screams of joy]",
+        "3-2": "[Voices let out screams of joy.]",
+        "3-3": "[Voices let out screams of joy!]"
+      },
+      "original_text": "[Screams of joy are heard.]",
+      "representations": {
+        "plain": "[Joyful screams]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    },
+    {
+      "cue_id": "brain-divided-sound-018",
+      "start_s": 289,
+      "end_s": 295,
+      "reference_text": "[Alert Alarm Sounds]",
+      "sound_key": "brain-divided-sound-018",
+      "grid": {
+        "1-1": "[Alert alarm]",
+        "1-2": "[Alert alarm.]",
+        "1-3": "[Alert alarm!]",
+        "2-1": "[An alert alarm sounds]",
+        "2-2": "[An alert alarm sounds.]",
+        "2-3": "[An alert alarm sounds!]",
+        "3-1": "[An alarm sounds an alert]",
+        "3-2": "[An alarm sounds an alert.]",
+        "3-3": "[An alarm sounds an alert!]"
+      },
+      "original_text": "[An alert alarm sounds.]",
+      "representations": {
+        "plain": "[Alert alarm]"
+      },
+      "scene_load": "quiet",
+      "scene_load_basis": "cue-density",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions."
+    }
+  ]
+}

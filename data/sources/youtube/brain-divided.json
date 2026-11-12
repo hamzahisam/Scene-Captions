@@ -1,0 +1,122 @@
+{
+  "video_id": "brain-divided",
+  "youtube_id": "JuyB7NO0EYY",
+  "title": "Brain Divided",
+  "duration_seconds": 302,
+  "attribution": "Josiah Haworth, Joon Shik Song & Joon Soo Song \u00b7 Ringling College of Art and Design \u00b7 TheCGBros",
+  "source_url": "https://www.youtube.com/watch?v=JuyB7NO0EYY",
+  "caption_language": "en",
+  "caption_kind": "authored or unspecified",
+  "transcript_sha256": "cedbff2d3205d0530cf52b7d9fe6d59bab5c465b22753a06b4a17cc24efbece9",
+  "timing_method": "Whole-second starts from the YouTube transcript export. Derived display ends are the next distinct sound-caption start or six seconds, whichever is earlier. Original cue offsets/milliseconds are not supplied by that export; timing remains an unverified reconstruction. Spoken dialogue remains available through the original YouTube captions.",
+  "cues": [
+    {
+      "cue_id": "brain-divided-sound-001",
+      "start_s": 35,
+      "end_s": 40,
+      "reference_text": "[Loud Snoring]"
+    },
+    {
+      "cue_id": "brain-divided-sound-002",
+      "start_s": 40,
+      "end_s": 46,
+      "reference_text": "[Loud Kissing]"
+    },
+    {
+      "cue_id": "brain-divided-sound-003",
+      "start_s": 46,
+      "end_s": 50,
+      "reference_text": "[Sigh]"
+    },
+    {
+      "cue_id": "brain-divided-sound-004",
+      "start_s": 50,
+      "end_s": 55,
+      "reference_text": "[Sexy Music Playing]"
+    },
+    {
+      "cue_id": "brain-divided-sound-005",
+      "start_s": 55,
+      "end_s": 57,
+      "reference_text": "[Boing/Spring Sound!]"
+    },
+    {
+      "cue_id": "brain-divided-sound-006",
+      "start_s": 57,
+      "end_s": 63,
+      "reference_text": "[Wolf Howl]\n[Panting]"
+    },
+    {
+      "cue_id": "brain-divided-sound-007",
+      "start_s": 109,
+      "end_s": 115,
+      "reference_text": "[Scarlet] Nervous Laughter"
+    },
+    {
+      "cue_id": "brain-divided-sound-008",
+      "start_s": 115,
+      "end_s": 121,
+      "reference_text": "[John] Nervous chuckle"
+    },
+    {
+      "cue_id": "brain-divided-sound-009",
+      "start_s": 130,
+      "end_s": 131,
+      "reference_text": "[Biting sound]"
+    },
+    {
+      "cue_id": "brain-divided-sound-010",
+      "start_s": 131,
+      "end_s": 137,
+      "reference_text": "[Evil Laugh]"
+    },
+    {
+      "cue_id": "brain-divided-sound-011",
+      "start_s": 152,
+      "end_s": 158,
+      "reference_text": "[Sexy Flute Playing]"
+    },
+    {
+      "cue_id": "brain-divided-sound-012",
+      "start_s": 169,
+      "end_s": 173,
+      "reference_text": "[Scarlet] Chuckles"
+    },
+    {
+      "cue_id": "brain-divided-sound-013",
+      "start_s": 173,
+      "end_s": 179,
+      "reference_text": "[Angry Growl]"
+    },
+    {
+      "cue_id": "brain-divided-sound-014",
+      "start_s": 209,
+      "end_s": 210,
+      "reference_text": "[Alarm Sounds]"
+    },
+    {
+      "cue_id": "brain-divided-sound-015",
+      "start_s": 210,
+      "end_s": 216,
+      "reference_text": "[Nervous Worried Sounds]"
+    },
+    {
+      "cue_id": "brain-divided-sound-016",
+      "start_s": 268,
+      "end_s": 274,
+      "reference_text": "[Ding Sound]"
+    },
+    {
+      "cue_id": "brain-divided-sound-017",
+      "start_s": 282,
+      "end_s": 288,
+      "reference_text": "[Screams of Joy]"
+    },
+    {
+      "cue_id": "brain-divided-sound-018",
+      "start_s": 289,
+      "end_s": 295,
+      "reference_text": "[Alert Alarm Sounds]"
+    }
+  ]
+}

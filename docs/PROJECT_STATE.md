@@ -1,3 +1,13 @@
+# Viewer catalogue update — 12 November 2026
+
+The main viewer now includes complete publisher-hosted YouTube story films **Soar (6:15)** and **Brain Divided (5:02)**, alongside the three existing titles. Their exported English captions supply 49 and 18 non-speech intervals respectively, with Essential, Balanced and Rich generated wording. Dialogue stays available through YouTube captions. No movie reuploads were made.
+
+The main viewer no longer exposes local video/annotation import. Detail, expressiveness, cue-density adaptation, representation, readability and temporary preview are available for BBB and the two new sound tracks. Expressiveness is explicitly punctuation-only; density is a proxy. Existing dialogue-only titles retain their honest coverage limits. Generation remains offline; no model calls occur during viewing.
+
+Verification: 52 Node tests and production build passed; browser checks covered both embedded films, advancing playback, paused seeking, film switching, three presets, expression changes, preview, adaptation, top positioning and extra-large text. Whole-second YouTube transcript starts and derived display ends are approximate, not original subtitle intervals or listening-reviewed timing. See [update evidence](verification/youtube-films-2026-11-12/README.md).
+
+The historical code map and audit reports below predate the new YouTube player, catalogue, generated datasets and removal of main-viewer imports; they are stale for those changes. Historical research conclusions remain unchanged.
+
 # Research follow-up: recurrence, overlap and predictable controls — 3 November 2026
 
 Read all 402 lines of the newly supplied `SceneCaptions-research-review.md`.

@@ -1,0 +1,308 @@
+{
+  "video_id": "soar",
+  "youtube_id": "UUlaseGrkLc",
+  "title": "Soar",
+  "duration_seconds": 375,
+  "attribution": "Alyce Tzue \u00b7 Academy of Art University \u00b7 TheCGBros",
+  "source_url": "https://www.youtube.com/watch?v=UUlaseGrkLc",
+  "caption_language": "en",
+  "caption_kind": "authored or unspecified",
+  "transcript_sha256": "7b59c7b6374cb50efbb60762a0900e5ab1a7412207584b173ef1c3d470878e3d",
+  "timing_method": "Whole-second starts from the YouTube transcript export. Derived display ends are the next distinct sound-caption start or six seconds, whichever is earlier. Original cue offsets/milliseconds are not supplied by that export; timing remains an unverified reconstruction. Spoken dialogue remains available through the original YouTube captions.",
+  "cues": [
+    {
+      "cue_id": "soar-sound-001",
+      "start_s": 0,
+      "end_s": 2,
+      "reference_text": "[tweeting birds]"
+    },
+    {
+      "cue_id": "soar-sound-002",
+      "start_s": 2,
+      "end_s": 5,
+      "reference_text": "[flute of ideas music]"
+    },
+    {
+      "cue_id": "soar-sound-003",
+      "start_s": 5,
+      "end_s": 8,
+      "reference_text": "[crank]"
+    },
+    {
+      "cue_id": "soar-sound-004",
+      "start_s": 8,
+      "end_s": 14,
+      "reference_text": "[crank]"
+    },
+    {
+      "cue_id": "soar-sound-005",
+      "start_s": 14,
+      "end_s": 19,
+      "reference_text": "[sigh]"
+    },
+    {
+      "cue_id": "soar-sound-006",
+      "start_s": 19,
+      "end_s": 24,
+      "reference_text": "[zoom]"
+    },
+    {
+      "cue_id": "soar-sound-007",
+      "start_s": 24,
+      "end_s": 27,
+      "reference_text": "[swish]"
+    },
+    {
+      "cue_id": "soar-sound-008",
+      "start_s": 27,
+      "end_s": 29,
+      "reference_text": "[sigh]"
+    },
+    {
+      "cue_id": "soar-sound-009",
+      "start_s": 29,
+      "end_s": 35,
+      "reference_text": "[sad piano solo]"
+    },
+    {
+      "cue_id": "soar-sound-010",
+      "start_s": 39,
+      "end_s": 45,
+      "reference_text": "[wind picks up]"
+    },
+    {
+      "cue_id": "soar-sound-011",
+      "start_s": 46,
+      "end_s": 51,
+      "reference_text": "[sigh]"
+    },
+    {
+      "cue_id": "soar-sound-012",
+      "start_s": 51,
+      "end_s": 52,
+      "reference_text": "[leaves rustling]"
+    },
+    {
+      "cue_id": "soar-sound-013",
+      "start_s": 52,
+      "end_s": 55,
+      "reference_text": "[Ah!]"
+    },
+    {
+      "cue_id": "soar-sound-014",
+      "start_s": 55,
+      "end_s": 60,
+      "reference_text": "[curious oboe music]"
+    },
+    {
+      "cue_id": "soar-sound-015",
+      "start_s": 60,
+      "end_s": 61,
+      "reference_text": "[gasp]"
+    },
+    {
+      "cue_id": "soar-sound-016",
+      "start_s": 61,
+      "end_s": 66,
+      "reference_text": "[dying helicopter]"
+    },
+    {
+      "cue_id": "soar-sound-017",
+      "start_s": 66,
+      "end_s": 68,
+      "reference_text": "[Oof!]"
+    },
+    {
+      "cue_id": "soar-sound-018",
+      "start_s": 68,
+      "end_s": 73,
+      "reference_text": "[gasp]"
+    },
+    {
+      "cue_id": "soar-sound-019",
+      "start_s": 73,
+      "end_s": 74,
+      "reference_text": "[Huh?]"
+    },
+    {
+      "cue_id": "soar-sound-020",
+      "start_s": 74,
+      "end_s": 80,
+      "reference_text": "[GASP]"
+    },
+    {
+      "cue_id": "soar-sound-021",
+      "start_s": 86,
+      "end_s": 92,
+      "reference_text": "[Click]"
+    },
+    {
+      "cue_id": "soar-sound-022",
+      "start_s": 94,
+      "end_s": 95,
+      "reference_text": "[clang]"
+    },
+    {
+      "cue_id": "soar-sound-023",
+      "start_s": 95,
+      "end_s": 99,
+      "reference_text": "[gasp]"
+    },
+    {
+      "cue_id": "soar-sound-024",
+      "start_s": 99,
+      "end_s": 105,
+      "reference_text": "[whirring]"
+    },
+    {
+      "cue_id": "soar-sound-025",
+      "start_s": 123,
+      "end_s": 127,
+      "reference_text": "[an idea is coming music]"
+    },
+    {
+      "cue_id": "soar-sound-026",
+      "start_s": 127,
+      "end_s": 128,
+      "reference_text": "[Oof!]"
+    },
+    {
+      "cue_id": "soar-sound-027",
+      "start_s": 128,
+      "end_s": 134,
+      "reference_text": "[an idea has come music]"
+    },
+    {
+      "cue_id": "soar-sound-028",
+      "start_s": 141,
+      "end_s": 144,
+      "reference_text": "[whirring]"
+    },
+    {
+      "cue_id": "soar-sound-029",
+      "start_s": 144,
+      "end_s": 145,
+      "reference_text": "[Squeak!]"
+    },
+    {
+      "cue_id": "soar-sound-030",
+      "start_s": 145,
+      "end_s": 149,
+      "reference_text": "[swish]"
+    },
+    {
+      "cue_id": "soar-sound-031",
+      "start_s": 149,
+      "end_s": 152,
+      "reference_text": "[swish swish swish crack swish]"
+    },
+    {
+      "cue_id": "soar-sound-032",
+      "start_s": 152,
+      "end_s": 158,
+      "reference_text": "[an idea is coming music]"
+    },
+    {
+      "cue_id": "soar-sound-033",
+      "start_s": 161,
+      "end_s": 163,
+      "reference_text": "[Hmph]"
+    },
+    {
+      "cue_id": "soar-sound-034",
+      "start_s": 163,
+      "end_s": 165,
+      "reference_text": "[Ahhhhhhh]"
+    },
+    {
+      "cue_id": "soar-sound-035",
+      "start_s": 165,
+      "end_s": 169,
+      "reference_text": "[AHHHHHHH]\n[Oof *swish swish]"
+    },
+    {
+      "cue_id": "soar-sound-036",
+      "start_s": 169,
+      "end_s": 175,
+      "reference_text": "[Huh?]"
+    },
+    {
+      "cue_id": "soar-sound-037",
+      "start_s": 182,
+      "end_s": 188,
+      "reference_text": "[sad piano solo]"
+    },
+    {
+      "cue_id": "soar-sound-038",
+      "start_s": 188,
+      "end_s": 190,
+      "reference_text": "[sniff]"
+    },
+    {
+      "cue_id": "soar-sound-039",
+      "start_s": 190,
+      "end_s": 196,
+      "reference_text": "[sad music]"
+    },
+    {
+      "cue_id": "soar-sound-040",
+      "start_s": 197,
+      "end_s": 199,
+      "reference_text": "[wind picks up]"
+    },
+    {
+      "cue_id": "soar-sound-041",
+      "start_s": 199,
+      "end_s": 205,
+      "reference_text": "[sad music]"
+    },
+    {
+      "cue_id": "soar-sound-042",
+      "start_s": 206,
+      "end_s": 212,
+      "reference_text": "[an idea is coming music]"
+    },
+    {
+      "cue_id": "soar-sound-043",
+      "start_s": 218,
+      "end_s": 224,
+      "reference_text": "[flute of victory]"
+    },
+    {
+      "cue_id": "soar-sound-044",
+      "start_s": 226,
+      "end_s": 232,
+      "reference_text": "[Ah]"
+    },
+    {
+      "cue_id": "soar-sound-045",
+      "start_s": 242,
+      "end_s": 248,
+      "reference_text": "[click]"
+    },
+    {
+      "cue_id": "soar-sound-046",
+      "start_s": 250,
+      "end_s": 256,
+      "reference_text": "[twinkling]"
+    },
+    {
+      "cue_id": "soar-sound-047",
+      "start_s": 264,
+      "end_s": 267,
+      "reference_text": "[ting ting]"
+    },
+    {
+      "cue_id": "soar-sound-048",
+      "start_s": 267,
+      "end_s": 273,
+      "reference_text": "[ting ting]"
+    },
+    {
+      "cue_id": "soar-sound-049",
+      "start_s": 273,
+      "end_s": 279,
+      "reference_text": "[happy piano solo]"
+    }
+  ]
+}

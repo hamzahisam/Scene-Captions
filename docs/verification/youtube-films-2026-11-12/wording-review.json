@@ -1,0 +1,583 @@
+{
+  "reviewer": "Main-session assistant",
+  "kind": "source-text editorial review",
+  "independent_review": false,
+  "listening_review": "not completed",
+  "timing": "whole-second transcript starts; derived display ends; not exact source cue boundaries",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "usage": {
+    "prompt_tokens": 3131,
+    "completion_tokens": 1723,
+    "total_tokens": 4854,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    }
+  },
+  "approved_labels": [
+    {
+      "id": "sound-067",
+      "reference": "[tweeting birds]",
+      "shortest_interval": 2,
+      "approved_phrases": [
+        "Birds chirp",
+        "Birds make chirping calls",
+        "Birds call with little chirping sounds"
+      ]
+    },
+    {
+      "id": "sound-068",
+      "reference": "[flute of ideas music]",
+      "shortest_interval": 3,
+      "approved_phrases": [
+        "Flute music",
+        "Flute music accompanies an idea",
+        "Flute music plays as an idea forms"
+      ]
+    },
+    {
+      "id": "sound-069",
+      "reference": "[crank]",
+      "shortest_interval": 3,
+      "approved_phrases": [
+        "Cranking",
+        "A crank turns",
+        "A crank makes a turning sound"
+      ]
+    },
+    {
+      "id": "sound-070",
+      "reference": "[sigh]",
+      "shortest_interval": 5,
+      "approved_phrases": [
+        "Sighing",
+        "A sigh is let out",
+        "A breath is let out in a sigh"
+      ]
+    },
+    {
+      "id": "sound-071",
+      "reference": "[zoom]",
+      "shortest_interval": 5,
+      "approved_phrases": [
+        "Zooming sound",
+        "A zooming sound",
+        "A sound goes zoom"
+      ]
+    },
+    {
+      "id": "sound-072",
+      "reference": "[swish]",
+      "shortest_interval": 3,
+      "approved_phrases": [
+        "Swishing",
+        "A swishing sound",
+        "A sound sweeps by with a swish"
+      ]
+    },
+    {
+      "id": "sound-073",
+      "reference": "[sad piano solo]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Sad piano",
+        "Sad piano music plays",
+        "A piano plays a sad solo"
+      ]
+    },
+    {
+      "id": "sound-074",
+      "reference": "[wind picks up]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Wind rises",
+        "The wind picks up",
+        "The sound of the wind grows stronger"
+      ]
+    },
+    {
+      "id": "sound-075",
+      "reference": "[leaves rustling]",
+      "shortest_interval": 1,
+      "approved_phrases": [
+        "Rustling leaves",
+        "Leaves make rustling sounds",
+        "Leaves move with a rustling sound"
+      ]
+    },
+    {
+      "id": "sound-076",
+      "reference": "[Ah!]",
+      "shortest_interval": 3,
+      "approved_phrases": [
+        "Ah!",
+        "An ah sound",
+        "A voice lets out an ah"
+      ]
+    },
+    {
+      "id": "sound-077",
+      "reference": "[curious oboe music]",
+      "shortest_interval": 5,
+      "approved_phrases": [
+        "Curious oboe",
+        "Curious oboe music plays",
+        "An oboe plays music with a curious mood"
+      ]
+    },
+    {
+      "id": "sound-078",
+      "reference": "[gasp]",
+      "shortest_interval": 1,
+      "approved_phrases": [
+        "Gasping",
+        "A gasp of breath",
+        "A breath is drawn in with a gasp"
+      ]
+    },
+    {
+      "id": "sound-079",
+      "reference": "[dying helicopter]",
+      "shortest_interval": 5,
+      "approved_phrases": [
+        "Helicopter falters",
+        "A helicopter splutters",
+        "A helicopter sounds as if it is giving out"
+      ]
+    },
+    {
+      "id": "sound-080",
+      "reference": "[Oof!]",
+      "shortest_interval": 2,
+      "approved_phrases": [
+        "Oof!",
+        "An oof sound",
+        "A voice lets out an oof"
+      ]
+    },
+    {
+      "id": "sound-081",
+      "reference": "[Huh?]",
+      "shortest_interval": 1,
+      "approved_phrases": [
+        "Huh?",
+        "A huh sound",
+        "A voice makes a questioning huh"
+      ]
+    },
+    {
+      "id": "sound-082",
+      "reference": "[GASP]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Gasping",
+        "A gasp of breath",
+        "A breath is drawn in with a gasp"
+      ]
+    },
+    {
+      "id": "sound-083",
+      "reference": "[Click]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Clicking",
+        "A click sounds",
+        "A short clicking sound is heard"
+      ]
+    },
+    {
+      "id": "sound-084",
+      "reference": "[clang]",
+      "shortest_interval": 1,
+      "approved_phrases": [
+        "Clanging",
+        "A clang sounds",
+        "A ringing clang is heard"
+      ]
+    },
+    {
+      "id": "sound-085",
+      "reference": "[whirring]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Whirring",
+        "A whirring sound",
+        "A sound continues with a whirr"
+      ]
+    },
+    {
+      "id": "sound-086",
+      "reference": "[an idea is coming music]",
+      "shortest_interval": 4,
+      "approved_phrases": [
+        "Idea music",
+        "Music accompanies a forming idea",
+        "Music plays as an idea takes shape"
+      ]
+    },
+    {
+      "id": "sound-087",
+      "reference": "[an idea has come music]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Idea music",
+        "Music marks a new idea",
+        "Music plays as an idea arrives"
+      ]
+    },
+    {
+      "id": "sound-088",
+      "reference": "[Squeak!]",
+      "shortest_interval": 1,
+      "approved_phrases": [
+        "Squeaking",
+        "A squeak sounds",
+        "A little squeaking sound is heard"
+      ]
+    },
+    {
+      "id": "sound-089",
+      "reference": "[swish swish swish crack swish]",
+      "shortest_interval": 3,
+      "approved_phrases": [
+        "Swishes and a crack",
+        "Swishing sounds and a crack",
+        "Several swishes are joined by a cracking sound"
+      ]
+    },
+    {
+      "id": "sound-090",
+      "reference": "[Hmph]",
+      "shortest_interval": 2,
+      "approved_phrases": [
+        "Hmph",
+        "A hmph sound",
+        "A voice lets out a hmph"
+      ]
+    },
+    {
+      "id": "sound-091",
+      "reference": "[Ahhhhhhh]",
+      "shortest_interval": 2,
+      "approved_phrases": [
+        "Ahhh",
+        "A drawn-out ah",
+        "A voice lets out a drawn-out ah"
+      ]
+    },
+    {
+      "id": "sound-092",
+      "reference": "[AHHHHHHH]",
+      "shortest_interval": 4,
+      "approved_phrases": [
+        "Ahhh",
+        "A drawn-out ah",
+        "A voice lets out a drawn-out ah"
+      ]
+    },
+    {
+      "id": "sound-093",
+      "reference": "[Oof *swish swish]",
+      "shortest_interval": 4,
+      "approved_phrases": [
+        "Oof and swishes",
+        "An oof with swishing sounds",
+        "A voice goes oof alongside swishing sounds"
+      ]
+    },
+    {
+      "id": "sound-094",
+      "reference": "[sniff]",
+      "shortest_interval": 2,
+      "approved_phrases": [
+        "Sniffing",
+        "A sniff is heard",
+        "Air is drawn in with a sniff"
+      ]
+    },
+    {
+      "id": "sound-095",
+      "reference": "[sad music]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Sad music",
+        "Sad music plays",
+        "Music plays with a sad mood"
+      ]
+    },
+    {
+      "id": "sound-096",
+      "reference": "[flute of victory]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Victory flute",
+        "Flute music signals victory",
+        "A flute plays with a victorious mood"
+      ]
+    },
+    {
+      "id": "sound-097",
+      "reference": "[Ah]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Ah",
+        "An ah sound",
+        "A voice lets out an ah"
+      ]
+    },
+    {
+      "id": "sound-098",
+      "reference": "[click]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Clicking",
+        "A click sounds",
+        "A short clicking sound is heard"
+      ]
+    },
+    {
+      "id": "sound-099",
+      "reference": "[twinkling]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Twinkling",
+        "A twinkling sound",
+        "A sound twinkles"
+      ]
+    },
+    {
+      "id": "sound-100",
+      "reference": "[ting ting]",
+      "shortest_interval": 3,
+      "approved_phrases": [
+        "Ting ting",
+        "Two ting sounds",
+        "Two ringing ting sounds are heard"
+      ]
+    },
+    {
+      "id": "sound-101",
+      "reference": "[happy piano solo]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Happy piano",
+        "Happy piano music plays",
+        "A piano plays a happy solo"
+      ]
+    },
+    {
+      "id": "sound-102",
+      "reference": "[Loud Snoring]",
+      "shortest_interval": 5,
+      "approved_phrases": [
+        "Loud snoring",
+        "Loud snores are heard",
+        "Noisy breathing in sleep makes loud snores"
+      ]
+    },
+    {
+      "id": "sound-103",
+      "reference": "[Loud Kissing]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Loud kissing",
+        "Loud kissing sounds",
+        "Kissing makes loud smacking sounds"
+      ]
+    },
+    {
+      "id": "sound-104",
+      "reference": "[Sigh]",
+      "shortest_interval": 4,
+      "approved_phrases": [
+        "Sighing",
+        "A sigh is let out",
+        "A breath is let out in a sigh"
+      ]
+    },
+    {
+      "id": "sound-105",
+      "reference": "[Sexy Music Playing]",
+      "shortest_interval": 5,
+      "approved_phrases": [
+        "Sultry music",
+        "Sultry music plays",
+        "Music plays with a sultry mood"
+      ]
+    },
+    {
+      "id": "sound-106",
+      "reference": "[Boing/Spring Sound!]",
+      "shortest_interval": 2,
+      "approved_phrases": [
+        "Boing",
+        "A spring goes boing",
+        "A spring-like boing sound is heard"
+      ]
+    },
+    {
+      "id": "sound-107",
+      "reference": "[Wolf Howl]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Wolf howls",
+        "A wolf lets out a howl",
+        "A wolf makes a howling call"
+      ]
+    },
+    {
+      "id": "sound-108",
+      "reference": "[Panting]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Panting",
+        "Panting breaths are heard",
+        "Breathing comes in panting breaths"
+      ]
+    },
+    {
+      "id": "sound-109",
+      "reference": "[Scarlet] Nervous Laughter",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Nervous laughter",
+        "Scarlet laughs nervously",
+        "Scarlet lets out nervous laughter"
+      ]
+    },
+    {
+      "id": "sound-110",
+      "reference": "[John] Nervous chuckle",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Nervous chuckle",
+        "John chuckles nervously",
+        "John lets out a nervous chuckle"
+      ]
+    },
+    {
+      "id": "sound-111",
+      "reference": "[Biting sound]",
+      "shortest_interval": 1,
+      "approved_phrases": [
+        "Biting sound",
+        "A biting sound is heard",
+        "A bite makes a biting sound"
+      ]
+    },
+    {
+      "id": "sound-112",
+      "reference": "[Evil Laugh]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Evil laughter",
+        "An evil laugh is heard",
+        "A voice lets out an evil laugh"
+      ]
+    },
+    {
+      "id": "sound-113",
+      "reference": "[Sexy Flute Playing]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Sultry flute",
+        "Sultry flute music plays",
+        "A flute plays music with a sultry mood"
+      ]
+    },
+    {
+      "id": "sound-114",
+      "reference": "[Scarlet] Chuckles",
+      "shortest_interval": 4,
+      "approved_phrases": [
+        "Chuckling",
+        "Scarlet chuckles",
+        "Scarlet lets out a chuckle"
+      ]
+    },
+    {
+      "id": "sound-115",
+      "reference": "[Angry Growl]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Angry growl",
+        "An angry growl is heard",
+        "A growling sound expresses anger"
+      ]
+    },
+    {
+      "id": "sound-116",
+      "reference": "[Alarm Sounds]",
+      "shortest_interval": 1,
+      "approved_phrases": [
+        "Alarm",
+        "An alarm sounds",
+        "An alarm makes a warning sound"
+      ]
+    },
+    {
+      "id": "sound-117",
+      "reference": "[Nervous Worried Sounds]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Worried sounds",
+        "Nervous worried sounds",
+        "Sounds convey nervousness and worry"
+      ]
+    },
+    {
+      "id": "sound-118",
+      "reference": "[Ding Sound]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Ding",
+        "A ding sounds",
+        "A ringing ding is heard"
+      ]
+    },
+    {
+      "id": "sound-119",
+      "reference": "[Screams of Joy]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Joyful screams",
+        "Screams of joy are heard",
+        "Voices let out screams of joy"
+      ]
+    },
+    {
+      "id": "sound-120",
+      "reference": "[Alert Alarm Sounds]",
+      "shortest_interval": 6,
+      "approved_phrases": [
+        "Alert alarm",
+        "An alert alarm sounds",
+        "An alarm sounds an alert"
+      ]
+    }
+  ],
+  "editorial_changes": [],
+  "tracks": [
+    {
+      "video_id": "big-buck-bunny",
+      "cues": 87,
+      "sha256": "601e8c9e212992516fdb519222ddef502644b2b5a457b55594b0462ce48d31fc"
+    },
+    {
+      "video_id": "soar",
+      "cues": 49,
+      "sha256": "bf94577a72bbf97fa1dc4659531ac6beac87db4e89a32d3d52c388c5a7e136a4"
+    },
+    {
+      "video_id": "brain-divided",
+      "cues": 18,
+      "sha256": "41d14d1388a1ad78548de10fa54b6bc8c7313d9473707b2585881caa9c271528"
+    }
+  ]
+}

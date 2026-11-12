@@ -1,0 +1,196 @@
+1
+00:00:00,000 --> 00:00:02,000
+[Birds make chirping calls.]
+
+2
+00:00:02,000 --> 00:00:05,000
+[Flute music accompanies an idea.]
+
+3
+00:00:05,000 --> 00:00:08,000
+[A crank turns.]
+
+4
+00:00:08,000 --> 00:00:14,000
+[A crank turns.]
+
+5
+00:00:14,000 --> 00:00:19,000
+[A sigh is let out.]
+
+6
+00:00:19,000 --> 00:00:24,000
+[A zooming sound.]
+
+7
+00:00:24,000 --> 00:00:27,000
+[A swishing sound.]
+
+8
+00:00:27,000 --> 00:00:29,000
+[A sigh is let out.]
+
+9
+00:00:29,000 --> 00:00:35,000
+[Sad piano music plays.]
+
+10
+00:00:39,000 --> 00:00:45,000
+[The wind picks up.]
+
+11
+00:00:46,000 --> 00:00:51,000
+[A sigh is let out.]
+
+12
+00:00:51,000 --> 00:00:52,000
+[Leaves make rustling sounds.]
+
+13
+00:00:52,000 --> 00:00:55,000
+[An ah sound.]
+
+14
+00:00:55,000 --> 00:01:00,000
+[Curious oboe music plays.]
+
+15
+00:01:00,000 --> 00:01:01,000
+[A gasp of breath.]
+
+16
+00:01:01,000 --> 00:01:06,000
+[A helicopter splutters.]
+
+17
+00:01:06,000 --> 00:01:08,000
+[An oof sound.]
+
+18
+00:01:08,000 --> 00:01:13,000
+[A gasp of breath.]
+
+19
+00:01:13,000 --> 00:01:14,000
+[A huh sound.]
+
+20
+00:01:14,000 --> 00:01:20,000
+[A gasp of breath.]
+
+21
+00:01:26,000 --> 00:01:32,000
+[A click sounds.]
+
+22
+00:01:34,000 --> 00:01:35,000
+[A clang sounds.]
+
+23
+00:01:35,000 --> 00:01:39,000
+[A gasp of breath.]
+
+24
+00:01:39,000 --> 00:01:45,000
+[A whirring sound.]
+
+25
+00:02:03,000 --> 00:02:07,000
+[Music accompanies a forming idea.]
+
+26
+00:02:07,000 --> 00:02:08,000
+[An oof sound.]
+
+27
+00:02:08,000 --> 00:02:14,000
+[Music marks a new idea.]
+
+28
+00:02:21,000 --> 00:02:24,000
+[A whirring sound.]
+
+29
+00:02:24,000 --> 00:02:25,000
+[A squeak sounds.]
+
+30
+00:02:25,000 --> 00:02:29,000
+[A swishing sound.]
+
+31
+00:02:29,000 --> 00:02:32,000
+[Swishing sounds and a crack.]
+
+32
+00:02:32,000 --> 00:02:38,000
+[Music accompanies a forming idea.]
+
+33
+00:02:41,000 --> 00:02:43,000
+[A hmph sound.]
+
+34
+00:02:43,000 --> 00:02:45,000
+[A drawn-out ah.]
+
+35
+00:02:45,000 --> 00:02:49,000
+[A drawn-out ah.]
+[An oof with swishing sounds.]
+
+36
+00:02:49,000 --> 00:02:55,000
+[A huh sound.]
+
+37
+00:03:02,000 --> 00:03:08,000
+[Sad piano music plays.]
+
+38
+00:03:08,000 --> 00:03:10,000
+[A sniff is heard.]
+
+39
+00:03:10,000 --> 00:03:16,000
+[Sad music plays.]
+
+40
+00:03:17,000 --> 00:03:19,000
+[The wind picks up.]
+
+41
+00:03:19,000 --> 00:03:25,000
+[Sad music plays.]
+
+42
+00:03:26,000 --> 00:03:32,000
+[Music accompanies a forming idea.]
+
+43
+00:03:38,000 --> 00:03:44,000
+[Flute music signals victory.]
+
+44
+00:03:46,000 --> 00:03:52,000
+[An ah sound.]
+
+45
+00:04:02,000 --> 00:04:08,000
+[A click sounds.]
+
+46
+00:04:10,000 --> 00:04:16,000
+[A twinkling sound.]
+
+47
+00:04:24,000 --> 00:04:27,000
+[Two ting sounds.]
+
+48
+00:04:27,000 --> 00:04:33,000
+[Two ting sounds.]
+
+49
+00:04:33,000 --> 00:04:39,000
+[Happy piano music plays.]

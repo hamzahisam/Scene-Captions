@@ -42,6 +42,7 @@ export const videoSchema = z.object({
     acoustic_validation: z.literal("failed").optional(),
     input_basis: z.literal("media-only").optional(),
     wording_style: z.literal("simple-source-richness").optional(),
+    export_basename: z.string().regex(/^[a-z0-9-]+$/).max(100).optional(),
     non_speech_status: z.literal("not-prepared").optional(),
   }),
   dialogue: z.array(dialogueCueSchema).max(5000).optional(),
