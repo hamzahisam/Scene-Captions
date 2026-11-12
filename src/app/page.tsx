@@ -3,7 +3,6 @@ import sintel from "../../data/captions/sintel.json";
 import tears from "../../data/captions/tears-of-steel.json";
 import simpleBunny from "../../data/source-assisted-captions/big-buck-bunny-controls.json";
 import soar from "../../data/source-assisted-captions/soar.json";
-import brainDivided from "../../data/source-assisted-captions/brain-divided.json";
 import { videoSchema } from "@/lib/captions";
 import { sourceAssistedTrackFor } from "@/lib/source-captions";
 import { Header } from "@/components/header";
@@ -28,7 +27,6 @@ export default function Home() {
     { data: videoSchema.parse(sintel), source: mediaSource("SINTEL_VIDEO_URL", "/media/sintel.mp4"), poster: "/media/sintel-poster.jpg", credit: "Blender Foundation · 2010" },
     { data: videoSchema.parse(tears), source: mediaSource("TEARS_OF_STEEL_VIDEO_URL", "/media/tears-of-steel.mp4"), poster: "/media/tears-of-steel-poster.jpg", credit: "Blender Foundation · 2012" },
     { data: videoSchema.parse(soar), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/soar.mp4", poster: "/media/soar-poster.jpg", credit: "Alyce Tzue · TheCGBros" },
-    { data: videoSchema.parse(brainDivided), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/brain-divided.mp4", poster: "/media/brain-divided-poster.jpg", credit: "Ringling College of Art and Design · TheCGBros" },
   ];
   return <><Header /><ScreeningRoom films={films} /></>;
 }
