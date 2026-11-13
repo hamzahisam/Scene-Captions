@@ -77,6 +77,7 @@ export const profileSchema = z.object({
   detail: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   expression: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   adaptive: z.boolean(), representation: z.enum(["descriptive", "plain", "onomatopoeic"]),
+  announceCaptions:z.boolean().default(false),
   shortcuts:z.boolean().default(true),pageWideShortcuts:z.boolean().default(false),
   backdrop:z.enum(["solid","translucent","outline"]).default("solid"),textColor:z.enum(["white","yellow"]).default("white"),
   typeStyling:z.boolean().default(true),
@@ -84,7 +85,7 @@ export const profileSchema = z.object({
   size: z.enum(["standard", "large", "extra-large"]), position: z.enum(["bottom", "top"]),
 });
 export type CaptionProfile = z.infer<typeof profileSchema>;
-export const DEFAULT_PROFILE: CaptionProfile = { detail: 2, expression: 2, adaptive: true, representation: "descriptive", size: "large", position: "bottom", readingSpeed:17,typeStyling:true,backdrop:"solid",textColor:"white",shortcuts:true,pageWideShortcuts:false };
+export const DEFAULT_PROFILE: CaptionProfile = { detail: 2, expression: 2, adaptive: true, representation: "descriptive", size: "large", position: "bottom", readingSpeed:17,typeStyling:true,backdrop:"solid",textColor:"white",shortcuts:true,pageWideShortcuts:false,announceCaptions:false };
 
 export function activeCues(cues: CaptionCue[], seconds: number): CaptionCue[] {
   return cues.filter((cue) => cue.start_s <= seconds && seconds < cue.end_s);

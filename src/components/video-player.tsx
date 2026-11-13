@@ -48,6 +48,6 @@ export function VideoPlayer({ source, data, profile, condition, showOriginal, on
     {mismatch && <p role="alert" className="inline-error">Caption timing does not match this video’s duration. Captions are hidden. The prepared track needs review.</p>}
     {!data && <p className="inline-notice">Sound captions are unavailable for this film.</p>}
     <div className="sr-only" role="status" aria-live="polite">{shortcutNotice}</div>
-    <p id="video-description" className="sr-only">Available dialogue and non-speech captions are displayed on the video. {data?.generated_with.experimental ? "Experimental dialogue is transcribed from audio; words and timing are unverified." : "Dialogue keeps its source wording regardless of sound preferences."} Focus the video and press Space to play or pause; use Left and Right arrows to seek five seconds. Full sound text and jump controls are available in the timeline below.</p>
+    <p id="video-description" className="sr-only">Dialogue stays fixed while sound captions follow your preferences. Open CC for detail, reading pace and appearance. Focus the player for keyboard controls; press question mark for help. Original toggles the source wording, or hold it to compare temporarily. Research tools contain upcoming sound text and are not part of participant viewing.</p>
   </>;
 }
