@@ -1,0 +1,132 @@
+[
+  {
+    "file": "big-buck-bunny-controls.json",
+    "levels": [
+      {
+        "detail": 1,
+        "cues": 87,
+        "over17": 12,
+        "over20": 5,
+        "shorterThan083": 4
+      },
+      {
+        "detail": 2,
+        "cues": 87,
+        "over17": 12,
+        "over20": 5,
+        "shorterThan083": 4
+      },
+      {
+        "detail": 3,
+        "cues": 87,
+        "over17": 12,
+        "over20": 5,
+        "shorterThan083": 4
+      }
+    ]
+  },
+  {
+    "file": "big-buck-bunny.json",
+    "levels": [
+      {
+        "detail": 1,
+        "cues": 87,
+        "over17": 10,
+        "over20": 5,
+        "shorterThan083": 4
+      },
+      {
+        "detail": 2,
+        "cues": 87,
+        "over17": 10,
+        "over20": 5,
+        "shorterThan083": 4
+      },
+      {
+        "detail": 3,
+        "cues": 87,
+        "over17": 10,
+        "over20": 5,
+        "shorterThan083": 4
+      }
+    ]
+  },
+  {
+    "file": "brain-divided.json",
+    "levels": [
+      {
+        "detail": 1,
+        "cues": 18,
+        "over17": 0,
+        "over20": 0,
+        "shorterThan083": 0
+      },
+      {
+        "detail": 2,
+        "cues": 18,
+        "over17": 0,
+        "over20": 0,
+        "shorterThan083": 0
+      },
+      {
+        "detail": 3,
+        "cues": 18,
+        "over17": 0,
+        "over20": 0,
+        "shorterThan083": 0
+      }
+    ]
+  },
+  {
+    "file": "hair-love.json",
+    "levels": [
+      {
+        "detail": 1,
+        "cues": 15,
+        "over17": 1,
+        "over20": 0,
+        "shorterThan083": 0
+      },
+      {
+        "detail": 2,
+        "cues": 15,
+        "over17": 1,
+        "over20": 0,
+        "shorterThan083": 0
+      },
+      {
+        "detail": 3,
+        "cues": 15,
+        "over17": 1,
+        "over20": 0,
+        "shorterThan083": 0
+      }
+    ]
+  },
+  {
+    "file": "soar.json",
+    "levels": [
+      {
+        "detail": 1,
+        "cues": 49,
+        "over17": 1,
+        "over20": 0,
+        "shorterThan083": 0
+      },
+      {
+        "detail": 2,
+        "cues": 49,
+        "over17": 1,
+        "over20": 0,
+        "shorterThan083": 0
+      },
+      {
+        "detail": 3,
+        "cues": 49,
+        "over17": 1,
+        "over20": 0,
+        "shorterThan083": 0
+      }
+    ]
+  }
+]

@@ -1,3 +1,9 @@
+# DHH upgrade Phase 2 — 13 November 2026
+
+Tasks 2.1–2.7 add configurable 15/17/20 cps adaptation (timings unchanged), heuristic cue-type sidecars and speaker chip, shape/glyph styling, contrast-tested white/yellow solid/translucent backdrops plus explicitly limited outline mode, decorative sound markers/navigation, scoped switchable shortcuts/help, isolated frame clock and opt-in caption announcements. No new font/dependency was added. Sidecars remain heuristic drafts; no off-screen claims were inferred. Existing provenance guards and hash-bound datasets are unchanged.
+
+Reading-rate results for BBB: before adaptation at 17 cps, Essential/Balanced/Rich exceed the cap on 12/27/60 of 87 cues; after, 12/12/12. At 20 cps: 5/20/53 before, 5/5/5 after. These residual cases are unavoidable with the existing Essential wording. Four cues remain shorter than 0.83 s and are flagged, not extended. Every task passed types/tests/build. Desktop/mobile checks and the frame-clock render-isolation test are under `artifacts/dhh-ux-browser`; physical iPhone, screen readers and the soak remain manual. Maps stay stale; no push/deploy/model calls.
+
 # DHH upgrade Phase 1 — 13 November 2026
 
 Tasks 1.1–1.5 implemented on `dhh-ux-upgrade`: independent amount/punctuation profile, responsive in-frame CC dialog with focus management, in-place past-cue sample, original click/hold comparison, shortening marker, collapsed mounted research drawer, single-column viewer, labelled dialogue-only films, scalable captions and native-fullscreen text-track fallback shared with the lab player. Removed preview seeking/timers, dead viewer imports and redundant participant-facing controls. Full stop/grid/always-visible controls defaults retained; Lab groups creator/anchored navigation. Protected caption files unchanged.
