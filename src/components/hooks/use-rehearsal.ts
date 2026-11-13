@@ -1,30 +1,13 @@
-"use client";
-import { useCallback, useState } from "react";
-import { appendEvent } from "@/lib/session";
-import type { StudyEvent, RecordedEvent } from "@/lib/session";
-import type { CaptionProfile, Condition } from "@/lib/captions";
-
-export function useRehearsal() {
-  const [recording, setRecording] = useState(false);
-  const [events, setEvents] = useState<RecordedEvent[]>([]);
-  const [startedAt, setStartedAt] = useState<number | null>(null);
-  const [sessionId, setSessionId] = useState("");
-  const [stoppedElapsed, setStoppedElapsed] = useState<number | null>(null);
-  const record = useCallback((event: StudyEvent) => {
-    if (recording && startedAt !== null) setEvents(current => appendEvent(current, event, performance.now() - startedAt));
-  }, [recording, startedAt]);
-  function start(video_s: number, condition: Condition, profile: CaptionProfile, enabled: boolean) {
-    setStartedAt(performance.now()); setStoppedElapsed(null);
-    setSessionId(crypto.randomUUID().slice(0, 8)); setRecording(true);
-    setEvents([
-      { type: "condition", video_s, condition, elapsed_ms: 0 },
-      { type: "profile", video_s, profile, elapsed_ms: 0 },
-      { type: "original", video_s, enabled, elapsed_ms: 0 },
-    ]);
-  }
-  function stop() {
-    setStoppedElapsed(startedAt !== null ? Math.round(performance.now() - startedAt) : 0);
-    setRecording(false);
-  }
-  return { recording, events, startedAt, sessionId, stoppedElapsed, record, start, stop };
+'use client';
+import {useCallback,useEffect,useRef,useState} from 'react';import {TelemetryRecorder} from '@/lib/telemetry-storage';import type {TelemetryInput} from '@/lib/telemetry';import type {StudyEvent} from '@/lib/session';import type {CaptionProfile,Condition} from '@/lib/captions';import {sessionDefaults} from '@/lib/study-session';import type {StudySession} from '@/lib/study-session';
+export function useRehearsal({filmId,session,lab=false}:{filmId:string;session?:StudySession;lab?:boolean}){
+ const [recorder,setRecorder]=useState<TelemetryRecorder|null>(null),[recording,setRecording]=useState(false),[initError,setInitError]=useState('');const lastProfile=useRef<CaptionProfile|null>(null);const videoTime=useRef(0),currentRecorder=useRef<TelemetryRecorder|null>(null);currentRecorder.current=recorder;const setVideoTime=useCallback((time:number)=>{videoTime.current=time;currentRecorder.current?.updatePosition(time)},[]);
+ const sessionId=session?.id||`${lab?'lab':'rehearsal'}-${filmId}`;
+ useEffect(()=>{try{const r=new TelemetryRecorder({session_id:sessionId,participant_id:session?.participantId||null,design:session?.design||'rehearsal',assigned_condition:session?.sequence[session.sequenceIndex].condition||'personalized',sequence_index:session?.sequenceIndex||0,film_id:filmId,app_version:process.env.NEXT_PUBLIC_APP_VERSION||'local'},localStorage);if(session&&!r.started){r.start(0);const defaults=sessionDefaults(session);for(const field of Object.keys(defaults) as (keyof CaptionProfile)[])r.append({type:"profile_change",video_s:0,field,from:null,to:defaults[field],source:"system"})}setRecorder(r);setRecording(r.recording)}catch{setInitError('Browser storage is unavailable. A session cannot start safely.')}},[sessionId,filmId,session?.sequenceIndex]);
+ useEffect(()=>{if(!recorder)return;const unload=(e:BeforeUnloadEvent)=>{if(recorder.recording){recorder.flush();e.preventDefault();e.returnValue=''}};const visibility=()=>recorder.append({type:'visibility',video_s:videoTime.current,visible:document.visibilityState==='visible',source:'system'});window.addEventListener('beforeunload',unload);document.addEventListener('visibilitychange',visibility);return()=>{window.removeEventListener('beforeunload',unload);document.removeEventListener('visibilitychange',visibility)}},[recorder]);
+ const telemetry=useCallback((e:TelemetryInput)=>recorder?.append(e),[recorder]);
+ const record=useCallback((e:StudyEvent)=>{if(!recorder?.recording)return;const source=e.source||'participant';if(e.type==='play'||e.type==='pause')telemetry({type:e.type,video_s:e.video_s,source});else if(e.type==='seek')telemetry({type:'seek',video_s:e.video_s,from_s:e.from_s??e.video_s,method:e.method||'jump',source});else if(e.type==='original')telemetry({type:'original',video_s:e.video_s,enabled:e.enabled,mode:e.mode||'toggle',source});else if(e.type==='profile'){for(const field of Object.keys(e.profile) as (keyof CaptionProfile)[])if(lastProfile.current?.[field]!==e.profile[field])telemetry({type:'profile_change',video_s:e.video_s,field,from:lastProfile.current?.[field]??null,to:e.profile[field],source});lastProfile.current=e.profile}else if(e.type==='rate'||e.type==='mute'||e.type==='fullscreen'||e.type==='error')telemetry(e as TelemetryInput)},[recorder,telemetry]);
+ function start(video_s:number,condition:Condition,profile:CaptionProfile,enabled:boolean){if(!recorder)return;recorder.context={...recorder.context,assigned_condition:condition};recorder.start(video_s);setRecording(recorder.recording);record({type:'profile',video_s,profile});record({type:'original',video_s,enabled})}
+ function stop(seconds?:number){recorder?.stop(seconds??recorder.events.at(-1)?.video_s??0);setRecording(false)}
+ return {recorder,setVideoTime,record,telemetry,recording,startedAt:recorder?.recording?0:null,start,stop,error:initError};
 }

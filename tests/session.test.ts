@@ -7,9 +7,9 @@ test("event recording validates event types and stores relative elapsed time", (
   assert.deepEqual(events, [{ type: "seek", video_s: 12, elapsed_ms: 25 }]);
   assert.throws(() => appendEvent([], { type: "seek", video_s: NaN }, 1));
 });
-test("rehearsal event buffer stays bounded", () => {
+test("legacy rehearsal export no longer silently drops events at the old cap", () => {
   const events: RecordedEvent[] = Array.from({ length: 3000 }, () => ({ type: "pause", video_s: 0, elapsed_ms: 0 }));
-  assert.equal(appendEvent(events, { type: "play", video_s: 1 }, 200).length, 3000);
+  assert.equal(appendEvent(events, { type: "play", video_s: 1 }, 200).length, 3001);
 });
 
 test("rehearsal snapshots keep stopped duration and the complete caption override state", async () => {

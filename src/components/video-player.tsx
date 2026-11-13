@@ -1,4 +1,5 @@
 "use client";
+import type {TelemetryInput} from "@/lib/telemetry";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {CaptionExperience} from "./caption-experience";
 import { useVideoPlayback } from "./hooks/use-video-playback";
@@ -15,11 +16,11 @@ import { resolveCaption } from "@/lib/captions";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import { Icon } from "./icon";
 
-export function VideoPlayer({ source, data, profile, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, onApply, annotations, settingsAllowed=true,showTicks=true, poster = "/media/bunny-poster.jpg" }: {
+export function VideoPlayer({ source, data, profile, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, onApply, annotations, onTelemetry=()=>{},recording=false, settingsAllowed=true,showTicks=true, poster = "/media/bunny-poster.jpg" }: {
   source: string; data: CaptionVideo | null; profile: CaptionProfile; condition: Condition;
-  showOriginal: boolean; onOriginal: (enabled?:boolean) => void; onTime: (time: number) => void;
+  showOriginal: boolean; onOriginal: (enabled?:boolean,mode?:"toggle"|"hold") => void; onTime: (time: number) => void;
   onEvent: (event: StudyEvent) => void; seekTo: { seconds: number; nonce: number } | null;
-  settingsAllowed?:boolean;showTicks?:boolean; annotations?:CueAnnotations; poster?: string; onApply:(p:CaptionProfile)=>void;
+  onTelemetry?:(event:TelemetryInput)=>void;recording?:boolean;settingsAllowed?:boolean;showTicks?:boolean; annotations?:CueAnnotations; poster?: string; onApply:(p:CaptionProfile)=>void;
 }) {
   const playback = useVideoPlayback({ source, seekTo, onTime, onEvent });
   const { video, frame, ready, playing, error, waiting, duration, time, toggle } = playback;
@@ -27,8 +28,9 @@ export function VideoPlayer({ source, data, profile, condition, showOriginal, on
   const [helpOpen,setHelpOpen]=useState(false),[shortcutNotice,setShortcutNotice]=useState(""); const helpButton=useRef<HTMLButtonElement>(null);const closeHelp=useCallback(()=>setHelpOpen(false),[]);
   const closeSettings=useCallback(()=>setSettingsOpen(false),[]);
   useEffect(()=>{const el=frame.current;if(!el)return;const resize=new ResizeObserver(()=>setNarrow(el.clientWidth<560&&!document.fullscreenElement));resize.observe(el);const full=()=>setNarrow(el.clientWidth<560&&!document.fullscreenElement);document.addEventListener("fullscreenchange",full);return()=>{resize.disconnect();document.removeEventListener("fullscreenchange",full)}},[frame]);
-  usePlayerShortcuts(frame,profile.shortcuts,profile.pageWideShortcuts,{toggle:()=>void toggle(),seek:delta=>playback.seek((video.current?.currentTime||0)+delta),settings:()=>{setHelpOpen(false);if(settingsAllowed)setSettingsOpen(v=>!v)},original:value=>{if(condition!=="baseline")onOriginal(value)},originalEnabled:showOriginal,amount:delta=>{if(condition==="baseline"||!data?.cues.length)return;const detail=Math.max(1,Math.min(3,profile.detail+delta)) as 1|2|3;onApply({...profile,detail});setShortcutNotice(`Amount: ${["","Essential","Balanced","Rich"][detail]}`)},size:delta=>{const sizes=["standard","large","extra-large"] as const;const size=sizes[Math.max(0,Math.min(2,sizes.indexOf(profile.size)+delta))];onApply({...profile,size});setShortcutNotice(`Text size: ${size}`)},fullscreen:()=>void playback.fullscreen(),sound:direction=>{const target=adjacentSound(data?.cues||[],video.current?.currentTime||0,direction);if(target!==null)playback.seek(target)},help:()=>{setSettingsOpen(false);setHelpOpen(true)},close:()=>{setHelpOpen(false);setSettingsOpen(false)}});
+  usePlayerShortcuts(frame,profile.shortcuts,profile.pageWideShortcuts,{toggle:()=>void toggle(),seek:delta=>playback.seek((video.current?.currentTime||0)+delta,"keyboard"),settings:()=>{setHelpOpen(false);if(settingsAllowed)setSettingsOpen(v=>!v)},original:(value,mode)=>{if(condition!=="baseline")onOriginal(value,mode)},originalEnabled:showOriginal,amount:delta=>{if(condition==="baseline"||!data?.cues.length)return;const detail=Math.max(1,Math.min(3,profile.detail+delta)) as 1|2|3;onApply({...profile,detail});setShortcutNotice(`Amount: ${["","Essential","Balanced","Rich"][detail]}`)},size:delta=>{const sizes=["standard","large","extra-large"] as const;const size=sizes[Math.max(0,Math.min(2,sizes.indexOf(profile.size)+delta))];onApply({...profile,size});setShortcutNotice(`Text size: ${size}`)},fullscreen:()=>void playback.fullscreen(),sound:direction=>{const target=adjacentSound(data?.cues||[],video.current?.currentTime||0,direction);if(target!==null)playback.seek(target,"sound-navigation")},help:()=>{setSettingsOpen(false);setHelpOpen(true)},close:()=>{setHelpOpen(false);setSettingsOpen(false)}});
   const settingsHost=useRef<HTMLDivElement>(null);
+  const previousSettings=useRef(false);useEffect(()=>{if(previousSettings.current!==settingsOpen){onTelemetry({type:"settings",open:settingsOpen,video_s:video.current?.currentTime||0,source:"participant"});previousSettings.current=settingsOpen}},[settingsOpen,onTelemetry,video]);
   const mismatch=!!data&&duration>0&&Math.abs(duration-data.duration_seconds)>2;
   return <>
     <div className={`video-frame ${settingsOpen?"settings-open":""} ${narrow?"settings-below":""}`} ref={frame} role="region" aria-label="Video player" tabIndex={0}><div className="video-stage">
@@ -38,7 +40,7 @@ export function VideoPlayer({ source, data, profile, condition, showOriginal, on
 
       {!playing && !error && <button className="big-play" onClick={() => void toggle()} disabled={!ready} aria-label={ready ? "Play video" : "Loading video"}><Icon name="play" size={30} /></button>}
       {waiting && playing && <span className="buffering" role="status">Buffering video…</span>}
-      <CaptionExperience clock={playback.clock} data={data} duration={duration} profile={profile} condition={condition} original={showOriginal} video={video} host={settingsHost} trigger={settingsButton} open={settingsOpen} close={closeSettings} onApply={onApply} annotations={annotations}/>
+      <CaptionExperience clock={playback.clock} data={data} duration={duration} profile={profile} condition={condition} original={showOriginal} video={video} host={settingsHost} trigger={settingsButton} recording={recording} onTelemetry={onTelemetry} open={settingsOpen} close={closeSettings} onApply={onApply} annotations={annotations}/>
       {(showOriginal||condition==="baseline")&&<span className="original-indicator">Original captions</span>}
       <PlayerControls showTicks={showTicks} cues={data?.cues} annotations={annotations} playback={playback} baseline={condition === "baseline"} hasCaptions={!!data?.cues.length} showOriginal={showOriginal} onOriginal={onOriginal} generatedBaseline={data?.generated_with.kind === "source-assisted"} experimental={data?.generated_with.experimental} settingsOpen={settingsOpen} onSettings={settingsAllowed?()=>setSettingsOpen(v=>!v):undefined} settingsButton={settingsButton} />
       <button ref={helpButton} className="shortcut-help-trigger" aria-label="Keyboard shortcuts" onClick={()=>{setSettingsOpen(false);setHelpOpen(true)}}>?</button>

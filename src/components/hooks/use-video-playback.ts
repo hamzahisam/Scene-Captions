@@ -27,7 +27,7 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
   useEffect(() => {
     if (seekTo && video.current && ready) {
       const target = Math.min(duration, Math.max(0, seekTo.seconds));
-      video.current.currentTime = target;
+      pendingSeek.current={method:"jump",from:video.current.currentTime};video.current.currentTime = target;
       clock.set(target);setTime(target);
       onTime(target);
     }
@@ -42,10 +42,11 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
     if (!el.paused) { el.pause(); return; }
     try { await el.play(); setError(""); } catch { setError("Playback could not start. Choose a compatible MP4 video or try again."); }
   }
-  function seek(seconds: number) {
+  const pendingSeek=useRef<{method:"scrub"|"keyboard"|"jump"|"sound-navigation";from:number}|null>(null);
+  function seek(seconds: number,method:"scrub"|"keyboard"|"jump"|"sound-navigation"="scrub") {
     if (video.current) {
       const target = Math.min(duration, Math.max(0, seconds));
-      video.current.currentTime = target;
+      pendingSeek.current={method,from:video.current.currentTime};video.current.currentTime = target;
       // Keep the controlled slider current during the render that ends a preview.
       // Waiting for seeked can restore its old value before the next input event.
       clock.set(target);setTime(target);
@@ -57,15 +58,19 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
     onLoadedMetadata() { if (video.current) { clock.set(video.current.currentTime); setDuration(video.current.duration); setReady(true); setError(""); } },
     onTimeUpdate() { if (video.current) { onTime(video.current.currentTime); } },
     onPlay() { setPlaying(true); onEvent({ type: "play", video_s: video.current?.currentTime || 0 }); },
-    onPause() { setPlaying(false); onEvent({ type: "pause", video_s: video.current?.currentTime || 0 }); },
-    onSeeked() { const seconds = video.current?.currentTime || 0; clock.set(seconds);setTime(seconds); onTime(seconds); onEvent({ type: "seek", video_s: seconds }); },
+    onPause() { setPlaying(false); onEvent({ type: "pause", video_s: video.current?.currentTime || 0,source:video.current?.ended?"system":"participant" }); },
+    onRateChange(){if(video.current)onEvent({type:"rate",video_s:video.current.currentTime,value:video.current.playbackRate})},
+    onVolumeChange(){if(video.current){setMuted(video.current.muted);onEvent({type:"mute",video_s:video.current.currentTime,muted:video.current.muted})}},
+    onSeeked() { const seconds = video.current?.currentTime || 0; clock.set(seconds);setTime(seconds); onTime(seconds); onEvent({ type: "seek", video_s: seconds,method:pendingSeek.current?.method||"scrub",from_s:pendingSeek.current?.from??seconds });pendingSeek.current=null; },
     onWaiting() { setWaiting(true); },
     onCanPlay() { setWaiting(false); },
-    onError() { setError("The video could not load. Check your connection and try again."); },
+    onError() { const message="The video could not load. Check your connection and try again.";setError(message);onEvent({type:"error",video_s:video.current?.currentTime||0,message,source:"system"}); },
 
   };
   function toggleMute() { if (video.current) { video.current.muted = !muted; setMuted(!muted); } }
   function changeRate(value: number) { setPlaybackRate(value); if (video.current) video.current.playbackRate = value; }
+  const eventCallback=useRef(onEvent);eventCallback.current=onEvent;
+  useEffect(()=>{let prior=false;const change=()=>{const enabled=document.fullscreenElement===frame.current||document.fullscreenElement===video.current;if(enabled!==prior){eventCallback.current({type:"fullscreen",video_s:video.current?.currentTime||0,enabled,source:"participant"});prior=enabled}};const begin=()=>eventCallback.current({type:"fullscreen",video_s:video.current?.currentTime||0,enabled:true}),end=()=>eventCallback.current({type:"fullscreen",video_s:video.current?.currentTime||0,enabled:false});const el=video.current;document.addEventListener("fullscreenchange",change);el?.addEventListener("webkitbeginfullscreen",begin);el?.addEventListener("webkitendfullscreen",end);return()=>{document.removeEventListener("fullscreenchange",change);el?.removeEventListener("webkitbeginfullscreen",begin);el?.removeEventListener("webkitendfullscreen",end)}},[]);
   async function fullscreen() {
     try {
       await toggleFullscreen(frame.current,video.current);

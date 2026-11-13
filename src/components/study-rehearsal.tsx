@@ -1,30 +1,7 @@
 "use client";
-import { useState } from "react";
-import { RehearsalRatings } from "./rehearsal-ratings";
-import { rehearsalSnapshot } from "@/lib/session";
-import type { RecordedEvent } from "@/lib/session";
-import type { CaptionProfile, CaptionVideo, Condition } from "@/lib/captions";
-import { Icon } from "./icon";
-type RehearsalProps = { active: boolean; events: RecordedEvent[]; onStart: () => void; onStop: () => void; data: CaptionVideo | null; condition: Condition; profile: CaptionProfile; startedAt: number | null; sessionId: string; showOriginal: boolean; stoppedElapsed: number | null };
-
-export function StudyRehearsal(props: RehearsalProps) {
-  const { active, data, onStart, startedAt } = props;
-  const [consent, setConsent] = useState(false);
-  return <section className="rehearsal card" aria-labelledby="rehearsal-title"><div className="section-title"><div><span className="eyebrow">PREPARE FOR THE STUDY</span><h2 id="rehearsal-title">Try a study session</h2><p>Check the flow before inviting participants.</p></div><span className={`status-pill ${active ? "recording" : ""}`}>{active ? "Recording locally" : "Recording off"}</span></div>
-    <p className="rehearsal-warning">Rehearsal only. This is not formal research consent or an approved participant study. Events stay in this page’s memory; leaving this page or reloading clears them.</p>
-    {startedAt === null && <><label className="consent"><input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />I agree to record this demo’s player interactions locally.</label><button className="primary-button" disabled={!consent || !data} onClick={onStart}>Start rehearsal <Icon name="arrow" size={17} /></button>{!data && <p>Add caption data before starting a rehearsal.</p>}</>}
-    {startedAt !== null && <RehearsalSession {...props} />}
-  </section>;
-}
-
-function RehearsalSession({ active, events, onStart, onStop, data, condition, profile, startedAt, sessionId, showOriginal, stoppedElapsed }: RehearsalProps) {
-  const [ratings, setRatings] = useState<Record<string, number>>({}); const [note, setNote] = useState(""); const [message, setMessage] = useState("");
-  function download() {
-    const payload = rehearsalSnapshot({ data, condition, profile, showOriginal, startedAt, stoppedElapsed, sessionId, events, ratings, note }, performance.now());
-    const url = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" })); const a = document.createElement("a"); a.href = url; a.download = `scenecaptions-rehearsal-${sessionId}.json`; a.click(); URL.revokeObjectURL(url); setMessage("Rehearsal exported to your downloads. It has not been uploaded.");
-  }
-  return <>
-    <><div className="session-line"><span>Session <strong>{sessionId}</strong></span><span>{events.length} events recorded{events.length >= 3000 ? " · limit reached; export this session" : ""}</span></div><RehearsalRatings ratings={ratings} onRate={(key, value) => setRatings({ ...ratings, [key]: value })} /><label htmlFor="study-note" className="field-label">What felt clear or confusing? <span>(optional)</span></label><textarea id="study-note" value={note} maxLength={2000} onChange={(e) => setNote(e.target.value)} placeholder="Do not enter names or contact information…" rows={3} /><div className="session-actions">{active && <button className="secondary-button" onClick={onStop}>Stop recording</button>}<button className="primary-button" onClick={download}><Icon name="download" size={17} />Export rehearsal JSON</button></div><p className="helper-text">Unanswered ratings remain missing. These are custom, exploratory questions, not a validated workload scale.</p></>
-    {message && <p role="status" className="success-message">{message}</p>}
-  </>;
-}
+import {useState,useSyncExternalStore} from 'react';import type {TelemetryRecorder} from '@/lib/telemetry-storage';import {eventCsv,summaryCsv} from '@/lib/telemetry';import {download} from './captune/storage';import {ratingQuestions} from '@/lib/experiment';
+export function StudyRehearsal({recorder,error,onStart,onStop}:{recorder:TelemetryRecorder|null;error?:string;onStart:()=>void;onStop:()=>void}){const [consent,setConsent]=useState(false);useSyncExternalStore(recorder?.subscribe||(()=>()=>{}),recorder?.snapshot||(()=>0),()=>0);if(!recorder)return <p role="alert">{error||'Preparing local recorder…'}</p>;
+const name=`scenecaptions-${recorder.context.participant_id||'technical'}-${recorder.context.session_id}`;
+return <section className="rehearsal card"><h2>Local technical rehearsal</h2><p>This is not formal research consent or an approved participant study. Data is saved only in this browser; export it before changing device or clearing browser storage.</p>{recorder.resumed&&<p role="status">Resumed saved local recording after reload.</p>}{recorder.error&&<p role="alert" className="inline-error">{recorder.error}</p>}<p>{recorder.events.length} events · {recorder.recording?'Recording locally':'Recording off'}</p>{!recorder.recording&&<><label><input type="checkbox" checked={consent} onChange={e=>setConsent(e.target.checked)}/>I agree to record this technical rehearsal locally.</label><button disabled={!consent||!!recorder.error} onClick={onStart}>Start rehearsal</button></>}{recorder.recording&&<button onClick={onStop}>Stop recording</button>}
+<fieldset><legend>Exploratory end-of-video ratings</legend>{ratingQuestions.map(q=><label key={q.key}>{q.label}<select value={recorder.answers[q.key]??''} onChange={e=>{const value=e.target.value?Number(e.target.value):null;recorder.setAnswer(q.key,value);recorder.append({type:'survey',item:q.key,value,response_ms:0,video_s:recorder.events.at(-1)?.video_s||0})}}><option value="">Unanswered</option>{[1,2,3,4,5,6,7].map(n=><option key={n} value={n}>{n}</option>)}</select></label>)}</fieldset><label>Researcher note (no names or contact details)<textarea value={recorder.note} maxLength={2000} onChange={e=>recorder.setNote(e.target.value)}/></label>
+<button onClick={()=>download(`${name}.json`,recorder.export())}>Export full JSON</button><button onClick={()=>download(`${name}-events.csv`,eventCsv(recorder.events))}>Export events CSV</button><button onClick={()=>download(`${name}-summary.csv`,summaryCsv(recorder.context,recorder.events))}>Export summary CSV</button></section>}

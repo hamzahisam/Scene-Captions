@@ -1,22 +1,21 @@
 import { z } from "zod";
 import { profileSchema } from "./captions.ts";
 import type { CaptionVideo, CaptionProfile, Condition } from "./captions.ts";
-const eventSchema = z.discriminatedUnion("type", [
-  z.object({ type: z.literal("play"), video_s: z.number() }),
-  z.object({ type: z.literal("pause"), video_s: z.number() }),
-  z.object({ type: z.literal("seek"), video_s: z.number() }),
+const baseEventSchema = z.discriminatedUnion("type", [
+  z.object({ type: z.literal("play"), video_s: z.number(),source:z.enum(["participant","system","researcher"]).optional() }),
+  z.object({ type: z.literal("pause"), video_s: z.number(),source:z.enum(["participant","system","researcher"]).optional() }),
+  z.object({ type: z.literal("seek"), video_s: z.number(),method:z.enum(["scrub","keyboard","jump","sound-navigation"]).optional(),from_s:z.number().optional() }),
   z.object({ type: z.literal("profile"), video_s: z.number(), profile: profileSchema }),
-  z.object({ type: z.literal("original"), video_s: z.number(), enabled: z.boolean() }),
+  z.object({ type: z.literal("original"), video_s: z.number(), enabled: z.boolean(),mode:z.enum(["toggle","hold"]).optional() }),
   z.object({ type: z.literal("condition"), video_s: z.number(), condition: z.enum(["baseline", "personalized"]) }),
   z.object({ type: z.literal("preview"), video_s: z.number(), profile: profileSchema.optional(), cue_id: z.string().optional() }),
   z.object({ type: z.literal("preview_end"), video_s: z.number() }),
 ]);
-export type StudyEvent = z.infer<typeof eventSchema>;
+const eventSchema=z.union([baseEventSchema,z.object({type:z.literal("rate"),video_s:z.number(),value:z.number()}),z.object({type:z.literal("mute"),video_s:z.number(),muted:z.boolean()}),z.object({type:z.literal("fullscreen"),video_s:z.number(),enabled:z.boolean()}),z.object({type:z.literal("error"),video_s:z.number(),message:z.string()})]);
+export type StudyEvent = z.infer<typeof eventSchema> & {source?:"participant"|"system"|"researcher"};
 export type RecordedEvent = StudyEvent & { elapsed_ms: number };
-const MAX_EVENTS = 3000;
 export function appendEvent(events: RecordedEvent[], event: StudyEvent, elapsed_ms: number): RecordedEvent[] {
   const valid = eventSchema.parse(event);
-  if (events.length >= MAX_EVENTS) return events;
   return [...events, { ...valid, elapsed_ms: Math.max(0, Math.round(elapsed_ms)) }];
 }
 
