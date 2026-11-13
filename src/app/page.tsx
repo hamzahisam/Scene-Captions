@@ -1,3 +1,5 @@
+import soarQuestions from "../../data/study/soar-questions.json";
+import {questionFileSchema} from "@/lib/study-surveys";
 import bunnyAnnotations from "../../data/cue-annotations/big-buck-bunny.json";
 import sintelAnnotations from "../../data/cue-annotations/sintel.json";
 import tearsAnnotations from "../../data/cue-annotations/tears-of-steel.json";
@@ -36,5 +38,5 @@ export default function Home() {
     { data: videoSchema.parse(soar), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/soar.mp4", poster: "/media/soar-poster.jpg", credit: "Alyce Tzue · TheCGBros" },
     { data: videoSchema.parse(hairLove), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/hair-love.mp4", poster: "/media/hair-love-poster.jpg", credit: "Sony Pictures Animation · 2019" },
   ];
-  return <><Header /><ScreeningRoom films={films.map(film=>({...film,annotations:validateAnnotations(film.sourceAssistedData||film.data,({"big-buck-bunny":bunnyAnnotations,"sintel":sintelAnnotations,"tears-of-steel":tearsAnnotations,"soar":soarAnnotations,"hair-love":hairAnnotations})[film.data.video_id as "big-buck-bunny"])}))} /></>;
+  return <><Header /><ScreeningRoom films={films.map(film=>({...film,questions:film.data.video_id==="soar"?questionFileSchema.parse(soarQuestions):undefined,annotations:validateAnnotations(film.sourceAssistedData||film.data,({"big-buck-bunny":bunnyAnnotations,"sintel":sintelAnnotations,"tears-of-steel":tearsAnnotations,"soar":soarAnnotations,"hair-love":hairAnnotations})[film.data.video_id as "big-buck-bunny"])}))} /></>;
 }

@@ -1,5 +1,16 @@
 # SceneCaptions
 
+## Local DHH upgrade (13 November 2026)
+
+Branch `dhh-ux-upgrade` adds in-frame caption settings, reading-pace adaptation,
+sound-type sidecars, appearance/keyboard/fullscreen accessibility, and local
+`/session` setup with reproducible allocation, persistent telemetry and optional
+checkpoints/instruments. No push or deployment is authorized for this upgrade.
+Prepared caption files remain unchanged. See the [upgrade report and manual
+checklist](docs/verification/dhh-ux-2026-11-13/README.md) and current project state.
+Older preview/sidebar/memory-only descriptions below are historical.
+
+
 Adaptive non-speech captions for Deaf and hard-of-hearing (DHH) viewers of long-form video.
 
 ## Creator-anchored workflow (3 November 2026)

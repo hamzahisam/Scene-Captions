@@ -1,6 +1,6 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';import type {TelemetryInput} from '@/lib/telemetry';
-export type CaptionExposure={cue_id:string;cue_type:'sound'|'dialogue';displayed_level:number|'original';adapted:boolean;rule:string;text:string};
+export type CaptionExposure={sample?:boolean;cue_id:string;cue_type:'sound'|'dialogue';displayed_level:number|'original';adapted:boolean;rule:string;text:string};
 export function useCaptionExposure(records:CaptionExposure[],time:number,enabled:boolean,onEvent:(e:TelemetryInput)=>void){
  const key=JSON.stringify(records),last=useRef<Map<string,CaptionExposure>>(new Map()),latest=useRef({time,onEvent});latest.current={time,onEvent};const [visible,setVisible]=useState(true);
  useEffect(()=>{const change=()=>setVisible(document.visibilityState==='visible');change();document.addEventListener('visibilitychange',change);return()=>document.removeEventListener('visibilitychange',change)},[]);

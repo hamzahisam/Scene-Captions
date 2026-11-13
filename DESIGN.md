@@ -9,3 +9,9 @@ Reuse the CSS variables in src/app/globals.css for color, borders, type and surf
 Caption readability, visible keyboard focus, original-caption override and explanatory disclosure outrank decorative effects. Playback controls are always visible. Readability controls exist in both conditions. Sound cues are also available as a navigable text timeline. No animation is needed to understand the interface; reduced-motion preferences disable transitions and smooth scrolling.
 
 Demo notes must remain visible until verified study material replaces the illustrative cues. Rehearsal recording stays opt-in, local and separate from actual approved study consent.
+
+## DHH upgrade — 13 November 2026
+
+The current viewer uses a single-column film surface. CC opens caption settings inside the fullscreen boundary; narrow layouts place the panel below the picture. Amount, punctuation and appearance are independent. Changes apply immediately; a labelled sample stays in place without a seek or pause. Research controls and future sound text are in a collapsed drawer and hidden in study mode. Original supports click and temporary hold comparison.
+
+Caption size follows the player container, with reserved space for wrapped transport controls. Sound type uses glyphs/shapes alongside colour. Preset backdrops preserve contrast; outline mode explicitly cannot guarantee it against every picture. Existing palette and visible controls remain. No new font is bundled. These supersede the older sidebar/draft-preview descriptions above.

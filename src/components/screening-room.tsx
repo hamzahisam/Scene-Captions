@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
 import type { CaptionVideo } from "@/lib/captions";
+import type {QuestionFile} from "@/lib/study-surveys";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import {useStudySession} from "./study-context";
 import { Workspace } from "./workspace";
 
-export type ScreeningFilm = { data: CaptionVideo; sourceAssistedData?: CaptionVideo; source: string; poster: string; credit: string; annotations?:CueAnnotations };
+export type ScreeningFilm = { data: CaptionVideo; sourceAssistedData?: CaptionVideo; source: string; poster: string; credit: string; annotations?:CueAnnotations;questions?:QuestionFile };
 export function ScreeningRoom({ films }: { films: ScreeningFilm[] }) {
   const [selected, setSelected] = useState(films[0].data.video_id);
   const [locked, setLocked] = useState(false);
@@ -21,7 +22,7 @@ export function ScreeningRoom({ films }: { films: ScreeningFilm[] }) {
       </select>
       {locked && <p role="status">Film selection stays fixed after a rehearsal starts. Export, then reload to choose another.</p>}
     </section>}
-    <Workspace session={session||undefined} annotations={film.annotations} key={`${session?.id||"demo"}-${session?.sequenceIndex||0}-${film.data.video_id}`} initialVideo={film.data} sourceAssistedVideo={film.sourceAssistedData} demoSource={film.source} demoPoster={film.poster} demoCredit={film.credit} onMediaLockChange={setLocked} />
+    <Workspace questions={film.questions} session={session||undefined} annotations={film.annotations} key={`${session?.id||"demo"}-${session?.sequenceIndex||0}-${film.data.video_id}`} initialVideo={film.data} sourceAssistedVideo={film.sourceAssistedData} demoSource={film.source} demoPoster={film.poster} demoCredit={film.credit} onMediaLockChange={setLocked} />
     {session&&<details className="researcher-exit"><summary>Researcher controls</summary><button onClick={study.leave}>Leave study mode</button></details>}
   </>;
 }

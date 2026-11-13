@@ -24,9 +24,11 @@ _Avoid_: Calling cue density measured scene complexity or cognitive load.
 
 **Baseline condition**: Viewing with the same fixed original non-speech captions throughout.
 
-**Personalized condition**: Viewing with a saved caption profile, optional scene adaptation, preview and original-caption override.
+**Personalized condition**: Viewing with a saved caption profile, optional bounded adaptation, in-place samples and original-caption override.
 
-**Preview**: A candidate caption shown before preferences are applied to the viewing experience.
+**Sample**: A labelled current/past caption shown in place while settings are open and no live sound cue is active. Before any cue has played, the first cue is the explicit sample. It never seeks or pauses the film. Sample exposure is distinguished from story exposure.
+
+**Preview (historical)**: An unapplied candidate or seeking preview used before the November 2026 upgrade; removed from the main viewer.
 
 **On-video preview**: A temporary display of draft caption preferences in the player that returns to the saved preferences without applying the draft. Original-caption override remains authoritative.
 
@@ -76,3 +78,15 @@ Dialogue is protected separately. Original-caption override remains available.
 immediately. Cue preview pauses briefly to inspect the already applied setting;
 it no longer represents an unsaved draft requiring Apply. Earlier preview
 entries above describe the historical interaction.
+
+## DHH upgrade terms — 13 November 2026
+
+**Punctuation style**: None, Full stop or Exclamation inside main-viewer sound captions. This is separate from detail and does not establish sound loudness or semantic expressiveness. The lab retains its distinct semantic scale.
+
+**Reading pace**: A configurable characters-per-second bound for choosing existing prepared wording. It is not a measurement of a participant's ability or a universal DHH comfort threshold.
+
+**Reading-rate adaptation**: Selecting the greatest prepared detail within the viewer's maximum whose text fits the cue duration and chosen pace. A density reduction can lower it further; timing never changes. When Essential still exceeds the cap, it is retained and flagged.
+
+**Study session**: A locally saved pseudonymous assignment and sequence with configurable group defaults and instruments. Setup acknowledgement and technical recording are not formal research consent.
+
+**Caption exposure**: A recorded shown/hidden caption, with actual text, cue, level, adaptation rule and source. Samples have a separate flag; missing survey responses remain null.

@@ -917,3 +917,19 @@ suppression or mandatory top-right placement based on their recommendations.
 Research claims require primary-source checks and actual participant outcomes.
 See docs/research/RESEARCH_DIRECTIONS_REVIEW_2026-11-03.md. Current changes remain
 local and unpublished until a user publication request.
+
+DHH UX AND STUDY UPGRADE (13 November 2026)
+The user authorized local work on dhh-ux-upgrade only. Main-viewer settings
+share one validated profile hook; prepared data/provenance stay immutable.
+Sidecars own heuristic sound/speaker annotations. A frame-driven external
+clock isolates caption rendering from Workspace. Container and native-video
+fullscreen use one text-track fallback; physical iPhone validation is pending.
+Study setup/assignment and typed v2 telemetry persist only in this browser,
+with participant/session-scoped profiles, recoverable chunks, explicit storage
+warnings and local exports. This supersedes earlier memory-only/DB proposals.
+Both main and anchored viewers share the recorder; the lab grid/scale remains
+separate by the user's default. No viewing-time inference or participant upload.
+Optional checkpoints interrupt viewing and require frozen timestamps; group
+defaults/instruments are configurable, unapproved research preparation.
+See docs/verification/dhh-ux-2026-11-13/README.md and PROJECT_STATE.md for
+checks, decision defaults, stale maps and the remaining manual checklist.

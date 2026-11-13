@@ -1,0 +1,15 @@
+{
+  "film_id": "soar",
+  "questions": [
+    {
+      "id": "example-only",
+      "at": 60,
+      "prompt": "[Team supplies a reviewed comprehension question here]",
+      "choices": [
+        {"id": "a", "label": "[Team supplies option A]"},
+        {"id": "b", "label": "[Team supplies option B]"}
+      ],
+      "example": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-13",
+  "branch": "dhh-ux-upgrade",
+  "baseline_tests": 53,
+  "final_tests": 69,
+  "typecheck": "passed",
+  "tests": "passed",
+  "production_build": "passed",
+  "protected_caption_data_changes": [],
+  "protected_hash_note": "The separately authorized experimental-plan.md documentation update is excluded.",
+  "browser": "Installed Chrome via existing isolated Playwright runtime",
+  "data": "Synthetic only; browser evidence is technical verification, not study validation",
+  "manual_pending": [
+    "Safari and Firefox",
+    "Physical iPhone fullscreen",
+    "VoiceOver and NVDA",
+    "20\u201330 minute playback soak",
+    "DHH and researcher material review"
+  ]
+}

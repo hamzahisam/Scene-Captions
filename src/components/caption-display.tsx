@@ -9,7 +9,7 @@ type Selected = ReturnType<typeof resolveCaption>;
 
 export function useCaptionDisplay(data: CaptionVideo | null, duration: number, time: number, profile: CaptionProfile, condition: Condition, showOriginal: boolean) {
   const mismatch = !!data && duration > 0 && Math.abs(duration - data.duration_seconds) > 2;
-  const cues = data && !mismatch ? activeCues(data.cues, time) : [];
+  const cues = data && duration>0 && !mismatch ? activeCues(data.cues, time) : [];
   const nextCue = data && !mismatch ? data.cues.find(cue => cue.start_s > time) : undefined;
   const active = cues.map(cue => resolveCaption(cue, profile, condition, showOriginal));
   return { mismatch, cues, nextCue, active };

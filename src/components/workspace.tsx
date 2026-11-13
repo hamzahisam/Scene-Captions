@@ -1,5 +1,6 @@
 "use client";
 import {profileNamespace,sessionDefaults} from "@/lib/study-session";
+import type {QuestionFile} from "@/lib/study-surveys";
 import type {StudySession} from "@/lib/study-session";
 import {PROFILE_KEY} from "@/lib/profile";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -14,12 +15,12 @@ import type {CueAnnotations} from "@/lib/cue-annotations";
 import { Icon } from "./icon";
 
 
-export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoPoster = "/media/bunny-poster.jpg", demoCredit = "Blender Foundation · 2008", onMediaLockChange, annotations,session }: { initialVideo: CaptionVideo; sourceAssistedVideo?: CaptionVideo; demoSource: string; demoPoster?: string; demoCredit?: string; session?:StudySession; annotations?:CueAnnotations; onMediaLockChange?: (locked: boolean) => void }) {
+export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoPoster = "/media/bunny-poster.jpg", demoCredit = "Blender Foundation · 2008", onMediaLockChange, annotations,session,questions }: { initialVideo: CaptionVideo; sourceAssistedVideo?: CaptionVideo; demoSource: string; demoPoster?: string; demoCredit?: string; questions?:QuestionFile;session?:StudySession; annotations?:CueAnnotations; onMediaLockChange?: (locked: boolean) => void }) {
   const {profile, update: setProfile, storageError} = useCaptionProfile(session?profileNamespace(session):PROFILE_KEY,session?sessionDefaults(session):undefined);
   const [manualCondition, setCondition] = useState<Condition>("personalized"); const [showOriginal, setShowOriginal] = useState(false);
   const assigned=session?.sequence[session.sequenceIndex].condition;
   const condition:Condition=session?(assigned==="baseline"?"baseline":"personalized"):manualCondition;
-  const [seekTo, setSeekTo] = useState<{ seconds: number; nonce: number } | null>(null);
+  const [seekTo, setSeekTo] = useState<{ seconds: number; nonce: number;source?:"participant"|"system"|"researcher" } | null>(null);
   const [notice, setNotice] = useState("");
   const data = sourceAssistedVideo ?? initialVideo; const source=demoSource;
   const rehearsal = useRehearsal({filmId:data.video_id,session});
@@ -27,10 +28,10 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   const currentTime = useRef(0); const seekNonce = useRef(0);
   useEffect(() => { onMediaLockChange?.(startedAt !== null); }, [startedAt, onMediaLockChange]);
   const updateTime = useCallback((seconds: number) => { currentTime.current = seconds; rehearsal.setVideoTime(seconds); }, [rehearsal.setVideoTime]);
-  useEffect(()=>{if(rehearsal.recorder?.resumed&&rehearsal.recorder.resumePosition>0)setSeekTo({seconds:rehearsal.recorder.resumePosition,nonce:++seekNonce.current})},[rehearsal.recorder]);
+  useEffect(()=>{if(rehearsal.recorder?.resumed&&rehearsal.recorder.resumePosition>0)setSeekTo({seconds:rehearsal.recorder.resumePosition,nonce:++seekNonce.current,source:"system"})},[rehearsal.recorder]);
   function apply(next: CaptionProfile) { const previous=profile; setProfile(next); for(const field of Object.keys(next) as (keyof CaptionProfile)[])if(previous[field]!==next[field])rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field,from:previous[field],to:next[field]}); setNotice("Caption preferences saved."); }
   function original(value?: boolean,mode:"hold"|"toggle"="toggle") { const enabled = value ?? !showOriginal; setShowOriginal(enabled); record({ type: "original", video_s: currentTime.current, enabled,mode }); }
-  function changeCondition(next: Condition) { setCondition(next); setShowOriginal(false); record({ type: "condition", video_s: currentTime.current, condition: next }); record({ type: "original", video_s: currentTime.current, enabled: false }); }
+  function changeCondition(next: Condition) { rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field:"condition",from:condition,to:next,source:"researcher"});setCondition(next); setShowOriginal(false); record({ type: "condition", video_s: currentTime.current, condition: next }); record({ type: "original", video_s: currentTime.current, enabled: false,source:"system" }); }
   function jump(seconds: number) { setSeekTo({ seconds, nonce: ++seekNonce.current }); }
   const time=currentTime.current; const renders=useRef(0);renders.current++;
   const captionSource = data?.generated_with.caption_source;
@@ -38,7 +39,7 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   return <main data-render-count={process.env.NODE_ENV==="development"?renders.current:undefined} id="main" className="workspace">
     <RecorderStatus recorder={rehearsal.recorder} error={rehearsal.error}/>
     <div className="watch-layout"><section className="watch-column" aria-label="Video workspace"><div className="watch-heading"><h1>{data.title}<small>{demoCredit}</small></h1></div>
-      <VideoPlayer recording={recording} onTelemetry={rehearsal.telemetry} settingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
+      <VideoPlayer session={session} recorder={rehearsal.recorder} questions={questions} recording={recording} onTelemetry={rehearsal.telemetry} settingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
       <div className="film-footnote"><Icon name="leaf" size={16}/><span>{initialVideo.title} · {demoCredit}</span><a href="#media-credits">Credits</a></div>
     </section></div>
     {!session&&<details className="research-tools"><summary>Research tools {recording&&<span className="status-pill recording">Recording locally</span>}</summary>

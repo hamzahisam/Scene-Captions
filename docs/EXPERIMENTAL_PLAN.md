@@ -1,5 +1,16 @@
 # SceneCaptions — Experimental plan
 
+## DHH upgrade procedure — 13 November 2026 (supersedes older interface details)
+
+The current local implementation uses one Amount control, separate punctuation, and configurable reading pace (15/17/20 characters per second). Adaptation selects the highest prepared detail within the viewer’s maximum that fits the cue duration; the retained density proxy may reduce it further. Essential is retained and flagged when no variant fits. Timings are never extended. Settings apply immediately; an in-place sample does not seek or pause. Original supports toggle and hold comparison.
+
+Researcher `/session` setup freezes film/condition order, participant code, group, reading pace, sound-position ticks, instruments and optional narrative-boundary checkpoints. Participant groups and study approval remain undecided. Primary between-participants allocation uses seeded, stratified permuted blocks of four; two-condition pilots cross film/condition order in four sequences; three-condition pilots use six Williams sequences with distinct films. A Latin square is not used for between-participants allocation.
+
+Checkpoints pause the film for one effort item and optionally a team-authored comprehension question with Unsure. Identical film timestamps must be used across conditions; pauses may affect immersion and comprehension and must be reported. The example question is never shown. End instruments are configurable: adult exploratory 7-point items and Raw NASA-TLX (six unweighted 0–100 subscales), or up to three labelled 5-point pictorial child items. These adapted child items are not a validated Smileyometer. Skips are missing, not zero; question response times include time since the prompt first appeared and can include reload/visibility interruptions. Optional sign-language clips are served locally.
+
+Typed local telemetry records assignment, build SHA, event source and time, exact displayed captions and adaptation, seek method, settings and survey responses. Chunked browser storage supports resume and explicit quota warnings, with JSON/event-CSV/summary-CSV export. No participant data is uploaded. Technical rehearsal wording is not formal research consent. Freeze the manipulation, checkpoints, instruments and analysis plan before recruitment.
+
+
 Phase 1 proposal · revised 26 October 2026
 
 ## Research question
