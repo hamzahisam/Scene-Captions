@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {adjacentSound,densityBins} from '../src/lib/sound-navigation.ts';
+test('sound navigation seeks before cues and does not get stuck at its own target',()=>{const cues=[{start_s:2},{start_s:6},{start_s:9}];assert.equal(adjacentSound(cues,0,'next'),1.5);assert.equal(adjacentSound(cues,1.5,'next'),5.5);assert.equal(adjacentSound(cues,5.5,'previous'),1.5);assert.equal(adjacentSound(cues,0,'previous'),null);assert.deepEqual(densityBins(cues,10),[{start:0,count:1},{start:5,count:2}]);});
