@@ -4,9 +4,8 @@ import type { KeyboardEvent } from "react";
 import type { CaptionProfile } from "@/lib/captions";
 import type { StudyEvent } from "@/lib/session";
 
-export function useVideoPlayback({ source, seekTo, previewProfile, onPreviewEnd, onTime, onEvent }: {
+export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
   source: string; seekTo: { seconds: number; nonce: number } | null;
-  previewProfile: CaptionProfile | null; onPreviewEnd: () => void;
   onTime: (seconds: number) => void; onEvent: (event: StudyEvent) => void;
 }) {
   const video = useRef<HTMLVideoElement>(null); const frame = useRef<HTMLDivElement>(null);
@@ -30,20 +29,12 @@ export function useVideoPlayback({ source, seekTo, previewProfile, onPreviewEnd,
       onTime(target);
     }
   }, [seekTo, ready, duration, onTime]);
-  useEffect(() => {
-    if (!previewProfile || !ready) return;
-    video.current?.pause();
-    const timer = window.setTimeout(onPreviewEnd, 5000);
-    return () => window.clearTimeout(timer);
-  }, [previewProfile, ready, onPreviewEnd]);
   async function toggle() {
     const el = video.current; if (!el) return;
-    if (previewProfile) onPreviewEnd();
     if (!el.paused) { el.pause(); return; }
     try { await el.play(); setError(""); } catch { setError("Playback could not start. Choose a compatible MP4 video or try again."); }
   }
   function seek(seconds: number) {
-    if (previewProfile) onPreviewEnd();
     if (video.current) {
       const target = Math.min(duration, Math.max(0, seconds));
       video.current.currentTime = target;
@@ -64,7 +55,6 @@ export function useVideoPlayback({ source, seekTo, previewProfile, onPreviewEnd,
     onCanPlay() { setWaiting(false); },
     onError() { setError("The video could not load. Run npm run setup:demo for the sample, or open your own MP4 below."); },
     onKeyDown(event: KeyboardEvent<HTMLVideoElement>) {
-      if (event.key === "Escape" && previewProfile) { event.preventDefault(); onPreviewEnd(); }
       if (event.key === " " || event.key === "k") { event.preventDefault(); void toggle(); }
       if (event.key === "ArrowRight") { event.preventDefault(); seek((video.current?.currentTime || 0) + 5); }
       if (event.key === "ArrowLeft") { event.preventDefault(); seek((video.current?.currentTime || 0) - 5); }

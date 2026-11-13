@@ -7,3 +7,11 @@ test('profile storage validates malformed values and keeps detail independent of
  const punctuation=changeProfileField(changed,'expression',2);assert.equal(punctuation.detail,3);assert.equal(punctuation.expression,2);
  assert.deepEqual(loadProfile(JSON.stringify(changed)),changed);
 });
+import {captionSample} from '../src/lib/caption-sample.ts';
+import {readFileSync} from 'node:fs';
+test('sample uses current or most recent past cue, never the next cue in a gap',()=>{
+ const cues=JSON.parse(readFileSync('data/source-assisted-captions/soar.json','utf8')).cues;
+ assert.equal(captionSample(cues,12)?.cue_id,cues.filter((c:{start_s:number})=>c.start_s<=12).at(-1).cue_id);
+ assert.equal(captionSample(cues,-1)?.cue_id,cues[0].cue_id);
+ assert.equal(captionSample([],12),undefined);
+});

@@ -21,11 +21,12 @@ export function useCaptionDisplay(data: CaptionVideo | null, duration: number, t
   return { mismatch, cues, nextCue, active };
 }
 
-export function CaptionOverlay({ active, cues, profile, dialogue = [] }: { active: Selected[]; cues: CaptionCue[]; profile: CaptionProfile; dialogue?: { cue_id: string; text: string }[] }) {
+export function CaptionOverlay({ active, cues, profile, dialogue = [], sample=false }: { active: Selected[]; cues: CaptionCue[]; profile: CaptionProfile; sample?:boolean; dialogue?: { cue_id: string; text: string }[] }) {
   if (!active.length && !dialogue.length) return null;
-  return <div className={`caption-overlay ${profile.position} ${profile.size}`} aria-label="Captions">
+  return <div className={`caption-overlay ${profile.position} ${profile.size} ${sample?"caption-sample":""}`} aria-label="Captions">
+    {sample&&<span className="sample-label">Sample</span>}
     {!!dialogue.length && <div className="dialogue-lines" aria-label="Dialogue subtitles">{dialogue.map(cue => <p key={cue.cue_id}>{cue.text}</p>)}</div>}
-    {!!active.length && <div className="caption-lines" aria-label="Non-speech captions">{active.map((caption, index) => <p key={cues[index].cue_id}>{caption.text}</p>)}</div>}
+    {!!active.length && <div className="caption-lines" aria-label="Non-speech captions">{active.map((caption, index) => <p key={cues[index].cue_id}>{caption.text}{caption.adapted&&<span className="shortened-marker" aria-label="shortened"> ▿<span className="sr-only"> (shortened)</span></span>}</p>)}</div>}
   </div>;
 }
 
