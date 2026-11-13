@@ -25,7 +25,7 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   function changeCondition(next: Condition) { setCondition(next); setShowOriginal(false); record({ type: "condition", video_s: time, condition: next }); record({ type: "original", video_s: time, enabled: false }); }
   function jump(seconds: number) { setSeekTo({ seconds, nonce: ++seekNonce.current }); }
   const captionSource = data?.generated_with.caption_source;
-  const viewerProfile = data?.generated_with.scene_load_method === "unreviewed" ? { ...profile, adaptive: false } : profile;
+  const viewerProfile = profile;
   return <main id="main" className="workspace">
     <div className="watch-layout"><section className="watch-column" aria-label="Video workspace"><div className="watch-heading"><h1>{data.title}<small>{demoCredit}</small></h1></div>
       <VideoPlayer onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />

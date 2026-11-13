@@ -1,3 +1,4 @@
+import { readingBoundedDetail, readingRate } from "./reading-rate.ts";
 import { z } from "zod";
 
 const LEVELS = [1, 2, 3] as const;
@@ -76,25 +77,28 @@ export const profileSchema = z.object({
   detail: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   expression: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   adaptive: z.boolean(), representation: z.enum(["descriptive", "plain", "onomatopoeic"]),
+  readingSpeed: z.union([z.literal(15),z.literal(17),z.literal(20)]).default(17),
   size: z.enum(["standard", "large", "extra-large"]), position: z.enum(["bottom", "top"]),
 });
 export type CaptionProfile = z.infer<typeof profileSchema>;
-export const DEFAULT_PROFILE: CaptionProfile = { detail: 2, expression: 2, adaptive: true, representation: "descriptive", size: "large", position: "bottom" };
+export const DEFAULT_PROFILE: CaptionProfile = { detail: 2, expression: 2, adaptive: true, representation: "descriptive", size: "large", position: "bottom", readingSpeed:17 };
 
 export function activeCues(cues: CaptionCue[], seconds: number): CaptionCue[] {
   return cues.filter((cue) => cue.start_s <= seconds && seconds < cue.end_s);
 }
 
 export function resolveCaption(cue: CaptionCue, profile: CaptionProfile, condition: Condition, showOriginal = false) {
-  if (condition === "baseline" || showOriginal) return { text: cue.reference_text ?? cue.original_text, reason: cue.reference_text ? "Fetched reference caption" : "Original caption", adapted: false, detail: profile.detail };
-  const detail: Level = profile.adaptive && cue.scene_load === "dense" ? 1 : profile.detail;
-  const adapted = profile.adaptive && detail !== profile.detail;
-  const text = profile.representation === "plain" ? cue.representations.plain
-    : profile.representation === "onomatopoeic" && cue.representations.onomatopoeic ? cue.representations.onomatopoeic
-      : cue.grid[`${detail}-${profile.expression}`];
-  // The detail-maximum policy only adapts dense cues. Sparse expansion is unreachable.
-  const reason = adapted ? cue.scene_load_basis === "cue-density" ? "Less detail among frequent sound cues" : "Less detail in a busy scene" : "Your saved preferences";
-  return { text, reason: profile.representation !== "descriptive" ? "Your selected sound representation" : reason, adapted: adapted && profile.representation === "descriptive", detail };
+  const duration=cue.end_s-cue.start_s,cap=profile.readingSpeed;
+  const textAt=(detail:Level)=>profile.representation==='plain'?cue.representations.plain:profile.representation==='onomatopoeic'&&cue.representations.onomatopoeic?cue.representations.onomatopoeic:cue.grid[`${detail}-${profile.expression}`];
+  if(condition==='baseline'||showOriginal){const text=cue.reference_text??cue.original_text;return {text,reason:'Original captions',adapted:false,detail:profile.detail,rule:'none',overLimit:readingRate(text,duration)>cap,cps:readingRate(text,duration)};}
+  const bounded=readingBoundedDetail(profile.detail,duration,cap,textAt);
+  const density=profile.adaptive&&cue.scene_load==='dense';
+  const detail:Level=profile.adaptive?Math.min(bounded.detail,density?1:profile.detail) as Level:profile.detail;
+  const text=textAt(detail),read=profile.adaptive&&bounded.detail<profile.detail;
+  const rule=read&&density?'reading-rate+density':read?'reading-rate':density&&detail<profile.detail?'density':'none';
+  const adapted=detail<profile.detail&&text!==textAt(profile.detail);
+  const reason=adapted?(read&&density?'Shorter to fit the available time and closely spaced sounds':read?'Shorter to fit the available time':'Shorter because several sounds occur close together'):'Your sound settings';
+  return {text,reason,adapted,detail,rule,overLimit:readingRate(text,duration)>cap,cps:readingRate(text,duration)};
 }
 
 export function formatTime(seconds: number): string {

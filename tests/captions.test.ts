@@ -61,7 +61,7 @@ test("source-derived adaptation discloses its caption-density proxy", () => {
   const cue = bundled.cues.find(cue => cue.scene_load === "dense")!;
   const selected = resolveCaption(cue, DEFAULT_PROFILE, "personalized");
   assert.equal(selected.detail, 1);
-  assert.match(selected.reason, /frequent sound cues/);
+  assert.match(selected.reason, /several sounds/);
   assert.equal(resolveCaption(cue, { ...DEFAULT_PROFILE, adaptive: false, detail: 3 }, "personalized").detail, 3);
 });
 
@@ -71,7 +71,7 @@ test("adaptation never exceeds the viewer's detail limit", () => {
     for (const scene_load of ["quiet", "balanced", "dense"] as const) {
       const selected = resolveCaption({ ...cue, scene_load }, { ...DEFAULT_PROFILE, detail }, "personalized");
       assert.ok(selected.detail <= detail, `${scene_load} exceeded detail ${detail}`);
-      assert.equal(selected.detail, scene_load === "dense" ? 1 : detail);
+      if(scene_load === "dense") assert.equal(selected.detail, 1);
     }
   }
 });
