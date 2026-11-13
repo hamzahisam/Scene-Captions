@@ -1,4 +1,5 @@
 "use client";
+import { toggleFullscreen } from "@/lib/fullscreen";
 import { useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import type { CaptionProfile } from "@/lib/captions";
@@ -64,8 +65,7 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
   function changeRate(value: number) { setPlaybackRate(value); if (video.current) video.current.playbackRate = value; }
   async function fullscreen() {
     try {
-      if (document.fullscreenElement) await document.exitFullscreen();
-      else await frame.current?.requestFullscreen();
+      await toggleFullscreen(frame.current,video.current);
     } catch { setError("Fullscreen is unavailable in this browser."); }
   }
   return { video, frame, time, duration, playing, muted, error, ready, waiting, playbackRate, events, toggle, seek, toggleMute, changeRate, fullscreen };

@@ -6,6 +6,7 @@ import { PlayerControls } from "./player-controls";
 import { CaptionOverlay, useCaptionDisplay } from "./caption-display";
 import type { CaptionProfile, CaptionVideo, Condition } from "@/lib/captions";
 import type { StudyEvent } from "@/lib/session";
+import { useFullscreenTextTrack } from "./hooks/use-fullscreen-text-track";
 import { captionSample } from "@/lib/caption-sample";
 import { resolveCaption } from "@/lib/captions";
 import { Icon } from "./icon";
@@ -22,6 +23,7 @@ export function VideoPlayer({ source, data, profile, condition, showOriginal, on
   const closeSettings=useCallback(()=>setSettingsOpen(false),[]);
   useEffect(()=>{const el=frame.current;if(!el)return;const resize=new ResizeObserver(()=>setNarrow(el.clientWidth<560&&!document.fullscreenElement));resize.observe(el);const full=()=>setNarrow(el.clientWidth<560&&!document.fullscreenElement);document.addEventListener("fullscreenchange",full);return()=>{resize.disconnect();document.removeEventListener("fullscreenchange",full)}},[frame]);
   const display = useCaptionDisplay(data, duration, time, profile, condition, showOriginal);
+  const nativeFullscreen=useFullscreenTextTrack(video,[...display.cues.map((cue,i)=>({start:cue.start_s,end:cue.end_s,text:display.active[i].text})),...(display.mismatch?[]:data?.dialogue?.filter(c=>c.start_s<=time&&time<c.end_s).map(c=>({start:c.start_s,end:c.end_s,text:c.text}))||[])]);
   const sample=captionSample(data?.cues||[],time);
   const sampleVisible=settingsOpen&&!display.mismatch&&!display.active.length&&!!sample;
   return <>
@@ -32,7 +34,7 @@ export function VideoPlayer({ source, data, profile, condition, showOriginal, on
 
       {!playing && !error && <button className="big-play" onClick={() => void toggle()} disabled={!ready} aria-label={ready ? "Play video" : "Loading video"}><Icon name="play" size={30} /></button>}
       {waiting && playing && <span className="buffering" role="status">Buffering video…</span>}
-      <CaptionOverlay sample={sampleVisible} active={sampleVisible?[resolveCaption(sample!,profile,condition,showOriginal)]:display.active} cues={sampleVisible?[sample!]:display.cues} profile={profile} dialogue={display.mismatch ? [] : data?.dialogue?.filter(cue => cue.start_s <= time && time < cue.end_s)} />
+      {!nativeFullscreen&&<CaptionOverlay sample={sampleVisible} active={sampleVisible?[resolveCaption(sample!,profile,condition,showOriginal)]:display.active} cues={sampleVisible?[sample!]:display.cues} profile={profile} dialogue={display.mismatch ? [] : data?.dialogue?.filter(cue => cue.start_s <= time && time < cue.end_s)} />}
       {(showOriginal||condition==="baseline")&&<span className="original-indicator">Original captions</span>}
       <PlayerControls playback={playback} baseline={condition === "baseline"} hasCaptions={!!data?.cues.length} showOriginal={showOriginal} onOriginal={onOriginal} generatedBaseline={data?.generated_with.kind === "source-assisted"} experimental={data?.generated_with.experimental} settingsOpen={settingsOpen} onSettings={()=>setSettingsOpen(v=>!v)} settingsButton={settingsButton} />
       </div><CaptionSettingsPanel open={settingsOpen} close={closeSettings} trigger={settingsButton} profile={profile} onApply={onApply} data={data} condition={condition} sample={sample} explanation={display.active[0]?.reason||"Changes apply immediately to sound captions."} />
