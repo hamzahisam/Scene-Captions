@@ -1,4 +1,6 @@
 "use client";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { CaptionSettingsPanel } from "./caption-settings-panel";
 import { useVideoPlayback } from "./hooks/use-video-playback";
 import { PlayerControls } from "./player-controls";
 import { CaptionOverlay, CaptionFeedback, useCaptionDisplay } from "./caption-display";
@@ -6,18 +8,21 @@ import type { CaptionProfile, CaptionVideo, Condition } from "@/lib/captions";
 import type { StudyEvent } from "@/lib/session";
 import { Icon } from "./icon";
 
-export function VideoPlayer({ source, data, profile, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, previewProfile, onPreviewEnd, poster = "/media/bunny-poster.jpg" }: {
+export function VideoPlayer({ source, data, profile, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, previewProfile, onPreviewEnd, onApply, poster = "/media/bunny-poster.jpg" }: {
   source: string; data: CaptionVideo | null; profile: CaptionProfile; condition: Condition;
   showOriginal: boolean; onOriginal: () => void; onTime: (time: number) => void;
   onEvent: (event: StudyEvent) => void; seekTo: { seconds: number; nonce: number } | null;
   previewProfile: CaptionProfile | null; onPreviewEnd: () => void;
-  poster?: string;
+  poster?: string; onApply:(p:CaptionProfile)=>void;
 }) {
   const playback = useVideoPlayback({ source, seekTo, previewProfile, onPreviewEnd, onTime, onEvent });
   const { video, frame, ready, playing, error, waiting, duration, time, toggle } = playback;
+  const [settingsOpen,setSettingsOpen]=useState(false),[narrow,setNarrow]=useState(false); const settingsButton=useRef<HTMLButtonElement>(null);
+  const closeSettings=useCallback(()=>setSettingsOpen(false),[]);
+  useEffect(()=>{const el=frame.current;if(!el)return;const resize=new ResizeObserver(()=>setNarrow(el.clientWidth<560&&!document.fullscreenElement));resize.observe(el);const full=()=>setNarrow(el.clientWidth<560&&!document.fullscreenElement);document.addEventListener("fullscreenchange",full);return()=>{resize.disconnect();document.removeEventListener("fullscreenchange",full)}},[frame]);
   const display = useCaptionDisplay(data, duration, time, previewProfile || profile, condition, showOriginal);
   return <>
-    <div className="video-frame" ref={frame}>
+    <div className={`video-frame ${settingsOpen?"settings-open":""} ${narrow?"settings-below":""}`} ref={frame}><div className="video-stage">
       <video ref={video} src={source} poster={source.startsWith("blob:") ? undefined : poster} preload="metadata" playsInline
         aria-label={`${data?.title || "Your video"} video player`} aria-describedby="video-description" tabIndex={0}
         {...playback.events} />
@@ -25,7 +30,8 @@ export function VideoPlayer({ source, data, profile, condition, showOriginal, on
       {!playing && !error && <button className="big-play" onClick={() => void toggle()} disabled={!ready} aria-label={ready ? "Play video" : "Loading video"}><Icon name="play" size={30} /></button>}
       {waiting && playing && <span className="buffering" role="status">Buffering video…</span>}
       <CaptionOverlay active={display.active} cues={display.cues} profile={profile} dialogue={display.mismatch ? [] : data?.dialogue?.filter(cue => cue.start_s <= time && time < cue.end_s)} />
-      <PlayerControls playback={playback} baseline={condition === "baseline"} hasCaptions={!!data?.cues.length} showOriginal={showOriginal} onOriginal={onOriginal} generatedBaseline={data?.generated_with.kind === "source-assisted"} experimental={data?.generated_with.experimental} />
+      <PlayerControls playback={playback} baseline={condition === "baseline"} hasCaptions={!!data?.cues.length} showOriginal={showOriginal} onOriginal={onOriginal} generatedBaseline={data?.generated_with.kind === "source-assisted"} experimental={data?.generated_with.experimental} settingsOpen={settingsOpen} onSettings={()=>setSettingsOpen(v=>!v)} settingsButton={settingsButton} />
+      </div><CaptionSettingsPanel open={settingsOpen} close={closeSettings} trigger={settingsButton} profile={profile} onApply={onApply} data={data} condition={condition} sample={display.cues[0]} explanation={display.active[0]?.reason||"Changes apply immediately to sound captions."} />
     </div>
     {previewProfile && <div className="caption-preview-notice" role="status"><span>Preview only · your saved settings have not changed.</span><button className="text-button" onClick={onPreviewEnd}>Return to saved settings</button></div>}
     {error && <p role="alert" className="inline-error">{error}</p>}
