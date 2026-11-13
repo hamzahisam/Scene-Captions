@@ -53,7 +53,7 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
     onSeeked() { const seconds = video.current?.currentTime || 0; setTime(seconds); onTime(seconds); onEvent({ type: "seek", video_s: seconds }); },
     onWaiting() { setWaiting(true); },
     onCanPlay() { setWaiting(false); },
-    onError() { setError("The video could not load. Run npm run setup:demo for the sample, or open your own MP4 below."); },
+    onError() { setError("The video could not load. Check your connection and try again."); },
     onKeyDown(event: KeyboardEvent<HTMLVideoElement>) {
       if (event.key === " " || event.key === "k") { event.preventDefault(); void toggle(); }
       if (event.key === "ArrowRight") { event.preventDefault(); seek((video.current?.currentTime || 0) + 5); }
