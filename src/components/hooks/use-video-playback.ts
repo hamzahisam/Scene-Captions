@@ -1,4 +1,5 @@
 "use client";
+import {createPlaybackClock} from "@/lib/playback-clock";
 import { toggleFullscreen } from "@/lib/fullscreen";
 import { useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
@@ -9,6 +10,7 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
   source: string; seekTo: { seconds: number; nonce: number } | null;
   onTime: (seconds: number) => void; onEvent: (event: StudyEvent) => void;
 }) {
+  const clock=useRef(createPlaybackClock()).current;
   const video = useRef<HTMLVideoElement>(null); const frame = useRef<HTMLDivElement>(null);
   const [time, setTime] = useState(0); const [duration, setDuration] = useState(0);
   const [playing, setPlaying] = useState(false); const [muted, setMuted] = useState(false);
@@ -26,10 +28,15 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
     if (seekTo && video.current && ready) {
       const target = Math.min(duration, Math.max(0, seekTo.seconds));
       video.current.currentTime = target;
-      setTime(target);
+      clock.set(target);setTime(target);
       onTime(target);
     }
   }, [seekTo, ready, duration, onTime]);
+  const callbacks=useRef({onTime});callbacks.current={onTime};
+  useEffect(()=>{const el=video.current;if(!el||!playing)return;let frameId=0,animationId=0,last=0,active=true;
+    function tick(now:number,mediaTime?:number){if(!active)return;const seconds=mediaTime??el!.currentTime;clock.set(seconds);callbacks.current.onTime(seconds);if(now-last>=250){setTime(seconds);last=now}if(typeof el!.requestVideoFrameCallback==="function")frameId=el!.requestVideoFrameCallback((stamp,meta)=>tick(stamp,meta.mediaTime));else animationId=requestAnimationFrame(stamp=>tick(stamp))}
+    if(typeof el.requestVideoFrameCallback==="function")frameId=el.requestVideoFrameCallback((stamp,meta)=>tick(stamp,meta.mediaTime));else animationId=requestAnimationFrame(stamp=>tick(stamp));return()=>{active=false;if(frameId)el.cancelVideoFrameCallback(frameId);if(animationId)cancelAnimationFrame(animationId)};
+  },[playing,clock]);
   async function toggle() {
     const el = video.current; if (!el) return;
     if (!el.paused) { el.pause(); return; }
@@ -41,17 +48,17 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
       video.current.currentTime = target;
       // Keep the controlled slider current during the render that ends a preview.
       // Waiting for seeked can restore its old value before the next input event.
-      setTime(target);
+      clock.set(target);setTime(target);
       onTime(target);
     }
   }
 
   const events = {
-    onLoadedMetadata() { if (video.current) { setDuration(video.current.duration); setReady(true); setError(""); } },
-    onTimeUpdate() { if (video.current) { setTime(video.current.currentTime); onTime(video.current.currentTime); } },
+    onLoadedMetadata() { if (video.current) { clock.set(video.current.currentTime); setDuration(video.current.duration); setReady(true); setError(""); } },
+    onTimeUpdate() { if (video.current) { onTime(video.current.currentTime); } },
     onPlay() { setPlaying(true); onEvent({ type: "play", video_s: video.current?.currentTime || 0 }); },
     onPause() { setPlaying(false); onEvent({ type: "pause", video_s: video.current?.currentTime || 0 }); },
-    onSeeked() { const seconds = video.current?.currentTime || 0; setTime(seconds); onTime(seconds); onEvent({ type: "seek", video_s: seconds }); },
+    onSeeked() { const seconds = video.current?.currentTime || 0; clock.set(seconds);setTime(seconds); onTime(seconds); onEvent({ type: "seek", video_s: seconds }); },
     onWaiting() { setWaiting(true); },
     onCanPlay() { setWaiting(false); },
     onError() { setError("The video could not load. Check your connection and try again."); },
@@ -64,5 +71,5 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
       await toggleFullscreen(frame.current,video.current);
     } catch { setError("Fullscreen is unavailable in this browser."); }
   }
-  return { video, frame, time, duration, playing, muted, error, ready, waiting, playbackRate, events, toggle, seek, toggleMute, changeRate, fullscreen };
+  return { video, frame, clock, time, duration, playing, muted, error, ready, waiting, playbackRate, events, toggle, seek, toggleMute, changeRate, fullscreen };
 }

@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {createPlaybackClock} from '../src/lib/playback-clock.ts';
+test('isolated clock notifies subscribers only for changed finite media times',()=>{const clock=createPlaybackClock();let count=0;const off=clock.subscribe(()=>count++);clock.set(.04);assert.equal(clock.getSnapshot(),.04);clock.set(.04);clock.set(NaN);assert.equal(count,1);off();clock.set(.08);assert.equal(count,1);assert.equal(clock.getServerSnapshot(),0);});

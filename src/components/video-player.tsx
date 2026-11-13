@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { CaptionSettingsPanel } from "./caption-settings-panel";
+import {CaptionExperience} from "./caption-experience";
 import { useVideoPlayback } from "./hooks/use-video-playback";
 import { PlayerControls } from "./player-controls";
 import { CaptionOverlay, useCaptionDisplay } from "./caption-display";
@@ -28,10 +28,8 @@ export function VideoPlayer({ source, data, profile, condition, showOriginal, on
   const closeSettings=useCallback(()=>setSettingsOpen(false),[]);
   useEffect(()=>{const el=frame.current;if(!el)return;const resize=new ResizeObserver(()=>setNarrow(el.clientWidth<560&&!document.fullscreenElement));resize.observe(el);const full=()=>setNarrow(el.clientWidth<560&&!document.fullscreenElement);document.addEventListener("fullscreenchange",full);return()=>{resize.disconnect();document.removeEventListener("fullscreenchange",full)}},[frame]);
   usePlayerShortcuts(frame,profile.shortcuts,profile.pageWideShortcuts,{toggle:()=>void toggle(),seek:delta=>playback.seek((video.current?.currentTime||0)+delta),settings:()=>{setHelpOpen(false);setSettingsOpen(v=>!v)},original:value=>{if(condition!=="baseline")onOriginal(value)},originalEnabled:showOriginal,amount:delta=>{if(condition==="baseline"||!data?.cues.length)return;const detail=Math.max(1,Math.min(3,profile.detail+delta)) as 1|2|3;onApply({...profile,detail});setShortcutNotice(`Amount: ${["","Essential","Balanced","Rich"][detail]}`)},size:delta=>{const sizes=["standard","large","extra-large"] as const;const size=sizes[Math.max(0,Math.min(2,sizes.indexOf(profile.size)+delta))];onApply({...profile,size});setShortcutNotice(`Text size: ${size}`)},fullscreen:()=>void playback.fullscreen(),sound:direction=>{const target=adjacentSound(data?.cues||[],video.current?.currentTime||0,direction);if(target!==null)playback.seek(target)},help:()=>{setSettingsOpen(false);setHelpOpen(true)},close:()=>{setHelpOpen(false);setSettingsOpen(false)}});
-  const display = useCaptionDisplay(data, duration, time, profile, condition, showOriginal);
-  const nativeFullscreen=useFullscreenTextTrack(video,[...display.cues.map((cue,i)=>({start:cue.start_s,end:cue.end_s,text:display.active[i].text})),...(display.mismatch?[]:data?.dialogue?.filter(c=>c.start_s<=time&&time<c.end_s).map(c=>({start:c.start_s,end:c.end_s,text:c.text}))||[])]);
-  const sample=captionSample(data?.cues||[],time);
-  const sampleVisible=settingsOpen&&!display.mismatch&&!display.active.length&&!!sample;
+  const settingsHost=useRef<HTMLDivElement>(null);
+  const mismatch=!!data&&duration>0&&Math.abs(duration-data.duration_seconds)>2;
   return <>
     <div className={`video-frame ${settingsOpen?"settings-open":""} ${narrow?"settings-below":""}`} ref={frame} role="region" aria-label="Video player" tabIndex={0}><div className="video-stage">
       <video ref={video} src={source} poster={source.startsWith("blob:") ? undefined : poster} preload="metadata" playsInline
@@ -40,14 +38,14 @@ export function VideoPlayer({ source, data, profile, condition, showOriginal, on
 
       {!playing && !error && <button className="big-play" onClick={() => void toggle()} disabled={!ready} aria-label={ready ? "Play video" : "Loading video"}><Icon name="play" size={30} /></button>}
       {waiting && playing && <span className="buffering" role="status">Buffering video…</span>}
-      {!nativeFullscreen&&<CaptionOverlay annotations={annotations} sample={sampleVisible} active={sampleVisible?[resolveCaption(sample!,profile,condition,showOriginal)]:display.active} cues={sampleVisible?[sample!]:display.cues} profile={profile} dialogue={display.mismatch ? [] : data?.dialogue?.filter(cue => cue.start_s <= time && time < cue.end_s)} />}
+      <CaptionExperience clock={playback.clock} data={data} duration={duration} profile={profile} condition={condition} original={showOriginal} video={video} host={settingsHost} trigger={settingsButton} open={settingsOpen} close={closeSettings} onApply={onApply} annotations={annotations}/>
       {(showOriginal||condition==="baseline")&&<span className="original-indicator">Original captions</span>}
       <PlayerControls cues={data?.cues} annotations={annotations} playback={playback} baseline={condition === "baseline"} hasCaptions={!!data?.cues.length} showOriginal={showOriginal} onOriginal={onOriginal} generatedBaseline={data?.generated_with.kind === "source-assisted"} experimental={data?.generated_with.experimental} settingsOpen={settingsOpen} onSettings={()=>setSettingsOpen(v=>!v)} settingsButton={settingsButton} />
       <button ref={helpButton} className="shortcut-help-trigger" aria-label="Keyboard shortcuts" onClick={()=>{setSettingsOpen(false);setHelpOpen(true)}}>?</button>
-      </div><ShortcutHelp open={helpOpen} close={closeHelp} trigger={helpButton} profile={profile} onChange={onApply}/><CaptionSettingsPanel open={settingsOpen} close={closeSettings} trigger={settingsButton} profile={profile} onApply={onApply} data={data} condition={condition} sample={sample} explanation={display.active[0]?.reason||"Changes apply immediately to sound captions."} />
+      </div><div ref={settingsHost}/><ShortcutHelp open={helpOpen} close={closeHelp} trigger={helpButton} profile={profile} onChange={onApply}/>
     </div>
     {error && <p role="alert" className="inline-error">{error}</p>}
-    {display.mismatch && <p role="alert" className="inline-error">Caption timing does not match this video’s duration. Captions are hidden. The prepared track needs review.</p>}
+    {mismatch && <p role="alert" className="inline-error">Caption timing does not match this video’s duration. Captions are hidden. The prepared track needs review.</p>}
     {!data && <p className="inline-notice">Sound captions are unavailable for this film.</p>}
     <div className="sr-only" role="status" aria-live="polite">{shortcutNotice}</div>
     <p id="video-description" className="sr-only">Available dialogue and non-speech captions are displayed on the video. {data?.generated_with.experimental ? "Experimental dialogue is transcribed from audio; words and timing are unverified." : "Dialogue keeps its source wording regardless of sound preferences."} Focus the video and press Space to play or pause; use Left and Right arrows to seek five seconds. Full sound text and jump controls are available in the timeline below.</p>

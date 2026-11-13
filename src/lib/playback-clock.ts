@@ -1,0 +1,2 @@
+export function createPlaybackClock(){let time=0;const listeners=new Set<()=>void>();return {getSnapshot:()=>time,getServerSnapshot:()=>0,subscribe:(listener:()=>void)=>{listeners.add(listener);return()=>{listeners.delete(listener)}},set:(value:number)=>{if(Number.isFinite(value)&&value!==time){time=value;listeners.forEach(fn=>fn())}}};}
+export type PlaybackClock=ReturnType<typeof createPlaybackClock>;
