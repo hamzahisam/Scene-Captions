@@ -33,10 +33,11 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   function original(value?: boolean,mode:"hold"|"toggle"="toggle") { const enabled = value ?? !showOriginal; setShowOriginal(enabled); record({ type: "original", video_s: currentTime.current, enabled,mode }); }
   function changeCondition(next: Condition) { rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field:"condition",from:condition,to:next,source:"researcher"});setCondition(next); setShowOriginal(false); record({ type: "condition", video_s: currentTime.current, condition: next }); record({ type: "original", video_s: currentTime.current, enabled: false,source:"system" }); }
   function jump(seconds: number) { setSeekTo({ seconds, nonce: ++seekNonce.current }); }
-  const time=currentTime.current; const renders=useRef(0);renders.current++;
+  const time=currentTime.current; const renders=useRef(0);renders.current++;const diagnostic=useRef<HTMLElement>(null);
+  useEffect(()=>{if(process.env.NODE_ENV==="development"&&diagnostic.current)diagnostic.current.dataset.renderCount=String(renders.current)});
   const captionSource = data?.generated_with.caption_source;
   const viewerProfile = session&&assigned!=="personalized"?{...profile,...sessionDefaults(session),size:profile.size,position:profile.position,backdrop:profile.backdrop,textColor:profile.textColor}:profile;
-  return <main data-render-count={process.env.NODE_ENV==="development"?renders.current:undefined} id="main" className="workspace">
+  return <main ref={diagnostic} id="main" className="workspace">
     <RecorderStatus recorder={rehearsal.recorder} error={rehearsal.error}/>
     <div className="watch-layout"><section className="watch-column" aria-label="Video workspace"><div className="watch-heading"><h1>{data.title}<small>{demoCredit}</small></h1></div>
       <VideoPlayer session={session} recorder={rehearsal.recorder} questions={questions} recording={recording} onTelemetry={rehearsal.telemetry} settingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
