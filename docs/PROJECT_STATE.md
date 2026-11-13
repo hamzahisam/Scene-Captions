@@ -1,3 +1,9 @@
+# DHH upgrade Phase 1 — 13 November 2026
+
+Tasks 1.1–1.5 implemented on `dhh-ux-upgrade`: independent amount/punctuation profile, responsive in-frame CC dialog with focus management, in-place past-cue sample, original click/hold comparison, shortening marker, collapsed mounted research drawer, single-column viewer, labelled dialogue-only films, scalable captions and native-fullscreen text-track fallback shared with the lab player. Removed preview seeking/timers, dead viewer imports and redundant participant-facing controls. Full stop/grid/always-visible controls defaults retained; Lab groups creator/anchored navigation. Protected caption files unchanged.
+
+Every task passed typecheck, tests and build. Requested headless Playwright used installed Chrome (bundled Playwright browser missing) and passed desktop 1280×800/mobile 390×844 focus/Escape, profile independence/persistence, original click/hold, baseline locks, sample and layout checks. Evidence: `artifacts/dhh-ux-browser/phase1.json`, screenshots and per-task logs under `artifacts/dhh-ux-checks`. Physical iPhone native fullscreen, VoiceOver/NVDA and the playback soak remain manual checks. Maps remain stale. No push/deploy/model calls. Details continue in the upgrade verification note.
+
 # DHH upgrade Phase 0 baseline — 13 November 2026
 
 Working only on `dhh-ux-upgrade`; no push/deployment, inference or participant uploads. Baseline `npm ci`, typecheck, 53 Node tests and production build pass. Reading-rate counts for every prepared source-assisted track and protected-data hashes are saved under `docs/verification/dhh-ux-2026-11-13/reports/`. Existing structural maps are stale for this upgrade. Defaults selected from the request: Full stop, retained lab grid, always-visible controls, labelled dialogue-only films, study ticks on, no dependency/font/data changes. Skills and agents are not activated.

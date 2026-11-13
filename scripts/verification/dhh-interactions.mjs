@@ -1,0 +1,22 @@
+import {chromium} from '/Users/hamza/runtimes/playwright/node_modules/playwright/index.mjs';
+import assert from 'node:assert/strict';import {mkdir,writeFile} from 'node:fs/promises';
+const browser=await chromium.launch({headless:true,channel:"chrome"});const page=await browser.newPage({viewport:{width:1280,height:800}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+const out='artifacts/dhh-ux-browser';await mkdir(out,{recursive:true});
+try{
+ await page.goto('http://127.0.0.1:3000');await page.getByRole('button',{name:'Caption settings',exact:true}).click();
+ await page.getByRole('dialog',{name:'Caption settings'}).waitFor();assert.equal(await page.locator('input[name="amount"]:checked').evaluate(e=>e===document.activeElement),true);
+ await page.getByRole('radio',{name:/Rich/}).check();await page.getByText('More sound options',{exact:true}).click();
+ await page.getByRole('radio',{name:/None/}).check();await page.getByRole('radio',{name:/Essential/}).check();assert.equal(await page.getByRole('radio',{name:/None/}).isChecked(),true);
+ await page.keyboard.press('Escape');assert.equal(await page.getByRole('button',{name:'Caption settings',exact:true}).evaluate(e=>e===document.activeElement),true);
+ assert.equal(await page.getByRole('dialog',{name:'Caption settings'}).count(),0);
+ await page.getByRole('button',{name:'Caption settings',exact:true}).click();assert.equal(await page.locator('.caption-sample').count(),1);await page.keyboard.press('Escape');
+ await page.getByRole('button',{name:'Original captions',exact:true}).click();assert.equal(await page.getByRole('button',{name:'Original captions',exact:true}).getAttribute('aria-pressed'),'true');
+ await page.getByRole('button',{name:'Original captions',exact:true}).click();const box=await page.getByRole('button',{name:'Original captions',exact:true}).boundingBox();await page.mouse.move(box.x+box.width/2,box.y+box.height/2);await page.mouse.down();await page.waitForTimeout(420);assert.equal(await page.getByRole('button',{name:'Original captions',exact:true}).getAttribute('aria-pressed'),'true');await page.mouse.up();assert.equal(await page.getByRole('button',{name:'Original captions',exact:true}).getAttribute('aria-pressed'),'false');
+ await page.reload();await page.getByRole('button',{name:'Caption settings',exact:true}).click();assert.equal(await page.getByRole('radio',{name:/Essential/}).isChecked(),true);await page.keyboard.press('Escape');
+ assert.equal(await page.locator('.research-tools').getAttribute('open'),null);assert.equal(await page.locator('.caption-track-picker').count(),0);
+ await page.getByText('Research tools',{exact:true}).click();await page.getByRole('button',{name:'Reference baseline',exact:true}).click();await page.getByRole('button',{name:'Caption settings',exact:true}).click();assert.equal(await page.getByRole('radio',{name:/Rich/}).isDisabled(),true);assert.equal(await page.getByLabel('Text size',{exact:true}).count(),1);
+ await page.keyboard.press('Escape');await page.getByRole('button',{name:'Personalized',exact:true}).click();
+ await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'Caption settings',exact:true}).click();assert.equal(await page.locator('.video-frame').evaluate(e=>e.classList.contains('settings-below')),true);await page.screenshot({path:`${out}/mobile.png`,fullPage:true});await page.keyboard.press('Escape');
+ await page.setViewportSize({width:1280,height:800});await page.getByRole('button',{name:'Caption settings',exact:true}).click();await page.screenshot({path:`${out}/desktop.png`,fullPage:false});
+ assert.deepEqual(errors,[]);await writeFile(`${out}/phase1.json`,JSON.stringify({passed:true,errors},null,2));console.log('Phase 1 desktop/mobile interactions passed');
+}finally{await browser.close()}
