@@ -1,0 +1,154 @@
+{
+  "video_id": "soar",
+  "status": "heuristic-draft",
+  "sounds": {
+    "soar-sound-001": {
+      "kind": "ambience"
+    },
+    "soar-sound-002": {
+      "kind": "music"
+    },
+    "soar-sound-003": {
+      "kind": "sfx"
+    },
+    "soar-sound-004": {
+      "kind": "sfx"
+    },
+    "soar-sound-005": {
+      "kind": "vocal"
+    },
+    "soar-sound-006": {
+      "kind": "sfx"
+    },
+    "soar-sound-007": {
+      "kind": "sfx"
+    },
+    "soar-sound-008": {
+      "kind": "vocal"
+    },
+    "soar-sound-009": {
+      "kind": "music"
+    },
+    "soar-sound-010": {
+      "kind": "ambience"
+    },
+    "soar-sound-011": {
+      "kind": "vocal"
+    },
+    "soar-sound-012": {
+      "kind": "ambience"
+    },
+    "soar-sound-013": {
+      "kind": "sfx"
+    },
+    "soar-sound-014": {
+      "kind": "music"
+    },
+    "soar-sound-015": {
+      "kind": "vocal"
+    },
+    "soar-sound-016": {
+      "kind": "sfx"
+    },
+    "soar-sound-017": {
+      "kind": "sfx"
+    },
+    "soar-sound-018": {
+      "kind": "vocal"
+    },
+    "soar-sound-019": {
+      "kind": "sfx"
+    },
+    "soar-sound-020": {
+      "kind": "vocal"
+    },
+    "soar-sound-021": {
+      "kind": "sfx"
+    },
+    "soar-sound-022": {
+      "kind": "sfx"
+    },
+    "soar-sound-023": {
+      "kind": "vocal"
+    },
+    "soar-sound-024": {
+      "kind": "sfx"
+    },
+    "soar-sound-025": {
+      "kind": "music"
+    },
+    "soar-sound-026": {
+      "kind": "sfx"
+    },
+    "soar-sound-027": {
+      "kind": "music"
+    },
+    "soar-sound-028": {
+      "kind": "sfx"
+    },
+    "soar-sound-029": {
+      "kind": "vocal"
+    },
+    "soar-sound-030": {
+      "kind": "sfx"
+    },
+    "soar-sound-031": {
+      "kind": "sfx"
+    },
+    "soar-sound-032": {
+      "kind": "music"
+    },
+    "soar-sound-033": {
+      "kind": "sfx"
+    },
+    "soar-sound-034": {
+      "kind": "sfx"
+    },
+    "soar-sound-035": {
+      "kind": "sfx"
+    },
+    "soar-sound-036": {
+      "kind": "sfx"
+    },
+    "soar-sound-037": {
+      "kind": "music"
+    },
+    "soar-sound-038": {
+      "kind": "sfx"
+    },
+    "soar-sound-039": {
+      "kind": "music"
+    },
+    "soar-sound-040": {
+      "kind": "ambience"
+    },
+    "soar-sound-041": {
+      "kind": "music"
+    },
+    "soar-sound-042": {
+      "kind": "music"
+    },
+    "soar-sound-043": {
+      "kind": "music"
+    },
+    "soar-sound-044": {
+      "kind": "sfx"
+    },
+    "soar-sound-045": {
+      "kind": "sfx"
+    },
+    "soar-sound-046": {
+      "kind": "sfx"
+    },
+    "soar-sound-047": {
+      "kind": "sfx"
+    },
+    "soar-sound-048": {
+      "kind": "sfx"
+    },
+    "soar-sound-049": {
+      "kind": "music"
+    }
+  },
+  "dialogue": {}
+}

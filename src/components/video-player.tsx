@@ -9,13 +9,14 @@ import type { StudyEvent } from "@/lib/session";
 import { useFullscreenTextTrack } from "./hooks/use-fullscreen-text-track";
 import { captionSample } from "@/lib/caption-sample";
 import { resolveCaption } from "@/lib/captions";
+import type {CueAnnotations} from "@/lib/cue-annotations";
 import { Icon } from "./icon";
 
-export function VideoPlayer({ source, data, profile, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, onApply, poster = "/media/bunny-poster.jpg" }: {
+export function VideoPlayer({ source, data, profile, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, onApply, annotations, poster = "/media/bunny-poster.jpg" }: {
   source: string; data: CaptionVideo | null; profile: CaptionProfile; condition: Condition;
   showOriginal: boolean; onOriginal: (enabled?:boolean) => void; onTime: (time: number) => void;
   onEvent: (event: StudyEvent) => void; seekTo: { seconds: number; nonce: number } | null;
-  poster?: string; onApply:(p:CaptionProfile)=>void;
+  annotations?:CueAnnotations; poster?: string; onApply:(p:CaptionProfile)=>void;
 }) {
   const playback = useVideoPlayback({ source, seekTo, onTime, onEvent });
   const { video, frame, ready, playing, error, waiting, duration, time, toggle } = playback;
@@ -34,7 +35,7 @@ export function VideoPlayer({ source, data, profile, condition, showOriginal, on
 
       {!playing && !error && <button className="big-play" onClick={() => void toggle()} disabled={!ready} aria-label={ready ? "Play video" : "Loading video"}><Icon name="play" size={30} /></button>}
       {waiting && playing && <span className="buffering" role="status">Buffering video…</span>}
-      {!nativeFullscreen&&<CaptionOverlay sample={sampleVisible} active={sampleVisible?[resolveCaption(sample!,profile,condition,showOriginal)]:display.active} cues={sampleVisible?[sample!]:display.cues} profile={profile} dialogue={display.mismatch ? [] : data?.dialogue?.filter(cue => cue.start_s <= time && time < cue.end_s)} />}
+      {!nativeFullscreen&&<CaptionOverlay annotations={annotations} sample={sampleVisible} active={sampleVisible?[resolveCaption(sample!,profile,condition,showOriginal)]:display.active} cues={sampleVisible?[sample!]:display.cues} profile={profile} dialogue={display.mismatch ? [] : data?.dialogue?.filter(cue => cue.start_s <= time && time < cue.end_s)} />}
       {(showOriginal||condition==="baseline")&&<span className="original-indicator">Original captions</span>}
       <PlayerControls playback={playback} baseline={condition === "baseline"} hasCaptions={!!data?.cues.length} showOriginal={showOriginal} onOriginal={onOriginal} generatedBaseline={data?.generated_with.kind === "source-assisted"} experimental={data?.generated_with.experimental} settingsOpen={settingsOpen} onSettings={()=>setSettingsOpen(v=>!v)} settingsButton={settingsButton} />
       </div><CaptionSettingsPanel open={settingsOpen} close={closeSettings} trigger={settingsButton} profile={profile} onApply={onApply} data={data} condition={condition} sample={sample} explanation={display.active[0]?.reason||"Changes apply immediately to sound captions."} />

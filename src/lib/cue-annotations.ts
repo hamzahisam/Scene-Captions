@@ -1,0 +1,5 @@
+import {z} from 'zod';import type {CaptionVideo} from './captions.ts';
+export const cueAnnotationsSchema=z.object({video_id:z.string(),status:z.enum(['heuristic-draft','reviewed']),sounds:z.record(z.string(),z.object({kind:z.enum(['music','sfx','vocal','ambience']),offscreen:z.boolean().optional()})),dialogue:z.record(z.string(),z.object({speaker:z.string().min(1).max(80).optional()}))});
+export type CueAnnotations=z.infer<typeof cueAnnotationsSchema>;
+export function validateAnnotations(video:CaptionVideo,raw:unknown){const a=cueAnnotationsSchema.parse(raw);if(a.video_id!==video.video_id)throw Error('Annotations belong to another film.');const sounds=new Set(video.cues.map(c=>c.cue_id)),dialogue=new Set(video.dialogue?.map(c=>c.cue_id));if(Object.keys(a.sounds).some(id=>!sounds.has(id))||Object.keys(a.dialogue).some(id=>!dialogue.has(id)))throw Error('Annotations reference unknown cues.');return a;}
+export function speakerText(text:string,speaker?:string){const prefix=speaker&&`${speaker}:`;return prefix&&text.startsWith(prefix)?text.slice(prefix.length).trimStart():text;}

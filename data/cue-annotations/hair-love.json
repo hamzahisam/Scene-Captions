@@ -1,0 +1,56 @@
+{
+  "video_id": "hair-love",
+  "status": "heuristic-draft",
+  "sounds": {
+    "hair-love-sound-001": {
+      "kind": "music"
+    },
+    "hair-love-sound-002": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-003": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-004": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-005": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-006": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-007": {
+      "kind": "sfx"
+    },
+    "hair-love-sound-008": {
+      "kind": "music"
+    },
+    "hair-love-sound-009": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-010": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-011": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-012": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-013": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-014": {
+      "kind": "vocal"
+    },
+    "hair-love-sound-015": {
+      "kind": "music"
+    }
+  },
+  "dialogue": {
+    "hair-love-dialogue-001": {
+      "speaker": "Angela"
+    }
+  }
+}

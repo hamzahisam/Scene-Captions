@@ -1,0 +1,268 @@
+{
+  "video_id": "big-buck-bunny",
+  "status": "heuristic-draft",
+  "sounds": {
+    "bbb-sdh-001": {
+      "kind": "music"
+    },
+    "bbb-sdh-002": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-003": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-004": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-005": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-006": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-007": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-008": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-009": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-010": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-011": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-012": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-013": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-014": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-015": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-016": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-017": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-018": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-019": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-020": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-021": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-022": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-023": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-024": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-025": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-026": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-027": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-028": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-029": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-030": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-031": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-032": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-033": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-034": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-035": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-036": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-037": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-038": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-039": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-040": {
+      "kind": "music"
+    },
+    "bbb-sdh-041": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-042": {
+      "kind": "music"
+    },
+    "bbb-sdh-043": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-044": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-045": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-046": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-047": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-048": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-049": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-050": {
+      "kind": "music"
+    },
+    "bbb-sdh-051": {
+      "kind": "music"
+    },
+    "bbb-sdh-052": {
+      "kind": "music"
+    },
+    "bbb-sdh-053": {
+      "kind": "music"
+    },
+    "bbb-sdh-054": {
+      "kind": "music"
+    },
+    "bbb-sdh-055": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-056": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-057": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-058": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-059": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-060": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-061": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-062": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-063": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-064": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-065": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-066": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-067": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-068": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-069": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-070": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-071": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-072": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-073": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-074": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-075": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-076": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-077": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-078": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-079": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-080": {
+      "kind": "sfx"
+    },
+    "bbb-sdh-081": {
+      "kind": "vocal"
+    },
+    "bbb-sdh-082": {
+      "kind": "music"
+    },
+    "bbb-sdh-083": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-084": {
+      "kind": "music"
+    },
+    "bbb-sdh-085": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-086": {
+      "kind": "ambience"
+    },
+    "bbb-sdh-087": {
+      "kind": "sfx"
+    }
+  },
+  "dialogue": {}
+}
