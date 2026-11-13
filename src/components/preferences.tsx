@@ -13,7 +13,7 @@ export function Preferences({ profile, onApply, sample, disabled, onPreview, pre
     <div className="panel-heading"><div className="small-symbol"><Icon name="settings" size={20} /></div><div><h2 id="preferences-title">Make it yours</h2><p>A little detail. Or the whole picture.</p></div></div>
     {unavailable ? <p className="baseline-note">Add a matching caption track to enable these preferences.</p> : disabled && <p className="baseline-note">Baseline mode uses fixed captions. Switch to personalized to change preferences.</p>}
     <fieldset disabled={disabled || unavailable} className="preferences-fields"><legend className="sr-only">Caption preferences</legend>
-      <CaptionStyleControls draft={profile} profile={profile} onDraft={update} conservative={conservative} sceneTagsReady={sceneTagsReady} densityBased={densityBased} punctuationOnly={punctuationOnly} />
+      <CaptionStyleControls profile={profile} onChange={update} sample={sample} conservative={conservative} sceneTagsReady={sceneTagsReady} densityBased={densityBased} punctuationOnly={punctuationOnly} />
       <CaptionPreview sample={sample} candidate={candidate} onPreview={onPreview} originalActive={originalActive} previewing={previewing} />
       <p className="saved-note">{unavailable ? "Sound preferences are unavailable for this track. Caption readability still works below." : "Changes apply immediately."}</p>
     </fieldset>

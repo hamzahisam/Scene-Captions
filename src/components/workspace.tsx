@@ -1,18 +1,19 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { DEFAULT_PROFILE, activeCues, profileSchema } from "@/lib/captions";
+import { activeCues } from "@/lib/captions";
 import type { CaptionVideo, CaptionProfile, Condition } from "@/lib/captions";
 import { useLocalMedia } from "./hooks/use-local-media";
 import { useRehearsal } from "./hooks/use-rehearsal";
 import { CaptionTrackNotice, SoundTimeline } from "./caption-track";
 import { VideoPlayer } from "./video-player";
+import { useCaptionProfile } from "./hooks/use-caption-profile";
 import { Preferences } from "./preferences";
 import { StudyRehearsal } from "./study-rehearsal";
 import { Icon } from "./icon";
 
-const PROFILE_KEY = "scenecaptions.profile.v1";
+
 export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoPoster = "/media/bunny-poster.jpg", demoCredit = "Blender Foundation · 2008", onMediaLockChange }: { initialVideo: CaptionVideo; sourceAssistedVideo?: CaptionVideo; demoSource: string; demoPoster?: string; demoCredit?: string; onMediaLockChange?: (locked: boolean) => void }) {
-  const [profile, setProfile] = useState<CaptionProfile>(DEFAULT_PROFILE);
+  const {profile, update: setProfile, storageError} = useCaptionProfile();
   const [condition, setCondition] = useState<Condition>("personalized"); const [showOriginal, setShowOriginal] = useState(false);
   const [previewProfile, setPreviewProfile] = useState<CaptionProfile | null>(null);
   const [time, setTime] = useState(0); const [seekTo, setSeekTo] = useState<{ seconds: number; nonce: number } | null>(null);
@@ -25,12 +26,8 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   useEffect(() => { onMediaLockChange?.(startedAt !== null); }, [startedAt, onMediaLockChange]);
   const updateTime = useCallback((seconds: number) => { currentTime.current = seconds; setTime(seconds); }, []);
   useEffect(() => { setPreviewProfile(null); }, [source, data]);
-  useEffect(() => {
-    try { const value = localStorage.getItem(PROFILE_KEY); if (value) { const parsed = profileSchema.safeParse(JSON.parse(value)); if (parsed.success) setProfile(parsed.data); } }
-    catch { setNotice("Browser storage is unavailable. Preferences still work for this visit."); }
-  }, []);
   const endPreview = useCallback(() => { setPreviewProfile(null); record({ type: "preview_end", video_s: currentTime.current }); }, [record]);
-  function apply(next: CaptionProfile) { if (previewProfile) endPreview(); setProfile(next); record({ type: "profile", video_s: time, profile: next }); try { localStorage.setItem(PROFILE_KEY, JSON.stringify(next)); setNotice("Caption preferences applied and saved in this browser."); } catch { setNotice("Preferences applied for this visit. Browser storage is unavailable."); } }
+  function apply(next: CaptionProfile) { if (previewProfile) endPreview(); setProfile(next); record({ type: "profile", video_s: time, profile: next }); setNotice("Caption preferences saved."); }
   function original() { if (previewProfile) endPreview(); const enabled = !showOriginal; setShowOriginal(enabled); record({ type: "original", video_s: time, enabled }); }
   function changeCondition(next: Condition) { if (previewProfile) endPreview(); setCondition(next); setShowOriginal(false); record({ type: "condition", video_s: time, condition: next }); record({ type: "original", video_s: time, enabled: false }); }
   function jump(seconds: number) { if (previewProfile) endPreview(); setSeekTo({ seconds, nonce: ++seekNonce.current }); }
@@ -57,6 +54,6 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
 
     <StudyRehearsal active={recording} events={events} onStart={() => { setPreviewProfile(null); rehearsal.start(time, condition, profile, showOriginal); }} onStop={() => { rehearsal.stop(); setNotice("Rehearsal recording stopped. Export your data before reloading."); }} data={data?.cues.length ? data : null} condition={condition} profile={profile} showOriginal={showOriginal} stoppedElapsed={stoppedElapsed} startedAt={startedAt} sessionId={sessionId} />
     <footer id="media-credits" className="page-footer"><div><span className="footer-brand">SceneCaptions</span><p>More of the story. On your terms.</p></div><div><p>Research prototype · No AI calls during viewing</p><p>Demo film: <a href={initialVideo.source_url} target="_blank" rel="noreferrer">{initialVideo.title}</a> · {initialVideo.license === "CC BY 3.0" ? <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">CC BY 3.0</a> : initialVideo.license}<br />{initialVideo.attribution}<br />{captionSource ? <>{data?.generated_with.kind === "source-assisted" ? "Generation reference: " : "Sound captions: "}<a href={captionSource.url} target="_blank" rel="noreferrer">{captionSource.author}</a> · {captionSource.license}. {data?.generated_with.kind === "source-assisted" ? "New wording generated and edited by SceneCaptions." : "Wording variants added by SceneCaptions."}</> : <>See the caption coverage above for this title.</>}</p>{data?.dialogue_source && <p>English subtitles: <a href={data.dialogue_source.url} target="_blank" rel="noreferrer">{data.dialogue_source.author}</a> · {data.dialogue_source.license}. Source wording and timing retained.</p>}</div></footer>
-    <div className="sr-only" role="status" aria-live="polite">{notice}</div>
+    <div className="sr-only" role="status" aria-live="polite">{notice || storageError}</div>
   </main>;
 }

@@ -1,22 +1,14 @@
-"use client";
-import { useState } from "react";
-import type { CaptionProfile, Level } from "@/lib/captions";
-import { Icon } from "./icon";
-
-export function CaptionStyleControls({ draft, profile, onDraft, conservative, sceneTagsReady, densityBased, punctuationOnly = false }: {
-  draft: CaptionProfile; profile: CaptionProfile; onDraft: (candidate: CaptionProfile) => void;
-  conservative: boolean; sceneTagsReady: boolean; densityBased: boolean; punctuationOnly?: boolean;
-}) {
-  const [advanced, setAdvanced] = useState(false);
-  function update<K extends keyof CaptionProfile>(key: K, value: CaptionProfile[K]) {
-    onDraft({ ...draft, [key]: value });
-  }
-  return <>
-      <div className="preset-row">{[{ label: "Essential", detail: 1, expression: 1 }, { label: "Balanced", detail: 2, expression: 2 }, { label: "Rich", detail: 3, expression: 3 }].map((preset) => <button key={preset.label} className={`preset ${draft.detail === preset.detail && (conservative || draft.expression === preset.expression) ? "selected" : ""}`} onClick={() => { onDraft({ ...draft, detail: preset.detail as Level, expression: conservative ? profile.expression : preset.expression as Level }); }} aria-pressed={draft.detail === preset.detail && (conservative || draft.expression === preset.expression)}>{preset.label}</button>)}</div>
-      <div className="preference-section"><label htmlFor="detail">Level of detail <span>{["", "Less", "Balanced", "More"][draft.detail]}</span></label><input id="detail" type="range" min={1} max={3} step={1} value={draft.detail} onChange={(e) => update("detail", Number(e.target.value) as Level)} /><div className="range-labels"><span>Just the sound</span><span>More context</span></div><p className="helper-text">This is your maximum. Adaptation can shorten captions, but never adds more detail.</p></div>
-      <div className="preference-section"><label htmlFor="expression">Expressiveness <span>{(punctuationOnly ? ["", "Minimal", "Sentence", "Emphatic"] : ["", "Neutral", "Balanced", "Evocative"])[draft.expression]}</span></label><input id="expression" disabled={conservative} type="range" min={1} max={3} step={1} value={draft.expression} onChange={(e) => update("expression", Number(e.target.value) as Level)} /><div className="range-labels"><span>Factual</span><span>{punctuationOnly ? "Emphatic" : "Evocative"}</span></div>{punctuationOnly && <p className="helper-text">This generated draft changes punctuation only: minimal, sentence, or emphatic. It does not infer emotion or louder sounds.</p>}{conservative && <p className="helper-text">Expressive variants await review. This track uses factual wording at every expression level.</p>}</div>
-      <div className="adapt-setting"><div><label htmlFor="adaptive">{densityBased ? "Follow cue density" : "Follow the scene"}</label><p>{densityBased ? "Shorter captions when sound cues cluster. Your detail limit stays in place." : "Shorter captions in busy moments, within your detail limit."}</p>{!sceneTagsReady && <p>Scene tags await review for this track.</p>}</div><input id="adaptive" className="switch" disabled={!sceneTagsReady} type="checkbox" role="switch" checked={sceneTagsReady && draft.adaptive} onChange={(e) => update("adaptive", e.target.checked)} /></div>
-      <button className="advanced-toggle" onClick={() => setAdvanced(!advanced)} aria-expanded={advanced} aria-controls="advanced-settings">More preferences <Icon name="chevron" size={15} style={{ transform: advanced ? "rotate(90deg)" : undefined }} /></button>
-      {advanced && <div id="advanced-settings" className="advanced-settings"><label htmlFor="representation">Sound representation</label><select id="representation" value={draft.representation} onChange={(e) => update("representation", e.target.value as CaptionProfile["representation"])}><option value="descriptive">Descriptive</option><option value="plain">Plain sound labels</option><option value="onomatopoeic">Onomatopoeia when available</option></select><p className="helper-text">Unavailable sound spellings fall back to descriptive captions.</p></div>}
-  </>;
+'use client';
+import type {CaptionProfile,CaptionCue,Level} from '@/lib/captions';
+export function CaptionStyleControls({profile,onChange,conservative,sample}: {profile:CaptionProfile;onChange:(p:CaptionProfile)=>void;conservative:boolean;sample?:CaptionCue;sceneTagsReady?:boolean;densityBased?:boolean;punctuationOnly?:boolean}) {
+ return <>
+  <fieldset className="amount-options"><legend>Amount of detail</legend>{(['Essential','Balanced','Rich'] as const).map((label,index)=><label key={label}><input type="radio" name="amount" value={index+1} checked={profile.detail===index+1} onChange={()=>onChange({...profile,detail:(index+1) as Level})}/><span>{label}<small>{['Just the sound','Sound and its source','More context'][index]}</small></span></label>)}</fieldset>
+  <label className="keep-up"><input type="checkbox" role="switch" checked={profile.adaptive} onChange={e=>onChange({...profile,adaptive:e.target.checked})}/> Help me keep up</label>
+  <p>Shorter sound captions when needed, within your detail limit.</p>
+  <details className="more-sound-options"><summary>More sound options</summary>
+   <fieldset disabled={conservative}><legend>Punctuation inside sound captions</legend>{['None','Full stop','Exclamation'].map((label,i)=><label key={label}><input type="radio" name="punctuation" checked={profile.expression===i+1} onChange={()=>onChange({...profile,expression:(i+1) as Level})}/>{label}<small>{sample?.grid[`${profile.detail}-${i+1}`]||['[Sound]','[Sound.]','[Sound!]'][i]}</small></label>)}</fieldset>
+   <p>An exclamation mark does not mean the sound is louder.</p>{conservative&&<p>Punctuation changes are unavailable for this track.</p>}
+   <label htmlFor="representation">Sound representation</label><select id="representation" value={profile.representation} onChange={e=>onChange({...profile,representation:e.target.value as CaptionProfile['representation']})}><option value="descriptive">Descriptive</option><option value="plain">Plain sound labels</option><option value="onomatopoeic">Onomatopoeia when available</option></select><p>Unavailable sound spellings use descriptive captions.</p>
+  </details>
+ </>;
 }
