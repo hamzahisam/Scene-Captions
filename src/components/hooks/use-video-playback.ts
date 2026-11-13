@@ -55,11 +55,7 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
     onWaiting() { setWaiting(true); },
     onCanPlay() { setWaiting(false); },
     onError() { setError("The video could not load. Check your connection and try again."); },
-    onKeyDown(event: KeyboardEvent<HTMLVideoElement>) {
-      if (event.key === " " || event.key === "k") { event.preventDefault(); void toggle(); }
-      if (event.key === "ArrowRight") { event.preventDefault(); seek((video.current?.currentTime || 0) + 5); }
-      if (event.key === "ArrowLeft") { event.preventDefault(); seek((video.current?.currentTime || 0) - 5); }
-    },
+
   };
   function toggleMute() { if (video.current) { video.current.muted = !muted; setMuted(!muted); } }
   function changeRate(value: number) { setPlaybackRate(value); if (video.current) video.current.playbackRate = value; }
