@@ -1,3 +1,7 @@
+# DHH upgrade Phase 0 baseline — 13 November 2026
+
+Working only on `dhh-ux-upgrade`; no push/deployment, inference or participant uploads. Baseline `npm ci`, typecheck, 53 Node tests and production build pass. Reading-rate counts for every prepared source-assisted track and protected-data hashes are saved under `docs/verification/dhh-ux-2026-11-13/reports/`. Existing structural maps are stale for this upgrade. Defaults selected from the request: Full stop, retained lab grid, always-visible controls, labelled dialogue-only films, study ticks on, no dependency/font/data changes. Skills and agents are not activated.
+
 # Hair Love replaces Brain Divided — 12 November 2026
 
 User approved **Hair Love (about 6:48)** as the second additional film. It plays directly from the existing media store through the native player. Brain Divided is removed from the catalogue. Hair Love includes 15 prepared sound cues (14 original non-speech intervals plus a singing summary) and 26 fixed dialogue cues. Sound/dialogue retain original millisecond VTT timings; song lyrics are omitted. Essential/Balanced/Rich wording, punctuation-only expression, density adaptation and preview are available. A single bounded NVIDIA wording request used 987 reported tokens; no viewing-time calls. Listening/readability review remains incomplete.
