@@ -60,3 +60,6 @@
 @media(max-width:1000px){.survey-segments{grid-template-columns:repeat(7,minmax(0,1fr))}}
 
 .accessibility-options{border:0;margin:12px 0 0;padding:0;min-width:0}.accessibility-options legend{padding:0;font-weight:600}
+/* B5 laptop fold fit. Desktop only (>=901px); narrow layouts and fullscreen keep the rules above.
+   --fold-h is measured by useFoldHeight (window height below the real player top, less the credit line). */
+@media(min-width:901px){.film-library{max-width:1120px;margin:22px auto 0;padding:0 44px;flex-wrap:nowrap;gap:14px}.film-library>div{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;min-width:0}.film-library p{margin:0}.film-library>p{flex-basis:100%}.film-library select{flex:1 1 320px;min-width:220px;max-width:none}.film-library+.workspace{padding-top:20px}.watch-heading{min-height:0;margin-bottom:12px;flex-direction:row;align-items:baseline;justify-content:flex-start;gap:14px;min-width:0}.watch-heading h1{flex:1 1 auto;min-width:0;font-size:clamp(20px,1.9vw,26px);line-height:1.25;letter-spacing:-.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.watch-heading h1 small{display:inline;margin:0 0 0 12px;font-size:12px;line-height:1.5;letter-spacing:normal}.watch-column .video-frame:not(:fullscreen){width:min(100%,calc(var(--fold-h,100000px)*16/9));margin-inline:auto}}

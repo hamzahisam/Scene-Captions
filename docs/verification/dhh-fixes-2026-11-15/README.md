@@ -245,3 +245,25 @@ text through `aria-describedby`. The A2 runner now opens Appearance only when cl
 Chrome checks the demo page and a real personalized session (default pace 15) and
 that Reset restores defaults. Evidence: `reports/C4-browser.json`; runner
 `scripts/verification/dhh-fixes/C4-browser.mjs`.
+
+## B5 — laptop fold fit
+
+At the actual baseline the 16:9 player bottom was 859 px, failing 3 of the 4 audited
+viewports (1366×657, 1536×730, 1280×800; 1920×969 already fit). The desktop (≥901 px)
+layout now compacts the film picker into one wide row and the heading into one
+line (20–26 px, inline credit), and a small measuring helper (`use-fold-height`)
+sets `--fold-h` from the live window height, the player's real top and the credit
+line. The player width is `min(100%, fold height × 16/9)`, so the stage, controls and
+credit fit the first screen without cropping or scaling captions. Fullscreen, narrow
+(<900 px) and mobile layouts are unchanged; the helper recomputes on resize and zoom.
+
+After integration with A3/B1/C4 (Chrome, synthetic media clock, installed Chrome):
+player bottom 614 px at 1366×657, 687 at 1536×730, 757 at 1280×800 and 794 at
+1920×969 (full size kept); 1000×760 fits; the left-open-rehearsal banner state, a
+120 px shorter window and the tallest of 87 Rich/extra-large Big Buck Bunny cues
+also fit; 820×1000 and 390×844 are unchanged; no page errors. The runner's banner
+state follows B1 (explicit prior-rehearsal offer) and its Appearance step follows
+C4. Evidence: `reports/B5-geometry.json`; runner `scripts/verification/dhh-fold-geometry.mjs`;
+detailed before/after logs and screenshots remain in `artifacts/dhh-fixes/B5*`. Note
+that very small windows (under about 400 px of fold height) shrink the player width
+accordingly; no minimum is enforced.

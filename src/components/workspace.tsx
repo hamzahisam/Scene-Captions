@@ -15,6 +15,7 @@ import { StudyRehearsal } from "./study-rehearsal";
 import { PriorRehearsal, RehearsalLogs } from "./rehearsal-logs";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import { Icon } from "./icon";
+import { useFoldHeight } from "./hooks/use-fold-height";
 
 
 export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoPoster = "/media/bunny-poster.jpg", demoCredit = "Blender Foundation · 2008", onMediaLockChange, annotations,session,questions,onLeaveStudy }: { initialVideo: CaptionVideo; sourceAssistedVideo?: CaptionVideo; demoSource: string; demoPoster?: string; demoCredit?: string; questions?:QuestionFile;onLeaveStudy?:()=>void;session?:StudySession; annotations?:CueAnnotations; onMediaLockChange?: (locked: boolean) => void }) {
@@ -29,7 +30,7 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   const data = sourceAssistedVideo ?? initialVideo; const source=demoSource;
   const rehearsal = useRehearsal({filmId:data.video_id,session});
   const { recording, startedAt, record } = rehearsal;
-  const currentTime = useRef(0); const seekNonce = useRef(0);
+  const currentTime = useRef(0); const seekNonce = useRef(0); const watchColumn = useRef<HTMLElement>(null); useFoldHeight(watchColumn);
   useEffect(() => { onMediaLockChange?.(startedAt !== null); }, [startedAt, onMediaLockChange]);
   const updateTime = useCallback((seconds: number) => { currentTime.current = seconds; rehearsal.setVideoTime(seconds); }, [rehearsal.setVideoTime]);
   useEffect(()=>{if(rehearsal.recorder?.resumed&&rehearsal.recorder.resumePosition>0)setSeekTo({seconds:rehearsal.recorder.resumePosition,nonce:++seekNonce.current,source:"system"})},[rehearsal.recorder]);
@@ -45,7 +46,7 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   return <main ref={diagnostic} id="main" className="workspace">
     <RecorderStatus allowExport={!session} recorder={rehearsal.recorder} error={rehearsal.error}/>
     {!session&&<PriorRehearsal prior={rehearsal.prior} openLog={rehearsal.openLog} onResume={()=>rehearsal.resumePrior()} onDiscard={()=>rehearsal.discardPrior()}/>}
-    <div className="watch-layout"><section className="watch-column" aria-label="Video workspace"><div className="watch-heading"><h1>{data.title}<small>{demoCredit}</small></h1></div>
+    <div className="watch-layout"><section ref={watchColumn} className="watch-column" aria-label="Video workspace"><div className="watch-heading"><h1>{data.title}<small>{demoCredit}</small></h1></div>
       <VideoPlayer extendDisplay={extendDisplay} session={session} recorder={rehearsal.recorder} questions={questions} recording={recording} onTelemetry={rehearsal.telemetry} soundSettingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
       <div className="film-footnote"><Icon name="leaf" size={16}/><span>{initialVideo.title} · {demoCredit}</span><a href="#media-credits">Credits</a></div>
     </section></div>

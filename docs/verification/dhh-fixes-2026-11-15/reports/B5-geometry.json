@@ -1,0 +1,3154 @@
+{
+  "label": "after",
+  "generated": "2026-11-15T11:28:34.983Z",
+  "base": "http://127.0.0.1:3000",
+  "media": {
+    "kind": "SYNTHETIC",
+    "clip": "Chrome MediaRecorder WebM",
+    "clipSeconds": 14,
+    "shimmedDurationSeconds": 596.461678,
+    "longCue": {
+      "id": "bbb-sdh-061",
+      "atSeconds": 337.8115
+    }
+  },
+  "results": [
+    {
+      "size": {
+        "w": 1366,
+        "h": 657,
+        "kind": "desktop-fold"
+      },
+      "tag": "1366x657",
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 1366,
+            "h": 657
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1366,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 83,
+            "right": 1366,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 123,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1243,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 167,
+            "y": 169,
+            "width": 1032,
+            "height": 487.42,
+            "right": 1199,
+            "bottom": 656.42
+          },
+          "heading": {
+            "x": 167,
+            "y": 169,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 201.44
+          },
+          "h1": {
+            "x": 167,
+            "y": 169,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 201.44,
+            "fontSize": 25.954,
+            "lines": 2
+          },
+          "frame": {
+            "x": 326.56,
+            "y": 213.44,
+            "width": 712.88,
+            "height": 400.98,
+            "right": 1039.44,
+            "bottom": 614.42
+          },
+          "stage": {
+            "x": 326.56,
+            "y": 213.44,
+            "width": 712.88,
+            "height": 400.98,
+            "right": 1039.44,
+            "bottom": 614.42
+          },
+          "controls": {
+            "x": 326.56,
+            "y": 501.42,
+            "width": 712.88,
+            "height": 113,
+            "right": 1039.44,
+            "bottom": 614.42
+          },
+          "footnote": {
+            "x": 167,
+            "y": 614.42,
+            "width": 1032,
+            "height": 42,
+            "right": 1199,
+            "bottom": 656.42
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "712.875px"
+        },
+        "longCue": {
+          "viewport": {
+            "w": 1366,
+            "h": 657
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1366,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 83,
+            "right": 1366,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 123,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1243,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 167,
+            "y": 169,
+            "width": 1032,
+            "height": 487.42,
+            "right": 1199,
+            "bottom": 656.42
+          },
+          "heading": {
+            "x": 167,
+            "y": 169,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 201.44
+          },
+          "h1": {
+            "x": 167,
+            "y": 169,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 201.44,
+            "fontSize": 25.954,
+            "lines": 2
+          },
+          "frame": {
+            "x": 326.56,
+            "y": 213.44,
+            "width": 712.88,
+            "height": 400.98,
+            "right": 1039.44,
+            "bottom": 614.42
+          },
+          "stage": {
+            "x": 326.56,
+            "y": 213.44,
+            "width": 712.88,
+            "height": 400.98,
+            "right": 1039.44,
+            "bottom": 614.42
+          },
+          "controls": {
+            "x": 326.56,
+            "y": 501.42,
+            "width": 712.88,
+            "height": 113,
+            "right": 1039.44,
+            "bottom": 614.42
+          },
+          "footnote": {
+            "x": 167,
+            "y": 614.42,
+            "width": 1032,
+            "height": 42,
+            "right": 1199,
+            "bottom": 656.42
+          },
+          "captionOverlay": {
+            "x": 362.2,
+            "y": 405.58,
+            "width": 641.59,
+            "height": 87.84,
+            "right": 1003.8,
+            "bottom": 493.42
+          },
+          "captions": [
+            {
+              "x": 570.52,
+              "y": 405.58,
+              "width": 224.97,
+              "height": 87.84,
+              "right": 795.48,
+              "bottom": 493.42
+            }
+          ],
+          "frameWidthStyle": "712.875px"
+        },
+        "fullscreen": {
+          "viewport": {
+            "w": 1366,
+            "h": 657
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1366,
+          "fullscreen": true,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 83,
+            "right": 1366,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 123,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1243,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 167,
+            "y": 169,
+            "width": 1032,
+            "height": 86.44,
+            "right": 1199,
+            "bottom": 255.44
+          },
+          "heading": {
+            "x": 167,
+            "y": 169,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 201.44
+          },
+          "h1": {
+            "x": 167,
+            "y": 169,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 201.44,
+            "fontSize": 25.954,
+            "lines": 2
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 657,
+            "right": 1366,
+            "bottom": 657
+          },
+          "stage": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 657,
+            "right": 1366,
+            "bottom": 657
+          },
+          "controls": {
+            "x": 0,
+            "y": 544,
+            "width": 1366,
+            "height": 113,
+            "right": 1366,
+            "bottom": 657
+          },
+          "footnote": {
+            "x": 167,
+            "y": 213.44,
+            "width": 1032,
+            "height": 42,
+            "right": 1199,
+            "bottom": 255.44
+          },
+          "captionOverlay": {
+            "x": 68.3,
+            "y": 380.47,
+            "width": 1229.41,
+            "height": 155.53,
+            "right": 1297.7,
+            "bottom": 536
+          },
+          "captions": [
+            {
+              "x": 481.16,
+              "y": 380.47,
+              "width": 403.67,
+              "height": 155.53,
+              "right": 884.83,
+              "bottom": 536
+            }
+          ],
+          "frameWidthStyle": "1366px"
+        },
+        "resumed": {
+          "viewport": {
+            "w": 1366,
+            "h": 657
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1366,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 83,
+            "right": 1366,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 123,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1243,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 167,
+            "y": 379,
+            "width": 1032,
+            "height": 277.42,
+            "right": 1199,
+            "bottom": 656.42
+          },
+          "heading": {
+            "x": 167,
+            "y": 379,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 411.44
+          },
+          "h1": {
+            "x": 167,
+            "y": 379,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 411.44,
+            "fontSize": 25.954,
+            "lines": 2
+          },
+          "frame": {
+            "x": 513.22,
+            "y": 423.44,
+            "width": 339.55,
+            "height": 190.98,
+            "right": 852.77,
+            "bottom": 614.42
+          },
+          "stage": {
+            "x": 513.22,
+            "y": 423.44,
+            "width": 339.55,
+            "height": 190.98,
+            "right": 852.77,
+            "bottom": 614.42
+          },
+          "controls": {
+            "x": 513.22,
+            "y": 460.42,
+            "width": 339.55,
+            "height": 154,
+            "right": 852.77,
+            "bottom": 614.42
+          },
+          "footnote": {
+            "x": 167,
+            "y": 614.42,
+            "width": 1032,
+            "height": 42,
+            "right": 1199,
+            "bottom": 656.42
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "339.547px"
+        },
+        "resumedShorter": {
+          "viewport": {
+            "w": 1366,
+            "h": 537
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1366,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 83,
+            "right": 1366,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 123,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1243,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 167,
+            "y": 379,
+            "width": 1032,
+            "height": 157.42,
+            "right": 1199,
+            "bottom": 536.42
+          },
+          "heading": {
+            "x": 167,
+            "y": 379,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 411.44
+          },
+          "h1": {
+            "x": 167,
+            "y": 379,
+            "width": 1032,
+            "height": 32.44,
+            "right": 1199,
+            "bottom": 411.44,
+            "fontSize": 25.954,
+            "lines": 2
+          },
+          "frame": {
+            "x": 619.89,
+            "y": 423.44,
+            "width": 126.22,
+            "height": 70.98,
+            "right": 746.11,
+            "bottom": 494.42
+          },
+          "stage": {
+            "x": 619.89,
+            "y": 423.44,
+            "width": 126.22,
+            "height": 70.98,
+            "right": 746.11,
+            "bottom": 494.42
+          },
+          "controls": {
+            "x": 619.89,
+            "y": 273.42,
+            "width": 126.22,
+            "height": 221,
+            "right": 746.11,
+            "bottom": 494.42
+          },
+          "footnote": {
+            "x": 167,
+            "y": 494.42,
+            "width": 1032,
+            "height": 42,
+            "right": 1199,
+            "bottom": 536.42
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "126.219px"
+        }
+      },
+      "longCue": {
+        "atSeconds": 12.875,
+        "captionHeightPx": 87.84
+      },
+      "pageErrors": [],
+      "judgement": {
+        "default": {
+          "failures": []
+        },
+        "longCue": {
+          "failures": []
+        },
+        "fullscreen": {
+          "failures": [],
+          "note": "fullscreen: geometry not judged against fold rules"
+        },
+        "resumed": {
+          "failures": []
+        },
+        "resumedShorter": {
+          "failures": []
+        }
+      }
+    },
+    {
+      "size": {
+        "w": 1536,
+        "h": 730,
+        "kind": "desktop-fold"
+      },
+      "tag": "1536x730",
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 1536,
+            "h": 730
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1536,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 83,
+            "right": 1536,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 208,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1328,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 252,
+            "y": 169,
+            "width": 1032,
+            "height": 560.48,
+            "right": 1284,
+            "bottom": 729.48
+          },
+          "heading": {
+            "x": 252,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 201.5
+          },
+          "h1": {
+            "x": 252,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 201.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 346.67,
+            "y": 213.5,
+            "width": 842.66,
+            "height": 473.98,
+            "right": 1189.33,
+            "bottom": 687.48
+          },
+          "stage": {
+            "x": 346.67,
+            "y": 213.5,
+            "width": 842.66,
+            "height": 473.98,
+            "right": 1189.33,
+            "bottom": 687.48
+          },
+          "controls": {
+            "x": 346.67,
+            "y": 574.48,
+            "width": 842.66,
+            "height": 113,
+            "right": 1189.33,
+            "bottom": 687.48
+          },
+          "footnote": {
+            "x": 252,
+            "y": 687.48,
+            "width": 1032,
+            "height": 42,
+            "right": 1284,
+            "bottom": 729.48
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "842.656px"
+        },
+        "longCue": {
+          "viewport": {
+            "w": 1536,
+            "h": 730
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1536,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 83,
+            "right": 1536,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 208,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1328,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 252,
+            "y": 169,
+            "width": 1032,
+            "height": 560.48,
+            "right": 1284,
+            "bottom": 729.48
+          },
+          "heading": {
+            "x": 252,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 201.5
+          },
+          "h1": {
+            "x": 252,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 201.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 346.67,
+            "y": 213.5,
+            "width": 842.66,
+            "height": 473.98,
+            "right": 1189.33,
+            "bottom": 687.48
+          },
+          "stage": {
+            "x": 346.67,
+            "y": 213.5,
+            "width": 842.66,
+            "height": 473.98,
+            "right": 1189.33,
+            "bottom": 687.48
+          },
+          "controls": {
+            "x": 346.67,
+            "y": 574.48,
+            "width": 842.66,
+            "height": 113,
+            "right": 1189.33,
+            "bottom": 687.48
+          },
+          "footnote": {
+            "x": 252,
+            "y": 687.48,
+            "width": 1032,
+            "height": 42,
+            "right": 1284,
+            "bottom": 729.48
+          },
+          "captionOverlay": {
+            "x": 388.8,
+            "y": 465.2,
+            "width": 758.41,
+            "height": 101.28,
+            "right": 1147.2,
+            "bottom": 566.48
+          },
+          "captions": [
+            {
+              "x": 637.77,
+              "y": 465.2,
+              "width": 260.47,
+              "height": 101.28,
+              "right": 898.23,
+              "bottom": 566.48
+            }
+          ],
+          "frameWidthStyle": "842.656px"
+        },
+        "fullscreen": {
+          "viewport": {
+            "w": 1536,
+            "h": 730
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1536,
+          "fullscreen": true,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 83,
+            "right": 1536,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 208,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1328,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 252,
+            "y": 169,
+            "width": 1032,
+            "height": 86.5,
+            "right": 1284,
+            "bottom": 255.5
+          },
+          "heading": {
+            "x": 252,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 201.5
+          },
+          "h1": {
+            "x": 252,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 201.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 730,
+            "right": 1536,
+            "bottom": 730
+          },
+          "stage": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 730,
+            "right": 1536,
+            "bottom": 730
+          },
+          "controls": {
+            "x": 0,
+            "y": 617,
+            "width": 1536,
+            "height": 113,
+            "right": 1536,
+            "bottom": 730
+          },
+          "footnote": {
+            "x": 252,
+            "y": 213.5,
+            "width": 1032,
+            "height": 42,
+            "right": 1284,
+            "bottom": 255.5
+          },
+          "captionOverlay": {
+            "x": 76.8,
+            "y": 435.91,
+            "width": 1382.41,
+            "height": 173.09,
+            "right": 1459.2,
+            "bottom": 609
+          },
+          "captions": [
+            {
+              "x": 542.91,
+              "y": 435.91,
+              "width": 450.19,
+              "height": 173.09,
+              "right": 993.09,
+              "bottom": 609
+            }
+          ],
+          "frameWidthStyle": "1536px"
+        },
+        "resumed": {
+          "viewport": {
+            "w": 1536,
+            "h": 730
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1536,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 83,
+            "right": 1536,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 208,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1328,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 252,
+            "y": 379,
+            "width": 1032,
+            "height": 350.48,
+            "right": 1284,
+            "bottom": 729.48
+          },
+          "heading": {
+            "x": 252,
+            "y": 379,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 411.5
+          },
+          "h1": {
+            "x": 252,
+            "y": 379,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 411.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 533.33,
+            "y": 423.5,
+            "width": 469.33,
+            "height": 263.98,
+            "right": 1002.66,
+            "bottom": 687.48
+          },
+          "stage": {
+            "x": 533.33,
+            "y": 423.5,
+            "width": 469.33,
+            "height": 263.98,
+            "right": 1002.66,
+            "bottom": 687.48
+          },
+          "controls": {
+            "x": 533.33,
+            "y": 533.48,
+            "width": 469.33,
+            "height": 154,
+            "right": 1002.66,
+            "bottom": 687.48
+          },
+          "footnote": {
+            "x": 252,
+            "y": 687.48,
+            "width": 1032,
+            "height": 42,
+            "right": 1284,
+            "bottom": 729.48
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "469.328px"
+        },
+        "resumedShorter": {
+          "viewport": {
+            "w": 1536,
+            "h": 610
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1536,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1536,
+            "height": 83,
+            "right": 1536,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 208,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1328,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 252,
+            "y": 379,
+            "width": 1032,
+            "height": 230.5,
+            "right": 1284,
+            "bottom": 609.5
+          },
+          "heading": {
+            "x": 252,
+            "y": 379,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 411.5
+          },
+          "h1": {
+            "x": 252,
+            "y": 379,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1284,
+            "bottom": 411.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 640,
+            "y": 423.5,
+            "width": 256,
+            "height": 144,
+            "right": 896,
+            "bottom": 567.5
+          },
+          "stage": {
+            "x": 640,
+            "y": 423.5,
+            "width": 256,
+            "height": 144,
+            "right": 896,
+            "bottom": 567.5
+          },
+          "controls": {
+            "x": 640,
+            "y": 387.5,
+            "width": 256,
+            "height": 180,
+            "right": 896,
+            "bottom": 567.5
+          },
+          "footnote": {
+            "x": 252,
+            "y": 567.5,
+            "width": 1032,
+            "height": 42,
+            "right": 1284,
+            "bottom": 609.5
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "256px"
+        }
+      },
+      "longCue": {
+        "atSeconds": 12.875,
+        "captionHeightPx": 101.28
+      },
+      "pageErrors": [],
+      "judgement": {
+        "default": {
+          "failures": []
+        },
+        "longCue": {
+          "failures": []
+        },
+        "fullscreen": {
+          "failures": [],
+          "note": "fullscreen: geometry not judged against fold rules"
+        },
+        "resumed": {
+          "failures": []
+        },
+        "resumedShorter": {
+          "failures": []
+        }
+      }
+    },
+    {
+      "size": {
+        "w": 1280,
+        "h": 800,
+        "kind": "desktop-fold"
+      },
+      "tag": "1280x800",
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 1280,
+            "h": 800
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1280,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 83,
+            "right": 1280,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 80,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1200,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 124,
+            "y": 169,
+            "width": 1032,
+            "height": 630.38,
+            "right": 1156,
+            "bottom": 799.38
+          },
+          "heading": {
+            "x": 124,
+            "y": 169,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 199.39
+          },
+          "h1": {
+            "x": 124,
+            "y": 169,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 199.39,
+            "fontSize": 24.32,
+            "lines": 2
+          },
+          "frame": {
+            "x": 154.67,
+            "y": 211.39,
+            "width": 970.66,
+            "height": 545.98,
+            "right": 1125.33,
+            "bottom": 757.38
+          },
+          "stage": {
+            "x": 154.67,
+            "y": 211.39,
+            "width": 970.66,
+            "height": 545.98,
+            "right": 1125.33,
+            "bottom": 757.38
+          },
+          "controls": {
+            "x": 154.67,
+            "y": 644.38,
+            "width": 970.66,
+            "height": 113,
+            "right": 1125.33,
+            "bottom": 757.38
+          },
+          "footnote": {
+            "x": 124,
+            "y": 757.38,
+            "width": 1032,
+            "height": 42,
+            "right": 1156,
+            "bottom": 799.38
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "970.656px"
+        },
+        "longCue": {
+          "viewport": {
+            "w": 1280,
+            "h": 800
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1280,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 83,
+            "right": 1280,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 80,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1200,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 124,
+            "y": 169,
+            "width": 1032,
+            "height": 630.38,
+            "right": 1156,
+            "bottom": 799.38
+          },
+          "heading": {
+            "x": 124,
+            "y": 169,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 199.39
+          },
+          "h1": {
+            "x": 124,
+            "y": 169,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 199.39,
+            "fontSize": 24.32,
+            "lines": 2
+          },
+          "frame": {
+            "x": 154.67,
+            "y": 211.39,
+            "width": 970.66,
+            "height": 545.98,
+            "right": 1125.33,
+            "bottom": 757.38
+          },
+          "stage": {
+            "x": 154.67,
+            "y": 211.39,
+            "width": 970.66,
+            "height": 545.98,
+            "right": 1125.33,
+            "bottom": 757.38
+          },
+          "controls": {
+            "x": 154.67,
+            "y": 644.38,
+            "width": 970.66,
+            "height": 113,
+            "right": 1125.33,
+            "bottom": 757.38
+          },
+          "footnote": {
+            "x": 124,
+            "y": 757.38,
+            "width": 1032,
+            "height": 42,
+            "right": 1156,
+            "bottom": 799.38
+          },
+          "captionOverlay": {
+            "x": 203.2,
+            "y": 521.81,
+            "width": 873.59,
+            "height": 114.56,
+            "right": 1076.8,
+            "bottom": 636.38
+          },
+          "captions": [
+            {
+              "x": 492.23,
+              "y": 521.81,
+              "width": 295.52,
+              "height": 114.56,
+              "right": 787.75,
+              "bottom": 636.38
+            }
+          ],
+          "frameWidthStyle": "970.656px"
+        },
+        "fullscreen": {
+          "viewport": {
+            "w": 1280,
+            "h": 800
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1280,
+          "fullscreen": true,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 83,
+            "right": 1280,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 80,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1200,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 124,
+            "y": 169,
+            "width": 1032,
+            "height": 84.39,
+            "right": 1156,
+            "bottom": 253.39
+          },
+          "heading": {
+            "x": 124,
+            "y": 169,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 199.39
+          },
+          "h1": {
+            "x": 124,
+            "y": 169,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 199.39,
+            "fontSize": 24.32,
+            "lines": 2
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 800,
+            "right": 1280,
+            "bottom": 800
+          },
+          "stage": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 800,
+            "right": 1280,
+            "bottom": 800
+          },
+          "controls": {
+            "x": 0,
+            "y": 687,
+            "width": 1280,
+            "height": 113,
+            "right": 1280,
+            "bottom": 800
+          },
+          "footnote": {
+            "x": 124,
+            "y": 211.39,
+            "width": 1032,
+            "height": 42,
+            "right": 1156,
+            "bottom": 253.39
+          },
+          "captionOverlay": {
+            "x": 64,
+            "y": 532.41,
+            "width": 1152,
+            "height": 146.59,
+            "right": 1216,
+            "bottom": 679
+          },
+          "captions": [
+            {
+              "x": 449.91,
+              "y": 532.41,
+              "width": 380.17,
+              "height": 146.59,
+              "right": 830.08,
+              "bottom": 679
+            }
+          ],
+          "frameWidthStyle": "1280px"
+        },
+        "resumed": {
+          "viewport": {
+            "w": 1280,
+            "h": 800
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1280,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 83,
+            "right": 1280,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 80,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1200,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 124,
+            "y": 379,
+            "width": 1032,
+            "height": 420.38,
+            "right": 1156,
+            "bottom": 799.38
+          },
+          "heading": {
+            "x": 124,
+            "y": 379,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 409.39
+          },
+          "h1": {
+            "x": 124,
+            "y": 379,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 409.39,
+            "fontSize": 24.32,
+            "lines": 2
+          },
+          "frame": {
+            "x": 341.33,
+            "y": 421.39,
+            "width": 597.33,
+            "height": 335.98,
+            "right": 938.66,
+            "bottom": 757.38
+          },
+          "stage": {
+            "x": 341.33,
+            "y": 421.39,
+            "width": 597.33,
+            "height": 335.98,
+            "right": 938.66,
+            "bottom": 757.38
+          },
+          "controls": {
+            "x": 341.33,
+            "y": 644.38,
+            "width": 597.33,
+            "height": 113,
+            "right": 938.66,
+            "bottom": 757.38
+          },
+          "footnote": {
+            "x": 124,
+            "y": 757.38,
+            "width": 1032,
+            "height": 42,
+            "right": 1156,
+            "bottom": 799.38
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "597.328px"
+        },
+        "resumedShorter": {
+          "viewport": {
+            "w": 1280,
+            "h": 680
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1280,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 83,
+            "right": 1280,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 80,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1200,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 124,
+            "y": 379,
+            "width": 1032,
+            "height": 300.39,
+            "right": 1156,
+            "bottom": 679.39
+          },
+          "heading": {
+            "x": 124,
+            "y": 379,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 409.39
+          },
+          "h1": {
+            "x": 124,
+            "y": 379,
+            "width": 1032,
+            "height": 30.39,
+            "right": 1156,
+            "bottom": 409.39,
+            "fontSize": 24.32,
+            "lines": 2
+          },
+          "frame": {
+            "x": 448,
+            "y": 421.39,
+            "width": 384,
+            "height": 216,
+            "right": 832,
+            "bottom": 637.39
+          },
+          "stage": {
+            "x": 448,
+            "y": 421.39,
+            "width": 384,
+            "height": 216,
+            "right": 832,
+            "bottom": 637.39
+          },
+          "controls": {
+            "x": 448,
+            "y": 483.39,
+            "width": 384,
+            "height": 154,
+            "right": 832,
+            "bottom": 637.39
+          },
+          "footnote": {
+            "x": 124,
+            "y": 637.39,
+            "width": 1032,
+            "height": 42,
+            "right": 1156,
+            "bottom": 679.39
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "384px"
+        }
+      },
+      "longCue": {
+        "atSeconds": 12.875,
+        "captionHeightPx": 114.56
+      },
+      "pageErrors": [],
+      "judgement": {
+        "default": {
+          "failures": []
+        },
+        "longCue": {
+          "failures": []
+        },
+        "fullscreen": {
+          "failures": [],
+          "note": "fullscreen: geometry not judged against fold rules"
+        },
+        "resumed": {
+          "failures": []
+        },
+        "resumedShorter": {
+          "failures": []
+        }
+      }
+    },
+    {
+      "size": {
+        "w": 1920,
+        "h": 969,
+        "kind": "desktop-fold"
+      },
+      "tag": "1920x969",
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 1920,
+            "h": 969
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1920,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 83,
+            "right": 1920,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 400,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1520,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 444,
+            "y": 169,
+            "width": 1032,
+            "height": 667,
+            "right": 1476,
+            "bottom": 836
+          },
+          "heading": {
+            "x": 444,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 201.5
+          },
+          "h1": {
+            "x": 444,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 201.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 444,
+            "y": 213.5,
+            "width": 1032,
+            "height": 580.5,
+            "right": 1476,
+            "bottom": 794
+          },
+          "stage": {
+            "x": 444,
+            "y": 213.5,
+            "width": 1032,
+            "height": 580.5,
+            "right": 1476,
+            "bottom": 794
+          },
+          "controls": {
+            "x": 444,
+            "y": 681,
+            "width": 1032,
+            "height": 113,
+            "right": 1476,
+            "bottom": 794
+          },
+          "footnote": {
+            "x": 444,
+            "y": 794,
+            "width": 1032,
+            "height": 42,
+            "right": 1476,
+            "bottom": 836
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "1032px"
+        },
+        "longCue": {
+          "viewport": {
+            "w": 1920,
+            "h": 969
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1920,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 83,
+            "right": 1920,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 400,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1520,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 444,
+            "y": 169,
+            "width": 1032,
+            "height": 667,
+            "right": 1476,
+            "bottom": 836
+          },
+          "heading": {
+            "x": 444,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 201.5
+          },
+          "h1": {
+            "x": 444,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 201.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 444,
+            "y": 213.5,
+            "width": 1032,
+            "height": 580.5,
+            "right": 1476,
+            "bottom": 794
+          },
+          "stage": {
+            "x": 444,
+            "y": 213.5,
+            "width": 1032,
+            "height": 580.5,
+            "right": 1476,
+            "bottom": 794
+          },
+          "controls": {
+            "x": 444,
+            "y": 681,
+            "width": 1032,
+            "height": 113,
+            "right": 1476,
+            "bottom": 794
+          },
+          "footnote": {
+            "x": 444,
+            "y": 794,
+            "width": 1032,
+            "height": 42,
+            "right": 1476,
+            "bottom": 836
+          },
+          "captionOverlay": {
+            "x": 495.59,
+            "y": 552.09,
+            "width": 928.81,
+            "height": 120.91,
+            "right": 1424.41,
+            "bottom": 673
+          },
+          "captions": [
+            {
+              "x": 803.84,
+              "y": 552.09,
+              "width": 312.3,
+              "height": 120.91,
+              "right": 1116.14,
+              "bottom": 673
+            }
+          ],
+          "frameWidthStyle": "1032px"
+        },
+        "fullscreen": {
+          "viewport": {
+            "w": 1920,
+            "h": 969
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1920,
+          "fullscreen": true,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 83,
+            "right": 1920,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 400,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1520,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 444,
+            "y": 169,
+            "width": 1032,
+            "height": 86.5,
+            "right": 1476,
+            "bottom": 255.5
+          },
+          "heading": {
+            "x": 444,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 201.5
+          },
+          "h1": {
+            "x": 444,
+            "y": 169,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 201.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 969,
+            "right": 1920,
+            "bottom": 969
+          },
+          "stage": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 969,
+            "right": 1920,
+            "bottom": 969
+          },
+          "controls": {
+            "x": 0,
+            "y": 856,
+            "width": 1920,
+            "height": 113,
+            "right": 1920,
+            "bottom": 969
+          },
+          "footnote": {
+            "x": 444,
+            "y": 213.5,
+            "width": 1032,
+            "height": 42,
+            "right": 1476,
+            "bottom": 255.5
+          },
+          "captionOverlay": {
+            "x": 96,
+            "y": 635.09,
+            "width": 1728,
+            "height": 212.91,
+            "right": 1824,
+            "bottom": 848
+          },
+          "captions": [
+            {
+              "x": 682.38,
+              "y": 635.09,
+              "width": 555.25,
+              "height": 212.91,
+              "right": 1237.63,
+              "bottom": 848
+            }
+          ],
+          "frameWidthStyle": "1920px"
+        },
+        "resumed": {
+          "viewport": {
+            "w": 1920,
+            "h": 969
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1920,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 83,
+            "right": 1920,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 400,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1520,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 444,
+            "y": 379,
+            "width": 1032,
+            "height": 589.48,
+            "right": 1476,
+            "bottom": 968.48
+          },
+          "heading": {
+            "x": 444,
+            "y": 379,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 411.5
+          },
+          "h1": {
+            "x": 444,
+            "y": 379,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 411.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 512.89,
+            "y": 423.5,
+            "width": 894.22,
+            "height": 502.98,
+            "right": 1407.11,
+            "bottom": 926.48
+          },
+          "stage": {
+            "x": 512.89,
+            "y": 423.5,
+            "width": 894.22,
+            "height": 502.98,
+            "right": 1407.11,
+            "bottom": 926.48
+          },
+          "controls": {
+            "x": 512.89,
+            "y": 813.48,
+            "width": 894.22,
+            "height": 113,
+            "right": 1407.11,
+            "bottom": 926.48
+          },
+          "footnote": {
+            "x": 444,
+            "y": 926.48,
+            "width": 1032,
+            "height": 42,
+            "right": 1476,
+            "bottom": 968.48
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "894.219px"
+        },
+        "resumedShorter": {
+          "viewport": {
+            "w": 1920,
+            "h": 849
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1920,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 83,
+            "right": 1920,
+            "bottom": 83
+          },
+          "filmLibrary": {
+            "x": 400,
+            "y": 105,
+            "width": 1120,
+            "height": 44,
+            "right": 1520,
+            "bottom": 149
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 444,
+            "y": 379,
+            "width": 1032,
+            "height": 469.48,
+            "right": 1476,
+            "bottom": 848.48
+          },
+          "heading": {
+            "x": 444,
+            "y": 379,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 411.5
+          },
+          "h1": {
+            "x": 444,
+            "y": 379,
+            "width": 1032,
+            "height": 32.5,
+            "right": 1476,
+            "bottom": 411.5,
+            "fontSize": 26,
+            "lines": 2
+          },
+          "frame": {
+            "x": 619.56,
+            "y": 423.5,
+            "width": 680.88,
+            "height": 382.98,
+            "right": 1300.44,
+            "bottom": 806.48
+          },
+          "stage": {
+            "x": 619.56,
+            "y": 423.5,
+            "width": 680.88,
+            "height": 382.98,
+            "right": 1300.44,
+            "bottom": 806.48
+          },
+          "controls": {
+            "x": 619.56,
+            "y": 693.48,
+            "width": 680.88,
+            "height": 113,
+            "right": 1300.44,
+            "bottom": 806.48
+          },
+          "footnote": {
+            "x": 444,
+            "y": 806.48,
+            "width": 1032,
+            "height": 42,
+            "right": 1476,
+            "bottom": 848.48
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "680.875px"
+        }
+      },
+      "longCue": {
+        "atSeconds": 12.875,
+        "captionHeightPx": 120.91
+      },
+      "pageErrors": [],
+      "judgement": {
+        "default": {
+          "failures": []
+        },
+        "longCue": {
+          "failures": []
+        },
+        "fullscreen": {
+          "failures": [],
+          "note": "fullscreen: geometry not judged against fold rules"
+        },
+        "resumed": {
+          "failures": []
+        },
+        "resumedShorter": {
+          "failures": []
+        }
+      }
+    },
+    {
+      "size": {
+        "w": 1000,
+        "h": 760,
+        "kind": "desktop-mid"
+      },
+      "tag": "1000x760",
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 1000,
+            "h": 760
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1000,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 93,
+            "right": 1000,
+            "bottom": 93
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 115,
+            "width": 1000,
+            "height": 44,
+            "right": 1000,
+            "bottom": 159
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 28,
+            "y": 179,
+            "width": 944,
+            "height": 580.98,
+            "right": 972,
+            "bottom": 759.98
+          },
+          "heading": {
+            "x": 28,
+            "y": 179,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 204
+          },
+          "h1": {
+            "x": 28,
+            "y": 179,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 204,
+            "fontSize": 20,
+            "lines": 2
+          },
+          "frame": {
+            "x": 53.78,
+            "y": 216,
+            "width": 892.44,
+            "height": 501.98,
+            "right": 946.22,
+            "bottom": 717.98
+          },
+          "stage": {
+            "x": 53.78,
+            "y": 216,
+            "width": 892.44,
+            "height": 501.98,
+            "right": 946.22,
+            "bottom": 717.98
+          },
+          "controls": {
+            "x": 53.78,
+            "y": 604.98,
+            "width": 892.44,
+            "height": 113,
+            "right": 946.22,
+            "bottom": 717.98
+          },
+          "footnote": {
+            "x": 28,
+            "y": 717.98,
+            "width": 944,
+            "height": 42,
+            "right": 972,
+            "bottom": 759.98
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "892.438px"
+        },
+        "longCue": {
+          "viewport": {
+            "w": 1000,
+            "h": 760
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1000,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 93,
+            "right": 1000,
+            "bottom": 93
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 115,
+            "width": 1000,
+            "height": 44,
+            "right": 1000,
+            "bottom": 159
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 28,
+            "y": 179,
+            "width": 944,
+            "height": 580.98,
+            "right": 972,
+            "bottom": 759.98
+          },
+          "heading": {
+            "x": 28,
+            "y": 179,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 204
+          },
+          "h1": {
+            "x": 28,
+            "y": 179,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 204,
+            "fontSize": 20,
+            "lines": 2
+          },
+          "frame": {
+            "x": 53.78,
+            "y": 216,
+            "width": 892.44,
+            "height": 501.98,
+            "right": 946.22,
+            "bottom": 717.98
+          },
+          "stage": {
+            "x": 53.78,
+            "y": 216,
+            "width": 892.44,
+            "height": 501.98,
+            "right": 946.22,
+            "bottom": 717.98
+          },
+          "controls": {
+            "x": 53.78,
+            "y": 604.98,
+            "width": 892.44,
+            "height": 113,
+            "right": 946.22,
+            "bottom": 717.98
+          },
+          "footnote": {
+            "x": 28,
+            "y": 717.98,
+            "width": 944,
+            "height": 42,
+            "right": 972,
+            "bottom": 759.98
+          },
+          "captionOverlay": {
+            "x": 98.39,
+            "y": 490.55,
+            "width": 803.22,
+            "height": 106.44,
+            "right": 901.61,
+            "bottom": 596.98
+          },
+          "captions": [
+            {
+              "x": 362.92,
+              "y": 490.55,
+              "width": 274.14,
+              "height": 106.44,
+              "right": 637.06,
+              "bottom": 596.98
+            }
+          ],
+          "frameWidthStyle": "892.438px"
+        },
+        "fullscreen": {
+          "viewport": {
+            "w": 1000,
+            "h": 760
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1000,
+          "fullscreen": true,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 93,
+            "right": 1000,
+            "bottom": 93
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 115,
+            "width": 1000,
+            "height": 44,
+            "right": 1000,
+            "bottom": 159
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 28,
+            "y": 179,
+            "width": 944,
+            "height": 79,
+            "right": 972,
+            "bottom": 258
+          },
+          "heading": {
+            "x": 28,
+            "y": 179,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 204
+          },
+          "h1": {
+            "x": 28,
+            "y": 179,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 204,
+            "fontSize": 20,
+            "lines": 2
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 760,
+            "right": 1000,
+            "bottom": 760
+          },
+          "stage": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 760,
+            "right": 1000,
+            "bottom": 760
+          },
+          "controls": {
+            "x": 0,
+            "y": 647,
+            "width": 1000,
+            "height": 113,
+            "right": 1000,
+            "bottom": 760
+          },
+          "footnote": {
+            "x": 28,
+            "y": 216,
+            "width": 944,
+            "height": 42,
+            "right": 972,
+            "bottom": 258
+          },
+          "captionOverlay": {
+            "x": 50,
+            "y": 521.41,
+            "width": 900,
+            "height": 117.59,
+            "right": 950,
+            "bottom": 639
+          },
+          "captions": [
+            {
+              "x": 348.22,
+              "y": 521.41,
+              "width": 303.56,
+              "height": 117.59,
+              "right": 651.78,
+              "bottom": 639
+            }
+          ],
+          "frameWidthStyle": "1000px"
+        },
+        "resumed": {
+          "viewport": {
+            "w": 1000,
+            "h": 760
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1000,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 93,
+            "right": 1000,
+            "bottom": 93
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 115,
+            "width": 1000,
+            "height": 44,
+            "right": 1000,
+            "bottom": 159
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 28,
+            "y": 389,
+            "width": 944,
+            "height": 370.98,
+            "right": 972,
+            "bottom": 759.98
+          },
+          "heading": {
+            "x": 28,
+            "y": 389,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 414
+          },
+          "h1": {
+            "x": 28,
+            "y": 389,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 414,
+            "fontSize": 20,
+            "lines": 2
+          },
+          "frame": {
+            "x": 240.44,
+            "y": 426,
+            "width": 519.11,
+            "height": 291.98,
+            "right": 759.55,
+            "bottom": 717.98
+          },
+          "stage": {
+            "x": 240.44,
+            "y": 426,
+            "width": 519.11,
+            "height": 291.98,
+            "right": 759.55,
+            "bottom": 717.98
+          },
+          "controls": {
+            "x": 240.44,
+            "y": 604.98,
+            "width": 519.11,
+            "height": 113,
+            "right": 759.55,
+            "bottom": 717.98
+          },
+          "footnote": {
+            "x": 28,
+            "y": 717.98,
+            "width": 944,
+            "height": 42,
+            "right": 972,
+            "bottom": 759.98
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "519.109px"
+        },
+        "resumedShorter": {
+          "viewport": {
+            "w": 1000,
+            "h": 640
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 1000,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 93,
+            "right": 1000,
+            "bottom": 93
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 115,
+            "width": 1000,
+            "height": 44,
+            "right": 1000,
+            "bottom": 159
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 28,
+            "y": 389,
+            "width": 944,
+            "height": 250.98,
+            "right": 972,
+            "bottom": 639.98
+          },
+          "heading": {
+            "x": 28,
+            "y": 389,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 414
+          },
+          "h1": {
+            "x": 28,
+            "y": 389,
+            "width": 944,
+            "height": 25,
+            "right": 972,
+            "bottom": 414,
+            "fontSize": 20,
+            "lines": 2
+          },
+          "frame": {
+            "x": 347.11,
+            "y": 426,
+            "width": 305.77,
+            "height": 171.98,
+            "right": 652.88,
+            "bottom": 597.98
+          },
+          "stage": {
+            "x": 347.11,
+            "y": 426,
+            "width": 305.77,
+            "height": 171.98,
+            "right": 652.88,
+            "bottom": 597.98
+          },
+          "controls": {
+            "x": 347.11,
+            "y": 443.98,
+            "width": 305.77,
+            "height": 154,
+            "right": 652.88,
+            "bottom": 597.98
+          },
+          "footnote": {
+            "x": 28,
+            "y": 597.98,
+            "width": 944,
+            "height": 42,
+            "right": 972,
+            "bottom": 639.98
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "305.766px"
+        }
+      },
+      "longCue": {
+        "atSeconds": 12.875,
+        "captionHeightPx": 106.44
+      },
+      "pageErrors": [],
+      "judgement": {
+        "default": {
+          "failures": []
+        },
+        "longCue": {
+          "failures": []
+        },
+        "fullscreen": {
+          "failures": [],
+          "note": "fullscreen: geometry not judged against fold rules"
+        },
+        "resumed": {
+          "failures": []
+        },
+        "resumedShorter": {
+          "failures": []
+        }
+      }
+    },
+    {
+      "size": {
+        "w": 820,
+        "h": 1000,
+        "kind": "narrow-regression"
+      },
+      "tag": "820x1000",
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 820,
+            "h": 1000
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 820,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 820,
+            "height": 93,
+            "right": 820,
+            "bottom": 93
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 117,
+            "width": 820,
+            "height": 48.5,
+            "right": 820,
+            "bottom": 165.5
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 28,
+            "y": 199.5,
+            "width": 764,
+            "height": 550.11,
+            "right": 792,
+            "bottom": 749.61
+          },
+          "heading": {
+            "x": 28,
+            "y": 199.5,
+            "width": 764,
+            "height": 60.36,
+            "right": 792,
+            "bottom": 259.86
+          },
+          "h1": {
+            "x": 28,
+            "y": 199.5,
+            "width": 169.69,
+            "height": 60.36,
+            "right": 197.69,
+            "bottom": 259.86,
+            "fontSize": 28,
+            "lines": 3
+          },
+          "frame": {
+            "x": 28,
+            "y": 277.86,
+            "width": 764,
+            "height": 429.75,
+            "right": 792,
+            "bottom": 707.61
+          },
+          "stage": {
+            "x": 28,
+            "y": 277.86,
+            "width": 764,
+            "height": 429.75,
+            "right": 792,
+            "bottom": 707.61
+          },
+          "controls": {
+            "x": 28,
+            "y": 594.61,
+            "width": 764,
+            "height": 113,
+            "right": 792,
+            "bottom": 707.61
+          },
+          "footnote": {
+            "x": 28,
+            "y": 707.61,
+            "width": 764,
+            "height": 42,
+            "right": 792,
+            "bottom": 749.61
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "764px"
+        },
+        "longCue": {
+          "viewport": {
+            "w": 820,
+            "h": 1000
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 820,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 820,
+            "height": 93,
+            "right": 820,
+            "bottom": 93
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 117,
+            "width": 820,
+            "height": 48.5,
+            "right": 820,
+            "bottom": 165.5
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 28,
+            "y": 199.5,
+            "width": 764,
+            "height": 550.11,
+            "right": 792,
+            "bottom": 749.61
+          },
+          "heading": {
+            "x": 28,
+            "y": 199.5,
+            "width": 764,
+            "height": 60.36,
+            "right": 792,
+            "bottom": 259.86
+          },
+          "h1": {
+            "x": 28,
+            "y": 199.5,
+            "width": 169.69,
+            "height": 60.36,
+            "right": 197.69,
+            "bottom": 259.86,
+            "fontSize": 28,
+            "lines": 3
+          },
+          "frame": {
+            "x": 28,
+            "y": 277.86,
+            "width": 764,
+            "height": 429.75,
+            "right": 792,
+            "bottom": 707.61
+          },
+          "stage": {
+            "x": 28,
+            "y": 277.86,
+            "width": 764,
+            "height": 429.75,
+            "right": 792,
+            "bottom": 707.61
+          },
+          "controls": {
+            "x": 28,
+            "y": 594.61,
+            "width": 764,
+            "height": 113,
+            "right": 792,
+            "bottom": 707.61
+          },
+          "footnote": {
+            "x": 28,
+            "y": 707.61,
+            "width": 764,
+            "height": 42,
+            "right": 792,
+            "bottom": 749.61
+          },
+          "captionOverlay": {
+            "x": 66.19,
+            "y": 493.48,
+            "width": 687.63,
+            "height": 93.13,
+            "right": 753.81,
+            "bottom": 586.61
+          },
+          "captions": [
+            {
+              "x": 290.52,
+              "y": 493.48,
+              "width": 238.95,
+              "height": 93.13,
+              "right": 529.47,
+              "bottom": 586.61
+            }
+          ],
+          "frameWidthStyle": "764px"
+        },
+        "resumed": {
+          "viewport": {
+            "w": 820,
+            "h": 1000
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 820,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 820,
+            "height": 93,
+            "right": 820,
+            "bottom": 93
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 117,
+            "width": 820,
+            "height": 48.5,
+            "right": 820,
+            "bottom": 165.5
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 28,
+            "y": 409.5,
+            "width": 764,
+            "height": 550.11,
+            "right": 792,
+            "bottom": 959.61
+          },
+          "heading": {
+            "x": 28,
+            "y": 409.5,
+            "width": 764,
+            "height": 60.36,
+            "right": 792,
+            "bottom": 469.86
+          },
+          "h1": {
+            "x": 28,
+            "y": 409.5,
+            "width": 169.69,
+            "height": 60.36,
+            "right": 197.69,
+            "bottom": 469.86,
+            "fontSize": 28,
+            "lines": 3
+          },
+          "frame": {
+            "x": 28,
+            "y": 487.86,
+            "width": 764,
+            "height": 429.75,
+            "right": 792,
+            "bottom": 917.61
+          },
+          "stage": {
+            "x": 28,
+            "y": 487.86,
+            "width": 764,
+            "height": 429.75,
+            "right": 792,
+            "bottom": 917.61
+          },
+          "controls": {
+            "x": 28,
+            "y": 804.61,
+            "width": 764,
+            "height": 113,
+            "right": 792,
+            "bottom": 917.61
+          },
+          "footnote": {
+            "x": 28,
+            "y": 917.61,
+            "width": 764,
+            "height": 42,
+            "right": 792,
+            "bottom": 959.61
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "764px"
+        }
+      },
+      "longCue": {
+        "atSeconds": 12.875,
+        "captionHeightPx": 93.13
+      },
+      "pageErrors": [],
+      "judgement": {
+        "default": {
+          "failures": []
+        },
+        "longCue": {
+          "failures": []
+        },
+        "resumed": {
+          "failures": []
+        }
+      }
+    },
+    {
+      "size": {
+        "w": 390,
+        "h": 844,
+        "kind": "mobile-regression"
+      },
+      "tag": "390x844",
+      "states": {
+        "default": {
+          "viewport": {
+            "w": 390,
+            "h": 844
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 390,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 102,
+            "right": 390,
+            "bottom": 102
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 126,
+            "width": 390,
+            "height": 104.5,
+            "right": 390,
+            "bottom": 230.5
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 16,
+            "y": 255.5,
+            "width": 358,
+            "height": 395.36,
+            "right": 374,
+            "bottom": 650.86
+          },
+          "heading": {
+            "x": 16,
+            "y": 255.5,
+            "width": 358,
+            "height": 60.36,
+            "right": 374,
+            "bottom": 315.86
+          },
+          "h1": {
+            "x": 16,
+            "y": 255.5,
+            "width": 169.69,
+            "height": 60.36,
+            "right": 185.69,
+            "bottom": 315.86,
+            "fontSize": 28,
+            "lines": 3
+          },
+          "frame": {
+            "x": 16,
+            "y": 328.86,
+            "width": 358,
+            "height": 260,
+            "right": 374,
+            "bottom": 588.86
+          },
+          "stage": {
+            "x": 16,
+            "y": 328.86,
+            "width": 358,
+            "height": 260,
+            "right": 374,
+            "bottom": 588.86
+          },
+          "controls": {
+            "x": 16,
+            "y": 450.86,
+            "width": 358,
+            "height": 138,
+            "right": 374,
+            "bottom": 588.86
+          },
+          "footnote": {
+            "x": 16,
+            "y": 588.86,
+            "width": 358,
+            "height": 62,
+            "right": 374,
+            "bottom": 650.86
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "358px"
+        },
+        "longCue": {
+          "viewport": {
+            "w": 390,
+            "h": 844
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 390,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 102,
+            "right": 390,
+            "bottom": 102
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 126,
+            "width": 390,
+            "height": 104.5,
+            "right": 390,
+            "bottom": 230.5
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 16,
+            "y": 255.5,
+            "width": 358,
+            "height": 395.36,
+            "right": 374,
+            "bottom": 650.86
+          },
+          "heading": {
+            "x": 16,
+            "y": 255.5,
+            "width": 358,
+            "height": 60.36,
+            "right": 374,
+            "bottom": 315.86
+          },
+          "h1": {
+            "x": 16,
+            "y": 255.5,
+            "width": 169.69,
+            "height": 60.36,
+            "right": 185.69,
+            "bottom": 315.86,
+            "fontSize": 28,
+            "lines": 3
+          },
+          "frame": {
+            "x": 16,
+            "y": 328.86,
+            "width": 358,
+            "height": 260,
+            "right": 374,
+            "bottom": 588.86
+          },
+          "stage": {
+            "x": 16,
+            "y": 328.86,
+            "width": 358,
+            "height": 260,
+            "right": 374,
+            "bottom": 588.86
+          },
+          "controls": {
+            "x": 16,
+            "y": 450.86,
+            "width": 358,
+            "height": 138,
+            "right": 374,
+            "bottom": 588.86
+          },
+          "footnote": {
+            "x": 16,
+            "y": 588.86,
+            "width": 358,
+            "height": 62,
+            "right": 374,
+            "bottom": 650.86
+          },
+          "captionOverlay": {
+            "x": 26.73,
+            "y": 381.67,
+            "width": 336.53,
+            "height": 61.19,
+            "right": 363.27,
+            "bottom": 442.86
+          },
+          "captions": [
+            {
+              "x": 116.75,
+              "y": 381.67,
+              "width": 156.48,
+              "height": 61.19,
+              "right": 273.23,
+              "bottom": 442.86
+            }
+          ],
+          "frameWidthStyle": "358px"
+        },
+        "resumed": {
+          "viewport": {
+            "w": 390,
+            "h": 844
+          },
+          "scrollX": 0,
+          "scrollY": 0,
+          "docScrollWidth": 390,
+          "fullscreen": false,
+          "header": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 102,
+            "right": 390,
+            "bottom": 102
+          },
+          "filmLibrary": {
+            "x": 0,
+            "y": 126,
+            "width": 390,
+            "height": 104.5,
+            "right": 390,
+            "bottom": 230.5
+          },
+          "resumeBanner": null,
+          "column": {
+            "x": 16,
+            "y": 505.5,
+            "width": 358,
+            "height": 395.36,
+            "right": 374,
+            "bottom": 900.86
+          },
+          "heading": {
+            "x": 16,
+            "y": 505.5,
+            "width": 358,
+            "height": 60.36,
+            "right": 374,
+            "bottom": 565.86
+          },
+          "h1": {
+            "x": 16,
+            "y": 505.5,
+            "width": 169.69,
+            "height": 60.36,
+            "right": 185.69,
+            "bottom": 565.86,
+            "fontSize": 28,
+            "lines": 3
+          },
+          "frame": {
+            "x": 16,
+            "y": 578.86,
+            "width": 358,
+            "height": 260,
+            "right": 374,
+            "bottom": 838.86
+          },
+          "stage": {
+            "x": 16,
+            "y": 578.86,
+            "width": 358,
+            "height": 260,
+            "right": 374,
+            "bottom": 838.86
+          },
+          "controls": {
+            "x": 16,
+            "y": 700.86,
+            "width": 358,
+            "height": 138,
+            "right": 374,
+            "bottom": 838.86
+          },
+          "footnote": {
+            "x": 16,
+            "y": 838.86,
+            "width": 358,
+            "height": 62,
+            "right": 374,
+            "bottom": 900.86
+          },
+          "captionOverlay": null,
+          "captions": [],
+          "frameWidthStyle": "358px"
+        }
+      },
+      "longCue": {
+        "atSeconds": 12.875,
+        "captionHeightPx": 61.19
+      },
+      "pageErrors": [],
+      "judgement": {
+        "default": {
+          "failures": []
+        },
+        "longCue": {
+          "failures": []
+        },
+        "resumed": {
+          "failures": []
+        }
+      }
+    }
+  ]
+}
