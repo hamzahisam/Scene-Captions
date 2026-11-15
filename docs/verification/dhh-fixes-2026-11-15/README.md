@@ -341,3 +341,17 @@ audit reproduces the Phase A counts in all films for extension/marker off and on
 Not established: Safari, Firefox, a physical iPhone, VoiceOver/NVDA, DHH/team review of
 captions, instruments and wording, the 20–30 minute playback/recording soak, acoustic or
 listening validation, and any research validity. Historical Graphify/Fallow maps remain stale.
+
+## Follow-up audit fixes (committed after Phase C, out of task order)
+
+These two audit follow-ups were committed after the C-series and the final report,
+so they appear out of order in history; nothing was amended.
+
+**B4 audit — fresh registry allocation and canonical film order.** Session creation
+now selects the between-participants row, its stratum index and the saved rows from the
+freshly read registry (`claimBetweenRow` on `r.allocations`), not React state, so a stale
+second tab cannot reuse or overwrite a slot another tab consumed. Selected films are
+put in catalogue order (`canonicalFilms`) before the between/pilot rotation, so
+checkbox click order no longer changes the sequence. The legend is "Films to include"
+with a note that the saved viewing order is rotated from catalogue order. Tests cover
+reversed-checkbox equality and the stale-tab claim. B4 Chrome runner re-passes.

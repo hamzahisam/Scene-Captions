@@ -1,5 +1,6 @@
 import {researcherCredentialSchema} from './researcher-code.ts';
 import {z} from 'zod';import {DEFAULT_PROFILE} from './captions.ts';import type {CaptionProfile} from './captions.ts';
+import type {AllocationRow} from './allocation.ts';
 export const filmIds=['big-buck-bunny','sintel','tears-of-steel','soar','hair-love'] as const;
 export const conditionSchema=z.enum(['baseline','personalized','essential','balanced','rich']);
 export const participantIdSchema=z.string().regex(/^P-\d{3,6}$/,'Use a code such as P-001; names are not accepted.');
@@ -19,3 +20,12 @@ export function conditionProfile(profile:CaptionProfile, session?:StudySession):
 }
 export function profileNamespace(s:StudySession){return `scenecaptions.participant.${s.id}.${s.participantId}.profile`;}
 export function validateRegistry(raw:string|null):{sessions:Record<string,StudySession>;allocations:import('./allocation.ts').AllocationRow[];seed:string}{if(!raw)return {sessions:{},allocations:[],seed:'study-2026'};const d=JSON.parse(raw);if(!d||typeof d.seed!=='string'||!Array.isArray(d.allocations)||typeof d.sessions!=='object'||!d.sessions)throw Error('Saved study configuration is invalid.');const sessions:Record<string,StudySession>=Object.fromEntries(Object.entries(d.sessions).map(([id,s])=>[id,studySessionSchema.parse(s)]));const groups=new Map<string,{conditionCount:number;slot:number;withoutOverride:number}>();for(const s of Object.values(sessions)){const details=pilotSlotDetails(s);if(!details)continue;const key=`${details.conditionCount}:${details.slot}`,group=groups.get(key)??{...details,withoutOverride:0};if(!s.slotOverride)group.withoutOverride++;groups.set(key,group)}for(const group of groups.values())if(group.withoutOverride>1)throw Error(`Pilot slot ${group.conditionCount}-${group.slot} is assigned more than once. Repeat a pilot slot only with an explicit reason.`);return {...d,sessions};}
+
+/** Selected films in catalogue order, so checkbox click order never changes rotation. */
+export function canonicalFilms(selected:readonly string[]):string[]{return filmIds.filter(film=>selected.includes(film));}
+/** First unassigned row for a stratum, its index within that stratum and the rows with the participant saved. Reads the fresh registry rows. */
+export function claimBetweenRow(rows:AllocationRow[],background:string,participantId:string):{row:AllocationRow;index:number;rows:AllocationRow[]}|null{
+ const stratum=rows.filter(a=>a.stratum===background),row=stratum.find(a=>!a.participantId);
+ if(!row)return null;
+ return {row,index:stratum.indexOf(row),rows:rows.map(a=>a.slot===row.slot&&a.stratum===row.stratum?{...a,participantId}:a)};
+}

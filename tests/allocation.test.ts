@@ -93,3 +93,20 @@ test('a repeated pilot slot needs an explicit reasoned override stored in the se
  const three=pilotSession(3,3,0);
  assert.doesNotThrow(()=>validateRegistry(registryOf([first,three])));
 });
+import {canonicalFilms,claimBetweenRow} from '../src/lib/study-session.ts';
+test('film checkbox order never changes the saved rotation',()=>{
+ const forward=canonicalFilms(['soar','hair-love','big-buck-bunny']),reversed=canonicalFilms(['big-buck-bunny','hair-love','soar']);
+ assert.deepEqual(forward,['big-buck-bunny','soar','hair-love']);assert.deepEqual(forward,reversed);
+ for(let row=0;row<6;row++)assert.deepEqual(betweenSequence(forward,'personalized',row),betweenSequence(reversed,'personalized',row));
+});
+test('a stale tab claims the next fresh row and never reuses or overwrites a consumed slot',()=>{
+ const rows=[{slot:'frequent-1',stratum:'frequent',condition:'baseline'},{slot:'frequent-2',stratum:'frequent',condition:'personalized'},{slot:'occasional-1',stratum:'occasional',condition:'baseline'}] as never[];
+ const tabA=claimBetweenRow(rows,'frequent','P-001')!;
+ assert.equal(tabA.row.slot,'frequent-1');assert.equal(tabA.index,0);
+ // Tab B still holds the old rows, but create() reads the registry saved by tab A.
+ const fresh=tabA.rows,tabB=claimBetweenRow(fresh,'frequent','P-002')!;
+ assert.equal(tabB.row.slot,'frequent-2');assert.equal(tabB.index,1);
+ const final=tabB.rows as {slot:string;participantId?:string}[];
+ assert.deepEqual(final.map(r=>[r.slot,r.participantId]),[['frequent-1','P-001'],['frequent-2','P-002'],['occasional-1',undefined]]);
+ assert.equal(claimBetweenRow(final as never,'frequent','P-003'),null);
+});
