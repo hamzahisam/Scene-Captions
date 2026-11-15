@@ -98,6 +98,10 @@
 
   .video-stage:has(.caption-overlay p) .big-play { display: none; }
 
+  /* While the settings sheet is open on a wide player, captions shift left of it
+     (personalized viewing only; baseline participants cannot open settings). */
+  .settings-open:not(.settings-below) .caption-overlay { right: calc(min(360px, 46%) + 24px); left: 3%; }
+
   @media (max-width: 500px) {
     .caption-overlay { left: 3%; right: 3%; }
     .caption-overlay.top { top: 40px; }

@@ -1,2 +1,7 @@
 @layer research {
+  /* CapTune anchored viewer player (native controls). Caption offsets kept from bafdfb5. */
+  .anchor-video { aspect-ratio: 16 / 9; }
+  .anchor-video video { width: 100%; height: 100%; background: #111b15; }
+  .anchor-video .caption-overlay.bottom { bottom: 65px; }
+  @media (max-width: 500px) { .anchor-video .caption-overlay.bottom { bottom: 60px; } }
 }

@@ -120,8 +120,9 @@ export function Workspace({
   renders.current++;
   const diagnostic = useRef<HTMLElement>(null);
   useEffect(() => {
-    if (process.env.NODE_ENV === "development" && diagnostic.current)
-      diagnostic.current.dataset.renderCount = String(renders.current);
+    // Render-isolation diagnostic read by scripts/verification (on <main>).
+    const main = diagnostic.current?.closest("main");
+    if (process.env.NODE_ENV === "development" && main) main.dataset.renderCount = String(renders.current);
   });
   const viewerProfile =
     session && assigned !== "personalized"
@@ -226,6 +227,7 @@ export function Workspace({
         onEvent={record}
         seekTo={seekTo}
         savedNonce={savedNonce}
+        storageError={storageError}
         demoMode={!session}
       />
       <CaptionNote data={data} />
