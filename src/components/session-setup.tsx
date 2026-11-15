@@ -343,7 +343,8 @@ export function SessionSetup({ durations }: { durations: Record<string, number> 
             <h2 id="step-films-title"><span className="form-step__n">3</span>Films and order</h2>
             <fieldset className="check-list">
               <legend>Films in viewing order</legend>
-              {filmIds.map((film, i) => (
+              {/* Sintel and Tears of Steel are hidden: they have dialogue subtitles only, no sound captions. */}
+              {filmIds.map((film, i) => [film, i] as const).filter(([film]) => film !== "sintel" && film !== "tears-of-steel").map(([film, i]) => (
                 <label key={film} className="check-field">
                   <input
                     type="checkbox"
