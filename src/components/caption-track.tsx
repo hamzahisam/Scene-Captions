@@ -3,6 +3,10 @@ import { resolveCaptionWindows, formatTime, resolveCaption } from "@/lib/caption
 import type { CaptionVideo, CaptionCue, CaptionProfile, Condition } from "@/lib/captions";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import { Icon } from "./icon";
+import { useSyncExternalStore } from "react";
+import type { PlaybackClock } from "@/lib/playback-clock";
+const noSubscribe = () => () => {};
+const zero = () => 0;
 
 export function CaptionTrackNotice({ data }: { data: CaptionVideo | null }) {
   const captionSource = data?.generated_with.caption_source;
@@ -20,10 +24,13 @@ function cueLabel(cue: CaptionCue, data: CaptionVideo | null) {
   return { dense: "Busy moment", quiet: "Quiet moment", balanced: "Steady moment" }[cue.scene_load];
 }
 
-export function SoundTimeline({ data, time, profile, condition, showOriginal, jump,annotations,extendDisplay=false }: {
-  extendDisplay?:boolean;annotations?:CueAnnotations; data: CaptionVideo | null; time: number; profile: CaptionProfile; condition: Condition;
+export function SoundTimeline({ data, clock, live, profile, condition, showOriginal, jump,annotations,extendDisplay=false }: {
+  extendDisplay?:boolean;annotations?:CueAnnotations; data: CaptionVideo | null; clock: PlaybackClock | null; live: boolean; profile: CaptionProfile; condition: Condition;
   showOriginal: boolean; jump: (seconds: number) => void;
 }) {
+  // Follow the frame clock only while the research drawer is open; closed, nothing subscribes or re-renders.
+  const follow = live && !!clock;
+  const time = useSyncExternalStore(follow ? clock.subscribe : noSubscribe, follow ? clock.getSnapshot : zero, zero);
   if (!data?.cues.length && data?.dialogue?.length) return <section className="sound-timeline card" aria-labelledby="dialogue-title"><div className="section-title"><div><span className="eyebrow">FOLLOW THE DIALOGUE</span><h2 id="dialogue-title">Dialogue transcript</h2></div><span className="muted-text">{data.dialogue.length} subtitle cues</span></div><p className="section-description">Jump to a line. {data.generated_with.experimental ? "These experimental audio transcriptions need word and timing review." : "These source subtitles stay the same at every sound preference."}</p><div className="cue-list">{data.dialogue.map(cue => <button key={cue.cue_id} className={`cue-row dialogue-row ${cue.start_s <= time && time < cue.end_s ? "current" : ""}`} onClick={() => jump(cue.start_s)} aria-label={`Jump to ${formatTime(cue.start_s)}: ${cue.text}`} aria-current={cue.start_s <= time && time < cue.end_s ? "true" : undefined}><span className="cue-time">{formatTime(cue.start_s)}</span><span className="cue-copy"><strong>{cue.text}</strong><small>{data.generated_with.experimental ? "AI-transcribed English · unverified" : "English dialogue"}</small></span><Icon name="play" size={15} /></button>)}</div></section>;
   const windows = data ? resolveCaptionWindows(data,profile,condition,showOriginal,extendDisplay) : [];
   const activeIds = new Set(windows.filter(w=>w.start_s<=time&&time<w.display_end_s).map(w=>w.cue.cue_id));

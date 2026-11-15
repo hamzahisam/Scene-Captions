@@ -1,4 +1,5 @@
 "use client";
+import type { PlaybackClock } from "@/lib/playback-clock";
 import type {StudySession} from "@/lib/study-session";import type {QuestionFile} from "@/lib/study-surveys";import type {TelemetryRecorder} from "@/lib/telemetry-storage";
 import type {TelemetryInput} from "@/lib/telemetry";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -17,13 +18,15 @@ import { resolveCaption } from "@/lib/captions";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import { Icon } from "./icon";
 
-export function VideoPlayer({ source, data, profile, extendDisplay=false, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, onApply, annotations, onTelemetry=()=>{},recording=false,session,recorder,questions, soundSettingsAllowed=true,showTicks=true, poster = "/media/bunny-poster.jpg" }: {
+export function VideoPlayer({ onClock, source, data, profile, extendDisplay=false, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, onApply, annotations, onTelemetry=()=>{},recording=false,session,recorder,questions, soundSettingsAllowed=true,showTicks=true, poster = "/media/bunny-poster.jpg" }: {
+  onClock?: (clock: PlaybackClock) => void;
   extendDisplay?:boolean;source: string; data: CaptionVideo | null; profile: CaptionProfile; condition: Condition;
   showOriginal: boolean; onOriginal: (enabled?:boolean,mode?:"toggle"|"hold") => void; onTime: (time: number) => void;
   onEvent: (event: StudyEvent) => void; seekTo: { seconds: number; nonce: number;source?:"participant"|"system"|"researcher" } | null;
   session?:StudySession;recorder?:TelemetryRecorder|null;questions?:QuestionFile;onTelemetry?:(event:TelemetryInput)=>void;recording?:boolean;soundSettingsAllowed?:boolean;showTicks?:boolean; annotations?:CueAnnotations; poster?: string; onApply:(p:CaptionProfile)=>void;
 }) {
   const playback = useVideoPlayback({ source, seekTo, onTime, onEvent });
+  useEffect(() => { onClock?.(playback.clock); }, [onClock, playback.clock]);
   const { video, frame, ready, playing, error, waiting, duration, time, toggle } = playback;
   const [settingsOpen,setSettingsOpen]=useState(false),[narrow,setNarrow]=useState(false); const settingsButton=useRef<HTMLButtonElement>(null);
   const [surveyActive,setSurveyActive]=useState(false);const surveyActiveRef=useRef(false);const surveyChanged=useCallback((active:boolean)=>{const wasActive=surveyActiveRef.current;surveyActiveRef.current=active;setSurveyActive(active);if(wasActive&&!active)requestAnimationFrame(()=>{if(surveyActiveRef.current)return;if(settingsButton.current)settingsButton.current.focus();else frame.current?.focus()})},[frame]);

@@ -279,3 +279,16 @@ Tab never lands on the video, the button lies inside the control bar and is not
 positioned, click-then-`c` and `?` shortcuts work, and Escape returns focus to the
 button. On mobile the control bar's right group wraps onto its own row. Evidence:
 `reports/C5-browser.json`; runner `scripts/verification/dhh-fixes/C5-browser.mjs`.
+
+## C6 — timeline follows the clock only while open
+
+The research Sound timeline previously highlighted the current cue from a stale
+`currentTime.current` value read during workspace renders. `VideoPlayer` now hands
+its playback clock to the workspace (`onClock`, one state update), and `SoundTimeline`
+reads it with `useSyncExternalStore` only while the Research tools drawer is open;
+closed, nothing subscribes. The workspace itself still does not re-render on clock
+ticks. Chrome (dev render counter, synthetic clock) shows the counter flat across
+seeks with the drawer closed and across four timeline-moving seeks with it open
+(the current cue changes each time), and flat again after closing. The same script
+fails against the previous code (stale highlight). Evidence: `reports/C6-browser.json`;
+runner `scripts/verification/dhh-fixes/C6-browser.mjs`.

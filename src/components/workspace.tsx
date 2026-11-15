@@ -15,6 +15,7 @@ import { StudyRehearsal } from "./study-rehearsal";
 import { PriorRehearsal, RehearsalLogs } from "./rehearsal-logs";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import { Icon } from "./icon";
+import type { PlaybackClock } from "@/lib/playback-clock";
 import { useFoldHeight } from "./hooks/use-fold-height";
 
 
@@ -30,7 +31,7 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   const data = sourceAssistedVideo ?? initialVideo; const source=demoSource;
   const rehearsal = useRehearsal({filmId:data.video_id,session});
   const { recording, startedAt, record } = rehearsal;
-  const currentTime = useRef(0); const seekNonce = useRef(0); const watchColumn = useRef<HTMLElement>(null); useFoldHeight(watchColumn);
+  const currentTime = useRef(0); const seekNonce = useRef(0); const watchColumn = useRef<HTMLElement>(null); const [clock,setClock]=useState<PlaybackClock|null>(null),[researchOpen,setResearchOpen]=useState(false); useFoldHeight(watchColumn);
   useEffect(() => { onMediaLockChange?.(startedAt !== null); }, [startedAt, onMediaLockChange]);
   const updateTime = useCallback((seconds: number) => { currentTime.current = seconds; rehearsal.setVideoTime(seconds); }, [rehearsal.setVideoTime]);
   useEffect(()=>{if(rehearsal.recorder?.resumed&&rehearsal.recorder.resumePosition>0)setSeekTo({seconds:rehearsal.recorder.resumePosition,nonce:++seekNonce.current,source:"system"})},[rehearsal.recorder]);
@@ -39,7 +40,7 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   function changeCondition(next: Condition) { rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field:"condition",from:condition,to:next,source:"researcher"});setCondition(next); setShowOriginal(false); record({ type: "condition", video_s: currentTime.current, condition: next }); record({ type: "original", video_s: currentTime.current, enabled: false,source:"system" }); }
   function startRecording() { rehearsal.start(currentTime.current,condition,profile,showOriginal); rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field:"extendDisplay",from:null,to:extendDisplay,source:"system"}); }
   function jump(seconds: number) { setSeekTo({ seconds, nonce: ++seekNonce.current }); }
-  const time=currentTime.current; const renders=useRef(0);renders.current++;const diagnostic=useRef<HTMLElement>(null);
+  const renders=useRef(0);renders.current++;const diagnostic=useRef<HTMLElement>(null);
   useEffect(()=>{if(process.env.NODE_ENV==="development"&&diagnostic.current)diagnostic.current.dataset.renderCount=String(renders.current)});
   const captionSource = data?.generated_with.caption_source;
   const viewerProfile = conditionProfile(profile,session);
@@ -47,13 +48,13 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
     <RecorderStatus allowExport={!session} recorder={rehearsal.recorder} error={rehearsal.error}/>
     {!session&&<PriorRehearsal prior={rehearsal.prior} openLog={rehearsal.openLog} onResume={()=>rehearsal.resumePrior()} onDiscard={()=>rehearsal.discardPrior()}/>}
     <div className="watch-layout"><section ref={watchColumn} className="watch-column" aria-label="Video workspace"><div className="watch-heading"><h1>{data.title}<small>{demoCredit}</small></h1></div>
-      <VideoPlayer extendDisplay={extendDisplay} session={session} recorder={rehearsal.recorder} questions={questions} recording={recording} onTelemetry={rehearsal.telemetry} soundSettingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
+      <VideoPlayer onClock={setClock} extendDisplay={extendDisplay} session={session} recorder={rehearsal.recorder} questions={questions} recording={recording} onTelemetry={rehearsal.telemetry} soundSettingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
       <div className="film-footnote"><Icon name="leaf" size={16}/><span>{initialVideo.title} · {demoCredit}</span><a href="#media-credits">Credits</a></div>
     </section></div>
-    {!session&&<details className="research-tools"><summary>Research tools {recording&&<span className="status-pill recording">Recording locally</span>}</summary>
+    {!session&&<details className="research-tools" onToggle={e=>setResearchOpen(e.currentTarget.open)}><summary>Research tools {recording&&<span className="status-pill recording">Recording locally</span>}</summary>
     <div className="condition-switch" role="group" aria-label="Research caption condition"><button aria-pressed={condition==='personalized'} onClick={()=>changeCondition('personalized')}>Personalized</button><button aria-pressed={condition==='baseline'} onClick={()=>changeCondition('baseline')}>Reference baseline</button></div>
     <label><input type="checkbox" checked={demoExtendDisplay} onChange={e=>{setDemoExtendDisplay(e.target.checked);rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field:"extendDisplay",from:demoExtendDisplay,to:e.target.checked,source:"researcher"})}}/>Allow extra reading time for sound captions</label><p>May keep a sound caption visible for up to one second after the sound ends, stopping before another sound. This changes timing fidelity; source timings stay unchanged.</p>
-    <CaptionTrackNotice data={data}/><SoundTimeline extendDisplay={extendDisplay} annotations={annotations} data={data} time={time} profile={profile} condition={condition} showOriginal={showOriginal} jump={jump}/>
+    <CaptionTrackNotice data={data}/><SoundTimeline extendDisplay={extendDisplay} annotations={annotations} data={data} clock={clock} live={researchOpen} profile={profile} condition={condition} showOriginal={showOriginal} jump={jump}/>
     <StudyRehearsal recorder={rehearsal.recorder} error={rehearsal.error} onStart={()=>startRecording()} onStop={()=>rehearsal.stop(currentTime.current)} paused={!!rehearsal.prior} onNew={()=>rehearsal.newRehearsal()}/>
     <RehearsalLogs logs={rehearsal.logs} openLog={rehearsal.openLog} onDelete={id=>rehearsal.removeLog(id)} recordingId={recording?rehearsal.recorder?.context.session_id??null:null}/>
     </details>}

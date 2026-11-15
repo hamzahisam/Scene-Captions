@@ -1,0 +1,24 @@
+{
+  "synthetic_media": true,
+  "renderCounts": {
+    "closedBefore": 4,
+    "closedAfter": 4,
+    "openBase": 6,
+    "closedAgain": 8
+  },
+  "seen": [
+    [
+      "2:33\n[A nut thuds.]\nsfx · heuristic-draft · Moderate cue density"
+    ],
+    [
+      "3:15\n[Butterfly splats.]\nsfx · heuristic-draft · Moderate cue density · over reading pace"
+    ],
+    [
+      "4:30\n[Cheerful music plays.]\nmusic · heuristic-draft · Sparse sound cues"
+    ],
+    [
+      "5:37\n[Dull thud.] [Squeaks in pain.]\nvocal · heuristic-draft · Moderate cue density · over reading pace"
+    ]
+  ],
+  "errors": []
+}
