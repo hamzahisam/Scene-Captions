@@ -34,7 +34,7 @@ try {
   for(const name of ['Reading pace','Sound representation','Mark shortened captions','Show sound type styling'])assert.equal(await panel.getByLabel(name,{exact:true}).count(),fixed?0:1);
   assert.equal(await panel.getByRole('group',{name:'Punctuation inside sound captions',exact:true}).count(),fixed?0:1);
   await openAppearance(panel);
-  const labels=['Text size','Position on the video','Backdrop','Text colour','Announce captions to screen readers','Single-key shortcuts','Use shortcuts across this page'];
+  const labels=['Italic sound captions','Text size','Position on the video','Backdrop','Text colour','Announce captions to screen readers','Single-key shortcuts','Use shortcuts across this page'];
   for(const label of labels)assert.equal(await panel.getByLabel(label,{exact:true}).isVisible(),true);
   await panel.getByLabel('Text size',{exact:true}).selectOption('extra-large');await panel.getByLabel('Position on the video',{exact:true}).selectOption('top');
   await panel.getByLabel('Backdrop',{exact:true}).selectOption('translucent');await panel.getByLabel('Text colour',{exact:true}).selectOption('yellow');

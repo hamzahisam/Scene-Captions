@@ -355,3 +355,17 @@ put in catalogue order (`canonicalFilms`) before the between/pilot rotation, so
 checkbox click order no longer changes the sequence. The legend is "Films to include"
 with a note that the saved viewing order is rotated from catalogue order. Tests cover
 reversed-checkbox equality and the stale-tab claim. B4 Chrome runner re-passes.
+
+**C2 audit — italic sound captions as a common appearance setting.** The earlier C2
+text above filed "Italic sound captions" under fixed sound settings; that is superseded.
+`conditionProfile` no longer overrides `italicSound`, and the control moved from More
+sound options to the Appearance group, so it is available in all five conditions,
+persists, and is reset by Reset appearance (which now also clears italics). Tests add it
+to the all-condition effective-appearance check; the A2 Chrome runner confirms the
+control in every condition and the C2 runner confirms opt-in, persistence and reset.
+
+**C4 acceptance re-verified (no extra commit needed).** The C4 Chrome runner passes
+on the final tree: Appearance open with Text size first, Reset appearance, the
+Accessibility group, pace labels 15 · Slower / 17 · Standard / 20 · Faster with the
+session default marked, and `aria-describedby` on Help me keep up. These checks cover
+the demo and a real personalized session.

@@ -23,10 +23,10 @@ try{
  await page.screenshot({path:'artifacts/dhh-fixes/screenshots/C2-upright-sound.png'});
  await page.getByRole('button',{name:'Caption settings',exact:true}).click();
  const panel=page.getByRole('dialog',{name:'Caption settings',exact:true});
- await panel.getByText('More sound options',{exact:true}).click();
  const italic=panel.getByLabel('Italic sound captions',{exact:true});assert.equal(await italic.isChecked(),false);
  await italic.check();assert.equal((await style()).fontStyle,'italic');
  await page.screenshot({path:'artifacts/dhh-fixes/screenshots/C2-italic-optin.png'});
+ await panel.getByRole('button',{name:'Reset appearance',exact:true}).click();assert.equal(await italic.isChecked(),false);assert.equal((await style()).fontStyle,'normal');await italic.check();
  await page.reload();await page.locator('video').first().evaluate(v=>{v.currentTime=0.1});
  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('scenecaptions.profile.v1')).italicSound);assert.equal(saved,true);
  assert.deepEqual(errors,[]);writeFileSync('artifacts/dhh-fixes/C2-browser.json',JSON.stringify({synthetic_media:true,before,italicPersisted:saved,errors},null,2));
