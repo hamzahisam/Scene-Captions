@@ -26,6 +26,11 @@
   }
   .caption-overlay.bottom { bottom: 86px; }
   .video-stage > .caption-overlay.bottom { bottom: calc(var(--controls-height, 86px) + 8px); }
+  /* Demo mode only: when the controls auto-hide, bottom captions drop closer to
+     the edge, and rise again when the controls return. Auto-hide never runs in
+     study mode, so participants always see the fixed position above. */
+  .video-stage > .caption-overlay.bottom { transition: bottom var(--dur-slow) var(--ease); }
+  .controls-idle .video-stage > .caption-overlay.bottom { bottom: max(16px, 4%); }
   .caption-overlay.top { top: 65px; }
 
   .caption-lines {

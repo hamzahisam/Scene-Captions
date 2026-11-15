@@ -113,6 +113,8 @@ export function VideoPlayer({
      mode. Hiding uses opacity only, so --controls-height and caption position
      never change. */
   const [idle, setIdle] = useState(false);
+  const lastPointer = useRef("mouse");
+  const tapRevealsOnly = useRef(false);
   const closeHelp = useCallback(() => setHelpOpen(false), []);
   const closeSettings = useCallback(() => setSettingsOpen(false), []);
   useEffect(() => {
@@ -274,6 +276,16 @@ export function VideoPlayer({
             aria-describedby="video-description"
             tabIndex={0}
             {...playback.events}
+            onPointerDown={(e) => {
+              lastPointer.current = e.pointerType;
+              tapRevealsOnly.current = e.pointerType === "touch" && idle;
+            }}
+            onClick={() => {
+              // Clicking the picture plays or pauses. On touch screens, a tap while the
+              // controls are hidden only brings them back, as in most video players.
+              if (tapRevealsOnly.current) return;
+              void toggle();
+            }}
           />
 
           {!playing && !error && (
