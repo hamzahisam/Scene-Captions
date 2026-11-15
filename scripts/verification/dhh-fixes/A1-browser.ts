@@ -1,0 +1,65 @@
+// Synthetic media-clock integration check; does not claim acoustic or physical-device validation.
+// Run: node --experimental-strip-types scripts/verification/dhh-fixes/A1-browser.ts [baseURL]
+import assert from 'node:assert/strict';
+import {mkdirSync,readFileSync,writeFileSync} from 'node:fs';
+import {DEFAULT_PROFILE,videoSchema,resolveCaptionWindows,captionExpectations} from '../../../src/lib/captions.ts';
+const playwrightPath=process.env.PLAYWRIGHT_PATH||'/Users/zuhairmerchant/TexPilot/yarn-erp/node_modules/playwright/index.mjs';
+const {chromium}=await import(playwrightPath);
+const data=videoSchema.parse(JSON.parse(readFileSync('data/source-assisted-captions/big-buck-bunny-controls.json','utf8')));
+const profile={...DEFAULT_PROFILE,detail:3 as const,readingSpeed:17 as const};
+const expected=resolveCaptionWindows(data,profile,'personalized',false,true).find(w=>w.extended&&!w.caption.adapted)!;
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1280,height:900}});
+const errors:string[]=[];page.on('pageerror',(e:Error)=>errors.push(e.message));
+try {
+ await page.addInitScript(({duration,profile}:{duration:number;profile:typeof DEFAULT_PROFILE})=>{
+  localStorage.setItem('scenecaptions.profile.v1',JSON.stringify(profile));
+  Object.defineProperty(HTMLMediaElement.prototype,'duration',{get(){return duration}});
+  Object.defineProperty(HTMLMediaElement.prototype,'readyState',{get(){return 1}});
+  const times=new WeakMap<HTMLMediaElement,number>();
+  Object.defineProperty(HTMLMediaElement.prototype,'currentTime',{get(){return times.get(this)||0},set(t:number){times.set(this,t);queueMicrotask(()=>this.dispatchEvent(new Event('seeked')))}});
+ },{duration:data.duration_seconds,profile});
+ await page.route('**/*.mp4',async (route:any)=>route.abort());
+ await page.goto(process.argv[2]||'http://127.0.0.1:3000');
+ await page.locator('.research-tools > summary').click();
+ await page.getByLabel('Allow extra reading time for sound captions').check();
+ await page.getByLabel('I agree to record this technical rehearsal locally.').check();
+ await page.getByRole('button',{name:'Start rehearsal',exact:true}).click();
+ await page.getByRole('button',{name:'Caption settings',exact:true}).click();
+ await page.getByText('At 17 characters per second, Rich fits 64 of 87 sounds in this film.',{exact:false}).waitFor();
+ assert.equal(await page.getByLabel('Mark shortened captions').isChecked(),false);
+ await page.getByRole('button',{name:'Close caption settings',exact:true}).click();
+ const time=expected.source_end_s+(expected.display_end_s-expected.source_end_s)/2;
+ await page.locator('video').evaluate((v:HTMLVideoElement,t:number)=>{v.currentTime=t},time);
+ await page.locator('.caption-lines').getByText(expected.caption.text,{exact:true}).waitFor();
+ assert.equal(await page.locator('.shortened-marker').count(),0);
+ const tracks=await page.locator('video').evaluate((v:HTMLVideoElement)=>Array.from(v.textTracks).flatMap(t=>Array.from(t.cues||[]).map(c=>({start:c.startTime,end:c.endTime,text:(c as VTTCue).text}))));
+ const native=tracks.find((c:{text:string})=>c.text.includes(expected.caption.text));
+ assert.ok(native);assert.equal(native.start,expected.start_s);assert.equal(native.end,expected.display_end_s);
+ const exposures=await page.evaluate(()=>Object.keys(localStorage).filter(k=>k.startsWith('scenecaptions.telemetry.v2.')&&/\.\d+$/.test(k)).flatMap(k=>JSON.parse(localStorage.getItem(k)||'[]')));
+ const exposed=exposures.find((e:any)=>e.type==='caption_shown'&&e.cue_id===expected.cue.cue_id&&e.extended);
+ assert.ok(exposed);assert.equal(exposed.source_end_s,expected.source_end_s);assert.equal(exposed.display_end_s,native.end);assert.equal(exposed.adapted,false);
+ await page.locator('video').evaluate((v:HTMLVideoElement,t:number)=>{v.currentTime=t},expected.display_end_s+.01);
+ await page.locator('.caption-lines').getByText(expected.caption.text,{exact:true}).waitFor({state:'hidden'});
+ await page.getByLabel('Allow extra reading time for sound captions').uncheck();
+ await page.locator('video').evaluate((v:HTMLVideoElement,t:number)=>{v.currentTime=t},time);
+ await page.locator('.caption-lines').getByText(expected.caption.text,{exact:true}).waitFor({state:'hidden'});
+ const shortened=resolveCaptionWindows(data,profile,'personalized').find(w=>w.caption.adapted)!;
+ await page.getByRole('button',{name:'Caption settings',exact:true}).click();
+ await page.getByText('More sound options',{exact:true}).click();
+ await page.getByLabel('Mark shortened captions').check();
+ await page.getByRole('button',{name:'Close caption settings',exact:true}).click();
+ await page.locator('video').evaluate((v:HTMLVideoElement,t:number)=>{v.currentTime=t},shortened.start_s+.01);
+ await page.locator('.shortened-marker').waitFor();
+ const markedNative=await page.locator('video').evaluate((v:HTMLVideoElement)=>Array.from(v.textTracks).flatMap(t=>Array.from(t.cues||[]).map(c=>(c as VTTCue).text)));
+ assert.ok(markedNative.some((text:string)=>text.includes(shortened.caption.text)&&text.endsWith(' ▿')));
+ await page.locator('video').evaluate((v:HTMLVideoElement)=>v.dispatchEvent(new Event('webkitbeginfullscreen')));
+ await page.locator('.caption-overlay').waitFor({state:'hidden'});
+ assert.equal(await page.locator('video').evaluate((v:HTMLVideoElement)=>v.textTracks[0].mode),'showing');
+ await page.locator('video').evaluate((v:HTMLVideoElement)=>v.dispatchEvent(new Event('webkitendfullscreen')));
+ await page.locator('.shortened-marker').waitFor();
+ assert.deepEqual(errors,[]);
+ mkdirSync('artifacts/dhh-fixes',{recursive:true});
+ writeFileSync('artifacts/dhh-fixes/A1-browser.json',JSON.stringify({synthetic_media:true,counts:captionExpectations(data,profile,'personalized',false,true),expected,native,exposed,errors},null,2));
+ console.log('A1 browser passed: expectation, extension activity, native cue end, exposure source/display ends, marker default/on parity, simulated native-fullscreen and off regression.');
+} finally {await browser.close()}

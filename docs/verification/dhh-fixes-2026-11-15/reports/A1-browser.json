@@ -1,0 +1,83 @@
+{
+  "synthetic_media": true,
+  "counts": {
+    "total": 87,
+    "shortened": 23,
+    "paceShortened": 17,
+    "densityShortened": 9,
+    "overLimit": 4,
+    "extended": 46,
+    "differentFromBalanced": 63
+  },
+  "expected": {
+    "cue": {
+      "cue_id": "bbb-sdh-009",
+      "start_s": 26.249,
+      "end_s": 27.541,
+      "original_text": "[Snoring sounds.]",
+      "reference_text": "[SNORES]",
+      "scene_context": "Uses your saved detail limit. Cue-density adaptation can shorten clustered sound captions.",
+      "sound_key": "snores",
+      "scene_load": "quiet",
+      "grid": {
+        "1-1": "[Snoring]",
+        "1-2": "[Snoring.]",
+        "1-3": "[Snoring!]",
+        "2-1": "[Snoring sounds]",
+        "2-2": "[Snoring sounds.]",
+        "2-3": "[Snoring sounds!]",
+        "3-1": "[Noisy breathing during sleep]",
+        "3-2": "[Noisy breathing during sleep.]",
+        "3-3": "[Noisy breathing during sleep!]"
+      },
+      "scene_load_basis": "cue-density",
+      "representations": {
+        "plain": "[Snoring]"
+      }
+    },
+    "caption": {
+      "text": "[Noisy breathing during sleep.]",
+      "reason": "Your sound settings",
+      "adapted": false,
+      "detail": 3,
+      "rule": "none",
+      "overLimit": false,
+      "cps": 16.999999999999993
+    },
+    "start_s": 26.249,
+    "source_end_s": 27.541,
+    "display_end_s": 28.072529411764705,
+    "extended": true
+  },
+  "native": {
+    "start": 26.249,
+    "end": 28.072529411764705,
+    "text": "[Noisy breathing during sleep.]"
+  },
+  "exposed": {
+    "session_id": "rehearsal-big-buck-bunny",
+    "participant_id": null,
+    "design": "rehearsal",
+    "assigned_condition": "personalized",
+    "sequence_index": 0,
+    "film_id": "big-buck-bunny",
+    "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+    "video_s": 27.80676470588235,
+    "source": "system",
+    "source_end_s": 27.541,
+    "display_end_s": 28.072529411764705,
+    "extended": true,
+    "sample": false,
+    "cue_id": "bbb-sdh-009",
+    "cue_type": "sound",
+    "displayed_level": 3,
+    "adapted": false,
+    "rule": "none",
+    "text": "[Noisy breathing during sleep.]",
+    "type": "caption_shown",
+    "iso_timestamp": "2026-11-15T10:51:47.453Z",
+    "elapsed_ms": 99,
+    "performance_ms": 572
+  },
+  "errors": []
+}

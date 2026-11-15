@@ -1,4 +1,4 @@
-import { readingBoundedDetail, readingRate } from "./reading-rate.ts";
+import { characterCount, readingBoundedDetail, readingRate } from "./reading-rate.ts";
 import { z } from "zod";
 
 const LEVELS = [1, 2, 3] as const;
@@ -78,6 +78,7 @@ export const profileSchema = z.object({
   expression: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   adaptive: z.boolean(), representation: z.enum(["descriptive", "plain", "onomatopoeic"]),
   announceCaptions:z.boolean().default(false),
+  markShortened:z.boolean().default(false),
   shortcuts:z.boolean().default(true),pageWideShortcuts:z.boolean().default(false),
   backdrop:z.enum(["solid","translucent","outline"]).default("solid"),textColor:z.enum(["white","yellow"]).default("white"),
   typeStyling:z.boolean().default(true),
@@ -85,14 +86,14 @@ export const profileSchema = z.object({
   size: z.enum(["standard", "large", "extra-large"]), position: z.enum(["bottom", "top"]),
 });
 export type CaptionProfile = z.infer<typeof profileSchema>;
-export const DEFAULT_PROFILE: CaptionProfile = { detail: 2, expression: 2, adaptive: true, representation: "descriptive", size: "large", position: "bottom", readingSpeed:17,typeStyling:true,backdrop:"solid",textColor:"white",shortcuts:true,pageWideShortcuts:false,announceCaptions:false };
+export const DEFAULT_PROFILE: CaptionProfile = { detail: 2, expression: 2, adaptive: true, representation: "descriptive", size: "large", position: "bottom", readingSpeed:17,typeStyling:true,backdrop:"solid",textColor:"white",shortcuts:true,pageWideShortcuts:false,announceCaptions:false,markShortened:false };
 
 export function activeCues(cues: CaptionCue[], seconds: number): CaptionCue[] {
   return cues.filter((cue) => cue.start_s <= seconds && seconds < cue.end_s);
 }
 
-export function resolveCaption(cue: CaptionCue, profile: CaptionProfile, condition: Condition, showOriginal = false) {
-  const duration=cue.end_s-cue.start_s,cap=profile.readingSpeed;
+export function resolveCaption(cue: CaptionCue, profile: CaptionProfile, condition: Condition, showOriginal = false, displayDuration = cue.end_s-cue.start_s) {
+  const duration=displayDuration,cap=profile.readingSpeed;
   const textAt=(detail:Level)=>profile.representation==='plain'?cue.representations.plain:profile.representation==='onomatopoeic'&&cue.representations.onomatopoeic?cue.representations.onomatopoeic:cue.grid[`${detail}-${profile.expression}`];
   if(condition==='baseline'||showOriginal){const text=cue.reference_text??cue.original_text;return {text,reason:'Original captions',adapted:false,detail:profile.detail,rule:'none',overLimit:readingRate(text,duration)>cap,cps:readingRate(text,duration)};}
   const bounded=readingBoundedDetail(profile.detail,duration,cap,textAt);
@@ -103,6 +104,45 @@ export function resolveCaption(cue: CaptionCue, profile: CaptionProfile, conditi
   const adapted=detail<profile.detail&&text!==textAt(profile.detail);
   const reason=adapted?(read&&density?'Shorter to fit the available time and closely spaced sounds':read?'Shorter to fit the available time':'Shorter because several sounds occur close together'):'Your sound settings';
   return {text,reason,adapted,detail,rule,overLimit:readingRate(text,duration)>cap,cps:readingRate(text,duration)};
+}
+
+export type CaptionWindow = {
+  cue: CaptionCue; caption: ReturnType<typeof resolveCaption>;
+  start_s: number; source_end_s: number; display_end_s: number; extended: boolean;
+};
+
+/** Derived viewing windows only; source cues and baseline/Original timings stay immutable. */
+export function resolveCaptionWindows(data: CaptionVideo, profile: CaptionProfile, condition: Condition, showOriginal = false, extendDisplay = false): CaptionWindow[] {
+  const intervals = [...data.cues,...(data.dialogue || [])];
+  return data.cues.map(cue => {
+    let ceiling = cue.end_s;
+    if (extendDisplay && condition !== "baseline" && !showOriginal) {
+      // A sound still active at this source end blocks any added display time.
+      const occupied = intervals.some(other => other !== cue && other.start_s < cue.end_s && other.end_s >= cue.end_s);
+      const nextStart = intervals.reduce((next,other)=>other !== cue && other.start_s >= cue.end_s ? Math.min(next,other.start_s) : next,Infinity);
+      if (!occupied) ceiling = Math.max(cue.end_s, Math.min(cue.end_s + 1, data.duration_seconds, nextStart - 0.1));
+    }
+    const caption = resolveCaption(cue, profile, condition, showOriginal, ceiling - cue.start_s);
+    const display_end_s = Math.max(cue.end_s, Math.min(ceiling, cue.start_s + characterCount(caption.text) / profile.readingSpeed));
+    // Recalculate rate against the actual selected-text window, not the available gap.
+    const selected = ceiling === cue.end_s ? caption : {...caption, cps: readingRate(caption.text, display_end_s - cue.start_s), overLimit: readingRate(caption.text, display_end_s - cue.start_s) > profile.readingSpeed + 1e-9};
+    return {cue, caption:selected, start_s:cue.start_s, source_end_s:cue.end_s, display_end_s, extended:display_end_s > cue.end_s};
+  });
+}
+
+/** Counts use the same resolver and settings as playback, including density reductions. */
+export function captionExpectations(data: CaptionVideo, profile: CaptionProfile, condition: Condition, showOriginal = false, extendDisplay = false) {
+  const windows = resolveCaptionWindows(data, profile, condition, showOriginal, extendDisplay);
+  const balanced = resolveCaptionWindows(data, {...profile,detail:2}, condition, showOriginal, extendDisplay);
+  return {
+    total:windows.length,
+    shortened:windows.filter(w => w.caption.adapted).length,
+    paceShortened:windows.filter(w => w.caption.adapted && w.caption.rule.includes('reading-rate')).length,
+    densityShortened:windows.filter(w => w.caption.adapted && w.caption.rule.includes('density')).length,
+    overLimit:windows.filter(w => w.caption.overLimit).length,
+    extended:windows.filter(w => w.extended).length,
+    differentFromBalanced:windows.filter((w,i) => w.caption.text !== balanced[i].caption.text).length,
+  };
 }
 
 export function formatTime(seconds: number): string {

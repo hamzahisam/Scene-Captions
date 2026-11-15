@@ -15,3 +15,5 @@ test('sample uses current or most recent past cue, never the next cue in a gap',
  assert.equal(captionSample(cues,-1)?.cue_id,cues[0].cue_id);
  assert.equal(captionSample([],12),undefined);
 });
+
+test('shortening marks default off in old profiles and persist independently of adaptation',()=>{const {markShortened,...legacy}=DEFAULT_PROFILE;assert.equal(loadProfile(JSON.stringify(legacy)).markShortened,false);const on=changeProfileField(DEFAULT_PROFILE,'markShortened',true);assert.equal(loadProfile(JSON.stringify(on)).markShortened,true);assert.equal(on.adaptive,DEFAULT_PROFILE.adaptive);});

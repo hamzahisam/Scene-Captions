@@ -1,0 +1,50 @@
+[
+  {
+    "film": "big-buck-bunny",
+    "cps": 17,
+    "total": 87,
+    "rich_shortened": 62,
+    "rich_vs_balanced_different": 24,
+    "rich_over_limit": 12
+  },
+  {
+    "film": "big-buck-bunny",
+    "cps": 20,
+    "total": 87,
+    "rich_shortened": 55,
+    "rich_vs_balanced_different": 31,
+    "rich_over_limit": 5
+  },
+  {
+    "film": "hair-love",
+    "cps": 17,
+    "total": 15,
+    "rich_shortened": 9,
+    "rich_vs_balanced_different": 6,
+    "rich_over_limit": 1
+  },
+  {
+    "film": "hair-love",
+    "cps": 20,
+    "total": 15,
+    "rich_shortened": 9,
+    "rich_vs_balanced_different": 6,
+    "rich_over_limit": 0
+  },
+  {
+    "film": "soar",
+    "cps": 17,
+    "total": 49,
+    "rich_shortened": 14,
+    "rich_vs_balanced_different": 35,
+    "rich_over_limit": 1
+  },
+  {
+    "film": "soar",
+    "cps": 20,
+    "total": 49,
+    "rich_shortened": 12,
+    "rich_vs_balanced_different": 37,
+    "rich_over_limit": 0
+  }
+]

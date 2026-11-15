@@ -1,0 +1,262 @@
+[
+  {
+    "film": "big-buck-bunny",
+    "cps": 17,
+    "total": 87,
+    "rich_shortened": 62,
+    "rich_vs_balanced_different": 24,
+    "rich_over_limit": 12,
+    "extension_off": {
+      "total": 87,
+      "shortened": 62,
+      "paceShortened": 60,
+      "densityShortened": 9,
+      "overLimit": 12,
+      "extended": 0,
+      "differentFromBalanced": 24
+    },
+    "extension_on": {
+      "total": 87,
+      "shortened": 23,
+      "paceShortened": 17,
+      "densityShortened": 9,
+      "overLimit": 4,
+      "extended": 46,
+      "differentFromBalanced": 63
+    }
+  },
+  {
+    "film": "big-buck-bunny",
+    "cps": 20,
+    "total": 87,
+    "rich_shortened": 55,
+    "rich_vs_balanced_different": 31,
+    "rich_over_limit": 5,
+    "extension_off": {
+      "total": 87,
+      "shortened": 55,
+      "paceShortened": 53,
+      "densityShortened": 9,
+      "overLimit": 5,
+      "extended": 0,
+      "differentFromBalanced": 31
+    },
+    "extension_on": {
+      "total": 87,
+      "shortened": 20,
+      "paceShortened": 14,
+      "densityShortened": 9,
+      "overLimit": 4,
+      "extended": 38,
+      "differentFromBalanced": 66
+    }
+  },
+  {
+    "film": "hair-love",
+    "cps": 17,
+    "total": 15,
+    "rich_shortened": 9,
+    "rich_vs_balanced_different": 6,
+    "rich_over_limit": 1,
+    "extension_off": {
+      "total": 15,
+      "shortened": 9,
+      "paceShortened": 9,
+      "densityShortened": 0,
+      "overLimit": 1,
+      "extended": 0,
+      "differentFromBalanced": 6
+    },
+    "extension_on": {
+      "total": 15,
+      "shortened": 2,
+      "paceShortened": 2,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 9,
+      "differentFromBalanced": 13
+    }
+  },
+  {
+    "film": "hair-love",
+    "cps": 20,
+    "total": 15,
+    "rich_shortened": 9,
+    "rich_vs_balanced_different": 6,
+    "rich_over_limit": 0,
+    "extension_off": {
+      "total": 15,
+      "shortened": 9,
+      "paceShortened": 9,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 6
+    },
+    "extension_on": {
+      "total": 15,
+      "shortened": 1,
+      "paceShortened": 1,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 9,
+      "differentFromBalanced": 14
+    }
+  },
+  {
+    "film": "soar",
+    "cps": 17,
+    "total": 49,
+    "rich_shortened": 14,
+    "rich_vs_balanced_different": 35,
+    "rich_over_limit": 1,
+    "extension_off": {
+      "total": 49,
+      "shortened": 14,
+      "paceShortened": 9,
+      "densityShortened": 6,
+      "overLimit": 1,
+      "extended": 0,
+      "differentFromBalanced": 35
+    },
+    "extension_on": {
+      "total": 49,
+      "shortened": 14,
+      "paceShortened": 9,
+      "densityShortened": 6,
+      "overLimit": 1,
+      "extended": 0,
+      "differentFromBalanced": 35
+    }
+  },
+  {
+    "film": "soar",
+    "cps": 20,
+    "total": 49,
+    "rich_shortened": 12,
+    "rich_vs_balanced_different": 37,
+    "rich_over_limit": 0,
+    "extension_off": {
+      "total": 49,
+      "shortened": 12,
+      "paceShortened": 7,
+      "densityShortened": 6,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 37
+    },
+    "extension_on": {
+      "total": 49,
+      "shortened": 12,
+      "paceShortened": 7,
+      "densityShortened": 6,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 37
+    }
+  },
+  {
+    "film": "sintel",
+    "cps": 17,
+    "total": 0,
+    "rich_shortened": 0,
+    "rich_vs_balanced_different": 0,
+    "rich_over_limit": 0,
+    "extension_off": {
+      "total": 0,
+      "shortened": 0,
+      "paceShortened": 0,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 0
+    },
+    "extension_on": {
+      "total": 0,
+      "shortened": 0,
+      "paceShortened": 0,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 0
+    }
+  },
+  {
+    "film": "sintel",
+    "cps": 20,
+    "total": 0,
+    "rich_shortened": 0,
+    "rich_vs_balanced_different": 0,
+    "rich_over_limit": 0,
+    "extension_off": {
+      "total": 0,
+      "shortened": 0,
+      "paceShortened": 0,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 0
+    },
+    "extension_on": {
+      "total": 0,
+      "shortened": 0,
+      "paceShortened": 0,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 0
+    }
+  },
+  {
+    "film": "tears-of-steel",
+    "cps": 17,
+    "total": 0,
+    "rich_shortened": 0,
+    "rich_vs_balanced_different": 0,
+    "rich_over_limit": 0,
+    "extension_off": {
+      "total": 0,
+      "shortened": 0,
+      "paceShortened": 0,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 0
+    },
+    "extension_on": {
+      "total": 0,
+      "shortened": 0,
+      "paceShortened": 0,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 0
+    }
+  },
+  {
+    "film": "tears-of-steel",
+    "cps": 20,
+    "total": 0,
+    "rich_shortened": 0,
+    "rich_vs_balanced_different": 0,
+    "rich_over_limit": 0,
+    "extension_off": {
+      "total": 0,
+      "shortened": 0,
+      "paceShortened": 0,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 0
+    },
+    "extension_on": {
+      "total": 0,
+      "shortened": 0,
+      "paceShortened": 0,
+      "densityShortened": 0,
+      "overLimit": 0,
+      "extended": 0,
+      "differentFromBalanced": 0
+    }
+  }
+]
