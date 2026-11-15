@@ -38,15 +38,14 @@ export function VideoPlayer({ source, data, profile, extendDisplay=false, condit
   return <>
     <div className={`video-frame ${settingsOpen?"settings-open":""} ${narrow?"settings-below":""}`} ref={frame} role="region" aria-label="Video player" tabIndex={0}><div className="video-stage" inert={surveyActive}>
       <video ref={video} src={source} poster={source.startsWith("blob:") ? undefined : poster} preload="metadata" playsInline
-        aria-label={`${data?.title || "Your video"} video player`} aria-describedby="video-description" tabIndex={0}
+        aria-label={`${data?.title || "Your video"} video player`} aria-describedby="video-description" tabIndex={-1}
         {...playback.events} />
 
       {!playing && !error && <button className="big-play" onClick={() => void toggle()} disabled={!ready} aria-label={ready ? "Play video" : "Loading video"}><Icon name="play" size={30} /></button>}
       {waiting && playing && <span className="buffering" role="status">Buffering video…</span>}
       <CaptionExperience soundSettingsAllowed={soundControlsShown} extendDisplay={extendDisplay} onSurveyActive={surveyChanged} session={session} recorder={recorder} questions={questions} playing={playing} ended={playback.ended} pauseForSurvey={()=>{if(settingsOpen)settingsSource.current="system";setSettingsOpen(false);setHelpOpen(false);playback.pause("system");playback.exitNativeFullscreen()}} resumeAfterSurvey={()=>void playback.play("system")} clock={playback.clock} data={data} duration={duration} profile={profile} condition={condition} original={showOriginal} video={video} host={settingsHost} trigger={settingsButton} recording={recording} onTelemetry={onTelemetry} open={settingsOpen} close={closeSettings} onApply={onApply} annotations={annotations}/>
       {(showOriginal||condition==="baseline")&&<span className="original-indicator">Original captions</span>}
-      <PlayerControls originalLocked={!soundControlsShown} showTicks={showTicks} cues={data?.cues} annotations={annotations} playback={playback} baseline={condition === "baseline"} hasCaptions={!!data?.cues.length} showOriginal={showOriginal} onOriginal={onOriginal} generatedBaseline={data?.generated_with.kind === "source-assisted"} experimental={data?.generated_with.experimental} settingsOpen={settingsOpen} onSettings={()=>setSettingsOpen(v=>!v)} settingsButton={settingsButton} />
-      <button ref={helpButton} className="shortcut-help-trigger" aria-label="Keyboard shortcuts" onClick={()=>{setSettingsOpen(false);setHelpOpen(true)}}>?</button>
+      <PlayerControls helpButton={helpButton} onHelp={()=>{setSettingsOpen(false);setHelpOpen(true)}} originalLocked={!soundControlsShown} showTicks={showTicks} cues={data?.cues} annotations={annotations} playback={playback} baseline={condition === "baseline"} hasCaptions={!!data?.cues.length} showOriginal={showOriginal} onOriginal={onOriginal} generatedBaseline={data?.generated_with.kind === "source-assisted"} experimental={data?.generated_with.experimental} settingsOpen={settingsOpen} onSettings={()=>setSettingsOpen(v=>!v)} settingsButton={settingsButton} />
       </div><div ref={settingsHost}/><ShortcutHelp soundControls={soundControlsShown} open={helpOpen} close={closeHelp} trigger={helpButton} profile={profile} onChange={onApply}/>
     </div>
     {error && <p role="alert" className="inline-error">{error}</p>}

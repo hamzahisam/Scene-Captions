@@ -1,0 +1,73 @@
+{
+  "synthetic_media": true,
+  "desktop": {
+    "stops": [
+      "INPUT:",
+      "BUTTON:Play video",
+      "BUTTON:Mute video",
+      "BUTTON:Next sound",
+      "SELECT:Playback speed",
+      "BUTTON:Keyboard shortcuts",
+      "BUTTON:Caption settings",
+      "BUTTON:Original captions",
+      "BUTTON:Fullscreen player",
+      "A:Credits",
+      "SUMMARY:Research tools ",
+      "A:Big Buck Bunny",
+      "A:CC BY 3.0",
+      "A:Demuxed / big-buck-capti"
+    ],
+    "rects": {
+      "h": {
+        "x": 922.28125,
+        "y": 716.375,
+        "w": 24.5625,
+        "hgt": 28
+      },
+      "c": {
+        "y": 644.375,
+        "b": 757.375
+      },
+      "f": {
+        "y": 211.390625,
+        "b": 757.375
+      }
+    },
+    "errors": []
+  },
+  "mobile": {
+    "stops": [
+      "INPUT:",
+      "BUTTON:Play video",
+      "BUTTON:Mute video",
+      "BUTTON:Next sound",
+      "SELECT:Playback speed",
+      "BUTTON:Keyboard shortcuts",
+      "BUTTON:Caption settings",
+      "BUTTON:Original captions",
+      "BUTTON:Fullscreen player",
+      "A:Credits",
+      "SUMMARY:Research tools ",
+      "A:Big Buck Bunny",
+      "A:CC BY 3.0",
+      "A:Demuxed / big-buck-capti"
+    ],
+    "rects": {
+      "h": {
+        "x": 203.953125,
+        "y": 551.859375,
+        "w": 24.5625,
+        "hgt": 28
+      },
+      "c": {
+        "y": 450.859375,
+        "b": 588.859375
+      },
+      "f": {
+        "y": 328.859375,
+        "b": 588.859375
+      }
+    },
+    "errors": []
+  }
+}

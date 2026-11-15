@@ -267,3 +267,15 @@ C4. Evidence: `reports/B5-geometry.json`; runner `scripts/verification/dhh-fold-
 detailed before/after logs and screenshots remain in `artifacts/dhh-fixes/B5*`. Note
 that very small windows (under about 400 px of fold height) shrink the player width
 accordingly; no minimum is enforced.
+
+## C5 — one keyboard stop for the player and a control-bar help button
+
+The `<video>` element is `tabindex=-1`, so the player region is the only keyboard
+stop for shortcuts; clicking the picture still lets shortcuts reach the region.
+The "?" Keyboard shortcuts button moved from an absolute overlay on the picture
+into the control bar beside CC (the old absolute class is removed), keeping its
+name, dialog and focus return. Chrome (desktop 1280×800 and mobile 390×844) checks
+Tab never lands on the video, the button lies inside the control bar and is not
+positioned, click-then-`c` and `?` shortcuts work, and Escape returns focus to the
+button. On mobile the control bar's right group wraps onto its own row. Evidence:
+`reports/C5-browser.json`; runner `scripts/verification/dhh-fixes/C5-browser.mjs`.
