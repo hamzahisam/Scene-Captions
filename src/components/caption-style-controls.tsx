@@ -3,7 +3,6 @@ import type { CaptionProfile, CaptionCue, Level } from "@/lib/captions";
 import { Icon } from "./icon";
 import { SegmentedControl } from "./ui/segmented-control";
 import { Switch } from "./ui/switch";
-import { SoundKey } from "./ui/soundprint";
 
 const AMOUNTS = [
   { label: "Essential", description: "Just the sound" },
@@ -159,7 +158,6 @@ export function CaptionStyleControls({
             checked={profile.announceCaptions}
             onChange={(announceCaptions) => onChange({ ...profile, announceCaptions })}
           />
-          <SoundKey />
         </div>
       </details>
     </>

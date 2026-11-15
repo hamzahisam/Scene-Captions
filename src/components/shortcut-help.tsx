@@ -3,7 +3,6 @@ import type { RefObject } from "react";
 import type { CaptionProfile } from "@/lib/captions";
 import { Sheet } from "./ui/sheet";
 import { Switch } from "./ui/switch";
-import { SoundKey } from "./ui/soundprint";
 
 const GROUPS: { title: string; items: [string[], string][] }[] = [
   {
@@ -102,7 +101,6 @@ export function ShortcutHelp({
           onChange={(pageWideShortcuts) => onChange({ ...profile, pageWideShortcuts })}
         />
       </div>
-      <SoundKey />
     </Sheet>
   );
 }

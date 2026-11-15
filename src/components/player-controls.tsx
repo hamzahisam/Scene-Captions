@@ -8,7 +8,6 @@ import type { CueAnnotations } from "@/lib/cue-annotations";
 import { OriginalButton } from "./original-button";
 import { Icon } from "./icon";
 import { Tooltip } from "./ui/tooltip";
-import { Soundprint, soundKindLabel, soundKindNear } from "./ui/soundprint";
 import type { useVideoPlayback } from "./hooks/use-video-playback";
 
 const SPEEDS = [0.75, 1, 1.25] as const;
@@ -115,7 +114,6 @@ function Timeline({
   }, [time, duration, video]);
   const played = duration ? Math.min(1, time / duration) : 0;
   const tip = hover ?? (focused ? { x: played * 100, t: time } : null);
-  const kind = tip && showTicks && duration ? soundKindNear(cues, annotations, tip.t, Math.max(1, duration * 0.006)) : null;
   return (
     <div
       className="timeline-track"
@@ -127,9 +125,6 @@ function Timeline({
       }}
       onPointerLeave={() => setHover(null)}
     >
-      {showTicks && (
-        <Soundprint variant="timeline" cues={cues} duration={duration} annotations={annotations} />
-      )}
       <label className="sr-only" htmlFor="timeline">
         Seek video
       </label>
@@ -163,7 +158,6 @@ function Timeline({
           style={{ left: `clamp(48px, ${tip.x}%, calc(100% - 48px))` }}
         >
           {formatTime(tip.t)}
-          {kind && <span className="timeline-tip__kind">{soundKindLabel(kind)}</span>}
         </span>
       )}
     </div>

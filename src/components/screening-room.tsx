@@ -7,7 +7,6 @@ import type { CueAnnotations } from "@/lib/cue-annotations";
 import { useStudySession } from "./study-context";
 import { Workspace } from "./workspace";
 import { SiteFooter } from "./site-footer";
-import { Soundprint } from "./ui/soundprint";
 import { Icon } from "./icon";
 
 export type ScreeningFilm = {
@@ -37,7 +36,6 @@ function FilmRail({
   locked: boolean;
 }) {
   const refs = useRef<Record<string, HTMLButtonElement | null>>({});
-  const [drawId] = useState(selected); // one orchestrated draw-in, on first load only
   function move(e: KeyboardEvent<HTMLButtonElement>, index: number) {
     const keys: Record<string, number> = {
       ArrowRight: 1,
@@ -113,15 +111,6 @@ function FilmRail({
                 >
                   {hasSound ? "Sound captions" : "Dialogue subtitles only"}
                 </span>
-                {hasSound && (
-                  <Soundprint
-                    variant="card"
-                    cues={track.cues}
-                    duration={track.duration_seconds}
-                    annotations={film.annotations}
-                    draw={drawId === film.data.video_id}
-                  />
-                )}
               </span>
             </button>
           );
