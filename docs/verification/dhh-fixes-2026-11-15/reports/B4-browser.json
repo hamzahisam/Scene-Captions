@@ -42,9 +42,9 @@
       "participantId": "P-004",
       "allocationSlot": "pilot-3-0",
       "films": [
+        "sintel",
         "soar",
-        "hair-love",
-        "sintel"
+        "hair-love"
       ],
       "conditions": [
         "essential",
@@ -56,9 +56,9 @@
       "participantId": "P-005",
       "allocationSlot": "frequent-1",
       "films": [
+        "sintel",
         "soar",
-        "hair-love",
-        "sintel"
+        "hair-love"
       ],
       "conditions": [
         "baseline",
@@ -70,9 +70,9 @@
       "participantId": "P-006",
       "allocationSlot": "frequent-2",
       "films": [
+        "soar",
         "hair-love",
-        "sintel",
-        "soar"
+        "sintel"
       ],
       "conditions": [
         "personalized",
