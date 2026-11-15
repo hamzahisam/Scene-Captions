@@ -18,7 +18,6 @@ const GROUPS: { title: string; items: [string[], string][] }[] = [
     title: "Captions",
     items: [
       [["C"], "Caption settings"],
-      [["O"], "Original captions. Hold to peek"],
       [["[", "]"], "Less or more detail"],
       [["−", "="], "Smaller or larger text"],
     ],

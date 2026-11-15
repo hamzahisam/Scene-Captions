@@ -187,4 +187,9 @@
     .hud { top: 8px; }
     .coach { top: 8px; right: 8px; bottom: auto; max-width: calc(100cqi - 16px); }
   }
+
+  /* Auto-hide after inactivity (see video-player.tsx). Opacity only: layout and caption position stay fixed. */
+  .video-controls, .mode-badge { transition: opacity var(--dur-slow) var(--ease), visibility var(--dur-slow); }
+  .controls-idle .video-controls { opacity: 0; visibility: hidden; pointer-events: none; }
+  .controls-idle .video-stage, .controls-idle .video-stage video { cursor: none; }
 }

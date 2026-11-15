@@ -107,6 +107,12 @@ export function VideoPlayer({
   const [peeking, setPeeking] = useState(false);
   const [hintVisible, setHintVisible] = useState(false);
   const helpButton = useRef<HTMLButtonElement>(null);
+  /* Controls fade after 3 s without pointer or keyboard activity while playing.
+     Never while paused, while a sheet or survey is open, while focus is in the
+     controls, on narrow players (controls sit under the picture) or in study
+     mode. Hiding uses opacity only, so --controls-height and caption position
+     never change. */
+  const [idle, setIdle] = useState(false);
   const closeHelp = useCallback(() => setHelpOpen(false), []);
   const closeSettings = useCallback(() => setSettingsOpen(false), []);
   useEffect(() => {
@@ -165,8 +171,9 @@ export function VideoPlayer({
       setHelpOpen(false);
       if (settingsAllowed) setSettingsOpen((v) => !v);
     },
-    original: (value, mode) => {
-      if (condition !== "baseline" && settingsAllowed) handleOriginal(value, mode);
+    // The Original control was removed from the player; the O key does nothing.
+    original: () => {
+      void handleOriginal;
     },
     originalEnabled: showOriginal,
     amount: (delta) => {
@@ -215,6 +222,29 @@ export function VideoPlayer({
       settingsSource.current = "participant";
     }
   }, [settingsOpen, onTelemetry, video]);
+  const canAutoHide = demoMode && playing && !settingsOpen && !helpOpen && !surveyActive && !narrow;
+  useEffect(() => {
+    const el = frame.current;
+    if (!el || !canAutoHide) {
+      setIdle(false);
+      return;
+    }
+    let timer: ReturnType<typeof setTimeout>;
+    const arm = () => {
+      setIdle(false);
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        if (!el.querySelector(".video-controls")?.contains(document.activeElement)) setIdle(true);
+      }, 3000);
+    };
+    const events = ["pointermove", "pointerdown", "keydown", "focusin", "wheel", "touchstart"] as const;
+    events.forEach((e) => el.addEventListener(e, arm, { passive: true }));
+    arm();
+    return () => {
+      clearTimeout(timer);
+      events.forEach((e) => el.removeEventListener(e, arm));
+    };
+  }, [canAutoHide, frame]);
   const mismatch = !!data && duration > 0 && Math.abs(duration - data.duration_seconds) > 2;
   const firstLoad = !playing && time === 0;
   const modeBadge = peeking
@@ -227,7 +257,7 @@ export function VideoPlayer({
   return (
     <>
       <div
-        className={`video-frame ${settingsOpen ? "settings-open" : ""} ${narrow ? "settings-below" : ""}`}
+        className={`video-frame ${settingsOpen ? "settings-open" : ""} ${narrow ? "settings-below" : ""} ${idle ? "controls-idle" : ""}`}
         ref={frame}
         role="region"
         aria-label="Video player"
@@ -277,10 +307,8 @@ export function VideoPlayer({
             </span>
           )}
           <Hud message={hud.message} nonce={hud.nonce} />
-          {hintVisible && !settingsOpen && !helpOpen && <OriginalHint onDismiss={dismissHint} />}
           <CaptionExperience
             onSurveyActive={surveyChanged}
-            onSoundCaption={onSoundCaption}
             savedNonce={savedNonce}
             storageError={storageError}
             session={session}

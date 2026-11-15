@@ -5,7 +5,6 @@ import { formatTime } from "@/lib/captions";
 import { adjacentSound } from "@/lib/sound-navigation";
 import type { CaptionCue } from "@/lib/captions";
 import type { CueAnnotations } from "@/lib/cue-annotations";
-import { OriginalButton } from "./original-button";
 import { Icon } from "./icon";
 import { Tooltip } from "./ui/tooltip";
 import type { useVideoPlayback } from "./hooks/use-video-playback";
@@ -315,20 +314,6 @@ export function PlayerControls({
               onSpeed?.(rate);
             }}
           />
-          <span className="original-anchor">
-            <Tooltip
-              text={originalDisabledReason || "Show original captions. Hold to peek."}
-              shortcut={originalDisabledReason ? undefined : "O"}
-            >
-              <OriginalButton
-                enabled={showOriginal || baseline}
-                peeking={peeking}
-                disabled={baseline || originalLocked || !hasCaptions}
-                onChange={(value, mode) => onOriginal(value, mode)}
-              />
-            </Tooltip>
-            {originalHint}
-          </span>
           {onSettings && (
             <Tooltip text="Caption settings" shortcut="C">
               <button
