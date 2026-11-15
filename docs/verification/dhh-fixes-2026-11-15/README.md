@@ -212,3 +212,21 @@ accessible names, disabled logic and seek behaviour are unchanged; the icons are
 `aria-hidden`. Chrome (synthetic clock) checks no text glyph remains, one SVG per
 button, minimum button size, and Next/Previous seeks. Evidence: `reports/C1-browser.json`;
 runner `scripts/verification/dhh-fixes/C1-browser.mjs`.
+
+## C2 — upright, symmetric sound styling
+
+Sound captions are upright by default; the italic and the one-sided green left
+border are gone. Typed sounds (non-music) now carry a symmetric 2 px tint ring
+outside the caption box, and music keeps its ♪ glyphs. Brackets stay the primary
+cue that text is a sound. A new `italicSound` profile field (default false, old
+profiles load false) adds "Italic sound captions" under More sound options; it is
+a sound setting, so fixed conditions take the session default (off) like type
+styling, while personalized sessions keep the viewer's choice.
+
+Contrast: the ring sits outside the caption background, so it does not change
+text contrast. Worst case over a white video frame: solid backdrop 19.7:1 white /
+16.1:1 yellow; translucent 5.7:1 white / 4.7:1 yellow (floor 4.5:1). Outline mode
+(transparent, 1 px black text shadow) has no guaranteed contrast and is an
+explicit limitation over bright frames. Chrome (synthetic clock) verifies computed
+upright style, the symmetric ring with no side border, opt-in italic and its
+persistence. Evidence: `reports/C2-browser.json`; runner `scripts/verification/dhh-fixes/C2-browser.mjs`.

@@ -1,0 +1,12 @@
+{
+  "synthetic_media": true,
+  "before": {
+    "fontStyle": "normal",
+    "boxShadow": "rgb(219, 232, 190) 0px 0px 0px 2px",
+    "borderLeft": "0px",
+    "borderRight": "0px",
+    "text": "[A bird chirps.]"
+  },
+  "italicPersisted": true,
+  "errors": []
+}
