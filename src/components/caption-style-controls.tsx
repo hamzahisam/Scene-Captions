@@ -3,7 +3,6 @@ import type { CaptionProfile, CaptionCue, Level } from "@/lib/captions";
 import { Icon } from "./icon";
 import { SegmentedControl } from "./ui/segmented-control";
 import { Switch } from "./ui/switch";
-import { setReadAloud, useReadAloudPreference } from "./hooks/use-read-aloud";
 
 const AMOUNTS = [
   { label: "Essential", description: "Just the sound" },
@@ -40,7 +39,6 @@ export function CaptionStyleControls({
   sample?: CaptionCue;
   explanation?: string;
 }) {
-  const readAloud = useReadAloudPreference();
   const styleExample = (value: CaptionProfile["representation"]) =>
     !sample
       ? undefined
@@ -154,18 +152,6 @@ export function CaptionStyleControls({
             helper="Adds ♪ around music, an off-screen tag, and an edge on other sound types."
             checked={profile.typeStyling}
             onChange={(typeStyling) => onChange({ ...profile, typeStyling })}
-          />
-          <Switch
-            label="Read captions aloud"
-            helper="A calm voice built into your device reads each new caption. Turn your sound on."
-            checked={readAloud}
-            onChange={setReadAloud}
-          />
-          <Switch
-            label="Announce captions to screen readers"
-            helper="Only for VoiceOver, NVDA and other screen readers. Has no effect otherwise."
-            checked={profile.announceCaptions}
-            onChange={(announceCaptions) => onChange({ ...profile, announceCaptions })}
           />
         </div>
       </details>
