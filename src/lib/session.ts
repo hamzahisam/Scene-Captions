@@ -7,7 +7,7 @@ const baseEventSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("seek"), video_s: z.number(),method:z.enum(["scrub","keyboard","jump","sound-navigation"]).optional(),from_s:z.number().optional() }),
   z.object({ type: z.literal("profile"), video_s: z.number(), profile: profileSchema }),
   z.object({ type: z.literal("original"), video_s: z.number(), enabled: z.boolean(),mode:z.enum(["toggle","hold"]).optional() }),
-  z.object({ type: z.literal("condition"), video_s: z.number(), condition: z.enum(["baseline", "personalized"]) }),
+  z.object({ type: z.literal("condition"), video_s: z.number(), condition: z.enum(["baseline", "personalized"]), from: z.enum(["baseline", "personalized"]).optional() }),
   z.object({ type: z.literal("preview"), video_s: z.number(), profile: profileSchema.optional(), cue_id: z.string().optional() }),
   z.object({ type: z.literal("preview_end"), video_s: z.number() }),
 ]);

@@ -13,6 +13,7 @@ export const telemetryInputSchema=z.discriminatedUnion('type',[
  z.object({...base,source:z.literal('researcher'),type:z.literal('researcher_unlock')}),
  z.object({...base,source:z.literal('researcher'),type:z.literal('researcher_action'),action:z.enum(['export_json','export_events','export_summary','note_edit','leave_study'])}),
  z.object({...base,type:z.literal('profile_change'),field:z.string().max(100),from:scalar,to:scalar}),
+ z.object({...base,type:z.literal('condition'),from:conditionSchema,condition:conditionSchema}),
  z.object({...base,type:z.literal('original'),mode:z.enum(['toggle','hold']),enabled:z.boolean()}),
  z.object({...caption,type:z.enum(['caption_shown','caption_hidden'])}),
  z.object({...base,type:z.literal('survey'),item:z.string().max(200),value:scalar,response_ms:z.number().nonnegative(),scale:surveyScaleSchema.optional()}),

@@ -289,6 +289,20 @@ reads it with `useSyncExternalStore` only while the Research tools drawer is ope
 closed, nothing subscribes. The workspace itself still does not re-render on clock
 ticks. Chrome (dev render counter, synthetic clock) shows the counter flat across
 seeks with the drawer closed and across four timeline-moving seeks with it open
-(the current cue changes each time), and flat again after closing. The same script
-fails against the previous code (stale highlight). Evidence: `reports/C6-browser.json`;
+(the current cue changes each time), and flat again after closing. (A stash-based comparison against the previous
+code also errored, but its failure reason was not inspected, so no before/after claim is made.) Evidence: `reports/C6-browser.json`;
 runner `scripts/verification/dhh-fixes/C6-browser.mjs`.
+
+## C7 — single condition event
+
+Changing the Research-tools condition used to write a `profile_change` row for the
+condition, then a `condition` study event that the rehearsal hook silently dropped
+(its telemetry schema had no condition type), then an Original-off event even when
+Original was off. Now a real change records exactly one typed `condition` event
+(`from`, `condition`, source `researcher`) and an Original-off event only if Original
+was on; choosing the already-active condition logs nothing. The hook maps the study
+event and the telemetry schema accepts it; exports include it (CSV unchanged).
+Note: the recorder's `assigned_condition` context is not rewritten mid-recording; use
+the `condition` events for the sequence. Unit tests cover the schema, storage and CSV;
+Chrome (synthetic clock, local rehearsal) covers no-op, a real switch, and Original-on
+then switch. Evidence: `reports/C7-browser.json`; runner `scripts/verification/dhh-fixes/C7-browser.mjs`.

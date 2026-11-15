@@ -1,4 +1,4 @@
-import {test} from 'node:test';import assert from 'node:assert/strict';import {TelemetryRecorder} from '../src/lib/telemetry-storage.ts';import {telemetryEvent,coalesceEvent,eventCsv,summaryCsv} from '../src/lib/telemetry.ts';import type {TelemetryContext} from '../src/lib/telemetry.ts';import {parseCsv} from '../src/lib/allocation.ts';
+import {test} from 'node:test';import assert from 'node:assert/strict';import {TelemetryRecorder} from '../src/lib/telemetry-storage.ts';import {telemetryEvent,telemetryInputSchema,coalesceEvent,eventCsv,summaryCsv} from '../src/lib/telemetry.ts';import type {TelemetryContext} from '../src/lib/telemetry.ts';import {parseCsv} from '../src/lib/allocation.ts';
 import {checkpointItems,endItems} from '../src/lib/study-surveys.ts';import {studySessionSchema} from '../src/lib/study-session.ts';
 const context:TelemetryContext={session_id:'synthetic-001',participant_id:'P-001',design:'between',assigned_condition:'personalized',sequence_index:0,film_id:'soar',app_version:'test-sha'};
 function storage(){const data=new Map<string,string>();return {getItem:(k:string)=>data.get(k)||null,setItem:(k:string,v:string)=>{data.set(k,v)}}}
@@ -26,4 +26,13 @@ test('source/display ends survive persistence/export and summary counts extended
  assert.ok(shown&&shown.type==='caption_shown');assert.equal(shown.source_end_s,2);assert.equal(shown.display_end_s,2.75);assert.equal(shown.extended,true);
  const csv=parseCsv(eventCsv(restored.events));assert.ok(csv[0].includes('source_end_s'));assert.ok(csv[0].includes('display_end_s'));
  const summary=parseCsv(summaryCsv(context,restored.events));assert.equal(summary[1][summary[0].indexOf('extended_exposures')],'1');assert.equal(summary[1][summary[0].indexOf('caption_exposures')],'2');
+});
+test('condition changes are a typed researcher event that survives storage and CSV',()=>{
+ const s=storage(),r=new TelemetryRecorder(context,s);r.start(0);
+ r.append({type:'condition',video_s:4,from:'personalized',condition:'baseline',source:'researcher'});
+ const saved=r.events.filter(e=>e.type==='condition');
+ assert.equal(saved.length,1);assert.deepEqual([saved[0].from,saved[0].condition,saved[0].source],['personalized','baseline','researcher']);
+ assert.equal(r.events.some(e=>e.type==='profile_change'),false);
+ assert.match(eventCsv(r.events),/condition/);
+ assert.throws(()=>telemetryInputSchema.parse({type:'condition',video_s:1,condition:'nonsense',from:'baseline'}));
 });
