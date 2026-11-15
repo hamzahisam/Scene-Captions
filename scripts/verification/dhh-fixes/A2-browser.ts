@@ -7,6 +7,8 @@ import {studySessionSchema,profileNamespace,conditionProfile,STUDY_REGISTRY} fro
 const {chromium}=await import(process.env.PLAYWRIGHT_PATH||'/Users/zuhairmerchant/TexPilot/yarn-erp/node_modules/playwright/index.mjs');
 const data=videoSchema.parse(JSON.parse(readFileSync('data/source-assisted-captions/big-buck-bunny-controls.json','utf8')));
 const initial={...DEFAULT_PROFILE,size:'standard' as const,detail:3 as const,expression:1 as const,adaptive:true,representation:'plain' as const,readingSpeed:15 as const,typeStyling:false,markShortened:true};
+// Appearance is open by default (C4); only open it when a persisted state closed it.
+const openAppearance=async(panel:any)=>{if(!(await panel.locator('details.readability').evaluate((el:HTMLDetailsElement)=>el.open)))await panel.getByText('Appearance',{exact:true}).click()};
 const browser=await chromium.launch({channel:'chrome',headless:true});
 const results=[];
 try {
@@ -31,7 +33,7 @@ try {
   if(!fixed)await panel.getByText('More sound options',{exact:true}).click();
   for(const name of ['Reading pace','Sound representation','Mark shortened captions','Show sound type styling'])assert.equal(await panel.getByLabel(name,{exact:true}).count(),fixed?0:1);
   assert.equal(await panel.getByRole('group',{name:'Punctuation inside sound captions',exact:true}).count(),fixed?0:1);
-  await panel.getByText('Appearance',{exact:true}).click();
+  await openAppearance(panel);
   const labels=['Text size','Position on the video','Backdrop','Text colour','Announce captions to screen readers','Single-key shortcuts','Use shortcuts across this page'];
   for(const label of labels)assert.equal(await panel.getByLabel(label,{exact:true}).isVisible(),true);
   await panel.getByLabel('Text size',{exact:true}).selectOption('extra-large');await panel.getByLabel('Position on the video',{exact:true}).selectOption('top');
@@ -43,7 +45,7 @@ try {
   await page.locator('.caption-overlay.extra-large.top.backdrop-translucent.color-yellow').waitFor();
   const expected=resolveCaption(data.cues[0],conditionProfile(initial,session),condition==='baseline'?'baseline':'personalized').text;
   const announcements=page.locator('[aria-live="polite"][aria-atomic="true"]');assert.ok((await announcements.textContent()).includes(expected));
-  await cc.click();await panel.getByText('Appearance',{exact:true}).click();
+  await cc.click();await openAppearance(panel);
   assert.equal(await panel.getByLabel('Announce captions to screen readers',{exact:true}).isChecked(),true);assert.equal(await panel.getByLabel('Single-key shortcuts',{exact:true}).isChecked(),false);
   await panel.getByLabel('Single-key shortcuts',{exact:true}).check();await panel.getByRole('button',{name:'Close caption settings'}).click();
   await page.evaluate(()=>{document.body.tabIndex=-1;document.body.focus()});await page.keyboard.press('-');
@@ -60,8 +62,8 @@ try {
   if(fixed){assert.ok(changes.every((e:any)=>['size','position','backdrop','textColor','announceCaptions','shortcuts','pageWideShortcuts'].includes(e.field)));assert.equal(events.filter((e:any)=>e.type==='original').length,0)}
   else {assert.ok(changes.some((e:any)=>e.field==='detail'));assert.ok(events.some((e:any)=>e.type==='original'))}
   // Disable single-key shortcuts, then prove the effective preferences survive reload.
-  await cc.click();await panel.getByText('Appearance',{exact:true}).click();await panel.getByLabel('Single-key shortcuts',{exact:true}).uncheck();await panel.getByRole('button',{name:'Close caption settings'}).click();
-  await page.reload();await cc.waitFor();await cc.click();await panel.getByText('Appearance',{exact:true}).click();
+  await cc.click();await openAppearance(panel);await panel.getByLabel('Single-key shortcuts',{exact:true}).uncheck();await panel.getByRole('button',{name:'Close caption settings'}).click();
+  await page.reload();await cc.waitFor();await cc.click();await openAppearance(panel);
   for(const [label,value] of [['Text size','large'],['Position on the video','top'],['Backdrop','translucent'],['Text colour','yellow']])assert.equal(await panel.getByLabel(label,{exact:true}).inputValue(),value);
   assert.equal(await panel.getByLabel('Announce captions to screen readers',{exact:true}).isChecked(),true);assert.equal(await panel.getByLabel('Single-key shortcuts',{exact:true}).isChecked(),false);assert.equal(await panel.getByLabel('Use shortcuts across this page',{exact:true}).isChecked(),true);
   await panel.getByRole('button',{name:'Close caption settings'}).click();await frame.focus();await page.keyboard.press('c');assert.equal(await panel.count(),0);

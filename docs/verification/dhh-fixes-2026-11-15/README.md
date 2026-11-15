@@ -230,3 +230,18 @@ text contrast. Worst case over a white video frame: solid backdrop 19.7:1 white 
 explicit limitation over bright frames. Chrome (synthetic clock) verifies computed
 upright style, the symmetric ring with no side border, opt-in italic and its
 persistence. Evidence: `reports/C2-browser.json`; runner `scripts/verification/dhh-fixes/C2-browser.mjs`.
+
+## C4 — caption settings organization
+
+Appearance is now open by default and is the first group in the panel, with Text
+size the first control. "Reset readability" is "Reset appearance" (size, position,
+backdrop, colour). Announce captions, Single-key shortcuts and Use shortcuts across
+this page sit in a labelled Accessibility group (labels unchanged for assistive
+technology and scripts). The "Font: system sans-serif" line is removed. Reading
+pace options read "15 · Slower", "17 · Standard", "20 · Faster"; in a study session
+the option equal to the session's reading pace adds "(session default)" (the demo,
+which has no session, marks nothing). "Help me keep up" is described by its help
+text through `aria-describedby`. The A2 runner now opens Appearance only when closed.
+Chrome checks the demo page and a real personalized session (default pace 15) and
+that Reset restores defaults. Evidence: `reports/C4-browser.json`; runner
+`scripts/verification/dhh-fixes/C4-browser.mjs`.

@@ -1,0 +1,19 @@
+{
+  "synthetic_media": true,
+  "demo": {
+    "paces": [
+      "15 · Slower",
+      "17 · Standard",
+      "20 · Faster"
+    ],
+    "errors": []
+  },
+  "session": {
+    "paces": [
+      "15 · Slower (session default)",
+      "17 · Standard",
+      "20 · Faster"
+    ],
+    "errors": []
+  }
+}

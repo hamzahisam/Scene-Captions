@@ -58,3 +58,5 @@
 .survey-dialog .survey-segments label:focus-within{outline:3px solid var(--sage);outline-offset:2px}
 .survey-dialog fieldset:has(.survey-segments) .range-labels{color:var(--sage);font-size:14px;margin-top:8px}
 @media(max-width:1000px){.survey-segments{grid-template-columns:repeat(7,minmax(0,1fr))}}
+
+.accessibility-options{border:0;margin:12px 0 0;padding:0;min-width:0}.accessibility-options legend{padding:0;font-weight:600}
