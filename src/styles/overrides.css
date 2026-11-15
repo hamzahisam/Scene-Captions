@@ -20,11 +20,11 @@
       --text-subtle: #2E2852;
       --control-border: #2E2852;
     }
-    .app-grain { display: none; }
+    .app-shell::before { display: none; }
   }
 
   @media (forced-colors: active) {
-    .app-grain { display: none; }
+    .app-shell::before { display: none; }
     :focus-visible { outline: 3px solid Highlight; box-shadow: none; }
     .soundprint i, .sound-shape { forced-color-adjust: none; }
     .btn, .control, .film-card, .option-card, .segmented label, .chip { border: 1px solid ButtonText; }
@@ -34,7 +34,7 @@
   }
 
   @media print {
-    .site-header, .toc, .page-hero__actions, .skip-link, .app-grain { display: none !important; }
+    .site-header, .toc, .page-hero__actions, .skip-link { display: none !important; }
     .theme-paper, .theme-cinema { background: #fff; color: #111; }
     .reading { display: block; }
     .reading section { break-inside: avoid; }

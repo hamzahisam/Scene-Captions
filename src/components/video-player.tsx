@@ -17,11 +17,11 @@ import { resolveCaption } from "@/lib/captions";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import { Icon } from "./icon";
 
-export function VideoPlayer({ source, data, profile, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, onApply, annotations, onTelemetry=()=>{},recording=false,session,recorder,questions, settingsAllowed=true,showTicks=true, poster = "/media/bunny-poster.jpg" }: {
+export function VideoPlayer({ source, data, profile, condition, showOriginal, onOriginal, onTime, onEvent, seekTo, onApply, annotations, onTelemetry=()=>{},recording=false,session,recorder,questions, settingsAllowed=true,showTicks=true, poster = "/media/bunny-poster.jpg", savedNonce = 0, demoMode = false }: {
   source: string; data: CaptionVideo | null; profile: CaptionProfile; condition: Condition;
   showOriginal: boolean; onOriginal: (enabled?:boolean,mode?:"toggle"|"hold") => void; onTime: (time: number) => void;
   onEvent: (event: StudyEvent) => void; seekTo: { seconds: number; nonce: number;source?:"participant"|"system"|"researcher" } | null;
-  session?:StudySession;recorder?:TelemetryRecorder|null;questions?:QuestionFile;onTelemetry?:(event:TelemetryInput)=>void;recording?:boolean;settingsAllowed?:boolean;showTicks?:boolean; annotations?:CueAnnotations; poster?: string; onApply:(p:CaptionProfile)=>void;
+  session?:StudySession;recorder?:TelemetryRecorder|null;questions?:QuestionFile;onTelemetry?:(event:TelemetryInput)=>void;recording?:boolean;settingsAllowed?:boolean;showTicks?:boolean; annotations?:CueAnnotations; poster?: string; savedNonce?: number; demoMode?: boolean; onApply:(p:CaptionProfile)=>void;
 }) {
   const playback = useVideoPlayback({ source, seekTo, onTime, onEvent });
   const { video, frame, ready, playing, error, waiting, duration, time, toggle } = playback;

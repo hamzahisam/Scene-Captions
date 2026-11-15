@@ -12,14 +12,14 @@ const result = { films: [], scope: 'Actual seeks and displayed source text; not 
 try {
   await page.goto('http://127.0.0.1:3000');
   await page.waitForFunction(() => document.querySelector('video')?.readyState >= 1);
-  assert(await page.locator('#film-choice option').count() === 3, 'Three films available');
+  assert(await page.locator('#film-choice [role=radio]').count() === 3, 'Three films available');
   await page.locator('.cue-row').nth(10).click();
   await page.getByRole('button', { name: 'Rich', exact: true }).click();
   await page.getByRole('button', { name: 'Preview this cue in the video', exact: true }).click();
   await page.locator('.caption-preview-notice').waitFor({ state: 'visible' });
   for (const id of ['sintel', 'tears-of-steel']) {
     const data = JSON.parse(readFileSync('data/captions/' + id + '.json', 'utf8'));
-    await page.locator('#film-choice').selectOption(id);
+    await page.locator(`#film-choice [data-film-id="${id}"]`).click();
     await page.waitForFunction(identity => document.querySelector('video')?.getAttribute('src') === '/media/' + identity + '.mp4' && document.querySelector('video')?.readyState >= 1, id);
     assert(await page.locator('.caption-preview-notice').count() === 0, 'Old preview cleared');
     assert(await page.locator('.cue-row:not(.dialogue-row)').count() === 0, 'Old film sound cues cleared');
@@ -54,7 +54,7 @@ try {
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'No narrow layout overflow');
   await page.screenshot({ path: evidence + '/screenshots/mobile.png', fullPage: true });
   await page.setViewportSize({ width: 1440, height: 1100 });
-  await page.locator('#film-choice').selectOption('big-buck-bunny');
+  await page.locator(`#film-choice [data-film-id="big-buck-bunny"]`).click();
   await page.waitForFunction(() => document.querySelector('video')?.readyState >= 1 && document.querySelectorAll('.cue-row').length === 87);
   // Synthetic dialogue verifies stacking and mismatch suppression; it is never saved into a real track.
   const fixture = JSON.parse(readFileSync('data/captions/big-buck-bunny.json', 'utf8'));
@@ -72,15 +72,15 @@ try {
   await upload({ ...fixture, duration_seconds: fixture.duration_seconds + 20 });
   await page.getByRole('alert').filter({ hasText: 'Caption timing does not match' }).waitFor();
   assert(await page.locator('.caption-overlay').count() === 0, 'Duration mismatch suppresses both caption types');
-  await page.locator('#film-choice').selectOption('sintel');
-  await page.locator('#film-choice').selectOption('big-buck-bunny');
+  await page.locator(`#film-choice [data-film-id="sintel"]`).click();
+  await page.locator(`#film-choice [data-film-id="big-buck-bunny"]`).click();
   await page.waitForFunction(() => document.querySelector('video')?.readyState >= 1 && document.querySelectorAll('.cue-row').length === 87);
   result.syntheticDialogueStackAndMismatch = true;
   await page.getByLabel('I agree to record this demo’s player interactions locally.').check();
   await page.getByRole('button', { name: 'Start rehearsal', exact: false }).click();
-  assert(await page.locator('#film-choice').isDisabled(), 'Rehearsal fixes the film');
+  assert((await page.locator('#film-choice').getAttribute('aria-disabled')) === 'true', 'Rehearsal fixes the film');
   await page.getByRole('button', { name: 'Stop recording', exact: true }).click();
-  assert(await page.locator('#film-choice').isDisabled(), 'Stopped rehearsal still fixes the film until reload');
+  assert((await page.locator('#film-choice').getAttribute('aria-disabled')) === 'true', 'Stopped rehearsal still fixes the film until reload');
   assert(errors.length === 0, 'No uncaught browser errors: ' + errors.join('; '));
   result.rehearsalSelectionLocked = true;
   result.narrowLayout = true;
