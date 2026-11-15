@@ -124,3 +124,22 @@ consented resume. Evidence: `reports/B1-browser.json` and per-task check logs.
 Team manual checks remain Safari, Firefox, physical iPhone fullscreen, VoiceOver,
 NVDA and a 20–30 minute recording/playback soak. Automated checks cannot establish
 sound accuracy, DHH comfort, participant consent or study approval.
+
+## B2 — survey interaction and response scales
+
+Surveys no longer close on Escape: the shared dialog hook takes an `escapeDismiss`
+option (default true, off for surveys) so the current answer, item and focus stay
+put; only explicit Skip records a null. Child checkpoint wording is "How easy was
+it to follow the captions?". Child checkpoint and all three end ratings share one
+1 negative → 5 positive face scale (inline SVG with adjacent visible text, no
+emoji; numeric codes unchanged). Every new survey response carries `scale`
+metadata (kind, endpoints, labels, direction) including skips and system-missed
+checkpoints; legacy events without it still parse, and CSV serializes it as JSON.
+Adult wording/polarity and TLX wording/scoring are preserved for B3.
+
+Changed owners: `use-dialog-focus`, `study-surveys` rules/component, `survey-face`,
+telemetry schema/CSV, experiment procedure and plan, focused tests, Chrome runner.
+Typecheck, tests, build and 53 protected hashes pass. Installed Chrome (synthetic
+media clock) checks child and adult groups, 25 Escape cases, Skip, faces plus
+accessible text and metadata; A3 regression passes. Evidence: `reports/B2-browser.json`;
+runner `scripts/verification/dhh-fixes/B2-browser.mjs`.
