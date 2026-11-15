@@ -1,6 +1,7 @@
 {
   "video_id": "sintel",
   "status": "heuristic-draft",
+  "dialogue_status": "heuristic-draft",
   "sounds": {},
   "dialogue": {}
 }

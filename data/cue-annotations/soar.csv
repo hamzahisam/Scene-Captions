@@ -1,0 +1,51 @@
+cue_id,start,text,proposed kind
+soar-sound-001,0,[tweeting birds],ambience
+soar-sound-002,2,[flute of ideas music],music
+soar-sound-003,5,[crank],sfx
+soar-sound-004,8,[crank],sfx
+soar-sound-005,14,[sigh],vocal
+soar-sound-006,19,[zoom],sfx
+soar-sound-007,24,[swish],sfx
+soar-sound-008,27,[sigh],vocal
+soar-sound-009,29,[sad piano solo],music
+soar-sound-010,39,[wind picks up],ambience
+soar-sound-011,46,[sigh],vocal
+soar-sound-012,51,[leaves rustling],ambience
+soar-sound-013,52,[Ah!],vocal
+soar-sound-014,55,[curious oboe music],music
+soar-sound-015,60,[gasp],vocal
+soar-sound-016,61,[dying helicopter],sfx
+soar-sound-017,66,[Oof!],vocal
+soar-sound-018,68,[gasp],vocal
+soar-sound-019,73,[Huh?],vocal
+soar-sound-020,74,[GASP],vocal
+soar-sound-021,86,[Click],sfx
+soar-sound-022,94,[clang],sfx
+soar-sound-023,95,[gasp],vocal
+soar-sound-024,99,[whirring],sfx
+soar-sound-025,123,[an idea is coming music],music
+soar-sound-026,127,[Oof!],vocal
+soar-sound-027,128,[an idea has come music],music
+soar-sound-028,141,[whirring],sfx
+soar-sound-029,144,[Squeak!],vocal
+soar-sound-030,145,[swish],sfx
+soar-sound-031,149,[swish swish swish crack swish],sfx
+soar-sound-032,152,[an idea is coming music],music
+soar-sound-033,161,[Hmph],vocal
+soar-sound-034,163,[Ahhhhhhh],vocal
+soar-sound-035,165,"[AHHHHHHH]
+[Oof *swish swish]",vocal|vocal
+soar-sound-036,169,[Huh?],vocal
+soar-sound-037,182,[sad piano solo],music
+soar-sound-038,188,[sniff],vocal
+soar-sound-039,190,[sad music],music
+soar-sound-040,197,[wind picks up],ambience
+soar-sound-041,199,[sad music],music
+soar-sound-042,206,[an idea is coming music],music
+soar-sound-043,218,[flute of victory],music
+soar-sound-044,226,[Ah],vocal
+soar-sound-045,242,[click],sfx
+soar-sound-046,250,[twinkling],sfx
+soar-sound-047,264,[ting ting],sfx
+soar-sound-048,267,[ting ting],sfx
+soar-sound-049,273,[happy piano solo],music

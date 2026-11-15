@@ -306,3 +306,21 @@ Note: the recorder's `assigned_condition` context is not rewritten mid-recording
 the `condition` events for the sequence. Unit tests cover the schema, storage and CSV;
 Chrome (synthetic clock, local rehearsal) covers no-op, a real switch, and Original-on
 then switch. Evidence: `reports/C7-browser.json`; runner `scripts/verification/dhh-fixes/C7-browser.mjs`.
+
+## C3 — per-line sound kinds, vocal heuristics and review CSV tooling (Gemini worker, integrated)
+
+Sound annotations may carry `kinds` (one per source line); validation requires the
+count to equal the source line count. Vocal detection uses word-boundary patterns (ah,
+oof, huh, gasp, sigh, hmph, etc.) so words such as crash, flash or roof no longer match,
+and all draft sidecars were regenerated (multi-line cues in Big Buck Bunny and Soar get
+`kinds`). Each film has a review CSV (`cue_id,start,text,proposed kind`, RFC 4180).
+`scripts/verification/apply-reviewed-csv.mjs` (with `--check`/`--dry-run`) validates the
+whole file first — known unique cue ids, exact start and source text, permitted kinds, line
+counts — and only then writes `status: 'reviewed'`. It keeps `dialogue_status` as
+`heuristic-draft`, so reviewing sounds never certifies dialogue speakers (the B6 gate is
+`dialogue_status ?? status`). Overlay, native track and exposure text share one formatter
+for per-line music glyphs. Integrated with B6 and the C2 italic class; unit tests 118
+pass with types, build and 53 protected hashes; B6/C2 Chrome runners re-pass. The Gemini
+worker's self-reported model/effort and "no model inference" were not independently
+verified beyond the committed deterministic scripts. All sidecars remain drafts: sound
+wording/kind accuracy and speaker attribution still need human review.

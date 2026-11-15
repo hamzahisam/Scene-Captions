@@ -1,0 +1,91 @@
+cue_id,start,text,proposed kind
+bbb-sdh-001,2.499,[SERENE MUSIC],music
+bbb-sdh-002,11.791,"[BROOK BABBLES]
+[FLY BUZZES]",ambience|sfx
+bbb-sdh-003,16.166,[BIRD TWEETS],ambience
+bbb-sdh-004,17.666,[WINGS FLAP],sfx
+bbb-sdh-005,19.833,"[BIRD TWEETS]
+[WINGS FLAP]",ambience|sfx
+bbb-sdh-006,20.374,[THUD],sfx
+bbb-sdh-007,21.374,[THUD],sfx
+bbb-sdh-008,22.249,[SQUIRREL LAUGHS],vocal
+bbb-sdh-009,26.249,[SNORES],vocal
+bbb-sdh-010,29.416,[SNORES],vocal
+bbb-sdh-011,32.749,[BUNNY SNORES],vocal
+bbb-sdh-012,35.916,[BUNNY SNORES],vocal
+bbb-sdh-013,45.333,[BUNNY SNIFFS],vocal
+bbb-sdh-014,46.541,[EARS POP],sfx
+bbb-sdh-015,50.083,[BUNNY YAWNS],vocal
+bbb-sdh-016,52.499,[BUNNY CRACKS NECK],sfx
+bbb-sdh-017,68.416,[BUNNY SNIFFS DEEPLY],vocal
+bbb-sdh-018,73.499,[BUNNY SNIFFS DEEPLY],vocal
+bbb-sdh-019,75.166,[BUNNY SIGHS],vocal
+bbb-sdh-020,83.624,[APPLE THUDS],sfx
+bbb-sdh-021,90.041,[TREE RUSTLES SUSPICIOUSLY],ambience
+bbb-sdh-022,94.499,[APPLE CRUNCHES],sfx
+bbb-sdh-023,101.958,[LEAVES RUSTLE],ambience
+bbb-sdh-024,106.541,[APPLE CORE THUDS],sfx
+bbb-sdh-025,130.874,[SQUIRREL SCUTTLES],sfx
+bbb-sdh-026,133.083,[BRANCHES RUSTLE],ambience
+bbb-sdh-027,139.499,[SQUIRREL SQUEAKS],vocal
+bbb-sdh-028,140.374,[THUD],sfx
+bbb-sdh-029,149.208,[NUT CRUNCHING],sfx
+bbb-sdh-030,152.916,[SQUIRREL SQUEAKS ANGRILY],vocal
+bbb-sdh-031,153.749,[NUT THUDS],sfx
+bbb-sdh-032,158.166,[NUT THUDS],sfx
+bbb-sdh-033,160.999,[SQUIRRELS LAUGHING],vocal
+bbb-sdh-034,164.166,[SQUIRREL SNAPS FINGERS],sfx
+bbb-sdh-035,169.374,[NUT WHOOSHES],sfx
+bbb-sdh-036,174.458,[NUTS THUDDING],sfx
+bbb-sdh-037,176.124,[NUTS WHOOSHING],sfx
+bbb-sdh-038,178.083,[NUTS THUDDING],sfx
+bbb-sdh-039,180.583,[NUTS WHOOSHING],sfx
+bbb-sdh-040,186.541,[SUSPENSFUL MUSIC],music
+bbb-sdh-041,195.833,[BUTTERFLY SPLATS],sfx
+bbb-sdh-042,197.083,[DRAMATIC MUSIC],music
+bbb-sdh-043,202.708,[SQUIRREL CLAPS],sfx
+bbb-sdh-044,204.999,[BUNNY GULPS],vocal
+bbb-sdh-045,209.124,[WINGS FLAP],sfx
+bbb-sdh-046,214.166,[THUD],sfx
+bbb-sdh-047,218.499,[SQUIRREL SQUEAKS],vocal
+bbb-sdh-048,225.457,[CONKERS WHOOSH],sfx
+bbb-sdh-049,226.707,[CONKERS THUD],sfx
+bbb-sdh-050,254.582,[MOTIVATIONAL MUSIC],music
+bbb-sdh-051,270.207,[JOVIAL MUSIC],music
+bbb-sdh-052,276.582,[MILITARY MUSIC],music
+bbb-sdh-053,285.332,[INQUISITIVE MUSIC],music
+bbb-sdh-054,294.541,[MUSIC CRESCENDOS],music
+bbb-sdh-055,302.207,[GRASS RUSTLING],ambience
+bbb-sdh-056,321.374,[BOW STRING PINGS],sfx
+bbb-sdh-057,322.624,[VINE SNAPS],sfx
+bbb-sdh-058,325.499,[SQUIRRELS SNIFFING],vocal
+bbb-sdh-059,329.624,[SQUIRREL SQUEAKS ORDERS],vocal
+bbb-sdh-060,332.624,[ROPES CREAK],sfx
+bbb-sdh-061,337.124,"[THUD]
+[SQUIRREL SQUEAKS IN PAIN]",sfx|vocal
+bbb-sdh-062,338.499,[THUD],sfx
+bbb-sdh-063,341.582,[NUT CRUNCHES],sfx
+bbb-sdh-064,346.374,[ROCK CRASHES],sfx
+bbb-sdh-065,351.332,[LOG CRUNCHES],sfx
+bbb-sdh-066,353.332,[LOG THUDS],sfx
+bbb-sdh-067,360.874,[SQUIRREL SQUEAKS],vocal
+bbb-sdh-068,371.957,[TRAP PINGS],sfx
+bbb-sdh-069,372.874,[SQUIRREL SQUEALS],vocal
+bbb-sdh-070,388.582,[THUD],sfx
+bbb-sdh-071,398.582,[WINGS POP],sfx
+bbb-sdh-072,410.791,[TWIG SNAPS],sfx
+bbb-sdh-073,418.665,[APPLE THUDS],sfx
+bbb-sdh-074,419.999,[TRAPS SNAP],sfx
+bbb-sdh-075,421.874,[TRAPS SNAPPING],sfx
+bbb-sdh-076,430.915,[TRAPS SNAPPING],sfx
+bbb-sdh-077,436.29,[BRANCHES SNAP],sfx
+bbb-sdh-078,437.957,[WINGS FLAPPING],sfx
+bbb-sdh-079,441.957,[SQUIRREL SQUEALS],vocal
+bbb-sdh-080,446.124,[BRANCH CREAKING],sfx
+bbb-sdh-081,456.749,[SQUIRREL SQUEAKS IN PAIN],vocal
+bbb-sdh-082,463.249,[SERENE MUSIC],music
+bbb-sdh-083,480.749,[WIND BLOWS],ambience
+bbb-sdh-084,490.04,[TRIUMPHANT MUSIC],music
+bbb-sdh-085,581.79,[BIRD FLAPPING],ambience
+bbb-sdh-086,587.749,[BIRD FLAPPING],ambience
+bbb-sdh-087,595.665,[POOP SPLATS],sfx

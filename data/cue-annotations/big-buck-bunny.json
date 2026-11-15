@@ -1,12 +1,17 @@
 {
   "video_id": "big-buck-bunny",
   "status": "heuristic-draft",
+  "dialogue_status": "heuristic-draft",
   "sounds": {
     "bbb-sdh-001": {
       "kind": "music"
     },
     "bbb-sdh-002": {
-      "kind": "ambience"
+      "kind": "ambience",
+      "kinds": [
+        "ambience",
+        "sfx"
+      ]
     },
     "bbb-sdh-003": {
       "kind": "ambience"
@@ -15,7 +20,11 @@
       "kind": "sfx"
     },
     "bbb-sdh-005": {
-      "kind": "ambience"
+      "kind": "ambience",
+      "kinds": [
+        "ambience",
+        "sfx"
+      ]
     },
     "bbb-sdh-006": {
       "kind": "sfx"
@@ -39,7 +48,7 @@
       "kind": "vocal"
     },
     "bbb-sdh-013": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "bbb-sdh-014": {
       "kind": "sfx"
@@ -51,10 +60,10 @@
       "kind": "sfx"
     },
     "bbb-sdh-017": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "bbb-sdh-018": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "bbb-sdh-019": {
       "kind": "vocal"
@@ -132,7 +141,7 @@
       "kind": "sfx"
     },
     "bbb-sdh-044": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "bbb-sdh-045": {
       "kind": "sfx"
@@ -174,7 +183,7 @@
       "kind": "sfx"
     },
     "bbb-sdh-058": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "bbb-sdh-059": {
       "kind": "vocal"
@@ -183,7 +192,11 @@
       "kind": "sfx"
     },
     "bbb-sdh-061": {
-      "kind": "vocal"
+      "kind": "vocal",
+      "kinds": [
+        "sfx",
+        "vocal"
+      ]
     },
     "bbb-sdh-062": {
       "kind": "sfx"
@@ -207,7 +220,7 @@
       "kind": "sfx"
     },
     "bbb-sdh-069": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "bbb-sdh-070": {
       "kind": "sfx"
@@ -237,7 +250,7 @@
       "kind": "sfx"
     },
     "bbb-sdh-079": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "bbb-sdh-080": {
       "kind": "sfx"

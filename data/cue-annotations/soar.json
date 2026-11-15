@@ -1,6 +1,7 @@
 {
   "video_id": "soar",
   "status": "heuristic-draft",
+  "dialogue_status": "heuristic-draft",
   "sounds": {
     "soar-sound-001": {
       "kind": "ambience"
@@ -39,7 +40,7 @@
       "kind": "ambience"
     },
     "soar-sound-013": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "soar-sound-014": {
       "kind": "music"
@@ -51,13 +52,13 @@
       "kind": "sfx"
     },
     "soar-sound-017": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "soar-sound-018": {
       "kind": "vocal"
     },
     "soar-sound-019": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "soar-sound-020": {
       "kind": "vocal"
@@ -78,7 +79,7 @@
       "kind": "music"
     },
     "soar-sound-026": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "soar-sound-027": {
       "kind": "music"
@@ -99,22 +100,26 @@
       "kind": "music"
     },
     "soar-sound-033": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "soar-sound-034": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "soar-sound-035": {
-      "kind": "sfx"
+      "kind": "vocal",
+      "kinds": [
+        "vocal",
+        "vocal"
+      ]
     },
     "soar-sound-036": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "soar-sound-037": {
       "kind": "music"
     },
     "soar-sound-038": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "soar-sound-039": {
       "kind": "music"
@@ -132,7 +137,7 @@
       "kind": "music"
     },
     "soar-sound-044": {
-      "kind": "sfx"
+      "kind": "vocal"
     },
     "soar-sound-045": {
       "kind": "sfx"

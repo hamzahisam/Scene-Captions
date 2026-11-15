@@ -1,6 +1,7 @@
 {
   "video_id": "hair-love",
   "status": "heuristic-draft",
+  "dialogue_status": "heuristic-draft",
   "sounds": {
     "hair-love-sound-001": {
       "kind": "music"

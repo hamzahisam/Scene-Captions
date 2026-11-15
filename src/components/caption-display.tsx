@@ -1,6 +1,6 @@
 "use client";
 import {useMemo} from "react";
-import {dialogueParts,reviewedSpeaker} from "@/lib/cue-annotations";
+import {dialogueParts,reviewedSpeaker,mapLinesToKinds} from "@/lib/cue-annotations";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import { resolveCaptionWindows, resolveCaption } from "@/lib/captions";
 import type { CaptionCue, CaptionProfile, CaptionVideo, Condition } from "@/lib/captions";
@@ -23,7 +23,22 @@ export function CaptionOverlay({ active, cues, profile, dialogue = [], sample=fa
   return <div className={`caption-overlay ${profile.position} ${profile.size} backdrop-${profile.backdrop} color-${profile.textColor} ${sample?"caption-sample":""}`}>
     {sample&&<span className="sample-label">Sample</span>}
     {!!dialogue.length && <div className="dialogue-lines">{dialogue.map(cue => {const part=dialogueParts(cue.text,reviewedSpeaker(annotations,cue.cue_id));return <p key={cue.cue_id}>{part.speaker&&<><span className="speaker-chip">{part.speaker}</span><span className="sr-only">: </span></>}{part.text}</p>})}</div>}
-    {!!active.length && <div className="caption-lines">{active.map((caption, index) => <p key={cues[index].cue_id} className={[profile.typeStyling&&annotations?.sounds[cues[index].cue_id]?`sound-type sound-${annotations.sounds[cues[index].cue_id].kind}`:"",profile.italicSound?"sound-italic":""].filter(Boolean).join(" ")||undefined}>{profile.typeStyling&&annotations?.sounds[cues[index].cue_id]?.kind==="music"&&<span aria-hidden="true">♪ </span>}{caption.text}{profile.typeStyling&&annotations?.sounds[cues[index].cue_id]?.kind==="music"&&<span aria-hidden="true"> ♪</span>}{profile.typeStyling&&annotations?.sounds[cues[index].cue_id]?.offscreen&&<span className="offscreen-tag">off-screen</span>}{profile.markShortened&&caption.adapted&&<span className="shortened-marker"><span aria-hidden="true"> ▿</span><span className="sr-only"> (shortened)</span></span>}</p>)}</div>}
+    {!!active.length && <div className="caption-lines">{active.map((caption, index) => {
+      const cue = cues[index];
+      const soundAnn = annotations?.sounds[cue.cue_id];
+      const lines = caption.text.split('\n');
+      const kinds = mapLinesToKinds(lines, soundAnn);
+      if (lines.length === 1) {
+        const lineKind = kinds[0];
+        const isMusic = profile.typeStyling && lineKind === "music";
+        return <p key={cue.cue_id} className={[profile.typeStyling&&lineKind?`sound-type sound-${lineKind}`:"",profile.italicSound?"sound-italic":""].filter(Boolean).join(" ")||undefined}>{isMusic&&<span aria-hidden="true">♪ </span>}{lines[0]}{isMusic&&<span aria-hidden="true"> ♪</span>}{profile.typeStyling&&soundAnn?.offscreen&&<span className="offscreen-tag">off-screen</span>}{profile.markShortened&&caption.adapted&&<span className="shortened-marker"><span aria-hidden="true"> ▿</span><span className="sr-only"> (shortened)</span></span>}</p>;
+      }
+      return <p key={cue.cue_id}>{lines.map((line, lineIdx) => {
+        const lineKind = kinds[lineIdx];
+        const isMusic = profile.typeStyling && lineKind === "music";
+        return <span key={lineIdx} style={{display:'block'}} className={[profile.typeStyling&&lineKind?`sound-type sound-${lineKind}`:"",profile.italicSound?"sound-italic":""].filter(Boolean).join(" ")||undefined}>{isMusic&&<span aria-hidden="true">♪ </span>}{line}{isMusic&&<span aria-hidden="true"> ♪</span>}</span>;
+      })}{profile.typeStyling&&soundAnn?.offscreen&&<span className="offscreen-tag">off-screen</span>}{profile.markShortened&&caption.adapted&&<span className="shortened-marker"><span aria-hidden="true"> ▿</span><span className="sr-only"> (shortened)</span></span>}</p>;
+    })}</div>}
   </div>;
 }
 
