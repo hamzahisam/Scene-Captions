@@ -203,3 +203,12 @@ mode (no chip, unchanged text, native cue unchanged) and, with the sidecar
 temporarily flipped to reviewed and then restored, in reviewed mode (one chip,
 hidden ": ", native "Angela: …"). Evidence: `reports/B6-browser.json`; runner
 `scripts/verification/dhh-fixes/B6-browser.mjs`.
+
+## C1 — sound navigation icons
+
+The Previous/Next sound buttons use two new inline SVG icons (sound bars with a
+left or right chevron) instead of the ↶/↷ glyphs, which read as undo/redo. The
+accessible names, disabled logic and seek behaviour are unchanged; the icons are
+`aria-hidden`. Chrome (synthetic clock) checks no text glyph remains, one SVG per
+button, minimum button size, and Next/Previous seeks. Evidence: `reports/C1-browser.json`;
+runner `scripts/verification/dhh-fixes/C1-browser.mjs`.
