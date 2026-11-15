@@ -12,11 +12,11 @@ async (page) => {
   const apple = track.cues.find(cue => cue.original_text === '[APPLE THUDS]');
   await page.getByRole('button', { name: 'Rich', exact: true }).click();
   await page.getByText('Caption readability', { exact: true }).click();
-  await page.getByLabel('Text size', { exact: true }).selectOption('extra-large');
+  await page.getByRole('radio',{name:'Extra large',exact:true}).check();
   assert(await page.getByLabel('Level of detail', { exact: false }).inputValue() === '3', 'Readability must retain unfinished detail');
   assert(await page.locator('.readability').getAttribute('open') !== null, 'Readability remains open');
   assert((await saved()).detail === 2, 'Readability must not save unfinished content');
-  await page.getByLabel('Position on the video', { exact: true }).selectOption('top');
+  await page.getByRole('radio',{name:'Top',exact:true}).check();
   await page.locator('.cue-row').nth(track.cues.indexOf(apple)).click();
   await page.waitForFunction(text => document.querySelector('.caption-lines')?.textContent === text, apple.grid['2-2']);
   const previewButton = page.getByRole('button', { name: 'Preview this cue in the video', exact: true });

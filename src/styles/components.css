@@ -72,18 +72,19 @@
   }
   .segmented__option { flex: 1 1 0; position: relative; min-width: 0; }
   .segmented__option input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
-  .segmented__option span {
+  .segmented__option > span {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     min-height: 40px; padding: var(--space-1) var(--space-2);
     border-radius: 7px; text-align: center; font-weight: 700; color: var(--text-muted);
     transition: background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
   }
-  .segmented__option span small { font-weight: 400; font-size: var(--text-meta); }
-  .segmented__option input:checked + span { background: var(--accent); color: var(--on-accent); }
-  .segmented__option input:checked + span small { color: var(--on-accent); }
-  .segmented__option input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; box-shadow: 0 0 0 6px var(--focus-halo); }
-  .segmented__option input:not(:checked):hover + span { color: var(--text); background: var(--surface-raised); }
-  fieldset:disabled .segmented__option span { opacity: .6; }
+  .segmented__option > span small { font-weight: 400; font-size: var(--text-meta); }
+  .segmented__option > input:checked + span { background: var(--accent); color: var(--on-accent); }
+  .segmented__option > input:checked + span small { color: var(--on-accent); }
+  .segmented__option > input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; box-shadow: 0 0 0 6px var(--focus-halo); }
+  .segmented__option > input:not(:checked):hover + span { color: var(--text); background: var(--surface-raised); }
+  fieldset:disabled .segmented__track { border-style: dashed; }
+  fieldset:disabled .segmented__option input { cursor: not-allowed; }
 
   /* Switch */
   .switch-row { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); }

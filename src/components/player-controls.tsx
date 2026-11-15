@@ -233,7 +233,7 @@ export function PlayerControls({
     const el = controls.current;
     if (!el) return;
     const update = () =>
-      el.closest<HTMLElement>(".video-stage")?.style.setProperty("--controls-height", `${el.getBoundingClientRect().height}px`);
+      el.closest<HTMLElement>(".video-frame")?.style.setProperty("--controls-height", `${el.getBoundingClientRect().height}px`);
     const observer = new ResizeObserver(update);
     observer.observe(el);
     update();

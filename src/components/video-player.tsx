@@ -277,7 +277,7 @@ export function VideoPlayer({
             </span>
           )}
           <Hud message={hud.message} nonce={hud.nonce} />
-          {hintVisible && <OriginalHint onDismiss={dismissHint} />}
+          {hintVisible && !settingsOpen && !helpOpen && <OriginalHint onDismiss={dismissHint} />}
           <CaptionExperience
             onSurveyActive={surveyChanged}
             onSoundCaption={onSoundCaption}
