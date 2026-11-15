@@ -2,7 +2,6 @@
  * SceneCaptions styles. Each file wraps its rules in one cascade layer:
  *   tokens     design tokens and the cinema / paper themes
  *   base       element defaults, focus, utilities
- *   legacy     pre-redesign rules for screens not yet rebuilt (temporary)
  *   layout     page shell, header, footer, page grids
  *   components player, rail, sheets, primitives, caption stimulus
  *   research   researcher console and paper-theme research routes
@@ -11,7 +10,6 @@
 @import "../styles/layers.css";
 @import "../styles/tokens.css";
 @import "../styles/base.css";
-@import "../styles/legacy.css";
 @import "../styles/layout.css";
 @import "../styles/components.css";
 @import "../styles/player.css";

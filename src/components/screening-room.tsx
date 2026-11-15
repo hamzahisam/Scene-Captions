@@ -39,9 +39,15 @@ function FilmRail({
   const refs = useRef<Record<string, HTMLButtonElement | null>>({});
   const [drawId] = useState(selected); // one orchestrated draw-in, on first load only
   function move(e: KeyboardEvent<HTMLButtonElement>, index: number) {
-    const keys: Record<string, number> = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+    const keys: Record<string, number> = {
+      ArrowRight: 1,
+      ArrowDown: 1,
+      ArrowLeft: -1,
+      ArrowUp: -1,
+    };
     let next: number | null = null;
-    if (e.key in keys) next = (index + keys[e.key] + films.length) % films.length;
+    if (e.key in keys)
+      next = (index + keys[e.key] + films.length) % films.length;
     if (e.key === "Home") next = 0;
     if (e.key === "End") next = films.length - 1;
     if (next === null) return;
@@ -90,7 +96,11 @@ function FilmRail({
             >
               <span className="film-card__poster">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={film.poster} alt="" loading={index < 3 ? "eager" : "lazy"} />
+                <img
+                  src={film.poster}
+                  alt=""
+                  loading={index < 3 ? "eager" : "lazy"}
+                />
                 <span className="film-card__check" aria-hidden="true">
                   <Icon name="check" size={18} />
                 </span>
@@ -98,7 +108,9 @@ function FilmRail({
               <span className="film-card__body">
                 <span className="film-card__title">{film.data.title}</span>
                 <span className="film-card__meta">{film.credit}</span>
-                <span className={`chip film-card__badge ${hasSound ? "" : "chip--plain"}`}>
+                <span
+                  className={`chip film-card__badge ${hasSound ? "" : "chip--plain"}`}
+                >
                   {hasSound ? "Sound captions" : "Dialogue subtitles only"}
                 </span>
                 {hasSound && (
@@ -118,7 +130,8 @@ function FilmRail({
       {locked && (
         <p id="film-lock-message" className="film-library__lock" role="status">
           <Icon name="info" size={18} />
-          Film is locked while a rehearsal is recording. Stop and export the rehearsal to switch films.
+          Film is locked while a rehearsal is recording. Stop and export the
+          rehearsal to switch films.
         </p>
       )}
     </section>
@@ -148,8 +161,10 @@ export function ScreeningRoom({ films }: { films: ScreeningFilm[] }) {
   const [consoleHost, setConsoleHost] = useState<HTMLDivElement | null>(null);
   const study = useStudySession();
   const session = study.session;
-  const selectedId = session?.sequence[session.sequenceIndex].filmId || selected;
-  const film = films.find((item) => item.data.video_id === selectedId) || films[0];
+  const selectedId =
+    session?.sequence[session.sequenceIndex].filmId || selected;
+  const film =
+    films.find((item) => item.data.video_id === selectedId) || films[0];
   if (!study.ready) return <LoadingStage />;
   if (study.error)
     return (
@@ -165,7 +180,14 @@ export function ScreeningRoom({ films }: { films: ScreeningFilm[] }) {
   return (
     <>
       <main id="main" className="watch">
-        {!session && <FilmRail films={films} selected={selected} onSelect={setSelected} locked={locked} />}
+        {!session && (
+          <FilmRail
+            films={films}
+            selected={selected}
+            onSelect={setSelected}
+            locked={locked}
+          />
+        )}
         <Workspace
           questions={film.questions}
           session={session || undefined}
@@ -182,16 +204,24 @@ export function ScreeningRoom({ films }: { films: ScreeningFilm[] }) {
       </main>
       <SiteFooter film={film} />
       <div className="console-band theme-paper">
-        <div ref={setConsoleHost} className="console-band__inner" />
-        {session && (
-          <details className="researcher-exit console-section">
-            <summary>Leave study mode</summary>
-            <p className="field__helper">For the researcher. Saved local data stays in this browser.</p>
-            <button type="button" className="btn btn--secondary" onClick={study.leave}>
-              Leave study mode
-            </button>
-          </details>
-        )}
+        <div className="console-band__inner">
+          <div ref={setConsoleHost} className="console-band__host" />
+          {session && (
+            <details className="researcher-exit console-section">
+              <summary>Leave study mode</summary>
+              <p className="field__helper">
+                For the researcher. Saved local data stays in this browser.
+              </p>
+              <button
+                type="button"
+                className="btn btn--secondary"
+                onClick={study.leave}
+              >
+                Leave study mode
+              </button>
+            </details>
+          )}
+        </div>
       </div>
     </>
   );

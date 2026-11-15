@@ -1,32 +1,227 @@
 "use client";
 import { activeCues, formatTime, resolveCaption } from "@/lib/captions";
 import type { CaptionVideo, CaptionCue, CaptionProfile, Condition } from "@/lib/captions";
-import type {CueAnnotations} from "@/lib/cue-annotations";
+import type { CueAnnotations } from "@/lib/cue-annotations";
 import { Icon } from "./icon";
+import { soundKindLabel, soundKindOf } from "./ui/soundprint";
 
 export function CaptionTrackNotice({ data }: { data: CaptionVideo | null }) {
   const captionSource = data?.generated_with.caption_source;
   const exportName = data?.generated_with.export_basename || data?.video_id;
-  if (data?.generated_with.wording_style && captionSource) return <div className="demo-note" role="status"><Icon name="info" size={17} /><p><strong>Our generated subtitles.</strong> Choose Essential, Balanced or Rich to set your preferred level of detail. <a href={`/research/source-richness/${exportName}-detail-1.srt`} download>Essential SRT</a> · <a href={`/research/source-richness/${exportName}-detail-2.srt`} download>Balanced SRT</a> · <a href={`/research/source-richness/${exportName}-detail-3.srt`} download>Rich SRT</a> · <a href={`/research/source-richness/${exportName}.json`} download>Caption JSON</a></p></div>;
-  if (data?.generated_with.experimental) return <div className="demo-note experimental-notice" role="status"><Icon name="info" size={17} /><p><strong>Experimental media-only AI subtitles selected.</strong> Generated from the full film’s audio without existing subtitles, plot or scene descriptions. Three sound-detail levels use 15-second analysis windows, not precise event boundaries. Dialogue uses audio-recognition timestamps. Known recognition tests failed: sounds or words may be wrong, missing or invented, and timings need review. These are not verified accessibility captions. <a href={`/research/media-only/${data.video_id}-detail-1.srt`} download>Essential SRT</a> · <a href={`/research/media-only/${data.video_id}-detail-2.srt`} download>Balanced SRT</a> · <a href={`/research/media-only/${data.video_id}-detail-3.srt`} download>Detailed SRT</a> · <a href={`/research/media-only/${data.video_id}.json`} download>Caption JSON</a></p></div>;
-  if (data?.generated_with.non_speech_status === "not-prepared") return <div className="demo-note" role="status"><Icon name="info" size={17} /><p><strong>English dialogue subtitles available.</strong> These are the film’s source dialogue subtitles. A verified sound-caption track has not been prepared for this title, so personalized sound captions are unavailable. Dialogue wording stays fixed. <a href="/research/library-caption-status.md">Caption coverage</a></p></div>;
-  if (data?.generated_with.kind === "source-assisted" && captionSource) return <div className="demo-note"><Icon name="info" size={17} /><p><strong>Our generated subtitles.</strong> Adjust the level of detail to suit the way you watch.</p></div>;
-  return (data?.generated_with.quality_gate === "failed" ? <div className="demo-note" role="status"><Icon name="info" size={17} /><p><strong>Sound captions are unavailable.</strong> Automatic sound-caption generation failed its audio checks. The mismatched sample track has been removed. The film still plays. <a href="/research/caption-generation-status.md">Generation report</a></p></div> : data?.generated_with.kind === "sourced" && captionSource ? <div className="demo-note"><Icon name="info" size={17} /><p><strong>Sourced sound captions.</strong> Timed captions from <a href={captionSource.url} target="_blank" rel="noreferrer">{captionSource.author}</a> · {captionSource.license}. Personalized wording is based on those captions. Adaptation follows cue density. This demo still needs a full review before a participant study.</p></div> : data?.annotation_status === "draft" && <div className="demo-note"><Icon name="info" size={17} /><p><strong>{data.generated_with.kind?.startsWith("audio") ? "AI-generated draft captions." : "Draft captions."}</strong> {data.generated_with.kind?.startsWith("audio") ? "Generated offline from this film’s actual audio. Sound descriptions and estimated timings still need listening review before research use." : "Sound descriptions and timestamps need review before research use."} Your team’s own video and verified captions will replace this sample.</p></div>);
+  if (data?.generated_with.wording_style && captionSource)
+    return (
+      <div className="callout console-notice" role="status">
+        <Icon name="info" size={17} />
+        <p>
+          <strong>Our generated subtitles.</strong> Choose Essential, Balanced or Rich to set your preferred
+          level of detail.{" "}
+          <a href={`/research/source-richness/${exportName}-detail-1.srt`} download>
+            Essential SRT
+          </a>{" "}
+          <a href={`/research/source-richness/${exportName}-detail-2.srt`} download>
+            Balanced SRT
+          </a>{" "}
+          <a href={`/research/source-richness/${exportName}-detail-3.srt`} download>
+            Rich SRT
+          </a>{" "}
+          <a href={`/research/source-richness/${exportName}.json`} download>
+            Caption JSON
+          </a>
+        </p>
+      </div>
+    );
+  if (data?.generated_with.experimental)
+    return (
+      <div className="callout callout--danger console-notice experimental-notice" role="status">
+        <Icon name="info" size={17} />
+        <p>
+          <strong>Experimental media-only AI subtitles selected.</strong> Generated from the full film’s audio
+          without existing subtitles, plot or scene descriptions. Three sound-detail levels use 15-second
+          analysis windows, not precise event boundaries. Dialogue uses audio-recognition timestamps. Known
+          recognition tests failed: sounds or words may be wrong, missing or invented, and timings need
+          review. These are not verified accessibility captions.{" "}
+          <a href={`/research/media-only/${data.video_id}-detail-1.srt`} download>
+            Essential SRT
+          </a>{" "}
+          <a href={`/research/media-only/${data.video_id}-detail-2.srt`} download>
+            Balanced SRT
+          </a>{" "}
+          <a href={`/research/media-only/${data.video_id}-detail-3.srt`} download>
+            Detailed SRT
+          </a>{" "}
+          <a href={`/research/media-only/${data.video_id}.json`} download>
+            Caption JSON
+          </a>
+        </p>
+      </div>
+    );
+  if (data?.generated_with.non_speech_status === "not-prepared")
+    return (
+      <div className="callout console-notice" role="status">
+        <Icon name="info" size={17} />
+        <p>
+          <strong>English dialogue subtitles available.</strong> These are the film’s source dialogue
+          subtitles. A verified sound-caption track has not been prepared for this title, so personalized
+          sound captions are unavailable. Dialogue wording stays fixed.{" "}
+          <a href="/research/library-caption-status.md">Caption coverage</a>
+        </p>
+      </div>
+    );
+  if (data?.generated_with.kind === "source-assisted" && captionSource)
+    return (
+      <div className="callout console-notice">
+        <Icon name="info" size={17} />
+        <p>
+          <strong>Our generated subtitles.</strong> Adjust the level of detail to suit the way you watch.
+        </p>
+      </div>
+    );
+  return data?.generated_with.quality_gate === "failed" ? (
+    <div className="callout console-notice" role="status">
+      <Icon name="info" size={17} />
+      <p>
+        <strong>Sound captions are unavailable.</strong> Automatic sound-caption generation failed its audio
+        checks. The mismatched sample track has been removed. The film still plays.{" "}
+        <a href="/research/caption-generation-status.md">Generation report</a>
+      </p>
+    </div>
+  ) : data?.generated_with.kind === "sourced" && captionSource ? (
+    <div className="callout console-notice">
+      <Icon name="info" size={17} />
+      <p>
+        <strong>Sourced sound captions.</strong> Timed captions from{" "}
+        <a href={captionSource.url} target="_blank" rel="noreferrer">
+          {captionSource.author}
+        </a>{" "}
+        ({captionSource.license}). Personalized wording is based on those captions. Adaptation follows cue
+        density. This demo still needs a full review before a participant study.
+      </p>
+    </div>
+  ) : (
+    data?.annotation_status === "draft" && (
+      <div className="callout console-notice">
+        <Icon name="info" size={17} />
+        <p>
+          <strong>
+            {data.generated_with.kind?.startsWith("audio")
+              ? "AI-generated draft captions."
+              : "Draft captions."}
+          </strong>{" "}
+          {data.generated_with.kind?.startsWith("audio")
+            ? "Generated offline from this film’s actual audio. Sound descriptions and estimated timings still need listening review before research use."
+            : "Sound descriptions and timestamps need review before research use."}{" "}
+          Your team’s own video and verified captions will replace this sample.
+        </p>
+      </div>
+    )
+  );
 }
 
 function cueLabel(cue: CaptionCue, data: CaptionVideo | null) {
-  if (cue.scene_load_basis === "cue-density") return { dense: "Clustered sound cues", quiet: "Sparse sound cues", balanced: "Moderate cue density" }[cue.scene_load];
+  if (cue.scene_load_basis === "cue-density")
+    return { dense: "Clustered sound cues", quiet: "Sparse sound cues", balanced: "Moderate cue density" }[
+      cue.scene_load
+    ];
   if (data?.generated_with.scene_load_method === "unreviewed") return "Scene tags unreviewed";
   return { dense: "Busy moment", quiet: "Quiet moment", balanced: "Steady moment" }[cue.scene_load];
 }
 
-export function SoundTimeline({ data, time, profile, condition, showOriginal, jump,annotations }: {
-  annotations?:CueAnnotations; data: CaptionVideo | null; time: number; profile: CaptionProfile; condition: Condition;
-  showOriginal: boolean; jump: (seconds: number) => void;
+export function SoundTimeline({
+  data,
+  time,
+  profile,
+  condition,
+  showOriginal,
+  jump,
+  annotations,
+}: {
+  annotations?: CueAnnotations;
+  data: CaptionVideo | null;
+  time: number;
+  profile: CaptionProfile;
+  condition: Condition;
+  showOriginal: boolean;
+  jump: (seconds: number) => void;
 }) {
-  if (!data?.cues.length && data?.dialogue?.length) return <section className="sound-timeline card" aria-labelledby="dialogue-title"><div className="section-title"><div><span className="eyebrow">FOLLOW THE DIALOGUE</span><h2 id="dialogue-title">Dialogue transcript</h2></div><span className="muted-text">{data.dialogue.length} subtitle cues</span></div><p className="section-description">Jump to a line. {data.generated_with.experimental ? "These experimental audio transcriptions need word and timing review." : "These source subtitles stay the same at every sound preference."}</p><div className="cue-list">{data.dialogue.map(cue => <button key={cue.cue_id} className={`cue-row dialogue-row ${cue.start_s <= time && time < cue.end_s ? "current" : ""}`} onClick={() => jump(cue.start_s)} aria-label={`Jump to ${formatTime(cue.start_s)}: ${cue.text}`} aria-current={cue.start_s <= time && time < cue.end_s ? "true" : undefined}><span className="cue-time">{formatTime(cue.start_s)}</span><span className="cue-copy"><strong>{cue.text}</strong><small>{data.generated_with.experimental ? "AI-transcribed English · unverified" : "English dialogue"}</small></span><Icon name="play" size={15} /></button>)}</div></section>;
-  const activeIds = new Set(data ? activeCues(data.cues, time).map(cue => cue.cue_id) : []);
+  if (!data?.cues.length && data?.dialogue?.length)
+    return (
+      <section className="sound-timeline console-block" aria-labelledby="dialogue-title">
+        <div className="section-title">
+          <h3 id="dialogue-title">Dialogue transcript</h3>
+          <span className="console-count">{data.dialogue.length} subtitle cues</span>
+        </div>
+        <p className="section-description">
+          Jump to a line.{" "}
+          {data.generated_with.experimental
+            ? "These experimental audio transcriptions need word and timing review."
+            : "These source subtitles stay the same at every sound preference."}
+        </p>
+        <div className="cue-list">
+          {data.dialogue.map((cue) => (
+            <button
+              key={cue.cue_id}
+              className={`cue-row dialogue-row ${cue.start_s <= time && time < cue.end_s ? "current" : ""}`}
+              onClick={() => jump(cue.start_s)}
+              aria-label={`Jump to ${formatTime(cue.start_s)}: ${cue.text}`}
+              aria-current={cue.start_s <= time && time < cue.end_s ? "true" : undefined}
+            >
+              <span className="cue-time">{formatTime(cue.start_s)}</span>
+              <span className="cue-copy">
+                <strong>{cue.text}</strong>
+                <small>
+                  {data.generated_with.experimental
+                    ? "AI-transcribed English, unverified"
+                    : "English dialogue"}
+                </small>
+              </span>
+              <Icon name="play" size={16} />
+            </button>
+          ))}
+        </div>
+      </section>
+    );
+  const activeIds = new Set(data ? activeCues(data.cues, time).map((cue) => cue.cue_id) : []);
   return (
-<section className="sound-timeline card" aria-labelledby="sounds-title"><div className="section-title"><div><span className="eyebrow">FOLLOW THE SOUNDS</span><h2 id="sounds-title">All sound cues</h2></div><span className="muted-text">{data?.cues.length || 0} sound cues</span></div><p className="section-description">This list includes upcoming sounds. Keep Research tools closed while a participant watches.</p><div className="cue-list">{data?.cues.map((cue) => <button key={cue.cue_id} className={`cue-row ${activeIds.has(cue.cue_id) ? "current" : ""}`} onClick={() => jump(cue.start_s)} aria-label={`Jump to ${formatTime(cue.start_s)}: ${cue.original_text}`} aria-current={activeIds.has(cue.cue_id) ? "true" : undefined}><span className="cue-time">{formatTime(cue.start_s)}</span><span className="cue-icon"><Icon name="sound" size={17} /></span><span className="cue-copy"><strong>{resolveCaption(cue, profile, condition, showOriginal).text}</strong><small>{annotations?.sounds[cue.cue_id]?.kind||"unclassified"} · {annotations?.status||"no annotations"} · {cueLabel(cue, data)}{cue.end_s-cue.start_s<.83?" · shorter than 0.83 s":""}{resolveCaption(cue,profile,condition,showOriginal).overLimit?" · over reading pace":""}</small></span><Icon name="play" size={15} /></button>)}{!data?.cues.length && <p className="empty-state">No sound cues are prepared for this film.</p>}</div></section>
+    <section className="sound-timeline console-block" aria-labelledby="sounds-title">
+      <div className="section-title">
+        <h3 id="sounds-title">All sound cues</h3>
+        <span className="console-count">{data?.cues.length || 0} sound cues</span>
+      </div>
+      <p className="section-description">
+        This list includes upcoming sounds. Keep the researcher console closed while a participant watches.
+      </p>
+      <div className="cue-list">
+        {data?.cues.map((cue) => (
+          <button
+            key={cue.cue_id}
+            className={`cue-row ${activeIds.has(cue.cue_id) ? "current" : ""}`}
+            onClick={() => jump(cue.start_s)}
+            aria-label={`Jump to ${formatTime(cue.start_s)}: ${cue.original_text}`}
+            aria-current={activeIds.has(cue.cue_id) ? "true" : undefined}
+          >
+            <span className="cue-time">{formatTime(cue.start_s)}</span>
+            <span className="cue-icon" aria-hidden="true">
+              <i className={`sound-shape sound-shape--${soundKindOf(cue.cue_id, annotations)}`} />
+            </span>
+            <span className="cue-copy">
+              <strong>{resolveCaption(cue, profile, condition, showOriginal).text}</strong>
+              <small>
+                {[
+                  annotations?.sounds[cue.cue_id] ? soundKindLabel(soundKindOf(cue.cue_id, annotations)) : "Unclassified",
+                  annotations?.status || "no annotations",
+                  cueLabel(cue, data),
+                  cue.end_s - cue.start_s < 0.83 ? "shorter than 0.83 s" : "",
+                  resolveCaption(cue, profile, condition, showOriginal).overLimit ? "over reading pace" : "",
+                ]
+                  .filter(Boolean)
+                  .join(", ")}
+              </small>
+            </span>
+            <Icon name="play" size={16} />
+          </button>
+        ))}
+        {!data?.cues.length && <p className="empty-state">No sound cues are prepared for this film.</p>}
+      </div>
+    </section>
   );
 }
