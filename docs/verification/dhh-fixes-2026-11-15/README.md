@@ -143,3 +143,21 @@ Typecheck, tests, build and 53 protected hashes pass. Installed Chrome (syntheti
 media clock) checks child and adult groups, 25 Escape cases, Skip, faces plus
 accessible text and metadata; A3 regression passes. Evidence: `reports/B2-browser.json`;
 runner `scripts/verification/dhh-fixes/B2-browser.mjs`.
+
+## B3 — Raw NASA-TLX wording and native segmented controls
+
+The six Raw TLX items use the standard task wording (mental, physical, temporal
+demand, performance, effort, frustration) with the task line "The task: watching
+the film with these captions." Endpoints are Very low / Very high, except
+performance Perfect / Failure. Each item is a native radio group of 21 segments
+(0–100, step 5) with no initial selection, so Continue stays disabled until a
+choice, including an explicit 0. Radios are keyboard (Space/arrows) and screen-reader
+operable, with the task and endpoints in the group description; the sliders and
+"Use 50" button are gone. Scoring is unchanged: mean of six answers, missing if
+any item is skipped. B2 Escape inertness and scale metadata are retained.
+
+Chrome (synthetic media clock): desktop 1280×900 and mobile 390×844 adult sessions
+check every item (initially empty, Space/arrow steps, Escape inertness, persisted
+metadata) and the real exported summary (50 complete, null when skipped), now
+through the A3 researcher dialog. The B2 runner still passes. Evidence:
+`reports/B3-browser.json`; runner `scripts/verification/dhh-fixes/B3-browser.mjs`.

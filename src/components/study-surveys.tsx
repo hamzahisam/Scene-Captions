@@ -1,6 +1,6 @@
 'use client';
-import {useEffect,useRef,useState} from 'react';import type {RefObject} from 'react';
-import type {StudySession} from '@/lib/study-session';import {checkpointItems,endItems} from '@/lib/study-surveys';import type {QuestionFile,SurveyItem} from '@/lib/study-surveys';import type {TelemetryRecorder} from '@/lib/telemetry-storage';import {Face} from './survey-face';import {useStudySession} from './study-context';import {useDialogFocus} from './hooks/use-dialog-focus';
+import {useEffect,useId,useRef,useState} from 'react';import type {RefObject} from 'react';
+import type {StudySession} from '@/lib/study-session';import {checkpointItems,endItems,TLX_TASK} from '@/lib/study-surveys';import type {QuestionFile,SurveyItem} from '@/lib/study-surveys';import type {TelemetryRecorder} from '@/lib/telemetry-storage';import {Face} from './survey-face';import {useStudySession} from './study-context';import {useDialogFocus} from './hooks/use-dialog-focus';
 type Pending={kind:'checkpoint'|'end';at:number;items:SurveyItem[];resume:boolean;prefix:string};
 export function StudySurveys({session,recorder,questions,time,playing,ended,pause,resume,trigger,onActiveChange}:{session:StudySession;recorder:TelemetryRecorder;questions?:QuestionFile;time:number;playing:boolean;ended:boolean;pause:()=>void;resume:()=>void;trigger:RefObject<HTMLButtonElement|null>;onActiveChange:(active:boolean)=>void}){
  const [pending,setPending]=useState<Pending|null>(null);const {advance}=useStudySession();const film=session.sequence[session.sequenceIndex].filmId,last=useRef(time),key=`pending:${film}`;
@@ -23,4 +23,22 @@ function SurveyDialog({pending,recorder,time,trigger,complete}:{pending:Pending;
  useEffect(()=>{if(!item)return;const k=`${pending.prefix}:${item.key}:shown_at`;if(!recorder.answers[k])recorder.setAnswer(k,Date.now());panel.current?.querySelector<HTMLElement>('input,button')?.focus()},[item?.key,recorder,pending.prefix]);
  return <div className="survey-dialog" role="dialog" aria-modal="true" aria-label={pending.kind==='end'?'End-of-film questions':'Quick check-in'} ref={panel}><h2>{pending.kind==='end'?'Your experience':'Quick check-in'}</h2><p>The video is paused. Use Continue to save an answer or Skip this item to leave it unanswered.</p>{item?<SurveyStep key={item.key} item={item} answer={answer}/>:<><p>Your answers are saved in this browser.</p><button onClick={complete}>{pending.kind==='end'?'Finish film':'Continue watching'}</button></>}</div>;
 }
-function SurveyStep({item,answer}:{item:SurveyItem;answer:(value:number|string|null)=>void}){const [value,setValue]=useState<number|string|null>(null),[videoError,setVideoError]=useState(false);return <><fieldset><legend>{item.prompt}</legend>{item.signVideo&&<><video className="sign-video" src={item.signVideo} controls playsInline aria-label="Sign-language version of this question" onError={()=>setVideoError(true)}/>{videoError&&<p role="status">The sign-language clip is unavailable. The text question remains available.</p>}</>}{item.choices?<>{item.scale.kind==='rating'&&<div className="range-labels"><span>{item.scale.min} · {item.scale.low}</span><span>{item.scale.max} · {item.scale.high}</span></div>}<div className="survey-choices">{item.choices.map(choice=><label key={choice.value}><input type="radio" name={item.key} checked={value===choice.value} onChange={()=>setValue(choice.value)}/>{item.pictorial&&<Face value={Number(choice.value)}/>}<span>{choice.label}</span></label>)}</div></>:<><div className="range-labels"><span>{item.low} · {item.min}</span><span>{item.high} · {item.max}</span></div><input type="range" aria-label={item.prompt} aria-valuetext={value===null?'Not answered':String(value)} min={item.min} max={item.max} step={item.step} value={value??50} onChange={e=>setValue(Number(e.target.value))}/>{value===null?<button onClick={()=>setValue(50)}>Use 50</button>:<p>Selected: {value}</p>}</>}</fieldset><div className="survey-actions"><button disabled={value===null} onClick={()=>answer(value)}>Continue</button><button onClick={()=>answer(null)}>Skip this item</button></div></>}
+function SurveyStep({item,answer}:{item:SurveyItem;answer:(value:number|string|null)=>void}){
+ const [value,setValue]=useState<number|string|null>(null),[videoError,setVideoError]=useState(false);
+ const description=useId();
+ return <>
+  <fieldset>
+   <legend>{item.prompt}</legend>
+   {item.segmented&&<p id={`${description}-task`}>{TLX_TASK}</p>}
+   {item.signVideo&&<><video className="sign-video" src={item.signVideo} controls playsInline aria-label="Sign-language version of this question" onError={()=>setVideoError(true)}/>{videoError&&<p role="status">The sign-language clip is unavailable. The text question remains available.</p>}</>}
+   {item.scale.kind==='rating'&&<div className="range-labels" id={`${description}-endpoints`}><span>{item.scale.min} · {item.scale.low}</span><span>{item.scale.max} · {item.scale.high}</span></div>}
+   <div className={item.segmented?'survey-segments':'survey-choices'} role="radiogroup" aria-label={item.prompt} aria-describedby={item.scale.kind==='rating'?`${item.segmented?`${description}-task `:''}${description}-endpoints`:undefined}>
+    {item.choices?.map(choice=><label key={choice.value}>
+     <input type="radio" name={item.key} value={choice.value} checked={value===choice.value} onChange={()=>setValue(choice.value)}/>
+     {item.pictorial&&<Face value={Number(choice.value)}/>}<span>{choice.label}</span>
+    </label>)}
+   </div>
+  </fieldset>
+  <div className="survey-actions"><button disabled={value===null} onClick={()=>answer(value)}>Continue</button><button onClick={()=>answer(null)}>Skip this item</button></div>
+ </>;
+}

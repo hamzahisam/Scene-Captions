@@ -1,0 +1,343 @@
+{
+  "synthetic_media": true,
+  "results": [
+    {
+      "skipped": false,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "surveys": [
+        {
+          "session_id": "B3-synthetic-complete",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-mental",
+          "value": 0,
+          "response_ms": 194,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:40.414Z",
+          "elapsed_ms": 233,
+          "performance_ms": 408
+        },
+        {
+          "session_id": "B3-synthetic-complete",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-physical",
+          "value": 20,
+          "response_ms": 197,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:40.613Z",
+          "elapsed_ms": 432,
+          "performance_ms": 607
+        },
+        {
+          "session_id": "B3-synthetic-complete",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-temporal",
+          "value": 40,
+          "response_ms": 181,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:40.796Z",
+          "elapsed_ms": 616,
+          "performance_ms": 790
+        },
+        {
+          "session_id": "B3-synthetic-complete",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-performance",
+          "value": 60,
+          "response_ms": 265,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Perfect",
+            "high": "Failure",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:41.063Z",
+          "elapsed_ms": 882,
+          "performance_ms": 1057
+        },
+        {
+          "session_id": "B3-synthetic-complete",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-effort",
+          "value": 80,
+          "response_ms": 197,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:41.262Z",
+          "elapsed_ms": 1082,
+          "performance_ms": 1256
+        },
+        {
+          "session_id": "B3-synthetic-complete",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-frustration",
+          "value": 100,
+          "response_ms": 214,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:41.479Z",
+          "elapsed_ms": 1299,
+          "performance_ms": 1473
+        }
+      ],
+      "scores": {
+        "soar": 50
+      },
+      "errors": []
+    },
+    {
+      "skipped": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "surveys": [
+        {
+          "session_id": "B3-synthetic-skipped",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-mental",
+          "value": 0,
+          "response_ms": 181,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:42.078Z",
+          "elapsed_ms": 220,
+          "performance_ms": 396
+        },
+        {
+          "session_id": "B3-synthetic-skipped",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-physical",
+          "value": 20,
+          "response_ms": 197,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:42.277Z",
+          "elapsed_ms": 420,
+          "performance_ms": 595
+        },
+        {
+          "session_id": "B3-synthetic-skipped",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-temporal",
+          "value": null,
+          "response_ms": 197,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:42.477Z",
+          "elapsed_ms": 619,
+          "performance_ms": 795
+        },
+        {
+          "session_id": "B3-synthetic-skipped",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-performance",
+          "value": 60,
+          "response_ms": 264,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Perfect",
+            "high": "Failure",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:42.743Z",
+          "elapsed_ms": 885,
+          "performance_ms": 1061
+        },
+        {
+          "session_id": "B3-synthetic-skipped",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-effort",
+          "value": 80,
+          "response_ms": 197,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:42.943Z",
+          "elapsed_ms": 1086,
+          "performance_ms": 1261
+        },
+        {
+          "session_id": "B3-synthetic-skipped",
+          "participant_id": "P-303",
+          "design": "between",
+          "assigned_condition": "personalized",
+          "sequence_index": 0,
+          "film_id": "soar",
+          "app_version": "bafdfb565af1deb091813247fcb8cc212703a92e",
+          "video_s": 375,
+          "source": "participant",
+          "type": "survey",
+          "item": "end:soar:end:tlx-frustration",
+          "value": 100,
+          "response_ms": 197,
+          "scale": {
+            "kind": "rating",
+            "min": 0,
+            "max": 100,
+            "low": "Very low",
+            "high": "Very high",
+            "direction": "positive-to-negative"
+          },
+          "iso_timestamp": "2026-11-15T11:16:43.143Z",
+          "elapsed_ms": 1285,
+          "performance_ms": 1461
+        }
+      ],
+      "scores": {
+        "soar": null
+      },
+      "errors": []
+    }
+  ]
+}

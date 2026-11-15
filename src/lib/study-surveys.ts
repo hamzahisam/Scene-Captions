@@ -8,7 +8,17 @@ export const surveyScaleSchema=z.discriminatedUnion('kind',[
  z.object({kind:z.literal('categorical')}),
 ]);
 export type SurveyScale=z.infer<typeof surveyScaleSchema>;
-export type SurveyItem={scale:SurveyScale;pictorial?:boolean;key:string;prompt:string;choices?:{value:number|string;label:string}[];min?:number;max?:number;step?:number;low?:string;high?:string;signVideo?:string};
+export type SurveyItem={scale:SurveyScale;pictorial?:boolean;segmented?:boolean;key:string;prompt:string;choices?:{value:number|string;label:string}[];min?:number;max?:number;step?:number;low?:string;high?:string;signVideo?:string};
+export const TLX_TASK='The task: watching the film with these captions.';
+export const TLX_VALUES=Array.from({length:21},(_,i)=>i*5);
+export const TLX_PROMPTS=[
+ 'How mentally demanding was the task?',
+ 'How physically demanding was the task?',
+ 'How hurried or rushed was the pace of the task?',
+ 'How successful were you in accomplishing what you were asked to do?',
+ 'How hard did you have to work to accomplish your level of performance?',
+ 'How insecure, discouraged, irritated, stressed and annoyed were you?',
+] as const;
 export const TLX_KEYS=['mental','physical','temporal','performance','effort','frustration'] as const;
 export function rawTlxScore(answers:Record<string,number|string|null>,prefix='tlx-'){const values=TLX_KEYS.map(k=>answers[prefix+k]);return values.every(v=>typeof v==='number'&&Number.isFinite(v)&&v>=0&&v<=100)?(values as number[]).reduce((s,x)=>s+x,0)/6:null;}
 const labels5=['Very hard','Hard','In between','Easy','Very easy'];
@@ -32,6 +42,6 @@ export function endItems(session:StudySession):SurveyItem[]{
   return {key:`child-${key}`,prompt:({readability:'How easy were the captions to read?',control:'Could you make the captions work for you?',story:'How easy was it to follow the story?'})[key],scale:ratingScale(1,5,labels[0],labels[4],'negative-to-positive'),pictorial:true,choices:labels.map((label,i)=>({value:i+1,label})),signVideo:session.signVideos[`child-${key}`]};
  });
  const result:SurveyItem[]=session.instruments.custom?ratingQuestions.map(q=>({key:q.key,prompt:q.label,scale:ratingScale(1,7,q.low,q.high,q.key==='effort'?'positive-to-negative':'negative-to-positive'),choices:Array.from({length:7},(_,i)=>({value:i+1,label:`${i+1}${i===0?' · '+q.low:i===6?' · '+q.high:''}`})),signVideo:session.signVideos[q.key]})):[];
- if(session.instruments.tlx)result.push(...TLX_KEYS.map((key,i)=>({key:`tlx-${key}`,prompt:['Mental demand','Physical demand','Time pressure','Performance','Effort','Frustration'][i],min:0,max:100,step:5,low:key==='performance'?'Good':'Low',high:key==='performance'?'Poor':'High',scale:ratingScale(0,100,key==='performance'?'Good':'Low',key==='performance'?'Poor':'High','positive-to-negative'),signVideo:session.signVideos[`tlx-${key}`]})));
+ if(session.instruments.tlx)result.push(...TLX_KEYS.map((key,i)=>({key:`tlx-${key}`,prompt:TLX_PROMPTS[i],segmented:true,choices:TLX_VALUES.map(value=>({value,label:String(value)})),min:0,max:100,step:5,low:key==='performance'?'Perfect':'Very low',high:key==='performance'?'Failure':'Very high',scale:ratingScale(0,100,key==='performance'?'Perfect':'Very low',key==='performance'?'Failure':'Very high','positive-to-negative'),signVideo:session.signVideos[`tlx-${key}`]})));
  return result;
 }
