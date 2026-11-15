@@ -183,3 +183,23 @@ deliberately not updated, so it is stale relative to the docs plan (as with A1�
 Installed Chrome checks real setup (with the A3 researcher code) for slot
 assignment, grouped schemes, reasoned override, rotation and reload stability.
 Evidence: `reports/B4-browser.json`; runner `scripts/verification/dhh-fixes/B4-browser.mjs`.
+
+## B6 — reviewed speaker attribution
+
+Speaker chips now appear only when the dialogue attribution is reviewed:
+`dialogue_status ?? status === 'reviewed'`, so a future sound-only review can mark
+sounds reviewed while dialogue speakers stay draft (the optional `dialogue_status`
+field is the gate; older sidecars fall back to `status`). A reviewed speaker renders
+as the chip plus a visually hidden ": ", so the paragraph's accessible text reads
+"Angela: Just took a little bit of work". Native text-track cues and telemetry
+exposure text use the same "Speaker: text" string. Unreviewed annotations leave the
+source text unchanged, including its own "Angela:" prefix, and show no chip. All
+current sidecars are heuristic drafts, so no chip shows until review. No annotation
+or caption data was changed.
+
+Unit tests cover the gate, the `dialogue_status` override, prefix stripping and
+native text. Installed Chrome (synthetic clock) checks Hair Love cue 1 in draft
+mode (no chip, unchanged text, native cue unchanged) and, with the sidecar
+temporarily flipped to reviewed and then restored, in reviewed mode (one chip,
+hidden ": ", native "Angela: …"). Evidence: `reports/B6-browser.json`; runner
+`scripts/verification/dhh-fixes/B6-browser.mjs`.

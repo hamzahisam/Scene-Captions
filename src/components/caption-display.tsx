@@ -1,6 +1,6 @@
 "use client";
 import {useMemo} from "react";
-import {speakerText} from "@/lib/cue-annotations";
+import {dialogueParts,reviewedSpeaker} from "@/lib/cue-annotations";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import { resolveCaptionWindows, resolveCaption } from "@/lib/captions";
 import type { CaptionCue, CaptionProfile, CaptionVideo, Condition } from "@/lib/captions";
@@ -22,7 +22,7 @@ export function CaptionOverlay({ active, cues, profile, dialogue = [], sample=fa
   if (!active.length && !dialogue.length) return null;
   return <div className={`caption-overlay ${profile.position} ${profile.size} backdrop-${profile.backdrop} color-${profile.textColor} ${sample?"caption-sample":""}`}>
     {sample&&<span className="sample-label">Sample</span>}
-    {!!dialogue.length && <div className="dialogue-lines">{dialogue.map(cue => <p key={cue.cue_id}>{annotations?.dialogue[cue.cue_id]?.speaker&&<span className="speaker-chip">{annotations.dialogue[cue.cue_id].speaker}</span>}{speakerText(cue.text,annotations?.dialogue[cue.cue_id]?.speaker)}</p>)}</div>}
+    {!!dialogue.length && <div className="dialogue-lines">{dialogue.map(cue => {const part=dialogueParts(cue.text,reviewedSpeaker(annotations,cue.cue_id));return <p key={cue.cue_id}>{part.speaker&&<><span className="speaker-chip">{part.speaker}</span><span className="sr-only">: </span></>}{part.text}</p>})}</div>}
     {!!active.length && <div className="caption-lines">{active.map((caption, index) => <p key={cues[index].cue_id} className={profile.typeStyling&&annotations?.sounds[cues[index].cue_id]?`sound-type sound-${annotations.sounds[cues[index].cue_id].kind}`:undefined}>{profile.typeStyling&&annotations?.sounds[cues[index].cue_id]?.kind==="music"&&<span aria-hidden="true">♪ </span>}{caption.text}{profile.typeStyling&&annotations?.sounds[cues[index].cue_id]?.kind==="music"&&<span aria-hidden="true"> ♪</span>}{profile.typeStyling&&annotations?.sounds[cues[index].cue_id]?.offscreen&&<span className="offscreen-tag">off-screen</span>}{profile.markShortened&&caption.adapted&&<span className="shortened-marker"><span aria-hidden="true"> ▿</span><span className="sr-only"> (shortened)</span></span>}</p>)}</div>}
   </div>;
 }

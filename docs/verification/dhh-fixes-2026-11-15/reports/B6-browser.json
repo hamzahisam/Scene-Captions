@@ -1,0 +1,25 @@
+{
+  "synthetic_media": true,
+  "draft": {
+    "synthetic_media": true,
+    "mode": "draft",
+    "chip": 0,
+    "text": "Angela: Just took a little bit of work",
+    "textContent": "Angela: Just took a little bit of work",
+    "native": [
+      "Angela: Just took a little bit\nof work"
+    ],
+    "errors": []
+  },
+  "reviewed": {
+    "synthetic_media": true,
+    "mode": "reviewed",
+    "chip": 1,
+    "text": "Angela : Just took a little bit of work",
+    "textContent": "Angela: Just took a little bit of work",
+    "native": [
+      "Angela: Just took a little bit\nof work"
+    ],
+    "errors": []
+  }
+}
