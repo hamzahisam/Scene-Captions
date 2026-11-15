@@ -1,4 +1,4 @@
-import {z} from 'zod';import {DEFAULT_PROFILE} from './captions.ts';
+import {z} from 'zod';import {DEFAULT_PROFILE} from './captions.ts';import type {CaptionProfile} from './captions.ts';
 export const filmIds=['big-buck-bunny','sintel','tears-of-steel','soar','hair-love'] as const;
 export const conditionSchema=z.enum(['baseline','personalized','essential','balanced','rich']);
 export const participantIdSchema=z.string().regex(/^P-\d{3,6}$/,'Use a code such as P-001; names are not accepted.');
@@ -6,5 +6,11 @@ export const studySessionSchema=z.object({id:z.string().regex(/^[a-zA-Z0-9-]{8,8
 export type StudySession=z.infer<typeof studySessionSchema>;
 export const STUDY_REGISTRY='scenecaptions.study-registry.v1';
 export function sessionDefaults(s:StudySession){const condition=s.sequence[s.sequenceIndex].condition;return {...DEFAULT_PROFILE,readingSpeed:s.readingSpeed,detail:({essential:1,balanced:2,rich:3} as const)[condition as 'essential'|'balanced'|'rich']||DEFAULT_PROFILE.detail,adaptive:condition==='personalized'};}
+/** Fixed assignments own sound settings; viewing/accessibility preferences always remain viewer-controlled. */
+export function conditionProfile(profile:CaptionProfile, session?:StudySession):CaptionProfile {
+ if(!session||session.sequence[session.sequenceIndex].condition==='personalized')return profile;
+ const fixed=sessionDefaults(session);
+ return {...profile,detail:fixed.detail,expression:fixed.expression,adaptive:fixed.adaptive,representation:fixed.representation,readingSpeed:fixed.readingSpeed,typeStyling:fixed.typeStyling,markShortened:fixed.markShortened};
+}
 export function profileNamespace(s:StudySession){return `scenecaptions.participant.${s.id}.${s.participantId}.profile`;}
 export function validateRegistry(raw:string|null):{sessions:Record<string,StudySession>;allocations:import('./allocation.ts').AllocationRow[];seed:string}{if(!raw)return {sessions:{},allocations:[],seed:'study-2026'};const d=JSON.parse(raw);if(!d||typeof d.seed!=='string'||!Array.isArray(d.allocations)||typeof d.sessions!=='object')throw Error('Saved study configuration is invalid.');return {...d,sessions:Object.fromEntries(Object.entries(d.sessions).map(([id,s])=>[id,studySessionSchema.parse(s)]))};}

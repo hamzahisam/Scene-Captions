@@ -1,5 +1,5 @@
 "use client";
-import {profileNamespace,sessionDefaults} from "@/lib/study-session";
+import {conditionProfile,profileNamespace,sessionDefaults} from "@/lib/study-session";
 import type {QuestionFile} from "@/lib/study-surveys";
 import type {StudySession} from "@/lib/study-session";
 import {PROFILE_KEY} from "@/lib/profile";
@@ -31,7 +31,7 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   useEffect(() => { onMediaLockChange?.(startedAt !== null); }, [startedAt, onMediaLockChange]);
   const updateTime = useCallback((seconds: number) => { currentTime.current = seconds; rehearsal.setVideoTime(seconds); }, [rehearsal.setVideoTime]);
   useEffect(()=>{if(rehearsal.recorder?.resumed&&rehearsal.recorder.resumePosition>0)setSeekTo({seconds:rehearsal.recorder.resumePosition,nonce:++seekNonce.current,source:"system"})},[rehearsal.recorder]);
-  function apply(next: CaptionProfile) { const previous=profile; setProfile(next); for(const field of Object.keys(next) as (keyof CaptionProfile)[])if(previous[field]!==next[field])rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field,from:previous[field],to:next[field]}); setNotice("Caption preferences saved."); }
+  function apply(next: CaptionProfile) { const previous=conditionProfile(profile,session),effective=conditionProfile(next,session); const changes=(Object.keys(effective) as (keyof CaptionProfile)[]).filter(field=>previous[field]!==effective[field]); setProfile({...profile,...Object.fromEntries(changes.map(field=>[field,effective[field]]))}); for(const field of changes)rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field,from:previous[field],to:effective[field]}); setNotice("Caption preferences saved."); }
   function original(value?: boolean,mode:"hold"|"toggle"="toggle") { const enabled = value ?? !showOriginal; setShowOriginal(enabled); record({ type: "original", video_s: currentTime.current, enabled,mode }); }
   function changeCondition(next: Condition) { rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field:"condition",from:condition,to:next,source:"researcher"});setCondition(next); setShowOriginal(false); record({ type: "condition", video_s: currentTime.current, condition: next }); record({ type: "original", video_s: currentTime.current, enabled: false,source:"system" }); }
   function startRecording() { rehearsal.start(currentTime.current,condition,profile,showOriginal); rehearsal.telemetry({type:"profile_change",video_s:currentTime.current,field:"extendDisplay",from:null,to:extendDisplay,source:"system"}); }
@@ -39,11 +39,11 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   const time=currentTime.current; const renders=useRef(0);renders.current++;const diagnostic=useRef<HTMLElement>(null);
   useEffect(()=>{if(process.env.NODE_ENV==="development"&&diagnostic.current)diagnostic.current.dataset.renderCount=String(renders.current)});
   const captionSource = data?.generated_with.caption_source;
-  const viewerProfile = session&&assigned!=="personalized"?{...profile,...sessionDefaults(session),size:profile.size,position:profile.position,backdrop:profile.backdrop,textColor:profile.textColor}:profile;
+  const viewerProfile = conditionProfile(profile,session);
   return <main ref={diagnostic} id="main" className="workspace">
     <RecorderStatus recorder={rehearsal.recorder} error={rehearsal.error}/>
     <div className="watch-layout"><section className="watch-column" aria-label="Video workspace"><div className="watch-heading"><h1>{data.title}<small>{demoCredit}</small></h1></div>
-      <VideoPlayer extendDisplay={extendDisplay} session={session} recorder={rehearsal.recorder} questions={questions} recording={recording} onTelemetry={rehearsal.telemetry} settingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
+      <VideoPlayer extendDisplay={extendDisplay} session={session} recorder={rehearsal.recorder} questions={questions} recording={recording} onTelemetry={rehearsal.telemetry} soundSettingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
       <div className="film-footnote"><Icon name="leaf" size={16}/><span>{initialVideo.title} · {demoCredit}</span><a href="#media-credits">Credits</a></div>
     </section></div>
     {!session&&<details className="research-tools"><summary>Research tools {recording&&<span className="status-pill recording">Recording locally</span>}</summary>

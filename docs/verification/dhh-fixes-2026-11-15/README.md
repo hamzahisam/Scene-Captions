@@ -56,8 +56,25 @@ simulated native-fullscreen events, not a physical iPhone. Compact evidence is
 under `reports/`; detailed logs stay in `artifacts/dhh-fixes/`. Re-run counts with
 `node --experimental-strip-types scripts/verification/dhh-fixes/A1-reading-audit.ts`.
 
-Open: A2 and A3 remain participant-session blockers until fixed; team device,
-screen-reader, listening and sustained-playback checks remain below.
+## A2 — appearance parity
+
+CC and its keyboard shortcut open in all five conditions. Fixed assignments show
+only the common appearance and accessibility controls, with a short fixed-sounds
+note. The pure `conditionProfile` helper locks sound fields while preserving every
+appearance field. Effective-profile comparison logs only actual changes. Amount
+and Original shortcuts/help entries follow sound-control availability; size works
+in every condition. No additional decision was required.
+
+Changed owners: study-session rules, workspace, player, caption settings,
+readability, shortcut handling/help and the focused tests/Chrome script.
+Typecheck, the full Node suite, build and all 53 protected hashes pass. Chrome
+checks baseline, personalized, Essential, Balanced and Rich, including identical
+seven appearance fields, effective announcements, persistence/reload, shortcut
+availability and matching telemetry. Media time is synthetic in this interaction
+test. Evidence: `reports/A2-browser.json`; runner `scripts/verification/dhh-fixes/A2-browser.ts`.
+
+Open: A3 remains a participant-session blocker; team device, screen-reader,
+listening and sustained-playback checks remain below.
 
 Team manual checks remain Safari, Firefox, physical iPhone fullscreen, VoiceOver,
 NVDA and a 20–30 minute recording/playback soak. Automated checks cannot establish
