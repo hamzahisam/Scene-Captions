@@ -31,7 +31,7 @@ flowchart TD
   Player --> Selector[Pure caption selector]
   Selector -.-> Reference[Fetched reference text or generated draft grid]
   Workspace --> LocalMedia[Local media and caption imports]
-  Workspace --> Rehearsal[Consent, in-memory events and JSON export]
+  Workspace --> Rehearsal[Consent, locally saved events, index and exports]
   Workspace -.-> Profile[Browser localStorage: profile]
   PlanRoute[Experimental plan route] --> Plan[Shared protocol content]
   Plan --> Exporter[Markdown exporter]

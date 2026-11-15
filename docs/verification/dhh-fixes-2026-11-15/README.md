@@ -102,6 +102,25 @@ requests occurred. Evidence: `reports/A3-browser.json`; runner
 Phase A blockers are implemented. Later correctness/validity fixes and the manual
 device, screen-reader, listening and sustained-playback checks remain open.
 
+## B1 — separate rehearsals and explicit resume
+
+Demo/lab runs use unique UUID-based IDs and a local metadata index. Research tools
+lists old runs with read-only exports and deletion; legacy fixed-ID logs remain
+discoverable. A closed demo run can only be followed by New rehearsal, which resets
+consent and initial profile telemetry. Loading an existing demo recorder defaults
+to paused/read-only; a left-open run offers Export, Discard and consent-gated Resume.
+Study sessions retain automatic resume and their assignment. Index entries are
+metadata only; logs are removed only through explicit deletion.
+
+Changed owners: rehearsal hook, recorder/storage, index/list UI, main/lab integration,
+procedure/data-handling docs and fake-storage/browser tests. No additional default
+decision was needed. **98 tests**, typecheck, build and 53 protected hashes pass.
+Chrome verifies two separate logs with one start each, fresh consent, reload
+without new capture, export without writes, explicit resume and deletion; A3's
+study creation/unlock/reload/export check still passes. A final visibility event
+on the old page's unload is expected; the new page does not append events until
+consented resume. Evidence: `reports/B1-browser.json` and per-task check logs.
+
 Team manual checks remain Safari, Firefox, physical iPhone fullscreen, VoiceOver,
 NVDA and a 20–30 minute recording/playback soak. Automated checks cannot establish
 sound accuracy, DHH comfort, participant consent or study approval.
