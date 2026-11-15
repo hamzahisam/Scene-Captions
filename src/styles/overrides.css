@@ -1,0 +1,43 @@
+@layer overrides {
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    .theme-cinema {
+      --text-muted: #E4E0FF;
+      --text-subtle: #CFC9F2;
+      --control-border: #CFC9F2;
+      --hairline: rgb(245 242 255 / .4);
+    }
+    .theme-paper {
+      --text-muted: #2E2852;
+      --text-subtle: #2E2852;
+      --control-border: #2E2852;
+    }
+    .app-grain { display: none; }
+  }
+
+  @media (forced-colors: active) {
+    .app-grain { display: none; }
+    :focus-visible { outline: 3px solid Highlight; box-shadow: none; }
+    .soundprint i, .sound-shape { forced-color-adjust: none; }
+    .btn, .control, .film-card, .option-card, .segmented label, .chip { border: 1px solid ButtonText; }
+    .film-card[aria-checked="true"], .option-card:has(input:checked), .segmented input:checked + span {
+      outline: 3px solid Highlight;
+    }
+  }
+
+  @media print {
+    .site-header, .toc, .page-hero__actions, .skip-link, .app-grain { display: none !important; }
+    .theme-paper, .theme-cinema { background: #fff; color: #111; }
+    .reading { display: block; }
+    .reading section { break-inside: avoid; }
+    .reading p { color: #111; font-size: 11pt; }
+  }
+}

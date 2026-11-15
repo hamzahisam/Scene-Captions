@@ -1,0 +1,120 @@
+/*
+ * CAPTION STIMULUS: the experimental stimulus. Do not restyle casually.
+ *
+ * These rules reproduce the computed caption appearance of commit bafdfb5
+ * exactly (font, size, weight, padding, radius, backdrops, colours, position),
+ * so baseline and personalized conditions look the same as before the redesign.
+ * Any change here must be listed under "Study-visible changes" in
+ * docs/design/UI_REDESIGN_2026.md. tests/appearance.test.ts checks the backdrop
+ * presets keep white and yellow text at or above 4.5:1.
+ */
+@layer components {
+  .video-frame { container-type: inline-size; }
+
+  .caption-overlay {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    text-align: center;
+    pointer-events: none;
+    z-index: 1;
+    /* Pinned: captions keep the pre-redesign face. The UI font is not used here. */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px; /* inherited body size before the redesign */
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+  .caption-overlay.bottom { bottom: 86px; }
+  .video-stage > .caption-overlay.bottom { bottom: calc(var(--controls-height, 86px) + 8px); }
+  .caption-overlay.top { top: 65px; }
+
+  .caption-lines {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 100%;
+  }
+  .caption-lines p { white-space: pre-line; }
+  .dialogue-lines { white-space: pre-line; }
+
+  .caption-overlay p {
+    display: block;
+    max-width: 100%;
+    margin: 0;
+    background: #080c08ed;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    text-wrap: wrap;
+    font-size: clamp(14px, 2.4cqi, 56px);
+  }
+  .caption-overlay.large p { font-size: clamp(16px, 3cqi, 68px); }
+  .caption-overlay.extra-large p { font-size: clamp(19px, 3.7cqi, 84px); }
+  .caption-overlay .dialogue-lines p { background: rgba(10, 18, 13, 0.9); }
+
+  /* Backdrop presets */
+  .caption-overlay.backdrop-solid p,
+  .caption-overlay.backdrop-solid .dialogue-lines p { background: #080c08; }
+  .caption-overlay.backdrop-translucent p,
+  .caption-overlay.backdrop-translucent .dialogue-lines p { background: rgba(0, 0, 0, 0.6); }
+  .caption-overlay.backdrop-outline p,
+  .caption-overlay.backdrop-outline .dialogue-lines p {
+    background: transparent;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .caption-overlay.color-white p { color: #fff; }
+  .caption-overlay.color-yellow p { color: #ffeb3b; }
+
+  /* Sound type styling (only when the viewer turns it on) */
+  .caption-overlay .sound-type { font-style: italic; }
+  .caption-overlay .sound-type:not(.sound-music) { border-inline-start: 4px solid #dbe8be; }
+  .speaker-chip,
+  .offscreen-tag {
+    display: inline-block;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    padding: 0 0.3em;
+    margin-inline-end: 0.4em;
+    font-size: 0.8em;
+    font-style: normal;
+  }
+  .shortened-marker { font-size: 0.8em; }
+
+  /* In-place sample while settings are open */
+  .caption-sample { outline: 2px dashed #e7efc9; outline-offset: 4px; }
+  .sample-label {
+    background: #17221b;
+    color: #fff;
+    font-size: 13px;
+    padding: 3px 7px;
+    border-radius: 3px;
+  }
+
+  /* Native fullscreen text track fallback */
+  .video-frame video::cue { background: #080c08; color: white; }
+
+  .video-stage:has(.caption-overlay p) .big-play { display: none; }
+
+  @media (max-width: 500px) {
+    .caption-overlay { left: 3%; right: 3%; }
+    .caption-overlay.top { top: 40px; }
+    .caption-overlay p { padding: 4px 8px; }
+  }
+
+  @media (prefers-contrast: more) {
+    .caption-overlay p,
+    .caption-overlay .dialogue-lines p { background: #080c08 !important; text-shadow: none; }
+  }
+  @media (forced-colors: active) {
+    .caption-overlay p,
+    .caption-overlay .dialogue-lines p {
+      background: Canvas !important;
+      color: CanvasText !important;
+      border: 1px solid CanvasText;
+      text-shadow: none;
+    }
+  }
+}

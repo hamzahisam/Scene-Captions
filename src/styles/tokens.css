@@ -1,0 +1,112 @@
+/*
+ * SceneCaptions design tokens: "Night Screening".
+ * Contrast ratios are WCAG 2.x, measured against each theme's surfaces.
+ * Full table: docs/design/UI_REDESIGN_2026.md.
+ * Caption stimulus colours are NOT taken from these palettes (see stimulus.css).
+ */
+@layer tokens {
+  :root {
+    /* Type */
+    --font-ui: var(--font-text), "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-headline: var(--font-display), "Anybody", var(--font-ui);
+    --text-meta: 0.875rem;   /* 14px: floor for anything a user needs to read */
+    --text-body: 1rem;       /* 16px: UI and body */
+    --text-long: 1.125rem;   /* 18px: long-form reading */
+    --text-l: 1.375rem;
+    --text-xl: 1.75rem;
+    --text-2xl: 2.25rem;
+    --text-display: clamp(2.5rem, 5vw, 4.5rem);
+    --leading-ui: 1.5;
+    --leading-long: 1.65;
+    --measure: 70ch;
+
+    /* Space */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 32px;
+    --space-8: 40px;
+    --space-9: 56px;
+    --space-10: 80px;
+
+    /* Shape: radius follows hierarchy */
+    --radius-player: 20px;
+    --radius-sheet: 16px;
+    --radius-card: 14px;
+    --radius-control: 10px;
+    --radius-pill: 999px;
+
+    /* Sizes */
+    --target: 44px;          /* primary player controls */
+    --target-min: 24px;      /* absolute floor anywhere */
+    --header-h: 64px;
+    --content-max: 1200px;
+
+    /* Motion */
+    --dur-fast: 120ms;
+    --dur-base: 200ms;
+    --dur-slow: 320ms;
+    --ease: cubic-bezier(.2, .8, .2, 1);
+
+    /* Elevation */
+    --edge-highlight: inset 0 1px 0 rgb(255 255 255 / .06);
+    --shadow-float: 0 24px 48px -12px rgb(5 3 15 / .6);
+  }
+
+  /* Dark "cinema" theme: the viewer. */
+  .theme-cinema {
+    color-scheme: dark;
+    --bg: #100D22;             /* Velvet */
+    --surface: #1A1633;        /* Plush */
+    --surface-raised: #252047; /* Aisle */
+    --hairline: rgb(245 242 255 / .10); /* decorative dividers only */
+    --control-border: #7A73AD; /* 4.1:1 surface, 3.6:1 raised */
+    --text: #F5F2FF;           /* 15.8:1 surface */
+    --text-muted: #BDB6E0;     /* 9.1:1 */
+    --text-subtle: #9C95C8;    /* 6.3:1, 14px minimum */
+    --accent: #FFB547;         /* Projector amber */
+    --accent-border: #FFB547;
+    --on-accent: #100D22;      /* 10.8:1 on amber */
+    --focus: #FFB547;
+    --focus-halo: #100D22;
+    --link: #FFCB7D;           /* 12.1:1 on surface */
+    --danger: #FF8A7A;         /* 7.6:1 */
+    --danger-surface: #3A1A2A;
+    --info-surface: #1F2347;
+    --sound-effect: #FFB547;   /* ◆ */
+    --sound-music: #FF5C9A;    /* ● Encore pink */
+    --sound-ambience: #5BE7FF; /* ■ Tide aqua */
+    --sound-voice: #8F9CFF;    /* ▲ Murmur periwinkle */
+    --scrim: rgb(16 13 34 / .92);
+  }
+
+  /* Light "paper" theme: research and reading routes. */
+  .theme-paper {
+    color-scheme: light;
+    --bg: #FAF8FF;
+    --surface: #FFFFFF;
+    --surface-raised: #F1EEFA;
+    --hairline: #E4E0F2;
+    --control-border: #7A73AD; /* 4.1:1 */
+    --text: #1A1633;
+    --text-muted: #575080;     /* 7.0:1 */
+    --text-subtle: #575080;
+    --accent: #FFB547;
+    --accent-border: #8A5300;  /* amber buttons need this border on paper */
+    --on-accent: #100D22;
+    --focus: #4A55D6;          /* 5.6:1 */
+    --focus-halo: #FFFFFF;
+    --link: #4A55D6;
+    --danger: #B3261E;
+    --danger-surface: #FCEDEB;
+    --info-surface: #EEF0FD;
+    --sound-effect: #8A5300;
+    --sound-music: #C2185B;
+    --sound-ambience: #007A8C; /* marks only, never small text on raised */
+    --sound-voice: #4A55D6;
+    --scrim: rgb(250 248 255 / .96);
+  }
+}

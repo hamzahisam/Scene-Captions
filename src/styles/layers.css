@@ -1,0 +1,2 @@
+/* Cascade order. Later layers win. `legacy` is temporary (removed by Phase 5). */
+@layer tokens, base, legacy, layout, components, research, overrides;

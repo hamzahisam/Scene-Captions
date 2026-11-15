@@ -41,7 +41,7 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
     <RecorderStatus recorder={rehearsal.recorder} error={rehearsal.error}/>
     <div className="watch-layout"><section className="watch-column" aria-label="Video workspace"><div className="watch-heading"><h1>{data.title}<small>{demoCredit}</small></h1></div>
       <VideoPlayer session={session} recorder={rehearsal.recorder} questions={questions} recording={recording} onTelemetry={rehearsal.telemetry} settingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
-      <div className="film-footnote"><Icon name="leaf" size={16}/><span>{initialVideo.title} · {demoCredit}</span><a href="#media-credits">Credits</a></div>
+      <div className="film-footnote"><Icon name="info" size={16}/><span>{initialVideo.title} · {demoCredit}</span><a href="#media-credits">Credits</a></div>
     </section></div>
     {!session&&<details className="research-tools"><summary>Research tools {recording&&<span className="status-pill recording">Recording locally</span>}</summary>
     <div className="condition-switch" role="group" aria-label="Research caption condition"><button aria-pressed={condition==='personalized'} onClick={()=>changeCondition('personalized')}>Personalized</button><button aria-pressed={condition==='baseline'} onClick={()=>changeCondition('baseline')}>Reference baseline</button></div>
