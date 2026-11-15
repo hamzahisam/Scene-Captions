@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "sessions": [
+    {
+      "participantId": "P-001",
+      "allocationSlot": "pilot-2-0",
+      "films": [
+        "soar",
+        "hair-love"
+      ],
+      "conditions": [
+        "baseline",
+        "personalized"
+      ]
+    },
+    {
+      "participantId": "P-002",
+      "allocationSlot": "pilot-2-1",
+      "films": [
+        "hair-love",
+        "soar"
+      ],
+      "conditions": [
+        "baseline",
+        "personalized"
+      ]
+    },
+    {
+      "participantId": "P-003",
+      "allocationSlot": "pilot-2-0",
+      "reason": "Room schedule requires the first sequence again.",
+      "films": [
+        "soar",
+        "hair-love"
+      ],
+      "conditions": [
+        "baseline",
+        "personalized"
+      ]
+    },
+    {
+      "participantId": "P-004",
+      "allocationSlot": "pilot-3-0",
+      "films": [
+        "soar",
+        "hair-love",
+        "sintel"
+      ],
+      "conditions": [
+        "essential",
+        "balanced",
+        "rich"
+      ]
+    },
+    {
+      "participantId": "P-005",
+      "allocationSlot": "frequent-1",
+      "films": [
+        "soar",
+        "hair-love",
+        "sintel"
+      ],
+      "conditions": [
+        "baseline",
+        "baseline",
+        "baseline"
+      ]
+    },
+    {
+      "participantId": "P-006",
+      "allocationSlot": "frequent-2",
+      "films": [
+        "hair-love",
+        "sintel",
+        "soar"
+      ],
+      "conditions": [
+        "personalized",
+        "personalized",
+        "personalized"
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -161,3 +161,25 @@ check every item (initially empty, Space/arrow steps, Escape inertness, persiste
 metadata) and the real exported summary (50 complete, null when skipped), now
 through the A3 researcher dialog. The B2 runner still passes. Evidence:
 `reports/B3-browser.json`; runner `scripts/verification/dhh-fixes/B3-browser.mjs`.
+
+## B4 — pilot slot allocation and between-film rotation
+
+Three-condition pilots now have exactly 18 slots: Williams condition order is
+slot mod 6 and the cyclic film rotation is floor(slot / 6) mod 3. Across all 18
+slots each film and condition appears six times in every position and every
+film–condition pair appears six times; slot 18+ is rejected. The two-condition
+pilot keeps its four crossed sequences. Pilot slots are saved as `pilot-2-N` /
+`pilot-3-N` (legacy `pilot-N` still reads); setup shows the next unused slot,
+derived from the saved registry (no separate counter), creates automatic
+assignments, and accepts a duplicate only through an explicit override with a
+required saved reason (`slotOverride`). Registry validation rejects unreasoned
+duplicates; exhausted three-condition slots throw a clear error. Between-participant
+sequences rotate film order by the allocation row's index within its stratum and
+the rotated sequence is stored in the session.
+
+The procedure and `docs/EXPERIMENTAL_PLAN.md` describe this. The generated public
+copy `public/research/experimental-plan.md` is a protected research file and is
+deliberately not updated, so it is stale relative to the docs plan (as with A1–B3).
+Installed Chrome checks real setup (with the A3 researcher code) for slot
+assignment, grouped schemes, reasoned override, rotation and reload stability.
+Evidence: `reports/B4-browser.json`; runner `scripts/verification/dhh-fixes/B4-browser.mjs`.
