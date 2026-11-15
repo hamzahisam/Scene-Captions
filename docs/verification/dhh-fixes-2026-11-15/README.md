@@ -324,3 +324,20 @@ pass with types, build and 53 protected hashes; B6/C2 Chrome runners re-pass. Th
 worker's self-reported model/effort and "no model inference" were not independently
 verified beyond the committed deterministic scripts. All sidecars remain drafts: sound
 wording/kind accuracy and speaker attribution still need human review.
+
+## Final integrated verification
+
+Installed Chrome, synthetic media clock, browser-local synthetic data; requests were
+only GETs of the app and film media (no uploads). `scripts/verification/dhh-fixes/final-e2e.mjs`
+creates a real two-film pilot session through `/session`, opens it, reloads, rejects a wrong
+researcher code and unlocks with the right one (relocking on reload), checks `?`/`c` shortcuts,
+answers the 10 end items by keyboard, finishes film one and confirms the next film and
+resume, at 1280×800 and 390×844 (`reports/final-e2e.json`, screenshots in
+`artifacts/dhh-fixes/screenshots/final-*`). The fold runner passes at 1366×657, 1536×730,
+1280×800, 1920×969, 1000×760 and the 820/390 regressions (`artifacts/dhh-fixes/final-fold`).
+Every task runner (A1–A3, B1–B4, B6, C1, C2, C4–C7) re-passed on the final tree. The reading
+audit reproduces the Phase A counts in all films for extension/marker off and on.
+
+Not established: Safari, Firefox, a physical iPhone, VoiceOver/NVDA, DHH/team review of
+captions, instruments and wording, the 20–30 minute playback/recording soak, acoustic or
+listening validation, and any research validity. Historical Graphify/Fallow maps remain stale.

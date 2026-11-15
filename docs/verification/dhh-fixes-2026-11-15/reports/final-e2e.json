@@ -1,0 +1,23 @@
+{
+  "synthetic_media": true,
+  "desktop": {
+    "answered": 10,
+    "filmSequence": [
+      "soar:baseline",
+      "hair-love:personalized"
+    ],
+    "title": "Hair LoveSony Pictures Animation · 2019",
+    "errors": [],
+    "uploads": []
+  },
+  "mobile": {
+    "answered": 10,
+    "filmSequence": [
+      "soar:baseline",
+      "hair-love:personalized"
+    ],
+    "title": "Hair Love\nSony Pictures Animation · 2019",
+    "errors": [],
+    "uploads": []
+  }
+}
