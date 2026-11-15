@@ -10,6 +10,8 @@ export const telemetryInputSchema=z.discriminatedUnion('type',[
  z.object({...base,type:z.literal('visibility'),visible:z.boolean()}),
  z.object({...base,type:z.literal('seek'),method:z.enum(['scrub','keyboard','jump','sound-navigation']),from_s:z.number().finite().nonnegative()}),
  z.object({...base,type:z.literal('settings'),open:z.boolean()}),
+ z.object({...base,source:z.literal('researcher'),type:z.literal('researcher_unlock')}),
+ z.object({...base,source:z.literal('researcher'),type:z.literal('researcher_action'),action:z.enum(['export_json','export_events','export_summary','note_edit','leave_study'])}),
  z.object({...base,type:z.literal('profile_change'),field:z.string().max(100),from:scalar,to:scalar}),
  z.object({...base,type:z.literal('original'),mode:z.enum(['toggle','hold']),enabled:z.boolean()}),
  z.object({...caption,type:z.enum(['caption_shown','caption_hidden'])}),

@@ -22,7 +22,6 @@ export function ScreeningRoom({ films }: { films: ScreeningFilm[] }) {
       </select>
       {locked && <p role="status">Film selection stays fixed after a rehearsal starts. Export, then reload to choose another.</p>}
     </section>}
-    <Workspace questions={film.questions} session={session||undefined} annotations={film.annotations} key={`${session?.id||"demo"}-${session?.sequenceIndex||0}-${film.data.video_id}`} initialVideo={film.data} sourceAssistedVideo={film.sourceAssistedData} demoSource={film.source} demoPoster={film.poster} demoCredit={film.credit} onMediaLockChange={setLocked} />
-    {session&&<details className="researcher-exit"><summary>Researcher controls</summary><button onClick={study.leave}>Leave study mode</button></details>}
+    <Workspace onLeaveStudy={study.leave} questions={film.questions} session={session||undefined} annotations={film.annotations} key={`${session?.id||"demo"}-${session?.sequenceIndex||0}-${film.data.video_id}`} initialVideo={film.data} sourceAssistedVideo={film.sourceAssistedData} demoSource={film.source} demoPoster={film.poster} demoCredit={film.credit} onMediaLockChange={setLocked} />
   </>;
 }

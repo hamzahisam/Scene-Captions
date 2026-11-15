@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "events": 25,
+  "credentialKeys": [
+    "algorithm",
+    "salt",
+    "hash"
+  ],
+  "errors": [],
+  "uploads": []
+}

@@ -73,8 +73,34 @@ seven appearance fields, effective announcements, persistence/reload, shortcut
 availability and matching telemetry. Media time is synthetic in this interaction
 test. Evidence: `reports/A2-browser.json`; runner `scripts/verification/dhh-fixes/A2-browser.ts`.
 
-Open: A3 remains a participant-session blocker; team device, screen-reader,
-listening and sustained-playback checks remain below.
+## A3 — researcher access
+
+Session creation requires 4–8 digits; SubtleCrypto stores a random salt and SHA-256
+digest only. The participant page mounts no researcher recording/export/rating/note
+or leave controls. A small Researcher button after the footer opens a modal dialog;
+correct code reveals those controls until close. Wrong code reveals nothing,
+Escape returns focus, and reload relocks. Browser confirmation was removed.
+Recovery exports are also hidden from the locked participant view. Older sessions
+without a code fail closed and require fresh setup.
+
+This deters casual access; it is not a security boundary. Browser developer tools
+can bypass the registry and UI. Supervision remains necessary. This is documented
+in the hash helper and experimental procedure. The supplied code-at-creation
+default was used. Unlock, exports, note edits and leaving are researcher-sourced
+events; audit events can be appended after recording stops without restarting
+participant capture. Recording start/stop retain their existing researcher events.
+
+Changed owners: researcher-code helper/dialog, registry/setup, workspace/screening
+room/study context, recorder status/rehearsal, telemetry/storage, experimental plan,
+dialog CSS, hash/audit tests and Chrome runner. Typecheck, **88 tests**, build and
+all **53 protected hashes** pass. The Chrome runner uses actual local session
+creation and verifies missing/wrong/correct code, modal close/reload, all three
+exports, note persistence, stop, leave and researcher audit records. No upload
+requests occurred. Evidence: `reports/A3-browser.json`; runner
+`scripts/verification/dhh-fixes/A3-browser.ts`.
+
+Phase A blockers are implemented. Later correctness/validity fixes and the manual
+device, screen-reader, listening and sustained-playback checks remain open.
 
 Team manual checks remain Safari, Firefox, physical iPhone fullscreen, VoiceOver,
 NVDA and a 20–30 minute recording/playback soak. Automated checks cannot establish

@@ -9,13 +9,14 @@ import { useRehearsal } from "./hooks/use-rehearsal";
 import { CaptionTrackNotice, SoundTimeline } from "./caption-track";
 import { VideoPlayer } from "./video-player";
 import { useCaptionProfile } from "./hooks/use-caption-profile";
+import {ResearcherDialog} from "./researcher-dialog";
 import {RecorderStatus} from "./recorder-status";
 import { StudyRehearsal } from "./study-rehearsal";
 import type {CueAnnotations} from "@/lib/cue-annotations";
 import { Icon } from "./icon";
 
 
-export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoPoster = "/media/bunny-poster.jpg", demoCredit = "Blender Foundation · 2008", onMediaLockChange, annotations,session,questions }: { initialVideo: CaptionVideo; sourceAssistedVideo?: CaptionVideo; demoSource: string; demoPoster?: string; demoCredit?: string; questions?:QuestionFile;session?:StudySession; annotations?:CueAnnotations; onMediaLockChange?: (locked: boolean) => void }) {
+export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoPoster = "/media/bunny-poster.jpg", demoCredit = "Blender Foundation · 2008", onMediaLockChange, annotations,session,questions,onLeaveStudy }: { initialVideo: CaptionVideo; sourceAssistedVideo?: CaptionVideo; demoSource: string; demoPoster?: string; demoCredit?: string; questions?:QuestionFile;onLeaveStudy?:()=>void;session?:StudySession; annotations?:CueAnnotations; onMediaLockChange?: (locked: boolean) => void }) {
   const {profile, update: setProfile, storageError} = useCaptionProfile(session?profileNamespace(session):PROFILE_KEY,session?sessionDefaults(session):undefined);
   const [demoExtendDisplay,setDemoExtendDisplay]=useState(false);
   const extendDisplay=session?.extendDisplay??demoExtendDisplay;
@@ -41,7 +42,7 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
   const captionSource = data?.generated_with.caption_source;
   const viewerProfile = conditionProfile(profile,session);
   return <main ref={diagnostic} id="main" className="workspace">
-    <RecorderStatus recorder={rehearsal.recorder} error={rehearsal.error}/>
+    <RecorderStatus allowExport={!session} recorder={rehearsal.recorder} error={rehearsal.error}/>
     <div className="watch-layout"><section className="watch-column" aria-label="Video workspace"><div className="watch-heading"><h1>{data.title}<small>{demoCredit}</small></h1></div>
       <VideoPlayer extendDisplay={extendDisplay} session={session} recorder={rehearsal.recorder} questions={questions} recording={recording} onTelemetry={rehearsal.telemetry} soundSettingsAllowed={!session||assigned==="personalized"} showTicks={session?.ticks??true} annotations={annotations} onApply={apply} poster={demoPoster} source={source} data={data} profile={viewerProfile} condition={condition} showOriginal={showOriginal} onOriginal={original} onTime={updateTime} onEvent={record} seekTo={seekTo} />
       <div className="film-footnote"><Icon name="leaf" size={16}/><span>{initialVideo.title} · {demoCredit}</span><a href="#media-credits">Credits</a></div>
@@ -52,8 +53,8 @@ export function Workspace({ initialVideo, sourceAssistedVideo, demoSource, demoP
     <CaptionTrackNotice data={data}/><SoundTimeline extendDisplay={extendDisplay} annotations={annotations} data={data} time={time} profile={profile} condition={condition} showOriginal={showOriginal} jump={jump}/>
     <StudyRehearsal recorder={rehearsal.recorder} error={rehearsal.error} onStart={()=>startRecording()} onStop={()=>rehearsal.stop(currentTime.current)}/>
     </details>}
-    {session&&<details className="study-recording-controls"><summary>Researcher recording controls</summary><StudyRehearsal recorder={rehearsal.recorder} error={rehearsal.error} onStart={()=>startRecording()} onStop={()=>rehearsal.stop(currentTime.current)}/></details>}
     <footer id="media-credits" className="page-footer"><div><span className="footer-brand">SceneCaptions</span><p>More of the story. On your terms.</p></div><div><p>Research prototype · No AI calls during viewing</p><p>Demo film: <a href={initialVideo.source_url} target="_blank" rel="noreferrer">{initialVideo.title}</a> · {initialVideo.license === "CC BY 3.0" ? <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">CC BY 3.0</a> : initialVideo.license}<br />{initialVideo.attribution}<br />{captionSource ? <>{data?.generated_with.kind === "source-assisted" ? "Generation reference: " : "Sound captions: "}<a href={captionSource.url} target="_blank" rel="noreferrer">{captionSource.author}</a> · {captionSource.license}. {data?.generated_with.kind === "source-assisted" ? "New wording generated and edited by SceneCaptions." : "Wording variants added by SceneCaptions."}</> : <>See the caption coverage above for this title.</>}</p>{data?.dialogue_source && <p>English subtitles: <a href={data.dialogue_source.url} target="_blank" rel="noreferrer">{data.dialogue_source.author}</a> · {data.dialogue_source.license}. Source wording and timing retained.</p>}</div></footer>
+    {session&&<ResearcherDialog credential={session.researcher} onUnlock={()=>rehearsal.telemetry({type:"researcher_unlock",video_s:currentTime.current,source:"researcher"})}><StudyRehearsal recorder={rehearsal.recorder} error={rehearsal.error} onStart={startRecording} onStop={()=>rehearsal.stop(currentTime.current)}/><button onClick={()=>{rehearsal.telemetry({type:"researcher_action",action:"leave_study",video_s:currentTime.current,source:"researcher"});rehearsal.stop(currentTime.current);onLeaveStudy?.()}}>Leave study mode</button></ResearcherDialog>}
     <div className="sr-only" role="status" aria-live="polite">{notice || storageError}</div>
   </main>;
 }
