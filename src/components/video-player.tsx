@@ -53,7 +53,7 @@ export function VideoPlayer({ onClock, source, data, profile, extendDisplay=fals
     <div className={`video-frame ${settingsOpen?"settings-open":""} ${narrow?"settings-below":""}`} ref={frame} role="region" aria-label="Video player" tabIndex={0}><div className="video-stage" inert={surveyActive}>
       <video ref={video} src={source} poster={source.startsWith("blob:") ? undefined : poster} preload="metadata" playsInline
         aria-label={`${data?.title || "Your video"} video player`} aria-describedby="video-description" tabIndex={-1}
-        {...playback.events} />
+        onClick={()=>{if(ready)void toggle()}} {...playback.events} />
 
       {!playing && !error && <button className="big-play" onClick={() => void toggle()} disabled={!ready} aria-label={ready ? "Play video" : "Loading video"}><Icon name="play" size={30} /></button>}
       {waiting && playing && <span className="buffering" role="status">Buffering video…</span>}

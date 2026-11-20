@@ -372,3 +372,4 @@ body:has(.watch-column) .workspace a,body:has(.watch-column) .film-library a{col
   .player-shell.docked.dock-collapsed .settings-dock.on{transform:translateX(24px)}
   .dock-toggle{transition:top .3s cubic-bezier(.22,.61,.36,1),right .3s cubic-bezier(.22,.61,.36,1),background .15s ease-out}
 }
+.video-stage video{cursor:pointer}
