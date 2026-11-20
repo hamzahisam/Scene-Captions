@@ -82,7 +82,7 @@ const measure = () => {
     viewport: {w: innerWidth, h: innerHeight}, scrollX, scrollY, docScrollWidth: document.documentElement.scrollWidth,
     fullscreen: !!document.fullscreenElement,
     header: rect(q('.site-header')), filmLibrary: rect(q('.film-library')), resumeBanner: rect(q('.resume-banner')),
-    column: rect(q('.player-main')||q('.watch-column')), heading: rect(q('.watch-heading')),
+    column: (()=>{const el=q('.player-main');if(!el)return rect(q('.watch-column'));const r=rect(el),pr=parseFloat(getComputedStyle(el).paddingRight)||0;return {...r,width:r.width-pr,right:r.right-pr}})(), heading: rect(q('.watch-heading')),
     h1: h1 ? {...rect(h1), fontSize: parseFloat(getComputedStyle(h1).fontSize), lines: h1Lines} : null,
     frame: rect(q('.video-frame')), stage: rect(q('.video-stage')), controls: rect(q('.video-controls')),
     footnote: rect(q('.film-footnote')), captionOverlay: rect(q('.caption-overlay')),
