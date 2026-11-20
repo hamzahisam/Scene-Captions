@@ -16,10 +16,9 @@ export function ScreeningRoom({ films }: { films: ScreeningFilm[] }) {
   if(study.error)return <main id="main" className="workspace"><p role="alert">{study.error}</p><a href="/session">Research session setup</a></main>;
   return <>
     {!session&&<section className="film-library" aria-label="Film library">
-      <div><label htmlFor="film-choice">Choose a film</label><p>Each film opens with its own captions and credits.</p></div>
-      <select id="film-choice" value={selected} disabled={locked} onChange={event => setSelected(event.target.value)}>
-        {films.map(item => <option key={item.data.video_id} value={item.data.video_id}>{item.data.title}{!item.data.cues.length?" (dialogue only)":""}</option>)}
-      </select>
+      <fieldset id="film-choice" className="film-cards" disabled={locked}><legend>Choose a film</legend>
+        {films.map(item => <label key={item.data.video_id} className="film-card"><input type="radio" name="film" value={item.data.video_id} checked={selected===item.data.video_id} onChange={() => setSelected(item.data.video_id)} /><img src={item.poster} alt="" loading="lazy" decoding="async" /><span className="film-card-title">{item.data.title}</span><span className="film-card-meta">{item.credit}</span>{item.data.cues.length>0?<span className="film-tag">Sound captions</span>:<span className="film-tag film-tag-plain">Dialogue only</span>}</label>)}
+      </fieldset>
       {locked && <p role="status">Film selection stays fixed after a rehearsal starts. Export, then reload to choose another.</p>}
     </section>}
     <Workspace onLeaveStudy={study.leave} questions={film.questions} session={session||undefined} annotations={film.annotations} key={`${session?.id||"demo"}-${session?.sequenceIndex||0}-${film.data.video_id}`} initialVideo={film.data} sourceAssistedVideo={film.sourceAssistedData} demoSource={film.source} demoPoster={film.poster} demoCredit={film.credit} onMediaLockChange={setLocked} />

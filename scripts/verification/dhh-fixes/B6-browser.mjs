@@ -15,7 +15,7 @@ try{
  });
  await page.route('**/*.mp4',route=>route.abort());
  await page.goto(base);
- await page.locator('#film-choice').selectOption({label:'Hair Love'});
+ await page.getByRole('radio',{name:/Hair Love/}).check({force:true});
  await page.locator('.research-tools > summary').click();
  await page.getByLabel('I agree to record this technical rehearsal locally.').check();
  await page.getByRole('button',{name:'Start rehearsal',exact:true}).click();

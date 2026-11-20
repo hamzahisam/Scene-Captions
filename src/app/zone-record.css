@@ -147,3 +147,84 @@ input[type=range]{accent-color:var(--mag)}
   .resume-banner{padding:12px;margin-bottom:10px}.resume-banner p{margin:4px 0}
   .workspace{padding-top:10px}
 }
+
+/* ---------- Refinement pass: theater canvas, film cards, labelled controls ---------- */
+/* The watch page is a dark theater: the picture and captions are the brightest things on it. */
+body:has(.watch-column){
+  --page:#111114;--paper:#1b1b20;--ink:#f3f3f5;--muted:#b9b9c0;--line:#3a3a42;--soft:#232329;--sage:#2e2e33;
+  background:#111114;color:#f3f3f5;
+}
+body:has(.watch-column) .workspace,body:has(.watch-column) .film-library{color:#f3f3f5}
+body:has(.watch-column) h1,body:has(.watch-column) h2{color:#f3f3f5}
+body:has(.watch-column) a{color:#ff9fc9}
+body:has(.watch-column) .film-footnote,body:has(.watch-column) .film-footnote *{color:#b9b9c0}
+body:has(.watch-column) .research-tools,body:has(.watch-column) .resume-banner,body:has(.watch-column) .caption-preview-notice,body:has(.watch-column) .recorder-status{background:#1b1b20;border-color:#3a3a42;color:#f3f3f5}
+body:has(.watch-column) .research-tools button,body:has(.watch-column) .research-tools .secondary-button{background:#2e2e33;color:#fff;border-color:#5a5a60}
+body:has(.watch-column) .inline-error{background:#3a1512;border-color:#ff8a80;color:#ffd9d4}
+body:has(.watch-column) .watch-heading h1 small{color:#b9b9c0}
+.workspace{padding-top:16px}
+
+/* Film cards: recognise a film by its poster rather than recall its title. */
+.film-library{display:block;margin-top:20px}
+.film-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,240px));gap:14px;border:0;padding:0;margin:0}
+.film-cards legend{font-size:15px;font-weight:700;margin-bottom:10px;padding:0}
+.film-card{position:relative;display:flex;flex-direction:column;gap:4px;padding:0 0 12px;background:#1b1b20;border:1px solid #3a3a42;border-radius:4px;overflow:hidden;cursor:pointer;color:#f3f3f5}
+.film-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#2e2e33}
+.film-card input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer}
+.film-card-title{font-size:17px;font-weight:700;padding:8px 12px 0}
+.film-card-meta{font-size:14px;color:#b9b9c0;padding:0 12px}
+.film-tag{align-self:flex-start;margin:6px 12px 0;padding:2px 8px;border:1px solid #8e8e94;border-radius:3px;font-size:13px;font-weight:600;color:#f3f3f5}
+.film-tag-plain{color:#b9b9c0;border-color:#5a5a60}
+.film-card:hover{border-color:#bebec2}
+.film-card:has(input:checked){border-color:#fff;box-shadow:0 0 0 2px #fff,0 0 0 5px var(--mag-on-dark)}
+.film-card:has(input:checked)::after{content:"Now watching";position:absolute;top:8px;left:8px;background:#fff;color:#111114;font-size:13px;font-weight:700;padding:2px 8px;border-radius:3px}
+.film-card:has(input:focus-visible){outline:3px solid var(--mag-on-dark);outline-offset:3px}
+.film-cards:disabled{opacity:.6}.film-cards:disabled .film-card{cursor:not-allowed}
+@media(max-width:700px){.film-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.film-card-meta{display:none}.film-card-title{font-size:14px;padding:6px 8px 0}.film-tag{margin:4px 8px 0;font-size:12px}.film-card:has(input:checked)::after{font-size:11px;top:4px;left:4px}}
+
+/* Control bar: one family of buttons, every one labelled or iconed, all 44px. */
+.video-controls .cc-button,.video-controls .help-button,.video-controls .original-button,.video-controls button:not(.icon-button){display:inline-flex;align-items:center;justify-content:center;gap:8px;background:rgba(17,17,20,.72);color:#fff;border:1px solid rgba(255,255,255,.55);border-radius:4px;min-height:44px;padding:0 12px;font-size:14px;font-weight:600}
+.video-controls .cc-button[aria-expanded=true]{background:#fff;color:#111114;border-color:#fff;box-shadow:inset 0 -3px var(--mag)}
+.video-controls button:not(.icon-button):hover{background:#fff;color:#111114}
+.video-controls .help-button{min-width:44px}
+.cc-label{white-space:nowrap}
+@media(max-width:560px){.cc-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.video-controls .cc-button{min-width:44px;padding:0}}
+
+/* Detail options show the real caption text each level produces. */
+.amount-options>label>span .level-sample{display:block;margin-top:6px;padding:3px 6px;background:#000;color:#fff;border:1px solid rgba(255,255,255,.35);font:600 13px/1.3 var(--font);border-radius:2px;white-space:normal}
+.caption-settings .amount-options{grid-template-columns:1fr}
+.caption-settings .amount-options>label{padding:10px 12px}
+.caption-settings .amount-options>label>span::before{height:10px;margin-bottom:6px}
+.caption-settings .level-note{margin:4px 0 12px;color:var(--z3)}
+
+/* A clear exit: Done stays reachable at the foot of the settings card. */
+.settings-done{position:sticky;bottom:-16px;margin:12px -16px -16px;padding:12px 16px;background:linear-gradient(transparent,var(--z7) 30%)}
+.done-button{width:100%;min-height:48px;background:#fff;color:var(--z7);border:1px solid #fff;border-radius:4px;font-size:16px;font-weight:700;cursor:pointer}
+.done-button:hover{background:var(--z2)}
+/* Compact film cards keep the player inside the laptop first screen. */
+body:has(.watch-column) a{color:inherit}
+body:has(.watch-column) .workspace a,body:has(.watch-column) .film-library a{color:#ff9fc9}
+.film-library{margin-top:14px}
+.film-cards{grid-template-columns:repeat(3,minmax(0,300px));gap:10px}
+.film-cards legend{margin-bottom:8px}
+.film-card{display:grid;grid-template-columns:96px 1fr;grid-template-areas:"img title" "img meta" "img tag";align-items:center;column-gap:10px;row-gap:0;padding:0 10px 0 0;min-height:64px}
+.film-card img{grid-area:img;height:100%;min-height:64px;aspect-ratio:auto}
+.film-card-title{grid-area:title;padding:6px 0 0;font-size:16px;line-height:1.2}
+.film-card-meta{display:none}
+.film-tag{grid-area:tag;margin:2px 0 6px;font-size:12px;padding:1px 6px}
+.film-card:has(input:checked)::after{content:"Now watching";top:auto;bottom:4px;right:6px;left:auto;font-size:11px;padding:1px 6px}
+.film-card:has(input:checked) .film-tag{visibility:hidden}
+@media(max-width:700px){.film-cards{grid-template-columns:1fr}.film-card{grid-template-columns:72px 1fr}.film-card img{min-height:52px}.film-card{min-height:52px}.film-tag{display:none}.film-card-title{font-size:15px;padding:0}}
+@media(max-width:700px){
+  .film-cards{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .film-card{flex:0 0 auto;min-width:168px;scroll-snap-align:start;grid-template-columns:56px 1fr;min-height:48px;padding-right:8px}
+  .film-card img{min-height:48px}
+  .film-card-title{font-size:14px;padding:0}
+  .film-card:has(input:checked)::after{display:none}
+  .film-card:has(input:checked) .film-card-title::after{content:" ✓";font-weight:700}
+  .film-cards legend{margin-bottom:6px;font-size:14px}
+  .film-library{margin-top:8px}
+}
+@media(max-width:700px){.film-card,.film-card img{min-height:44px}.film-cards{padding-bottom:0}.film-library{margin-top:4px}}
+.film-card .film-tag{justify-self:start;width:max-content;max-width:100%}
+.film-card:has(input:checked)::after{bottom:6px;right:8px}

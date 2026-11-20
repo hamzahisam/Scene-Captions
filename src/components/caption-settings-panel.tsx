@@ -10,5 +10,6 @@ export function CaptionSettingsPanel({open,close,trigger,profile,onApply,data,co
  <CaptionReadability profile={profile} onApply={onApply}/>
  {fixed&&<p>Sound captions are fixed for this session.</p>}{unavailable&&<p>This film has dialogue subtitles only. Sound settings do not apply.</p>}
  {!fixed&&!unavailable&&<fieldset><legend className="sr-only">Sound settings</legend><CaptionStyleControls data={data} condition={condition} extendDisplay={extendDisplay} defaultReadingSpeed={defaultReadingSpeed} profile={profile} onChange={onApply} sample={sample} explanation={explanation} conservative={data?.generated_with.expressiveness==='conservative'}/></fieldset>}
+ <div className="settings-done"><button type="button" className="done-button" onClick={()=>{close();trigger.current?.focus()}}>Done</button></div>
 </div>;
 }
