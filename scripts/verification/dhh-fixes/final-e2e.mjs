@@ -26,12 +26,12 @@ try{
   // 2. Open link: study mode, no research controls, researcher hidden until unlocked.
   await page.goto(`${base}/?session=${session.id}`);
   const firstFilm=session.sequence[0].filmId;
-  await page.getByRole('button',{name:'Caption settings',exact:true}).waitFor();
+  await page.getByRole('region',{name:'Video player',exact:true}).waitFor();
   assert.equal(await page.locator('.research-tools').count(),0);assert.equal(await page.locator('#film-choice').count(),0);
   assert.equal(await page.getByLabel('Researcher note (no names or contact details)',{exact:true}).count(),0);
   await page.screenshot({path:`${shots}/final-${name}-study-start.png`});
   // 3. Reload resumes the same session; unlock/relock.
-  await page.reload();await page.getByRole('button',{name:'Caption settings',exact:true}).waitFor();
+  await page.reload();await page.getByRole('region',{name:'Video player',exact:true}).waitFor();
   const researcher=page.getByRole('button',{name:'Researcher',exact:true});await researcher.click();
   let dialog=page.getByRole('dialog',{name:'Researcher controls',exact:true});await dialog.getByLabel('Researcher code',{exact:true}).fill('000000');await dialog.getByRole('button',{name:'Unlock controls',exact:true}).click();await dialog.getByRole('alert').waitFor();
   await dialog.getByLabel('Researcher code',{exact:true}).fill('012345');await dialog.getByRole('button',{name:'Unlock controls',exact:true}).click();
@@ -62,7 +62,7 @@ try{
   const title=await page.locator('h1').first().innerText();assert.match(title,session.sequence[1].filmId==='hair-love'?/Hair Love/:/Soar/);
   await page.screenshot({path:`${shots}/final-${name}-next-film.png`});
   // 6. Reload resumes at the second film.
-  await page.reload();await page.getByRole('button',{name:'Caption settings',exact:true}).waitFor();assert.match(await page.locator('h1').first().innerText(),/Hair Love|Soar/);
+  await page.reload();await page.getByRole('region',{name:'Video player',exact:true}).waitFor();assert.match(await page.locator('h1').first().innerText(),/Hair Love|Soar/);
   assert.deepEqual(errors,[]);assert.deepEqual(uploads,[],'no uploads: only GETs of the app and film media');
   out[name]={answered,filmSequence:session.sequence.map(x=>x.filmId+':'+x.condition),title,errors,uploads};await context.close();
   console.log(`final ${name}: creation, reload, unlock, keyboard, survey, end and next film passed (${answered} answers).`);

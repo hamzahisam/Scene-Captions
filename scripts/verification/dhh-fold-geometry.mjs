@@ -144,7 +144,7 @@ try {
     await page.screenshot({path: path.join(OUT, `${LABEL}-${tag}-default.png`)});
 
     // Long visible cue at largest text size, settings closed before measuring.
-    {const cc=page.getByRole('button', {name: 'Caption settings', exact: true});if(await cc.isVisible())await cc.click();else await page.locator('#caption-settings input[type=radio]:checked').first().focus();}
+    {const cc=page.getByRole('button', {name: 'Caption settings', exact: true});const bar=page.locator('.settings-bar');if(await cc.isVisible())await cc.click();else if(await bar.isVisible())await bar.click();else await page.locator('#caption-settings input[type=radio]:checked').first().focus();}
     if(!(await page.locator('details.readability').evaluate(d=>d.open)))await page.getByText('Appearance', {exact: true}).click();
     await page.getByLabel('Text size', {exact: true}).selectOption('extra-large');
     await page.getByRole('radio', {name: /^Rich/}).check(); // richest wording of the long cue

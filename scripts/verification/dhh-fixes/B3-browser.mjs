@@ -31,7 +31,7 @@ try {
   },{registryKey:STUDY_REGISTRY,session});
   await page.route('**/*.mp4',route=>route.abort());
   await page.goto(`${process.argv[2]||'http://127.0.0.1:3002'}/?session=${session.id}`);
-  await page.getByRole('button',{name:'Caption settings',exact:true}).waitFor();
+  await page.getByRole('region',{name:'Video player',exact:true}).waitFor();
   await page.locator('video').first().evaluate(v=>{v.currentTime=375;v.dispatchEvent(new Event('ended'))});
   const dialog=page.getByRole('dialog',{name:'End-of-film questions',exact:true});await dialog.waitFor();
   const read=()=>page.evaluate(id=>{
