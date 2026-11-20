@@ -25,7 +25,7 @@ try{
   for(const label of ['Announce captions to screen readers','Single-key shortcuts','Use shortcuts across this page'])assert.equal(await group.getByLabel(label,{exact:true}).count(),1);
   assert.equal(await panel.getByRole('button',{name:'Reset appearance',exact:true}).count(),1);assert.equal(await panel.getByText(/Font: system/).count(),0);
   assert.equal(await panel.getByRole('button',{name:'Reset readability'}).count(),0);
-  const paces=await panel.locator('#reading-speed option').evaluateAll(o=>o.map(x=>x.textContent));
+  const paces=await panel.locator('.pace-options label').evaluateAll(o=>o.map(x=>x.textContent.trim()));
   const keepUp=panel.getByRole('switch',{name:'Help me keep up'});
   assert.equal(await keepUp.getAttribute('aria-describedby'),'keep-up-help');assert.match(await panel.locator('#keep-up-help').innerText(),/Shorter sound captions/);
   assert.equal(await keepUp.evaluate(el=>el.accessibleDescription??null).catch(()=>null)===null||true,true);

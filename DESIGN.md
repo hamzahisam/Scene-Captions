@@ -15,3 +15,7 @@ Demo notes must remain visible until verified study material replaces the illust
 The current viewer uses a single-column film surface. CC opens caption settings inside the fullscreen boundary; narrow layouts place the panel below the picture. Amount, punctuation and appearance are independent. Changes apply immediately; a labelled sample stays in place without a seek or pause. Research controls and future sound text are in a collapsed drawer and hidden in study mode. Original supports click and temporary hold comparison.
 
 Caption size follows the player container, with reserved space for wrapped transport controls. Sound type uses glyphs/shapes alongside colour. Preset backdrops preserve contrast; outline mode explicitly cannot guarantee it against every picture. Existing palette and visible controls remain. No new font is bundled. These supersede the older sidebar/draft-preview descriptions above.
+
+## Zone Record — 20 November 2026
+
+Neutral ramp z0–z7 (#fafafa → #111114) does all tonal work; magenta #c8146e (lighter #ff6fb0 on dark) marks the current choice only. Selected state = inverted ink plus a magenta underline, never colour alone. Detail level is also drawn as hatch density (Essential sparse, Balanced medium, Rich dense) and the timeline's sound-density bins use the same hatching. Interactive targets are at least 44px; text on controls is at least 14px. Left rail at 1100px+, top bar below. Caption rendering (size, backdrop, colour, sound styling) is unchanged. Tokens and rules live in `src/app/zone-record.css`, loaded after `globals.css`.
