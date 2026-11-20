@@ -1,14 +1,10 @@
 import soarQuestions from "../../data/study/soar-questions.json";
 import {questionFileSchema} from "@/lib/study-surveys";
 import bunnyAnnotations from "../../data/cue-annotations/big-buck-bunny.json";
-import sintelAnnotations from "../../data/cue-annotations/sintel.json";
-import tearsAnnotations from "../../data/cue-annotations/tears-of-steel.json";
 import soarAnnotations from "../../data/cue-annotations/soar.json";
 import hairAnnotations from "../../data/cue-annotations/hair-love.json";
 import {validateAnnotations} from "@/lib/cue-annotations";
 import bunny from "../../data/captions/big-buck-bunny.json";
-import sintel from "../../data/captions/sintel.json";
-import tears from "../../data/captions/tears-of-steel.json";
 import simpleBunny from "../../data/source-assisted-captions/big-buck-bunny-controls.json";
 import soar from "../../data/source-assisted-captions/soar.json";
 import hairLove from "../../data/source-assisted-captions/hair-love.json";
@@ -33,10 +29,8 @@ function mediaSource(variable: string, localPath: string) {
 export default function Home() {
   const films = [
     { data: videoSchema.parse(bunny), sourceAssistedData: sourceAssistedTrackFor(videoSchema.parse(bunny), simpleBunny), source: mediaSource("DEMO_VIDEO_URL", "/media/big-buck-bunny.mp4"), poster: "/media/bunny-poster.jpg", credit: "Blender Foundation · 2008" },
-    { data: videoSchema.parse(sintel), source: mediaSource("SINTEL_VIDEO_URL", "/media/sintel.mp4"), poster: "/media/sintel-poster.jpg", credit: "Blender Foundation · 2010" },
-    { data: videoSchema.parse(tears), source: mediaSource("TEARS_OF_STEEL_VIDEO_URL", "/media/tears-of-steel.mp4"), poster: "/media/tears-of-steel-poster.jpg", credit: "Blender Foundation · 2012" },
     { data: videoSchema.parse(soar), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/soar.mp4", poster: "/media/soar-poster.jpg", credit: "Alyce Tzue · TheCGBros" },
     { data: videoSchema.parse(hairLove), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/hair-love.mp4", poster: "/media/hair-love-poster.jpg", credit: "Sony Pictures Animation · 2019" },
   ];
-  return <><Header /><ScreeningRoom films={films.map(film=>({...film,questions:film.data.video_id==="soar"?questionFileSchema.parse(soarQuestions):undefined,annotations:validateAnnotations(film.sourceAssistedData||film.data,({"big-buck-bunny":bunnyAnnotations,"sintel":sintelAnnotations,"tears-of-steel":tearsAnnotations,"soar":soarAnnotations,"hair-love":hairAnnotations})[film.data.video_id as "big-buck-bunny"])}))} /></>;
+  return <><Header /><ScreeningRoom films={films.map(film=>({...film,questions:film.data.video_id==="soar"?questionFileSchema.parse(soarQuestions):undefined,annotations:validateAnnotations(film.sourceAssistedData||film.data,({"big-buck-bunny":bunnyAnnotations,"soar":soarAnnotations,"hair-love":hairAnnotations})[film.data.video_id as "big-buck-bunny"])}))} /></>;
 }

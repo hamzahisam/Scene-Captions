@@ -41,7 +41,7 @@ try{
  assert.equal(overridden?.slotOverride?.reason,'Room schedule requires the first sequence again.');
  assert.match(await status.textContent(),/Override reason recorded\./);
  await page.getByLabel('Three fixed detail conditions (Essential, Balanced, Rich)',{exact:true}).check();
- await page.getByLabel('Sintel (dialogue only)',{exact:true}).check();
+ await page.getByLabel('Big Buck Bunny',{exact:true}).check();
  await page.getByText('Next unused three-condition pilot slot: 0.').waitFor();
  await create('P-004');
  await status.filter({hasText:'Saved pilot slot: pilot-3-0.'}).waitFor();
@@ -55,16 +55,16 @@ try{
  await create('P-005');
  await status.filter({hasText:'Saved fixed allocation: frequent-1.'}).waitFor();
  const between0=await sessionFor('P-005');
- assert.deepEqual(between0?.sequence.map(x=>x.filmId),['sintel','soar','hair-love']);
+ assert.deepEqual(between0?.sequence.map(x=>x.filmId),['big-buck-bunny','soar','hair-love']);
  await create('P-006');
  await status.filter({hasText:'Saved fixed allocation: frequent-2.'}).waitFor();
  const between1=await sessionFor('P-006');
- assert.deepEqual(between1?.sequence.map(x=>x.filmId),['soar','hair-love','sintel']);
+ assert.deepEqual(between1?.sequence.map(x=>x.filmId),['soar','hair-love','big-buck-bunny']);
  assert.ok(between1?.sequence.every(x=>x.condition===between1.sequence[0].condition));
  await page.reload();
  const saved=await registry();
  assert.equal(Object.values(saved.sessions).length,6);
- assert.deepEqual(Object.values(saved.sessions).find(s=>s.participantId==='P-006')?.sequence.map(x=>x.filmId),['soar','hair-love','sintel']);
+ assert.deepEqual(Object.values(saved.sessions).find(s=>s.participantId==='P-006')?.sequence.map(x=>x.filmId),['soar','hair-love','big-buck-bunny']);
  await page.getByLabel('Design',{exact:true}).selectOption('within-pilot');
  await page.getByText('Next unused two-condition pilot slot: 2.').waitFor();
  await page.getByLabel('Three fixed detail conditions (Essential, Balanced, Rich)',{exact:true}).check();
