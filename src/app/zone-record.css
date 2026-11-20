@@ -321,26 +321,6 @@ body:has(.watch-column) .workspace a,body:has(.watch-column) .film-library a{col
 .caption-settings.docked .dock-legend{margin-bottom:6px}
 .caption-settings.docked .amount-options legend{font-size:12px;color:#b9b9c0}
 
-/* Collapsible docked settings: open by default, one click to give the picture the full width back. */
-.settings-dock-wrap{display:none}
-.player-shell.docked .settings-dock-wrap{display:block;position:sticky;top:12px;align-self:start}
-.settings-dock.on{position:static;max-height:calc(100dvh - 24px)}
-.dock-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;background:#2e2e33;color:#fff;border:1px solid #6b6b72;border-radius:4px;font:600 14px/1 var(--font);cursor:pointer}
-.dock-toggle:hover{background:#3a3a42;border-color:#bebec2}
-.player-shell.docked .dock-toggle{position:absolute;top:12px;right:12px;z-index:2}
-.player-shell.docked:not(.dock-collapsed) .dock-head{padding-right:104px}
-.player-shell.docked.dock-collapsed{grid-template-columns:minmax(0,1fr) 56px}
-.dock-collapsed .settings-dock{display:none}
-.dock-collapsed .dock-toggle{position:static;flex-direction:column;justify-content:center;width:56px;min-height:190px;padding:12px 0;gap:12px;background:#1b1b20;border-color:#3a3a42}
-.dock-collapsed .dock-toggle-label{writing-mode:vertical-rl;letter-spacing:.04em}
-@media(prefers-reduced-motion:no-preference){.player-shell.docked{transition:grid-template-columns .2s ease-out}}
-
-/* Timeline sound markers: a quiet ruler above the bar, never drawn over it. */
-.timeline-track{padding-top:14px}
-.sound-markers{top:0;height:12px;left:0;right:0}
-.sound-markers .sound-bin{top:0;bottom:auto;height:100%;background:#fff;border-radius:2px;mix-blend-mode:normal}
-.sound-markers .sound-tick{top:auto;bottom:0;height:8px;width:2px;background:#fff;opacity:.95;border-radius:1px}
-
 /* Switching film: the layout keeps its shape and the new film eases in instead of snapping. */
 @media(prefers-reduced-motion:no-preference){
   .watch-layout{animation:film-in .32s cubic-bezier(.22,.61,.36,1) both}
@@ -349,18 +329,10 @@ body:has(.watch-column) .workspace a,body:has(.watch-column) .film-library a{col
 @keyframes film-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .video-frame video,.video-stage{background:#111114}
 /* The docked panel must not outrank its own Hide button. */
-.caption-settings.docked{z-index:auto}
-.player-shell.docked .dock-toggle{z-index:20}
 
 /* Sound density strip: even bars, taller where more sounds fall in a 5 s span. */
 .sound-markers{top:0;height:14px}
 .sound-markers .sound-bin{top:auto;bottom:0;background:rgba(255,255,255,.85);border-radius:2px 2px 0 0;opacity:1;min-height:3px}
-
-/* ---- Collapsed desktop panel: a normal horizontal button in the title row ---- */
-.player-shell.docked.dock-collapsed{grid-template-columns:minmax(0,1fr)}
-.dock-collapsed .settings-dock-wrap{grid-row:1;grid-column:1;justify-self:end;position:relative;top:auto;height:0;margin-top:-54px;overflow:visible;z-index:5}
-.dock-collapsed .dock-toggle{position:static;flex-direction:row;width:auto;min-height:44px;padding:0 14px;gap:10px;background:#2e2e33;border:1px solid #6b6b72}
-.dock-collapsed .dock-toggle-label{writing-mode:horizontal-tb;letter-spacing:0}
 
 /* ---- Phones and tablets: settings live below the picture, with a clear full-width entry ---- */
 .settings-bar{display:none}
@@ -374,3 +346,29 @@ body:has(.watch-column) .workspace a,body:has(.watch-column) .film-library a{col
 }
 .dock-toggle,.dock-toggle-label{white-space:nowrap}
 .dock-collapsed .dock-toggle{width:max-content}
+
+
+/* ---- Docked settings: collapsible with one smooth motion ---- */
+.settings-dock-wrap{display:none}
+.player-shell.docked{position:relative;column-gap:0;grid-template-columns:minmax(0,1fr) 400px}
+.player-shell.docked .player-main{padding-right:20px}
+.player-shell.docked.dock-collapsed{grid-template-columns:minmax(0,1fr) 0px}
+.player-shell.docked.dock-collapsed .player-main{padding-right:0}
+.player-shell.docked .settings-dock-wrap{display:block;position:sticky;top:12px;align-self:start;min-width:0;overflow:hidden;opacity:1;visibility:visible}
+.settings-dock.on{position:static;width:380px;max-height:calc(100dvh - 24px)}
+.caption-settings.docked{z-index:auto}
+.player-shell.docked.dock-collapsed .settings-dock-wrap{opacity:0;visibility:hidden;pointer-events:none}
+.dock-toggle{position:absolute;z-index:20;top:12px;right:32px;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;background:#2e2e33;color:#fff;border:1px solid #6b6b72;border-radius:4px;font:600 14px/1 var(--font);cursor:pointer;white-space:nowrap}
+.dock-toggle:hover{background:#3a3a42;border-color:#bebec2}
+.dock-toggle-label{white-space:nowrap}
+.player-shell.docked.dock-collapsed .dock-toggle{top:-54px;right:0}
+.player-shell.docked:not(.dock-collapsed) .dock-head{padding-right:104px}
+@media(prefers-reduced-motion:no-preference){
+  .player-shell.docked{transition:grid-template-columns .3s cubic-bezier(.22,.61,.36,1)}
+  .player-shell.docked .player-main{transition:padding-right .3s cubic-bezier(.22,.61,.36,1)}
+  .player-shell.docked .settings-dock-wrap{transition:opacity .22s ease-out,visibility 0s}
+  .player-shell.docked.dock-collapsed .settings-dock-wrap{transition:opacity .18s ease-out,visibility 0s .3s}
+  .settings-dock.on{transition:transform .3s cubic-bezier(.22,.61,.36,1)}
+  .player-shell.docked.dock-collapsed .settings-dock.on{transform:translateX(24px)}
+  .dock-toggle{transition:top .3s cubic-bezier(.22,.61,.36,1),right .3s cubic-bezier(.22,.61,.36,1),background .15s ease-out}
+}
