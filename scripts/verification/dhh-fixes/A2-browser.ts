@@ -54,13 +54,13 @@ try {
   let stored=await page.evaluate((key:string)=>JSON.parse(localStorage.getItem(key)||'{}'),key);assert.equal(stored.detail,fixed?initial.detail:2);
   await page.getByRole('button',{name:'Keyboard shortcuts',exact:true}).click();
   const help=page.getByRole('dialog',{name:'Keyboard shortcuts',exact:true});await help.waitFor();
-  assert.equal(await help.getByText('Original; hold to compare',{exact:true}).count(),fixed?0:1);assert.equal(await help.getByText('Less / more detail',{exact:true}).count(),fixed?0:1);assert.equal(await help.getByText('Caption settings',{exact:true}).count(),1);assert.equal(await help.getByText('Smaller / larger text',{exact:true}).count(),1);
+  assert.equal(await help.getByText('Original; hold to compare',{exact:true}).count(),0);assert.equal(await help.getByText('Less / more detail',{exact:true}).count(),fixed?0:1);assert.equal(await help.getByText('Caption settings',{exact:true}).count(),1);assert.equal(await help.getByText('Smaller / larger text',{exact:true}).count(),1);
   await help.getByRole('button',{name:'Close help'}).click();
   const events=await page.evaluate(()=>Object.keys(localStorage).filter(k=>k.startsWith('scenecaptions.telemetry.v2.')&&/\.\d+$/.test(k)).flatMap(k=>JSON.parse(localStorage.getItem(k)||'[]')));
   const changes=events.filter((e:any)=>e.type==='profile_change'&&e.source==='participant');
   for(const field of ['size','position','backdrop','textColor','announceCaptions','shortcuts','pageWideShortcuts'])assert.ok(changes.some((e:any)=>e.field===field),`${condition}: missing ${field} telemetry`);
   if(fixed){assert.ok(changes.every((e:any)=>['size','position','backdrop','textColor','announceCaptions','shortcuts','pageWideShortcuts'].includes(e.field)));assert.equal(events.filter((e:any)=>e.type==='original').length,0)}
-  else {assert.ok(changes.some((e:any)=>e.field==='detail'));assert.ok(events.some((e:any)=>e.type==='original'))}
+  else {assert.ok(changes.some((e:any)=>e.field==='detail'));assert.equal(events.filter((e:any)=>e.type==='original').length,0)}
   // Disable single-key shortcuts, then prove the effective preferences survive reload.
   await cc.click();await openAppearance(panel);await panel.getByLabel('Single-key shortcuts',{exact:true}).uncheck();await panel.getByRole('button',{name:'Close caption settings'}).click();
   await page.reload();await cc.waitFor();await cc.click();await openAppearance(panel);

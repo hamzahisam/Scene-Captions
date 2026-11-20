@@ -20,13 +20,12 @@ try{
  let e=await events();const cond=e.filter(x=>x.type==='condition');
  assert.equal(cond.length,1);assert.deepEqual([cond[0].from,cond[0].condition,cond[0].source],['personalized','baseline','researcher']);
  assert.equal(e.filter(x=>x.type==='profile_change'&&x.field==='condition').length,0);assert.equal(e.filter(x=>x.type==='original').length,originals0);
- // Original on, then switch: the condition event plus one Original-off event.
+ // Original captions control was removed from the UI: a switch emits the condition event and no original events.
  await baseline.click();await page.waitForTimeout(100);assert.equal((await events()).filter(x=>x.type==='condition').length,1);
  await personalized.click();await page.waitForTimeout(150);
- await page.getByRole('button',{name:'Original captions',exact:true}).click();await page.waitForTimeout(150);
- const before=await events();const onBefore=before.filter(x=>x.type==='original'&&x.enabled===true).length,offBefore=before.filter(x=>x.type==='original'&&x.enabled===false).length;assert.equal(onBefore,1);
+ const before=await events();const onBefore=before.filter(x=>x.type==='original'&&x.enabled===true).length,offBefore=before.filter(x=>x.type==='original'&&x.enabled===false).length;assert.equal(onBefore,0);
  await baseline.click();await page.waitForTimeout(200);
- e=await events();assert.equal(e.filter(x=>x.type==='condition').length,3);assert.equal(e.filter(x=>x.type==='original'&&x.enabled===false).length,offBefore+1);
+ e=await events();assert.equal(e.filter(x=>x.type==='condition').length,3);assert.equal(e.filter(x=>x.type==='original'&&x.enabled===false).length,offBefore);
  assert.equal(e.filter(x=>x.type==='profile_change'&&x.field==='condition').length,0);
  assert.deepEqual(errors,[]);
  writeFileSync('artifacts/dhh-fixes/C7-browser.json',JSON.stringify({synthetic_media:true,conditionEvents:e.filter(x=>x.type==='condition'),originalEvents:e.filter(x=>x.type==='original'),errors},null,2));

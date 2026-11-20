@@ -8,7 +8,6 @@ export function usePlayerShortcuts(frame:RefObject<HTMLElement|null>,enabled:boo
  if(e.key==='Escape'){a.close();return}if(e.key===' '&&el.closest('button,a,summary'))return;
  if(!enabled&&![' ','ArrowLeft','ArrowRight'].includes(e.key))return;
  const key=e.key.toLowerCase();const commands:Record<string,()=>void>={' ':a.toggle,k:a.toggle,j:()=>a.seek(-5),l:()=>a.seek(5),arrowleft:()=>a.seek(-5),arrowright:()=>a.seek(5),c:a.settings,...(a.soundControls!==false?{'[':()=>a.amount(-1),']':()=>a.amount(1)}:{}),'-':()=>a.size(-1),'=':()=>a.size(1),f:a.fullscreen,p:()=>a.sound('previous'),n:()=>a.sound('next'),'?':a.help};
- if(key==='o'&&a.soundControls!==false){e.preventDefault();if(e.repeat||pressed)return;pressed=true;previous=a.originalEnabled;timer=setTimeout(()=>{held=true;latest.current.original(true,'hold')},350);return}
  if(commands[key]){e.preventDefault();commands[key]()}}
  function up(event:Event){const e=event as KeyboardEvent;if(e.key.toLowerCase()!=='o'||!pressed)return;pressed=false;if(timer)clearTimeout(timer);if(held){held=false;latest.current.original(previous,'hold')}else latest.current.original(!previous,'toggle')}
  function cancel(){if(timer)clearTimeout(timer);if(held)latest.current.original(previous,'hold');held=false;pressed=false}
