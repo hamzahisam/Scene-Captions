@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync} from 'node:fs';
 const {chromium}=await import(process.env.PLAYWRIGHT_PATH||'/Users/zuhairmerchant/TexPilot/yarn-erp/node_modules/playwright/index.mjs');
 const data=JSON.parse(readFileSync('data/source-assisted-captions/big-buck-bunny-controls.json','utf8'));
-const browser=await chromium.launch({channel:'chrome',headless:true}),page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];
+const browser=await chromium.launch({channel:'chrome',headless:true}),page=await browser.newPage({viewport:{width:1000,height:900}}),errors=[];
 page.on('pageerror',e=>errors.push(e.message));
 try{
  await page.addInitScript(d=>{Object.defineProperty(HTMLMediaElement.prototype,'duration',{get(){return d}});Object.defineProperty(HTMLMediaElement.prototype,'readyState',{get(){return 1}});const t=new WeakMap();Object.defineProperty(HTMLMediaElement.prototype,'currentTime',{get(){return t.get(this)||0},set(v){t.set(this,v);queueMicrotask(()=>this.dispatchEvent(new Event('seeked')))}})},data.duration_seconds);

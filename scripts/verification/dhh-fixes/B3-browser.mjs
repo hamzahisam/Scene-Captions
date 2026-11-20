@@ -20,7 +20,7 @@ const browser=await chromium.launch({channel:'chrome',headless:true}),results=[]
 try {
  for(const skipped of [false,true]){
   const session=studySessionSchema.parse({id:`B3-synthetic-${skipped?'skipped':'complete'}`,participantId:'P-303',group:'adult',background:'frequent',design:'between',seed:'B3',allocationSlot:'test',sequence:[{filmId:'soar',condition:'personalized'}],sequenceIndex:0,readingSpeed:17,instruments:{custom:false,tlx:true,childItems:[]},createdAt:'2026-11-15T00:00:00.000Z',researcher:await hashResearcherCode('012345')});
-  const context=await browser.newContext({viewport:skipped?{width:390,height:844}:{width:1280,height:900}}),page=await context.newPage(),errors=[];
+  const context=await browser.newContext({viewport:skipped?{width:390,height:844}:{width:1000,height:900}}),page=await context.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(({registryKey,session})=>{
    localStorage.setItem(registryKey,JSON.stringify({seed:'B3',allocations:[],sessions:{[session.id]:session}}));

@@ -33,14 +33,6 @@ h1{font-weight:700}
 .header-inner nav a[aria-current=page]{background:var(--z6);color:#fff;border:0;font-weight:600;box-shadow:inset 0 -3px var(--mag)}
 .lab-nav>div{background:var(--z7);border:1px solid var(--z6);border-radius:4px}.lab-nav>div a{color:var(--z2)}
 .phase-label{display:none}
-@media(min-width:1100px){
-  body{padding-left:var(--rail)}
-  .site-header{position:fixed;inset:0 auto 0 0;width:var(--rail);z-index:20;overflow:auto}
-  .header-inner{flex-direction:column;align-items:stretch;padding:20px 12px;gap:18px}
-  .header-inner nav{flex-direction:column;align-items:stretch;gap:2px}
-  .header-inner nav a,.lab-nav>summary{width:100%}
-  .lab-nav>div{position:static;border:0;background:transparent;padding-left:12px}
-}
 
 /* Page rhythm */
 .workspace{max-width:1180px;padding:24px 28px 0}.watch-heading h1{font-size:26px}
@@ -68,10 +60,10 @@ h1{font-weight:700}
 .icon-button:hover{background:rgba(255,255,255,.18)}
 .help-button{min-width:44px;min-height:44px}
 .video-controls button,.video-controls select{min-height:44px}
-.sound-markers{top:-6px;height:34px}
-.sound-markers .sound-bin{top:0;bottom:0;height:100%;border-radius:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.95) 0 1px,transparent 1px 5px);opacity:1!important;mix-blend-mode:normal}
-.sound-markers .sound-tick{bottom:0;top:auto;height:12px;width:3px;background:#fff}
-.timeline-track{padding-top:6px}
+
+
+
+
 
 /* In-frame caption settings: a dark exposure card over the picture. */
 .caption-settings{background:var(--z7);border:1px solid var(--z5);border-radius:3px;color:#fff;width:340px}
@@ -112,7 +104,6 @@ h1{font-weight:700}
 input[type=range]{accent-color:var(--mag)}
 @media(max-width:1099px){.workspace{padding:16px 14px 0}.caption-settings{width:min(340px,92%)}}
 @media(forced-colors:active){.seg>label:has(input:checked),.amount-options>label:has(input:checked){outline:3px solid Highlight}}
-@media(min-width:1100px){.header-inner nav a,.lab-nav>summary{justify-content:flex-start}.lab-nav>summary{list-style:none}}
 .video-controls button:not(.icon-button){border-radius:3px}
 /* Settings card layout polish */
 .caption-settings .seg,.caption-settings .amount-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
@@ -228,3 +219,158 @@ body:has(.watch-column) .workspace a,body:has(.watch-column) .film-library a{col
 @media(max-width:700px){.film-card,.film-card img{min-height:44px}.film-cards{padding-bottom:0}.film-library{margin-top:4px}}
 .film-card .film-tag{justify-self:start;width:max-content;max-width:100%}
 .film-card:has(input:checked)::after{bottom:6px;right:8px}
+
+/* ======== Docked caption settings, slim header, calmer research tools ======== */
+.site-header{position:static}
+.header-inner{padding:10px 28px;min-height:56px;flex-wrap:nowrap}
+.workspace,.film-library{max-width:1500px}
+@media(min-width:1100px){.workspace,.film-library{padding-left:32px;padding-right:32px}}
+
+/* The player and its settings share the first screen. */
+.player-shell{display:block}
+.player-shell.docked{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:20px;align-items:start}
+.player-main{min-width:0}
+.settings-dock:not(.on){display:none}
+.settings-dock.on{position:sticky;top:12px;max-height:calc(100dvh - 24px);display:flex}
+.caption-settings.docked{position:static;inset:auto;width:100%;max-width:none;max-height:none;overflow:auto;padding:18px 18px 22px;background:#1b1b20;border:1px solid #3a3a42;border-radius:6px;color:#f3f3f5;scrollbar-gutter:stable}
+.dock-head h2{margin:0;font-size:20px}
+.dock-head p{margin:4px 0 14px;color:#b9b9c0;font-size:14px}
+.dock-legend{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d4d4d8;margin-bottom:10px;padding:0}
+.dock-sound{border:0;padding:0;margin:0 0 6px}
+.dock-note{padding:10px 12px;background:#26262c;border:1px solid #3a3a42;border-radius:4px;font-size:14px}
+.caption-settings.docked .readability{border-top:1px solid #3a3a42;margin-top:16px;padding-top:14px}
+
+/* Live preview: shows exactly how the chosen size, backdrop and colour will read. */
+.settings-preview{margin:0 0 16px}
+.sp-label{display:block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d4d4d8;margin-bottom:6px}
+.sp-stage{display:grid;place-items:end center;min-height:92px;padding:12px;border-radius:4px;border:1px solid #3a3a42;background:linear-gradient(135deg,#6f8461 0%,#b7c9d9 55%,#e9e2cf 100%)}
+.sp-caption{margin:0;padding:3px 10px;border-radius:2px;text-align:center;line-height:1.35;font-weight:600;max-width:100%}
+.sp-caption.size-standard{font-size:18px}.sp-caption.size-large{font-size:24px}.sp-caption.size-extra-large{font-size:30px}
+.sp-caption.bd-solid{background:#080c08}.sp-caption.bd-translucent{background:rgba(0,0,0,.6)}
+.sp-caption.bd-outline{background:transparent;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000,0 0 5px #000}
+.sp-caption.tc-white{color:#fff}.sp-caption.tc-yellow{color:#ffeb3b}.sp-caption.sp-italic{font-style:italic}
+
+/* In docked mode the control-bar button is redundant: settings are already on screen. */
+.player-shell.docked .cc-button{display:none}
+.caption-settings.docked .amount-options{grid-template-columns:1fr}
+.caption-settings.docked .seg,.caption-settings.docked .amount-options{margin-bottom:12px}
+@media(max-width:1099px){.settings-dock{display:none}}
+
+/* ---------- Research tools: grouped, quiet, one task per block ---------- */
+.research-tools{margin-top:28px;background:#1b1b20;border:1px solid #3a3a42;border-radius:6px;padding:0;color:#f3f3f5}
+.research-tools>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;min-height:56px;padding:12px 20px;cursor:pointer;list-style:none;font-size:17px}
+.research-tools>summary::-webkit-details-marker{display:none}
+.research-tools>summary::before{content:"";width:9px;height:9px;border-right:2px solid #d4d4d8;border-bottom:2px solid #d4d4d8;transform:rotate(-45deg);transition:transform .15s ease-out;margin-right:6px;flex:none}
+.research-tools[open]>summary::before{transform:rotate(45deg)}
+.rt-title{font-weight:700;margin-right:auto}
+.rt-status{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.rt-quiet{font-size:14px;color:#b9b9c0}
+.rt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:4px 20px 24px;border-top:1px solid #3a3a42}
+.rt-col{display:flex;flex-direction:column;gap:20px;min-width:0}
+.rt-section{padding-top:16px;min-width:0}
+.rt-wide{grid-column:1/-1;border-top:1px solid #3a3a42}
+.rt-section h3{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d4d4d8}
+.rt-section p{font-size:15px;line-height:1.5;max-width:68ch;color:#d4d4d8;margin:8px 0}
+.rt-section .card,.rt-section .rehearsal{background:transparent;border:0;padding:0;box-shadow:none;margin:0}
+.rt-section .rehearsal h2{font-size:16px;margin:0 0 6px;color:#f3f3f5}
+.rt-section button{min-height:44px;padding:0 16px;border:1px solid #6b6b72;border-radius:4px;background:#2e2e33;color:#fff;font-weight:600;cursor:pointer;font-size:15px}
+.rt-section button:hover:not(:disabled){background:#3a3a42;border-color:#bebec2}
+.rt-section button:disabled{opacity:.5;cursor:not-allowed}
+.rt-section button.primary-action{background:#fff;color:#111114;border-color:#fff}
+.rt-section button.primary-action:disabled{background:#2e2e33;color:#b9b9c0;border-color:#5a5a60}
+.rt-section button.stop-action{background:#b3261e;border-color:#ff8a80}
+.rt-section .rehearsal>button{margin:4px 8px 4px 0}
+.rt-section label{display:flex;align-items:flex-start;gap:10px;font-size:15px;margin:10px 0;min-height:24px}
+.rt-section input[type=checkbox]{width:22px;height:22px;flex:none;accent-color:var(--mag);margin:0}
+.rt-section select,.rt-section textarea{background:#fafafa;color:#111114;border:1px solid #8e8e94;border-radius:3px;font-size:15px;min-height:44px;padding:6px 8px}
+.rt-section textarea{width:100%;min-height:84px}
+.rt-section fieldset{border:1px solid #3a3a42;border-radius:4px;padding:10px 14px;margin:14px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px 16px}
+.rt-section fieldset legend{font-size:14px;color:#d4d4d8;padding:0 6px}
+.rt-section fieldset label{flex-direction:column;align-items:stretch;gap:4px;margin:6px 0}
+.rec-line{display:flex;align-items:center;gap:8px;font-weight:600;color:#f3f3f5!important}
+.rec-line::before{content:"";width:12px;height:12px;border-radius:50%;border:2px solid #b9b9c0;flex:none}
+.rec-line.on::before{background:#ff3b30;border-color:#ff3b30;box-shadow:0 0 0 3px rgba(255,59,48,.35)}
+@media(prefers-reduced-motion:no-preference){.rec-line.on::before{animation:rec-pulse 1.6s ease-in-out infinite}}
+@keyframes rec-pulse{50%{box-shadow:0 0 0 6px rgba(255,59,48,0)}}
+.rt-section .condition-switch{display:inline-flex;gap:0;background:transparent;border:1px solid #6b6b72;border-radius:4px;overflow:hidden;padding:0;margin:0 0 8px}
+.rt-section .condition-switch button{border:0;border-radius:0;background:transparent;min-width:150px}
+.rt-section .condition-switch button[aria-pressed=true]{background:#fff;color:#111114;box-shadow:inset 0 -3px var(--mag)}
+.rt-section .rt-check{margin-top:14px}
+.rt-section .sound-timeline{background:transparent;border:0;padding:0;margin:0}
+.rt-section .sound-timeline .eyebrow{display:none}
+.rt-section .sound-timeline .section-title h2{font-size:15px;margin:0}
+.rt-section .sound-timeline .cue-list{max-height:360px;overflow:auto;border:1px solid #3a3a42;border-radius:4px}
+.rt-section .cue-row{background:transparent;color:#f3f3f5;border-bottom:1px solid #3a3a42;min-height:44px}
+.rt-section .cue-row.current{background:#2e2e33;box-shadow:inset 0 -3px var(--mag-on-dark)}
+@media(max-width:900px){.rt-grid{grid-template-columns:1fr;padding:4px 14px 18px}.research-tools>summary{padding:10px 14px}}
+
+/* Refinements after first render */
+.rt-section .rehearsal-logs>h3{display:none}
+.rt-section .cue-copy strong,.rt-section .cue-copy strong *{color:#f3f3f5}
+.rt-section .cue-copy small,.rt-section .cue-time,.rt-section .section-title .muted-text{color:#d4d4d8}
+.rt-section .caption-preview-notice,.rt-section .caption-preview-notice *,.rt-section .section-description{color:#d4d4d8}
+.rt-section .caption-preview-notice a,.rt-section a{color:#ff9fc9}
+.rt-section .caption-preview-notice{background:transparent;border:0;padding:0}
+
+/* Compact detail cards: swatch beside the name, sample caption beneath. */
+.caption-settings .amount-options>label{padding:8px 10px}
+.caption-settings .amount-options>label>span{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:10px;row-gap:0;align-items:center}
+.caption-settings .amount-options>label>span::before{grid-row:span 2;height:34px;margin:0;width:56px}
+.caption-settings .amount-options>label>span small{display:block}
+.caption-settings .amount-options>label>span .level-sample{grid-column:1/-1;margin-top:6px}
+.caption-settings.docked .dock-legend{margin-bottom:6px}
+.caption-settings.docked .amount-options legend{font-size:12px;color:#b9b9c0}
+
+/* Collapsible docked settings: open by default, one click to give the picture the full width back. */
+.settings-dock-wrap{display:none}
+.player-shell.docked .settings-dock-wrap{display:block;position:sticky;top:12px;align-self:start}
+.settings-dock.on{position:static;max-height:calc(100dvh - 24px)}
+.dock-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;background:#2e2e33;color:#fff;border:1px solid #6b6b72;border-radius:4px;font:600 14px/1 var(--font);cursor:pointer}
+.dock-toggle:hover{background:#3a3a42;border-color:#bebec2}
+.player-shell.docked .dock-toggle{position:absolute;top:12px;right:12px;z-index:2}
+.player-shell.docked:not(.dock-collapsed) .dock-head{padding-right:104px}
+.player-shell.docked.dock-collapsed{grid-template-columns:minmax(0,1fr) 56px}
+.dock-collapsed .settings-dock{display:none}
+.dock-collapsed .dock-toggle{position:static;flex-direction:column;justify-content:center;width:56px;min-height:190px;padding:12px 0;gap:12px;background:#1b1b20;border-color:#3a3a42}
+.dock-collapsed .dock-toggle-label{writing-mode:vertical-rl;letter-spacing:.04em}
+@media(prefers-reduced-motion:no-preference){.player-shell.docked{transition:grid-template-columns .2s ease-out}}
+
+/* Timeline sound markers: a quiet ruler above the bar, never drawn over it. */
+.timeline-track{padding-top:14px}
+.sound-markers{top:0;height:12px;left:0;right:0}
+.sound-markers .sound-bin{top:0;bottom:auto;height:100%;background:#fff;border-radius:2px;mix-blend-mode:normal}
+.sound-markers .sound-tick{top:auto;bottom:0;height:8px;width:2px;background:#fff;opacity:.95;border-radius:1px}
+
+/* Switching film: the layout keeps its shape and the new film eases in instead of snapping. */
+@media(prefers-reduced-motion:no-preference){
+  .watch-layout{animation:film-in .32s cubic-bezier(.22,.61,.36,1) both}
+  .film-card{transition:border-color .15s ease-out,box-shadow .2s ease-out}
+}
+@keyframes film-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.video-frame video,.video-stage{background:#111114}
+/* The docked panel must not outrank its own Hide button. */
+.caption-settings.docked{z-index:auto}
+.player-shell.docked .dock-toggle{z-index:20}
+
+/* Sound density strip: even bars, taller where more sounds fall in a 5 s span. */
+.sound-markers{top:0;height:14px}
+.sound-markers .sound-bin{top:auto;bottom:0;background:rgba(255,255,255,.85);border-radius:2px 2px 0 0;opacity:1;min-height:3px}
+
+/* ---- Collapsed desktop panel: a normal horizontal button in the title row ---- */
+.player-shell.docked.dock-collapsed{grid-template-columns:minmax(0,1fr)}
+.dock-collapsed .settings-dock-wrap{grid-row:1;grid-column:1;justify-self:end;position:relative;top:auto;height:0;margin-top:-54px;overflow:visible;z-index:5}
+.dock-collapsed .dock-toggle{position:static;flex-direction:row;width:auto;min-height:44px;padding:0 14px;gap:10px;background:#2e2e33;border:1px solid #6b6b72}
+.dock-collapsed .dock-toggle-label{writing-mode:horizontal-tb;letter-spacing:0}
+
+/* ---- Phones and tablets: settings live below the picture, with a clear full-width entry ---- */
+.settings-bar{display:none}
+@media(max-width:1099px){
+  .settings-bar{display:flex;align-items:center;gap:12px;width:100%;min-height:60px;margin:10px 0 0;padding:10px 14px;background:#1b1b20;color:#f3f3f5;border:1px solid #3a3a42;border-radius:6px;text-align:left;font:inherit;cursor:pointer}
+  .settings-bar:hover{border-color:#bebec2}
+  .settings-bar-text{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+  .settings-bar-text strong{font-size:16px}
+  .settings-bar-text small{font-size:14px;color:#d4d4d8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .settings-bar:focus-visible{outline:3px solid var(--mag-on-dark);outline-offset:2px}
+}
+.dock-toggle,.dock-toggle-label{white-space:nowrap}
+.dock-collapsed .dock-toggle{width:max-content}

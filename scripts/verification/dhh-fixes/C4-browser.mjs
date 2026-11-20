@@ -8,7 +8,7 @@ const base=process.argv[2]||'http://127.0.0.1:3000',browser=await chromium.launc
 const init=()=>{Object.defineProperty(HTMLMediaElement.prototype,'duration',{get(){return 596.461678}});Object.defineProperty(HTMLMediaElement.prototype,'readyState',{get(){return 1}});const t=new WeakMap();Object.defineProperty(HTMLMediaElement.prototype,'currentTime',{get(){return t.get(this)||0},set(v){t.set(this,v);queueMicrotask(()=>this.dispatchEvent(new Event('seeked')))}})};
 try{
  for(const mode of ['demo','session']){
-  const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+  const page=await browser.newPage({viewport:{width:1000,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(init);
   if(mode==='session'){
    const session=studySessionSchema.parse({id:'C4-synthetic-session',participantId:'P-404',group:'adult',background:'frequent',design:'between',seed:'C4',allocationSlot:'t',sequence:[{filmId:'big-buck-bunny',condition:'personalized'}],readingSpeed:15,createdAt:'2026-11-15T00:00:00.000Z'});
@@ -19,8 +19,9 @@ try{
   await page.getByRole('button',{name:'Caption settings',exact:true}).click();
   const panel=page.getByRole('dialog',{name:'Caption settings',exact:true});await panel.waitFor();
   assert.equal(await panel.locator('details.readability').evaluate(d=>d.open),true);
-  // Text size is the first control in the panel.
-  const first=await panel.locator('select,input').first().getAttribute('id');assert.equal(first,'size');
+  // Sound captions (the product's core) come first when available; otherwise Text size is first. Size always precedes Accessibility.
+  const firstEl=panel.locator('select,input').first();const first=(await firstEl.getAttribute('name'))==='amount'?'amount':await firstEl.getAttribute('id');assert.ok(first==='amount'||first==='size',`first control was ${first}`);
+  assert.equal(await panel.evaluate(el=>{const a=el.querySelector('#size'),b=el.querySelector('.accessibility-options');return !!a&&!!b&&!!(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING)}),true);
   const group=panel.getByRole('group',{name:'Accessibility',exact:true});
   for(const label of ['Announce captions to screen readers','Single-key shortcuts','Use shortcuts across this page'])assert.equal(await group.getByLabel(label,{exact:true}).count(),1);
   assert.equal(await panel.getByRole('button',{name:'Reset appearance',exact:true}).count(),1);assert.equal(await panel.getByText(/Font: system/).count(),0);

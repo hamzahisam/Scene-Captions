@@ -9,7 +9,7 @@ const data=videoSchema.parse(JSON.parse(readFileSync('data/source-assisted-capti
 const profile={...DEFAULT_PROFILE,detail:3 as const,readingSpeed:17 as const};
 const expected=resolveCaptionWindows(data,profile,'personalized',false,true).find(w=>w.extended&&!w.caption.adapted)!;
 const browser=await chromium.launch({channel:'chrome',headless:true});
-const page=await browser.newPage({viewport:{width:1280,height:900}});
+const page=await browser.newPage({viewport:{width:1000,height:900}});
 const errors:string[]=[];page.on('pageerror',(e:Error)=>errors.push(e.message));
 try {
  await page.addInitScript(({duration,profile}:{duration:number;profile:typeof DEFAULT_PROFILE})=>{

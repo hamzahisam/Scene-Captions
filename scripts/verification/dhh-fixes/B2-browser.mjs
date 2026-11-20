@@ -8,7 +8,7 @@ const browser=await chromium.launch({channel:'chrome',headless:true}),results=[]
 try {
  for(const group of ['child','adult']){
   const session=studySessionSchema.parse({id:`B2-synthetic-${group}`,participantId:'P-202',group,background:'frequent',design:'between',seed:'B2',allocationSlot:'test',sequence:[{filmId:'soar',condition:'personalized'}],sequenceIndex:0,readingSpeed:17,checkpoints:{soar:[2,20]},instruments:{custom:true,tlx:false,childItems:['readability','control','story']},createdAt:'2026-11-15T00:00:00.000Z'});
-  const context=await browser.newContext({viewport:{width:1280,height:900}}),page=await context.newPage(),errors=[];
+  const context=await browser.newContext({viewport:{width:1000,height:900}}),page=await context.newPage(),errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(({registryKey,session})=>{
    localStorage.setItem(registryKey,JSON.stringify({seed:'B2',allocations:[],sessions:{[session.id]:session}}));

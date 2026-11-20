@@ -8,7 +8,7 @@ const base=process.argv[2]||'http://127.0.0.1:3000',shots='artifacts/dhh-fixes/s
 const durations={soar:374.352109,'hair-love':407.881723},browser=await chromium.launch({channel:'chrome',headless:true}),out={};
 const init=d=>{const dur=d;Object.defineProperty(HTMLMediaElement.prototype,'duration',{get(){return /hair/i.test(this.currentSrc||this.src||'')?dur['hair-love']:dur.soar}});Object.defineProperty(HTMLMediaElement.prototype,'readyState',{get(){return 1}});const t=new WeakMap();Object.defineProperty(HTMLMediaElement.prototype,'currentTime',{get(){return t.get(this)||0},set(v){t.set(this,v);queueMicrotask(()=>this.dispatchEvent(new Event('seeked')))}})};
 try{
- for(const [name,viewport] of [['desktop',{width:1280,height:800}],['mobile',{width:390,height:844}]]){
+ for(const [name,viewport] of [['desktop',{width:1000,height:800}],['mobile',{width:390,height:844}]]){
   const context=await browser.newContext({viewport}),page=await context.newPage(),errors=[],uploads=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(r.method()!=='GET'&&r.method()!=='HEAD'&&!r.url().startsWith('data:'))uploads.push(r.method()+' '+r.url());else if(!r.url().startsWith(base)&&!r.url().startsWith('data:')&&!r.url().startsWith('blob:')&&!/\.mp4(\?|$)/.test(r.url()))uploads.push(r.url())});
   await page.addInitScript(init,durations);await page.route('**/*.mp4',r=>r.abort());

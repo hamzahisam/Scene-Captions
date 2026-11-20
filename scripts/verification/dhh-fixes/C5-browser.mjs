@@ -4,7 +4,7 @@ import {writeFileSync} from 'node:fs';
 const {chromium}=await import(process.env.PLAYWRIGHT_PATH||'/Users/zuhairmerchant/TexPilot/yarn-erp/node_modules/playwright/index.mjs');
 const browser=await chromium.launch({channel:'chrome',headless:true}),out={};
 try{
- for(const [name,viewport] of [['desktop',{width:1280,height:800}],['mobile',{width:390,height:844}]]){
+ for(const [name,viewport] of [['desktop',{width:1000,height:800}],['mobile',{width:390,height:844}]]){
   const page=await browser.newPage({viewport}),errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(()=>{Object.defineProperty(HTMLMediaElement.prototype,'duration',{get(){return 596.461678}});Object.defineProperty(HTMLMediaElement.prototype,'readyState',{get(){return 1}})});
   await page.route('**/*.mp4',r=>r.abort());await page.goto(process.argv[2]||'http://127.0.0.1:3000');

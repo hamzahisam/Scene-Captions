@@ -14,7 +14,7 @@ const results=[];
 try {
  for(const [index,condition] of (['baseline','personalized','essential','balanced','rich'] as const).entries()){
   const session=studySessionSchema.parse({id:`A2-synthetic-${condition}`,participantId:`P-${200+index}`,group:'adult',background:'frequent',design:'between',seed:'A2',allocationSlot:'test',sequence:[{filmId:data.video_id,condition}],readingSpeed:20,instruments:{custom:false,tlx:false,childItems:[]},createdAt:'2026-11-15T00:00:00.000Z'});
-  const key=profileNamespace(session),context=await browser.newContext({viewport:{width:1280,height:900}}),page=await context.newPage();
+  const key=profileNamespace(session),context=await browser.newContext({viewport:{width:1000,height:900}}),page=await context.newPage();
   const errors:string[]=[];page.on('pageerror',(e:Error)=>errors.push(e.message));page.on('dialog',(dialog:any)=>dialog.accept());
   await page.addInitScript(({duration,profile,key,registryKey,session}:any)=>{
    if(!localStorage.getItem(registryKey)){localStorage.setItem(registryKey,JSON.stringify({seed:'A2',allocations:[],sessions:{[session.id]:session}}));localStorage.setItem(key,JSON.stringify(profile))}

@@ -82,7 +82,7 @@ const measure = () => {
     viewport: {w: innerWidth, h: innerHeight}, scrollX, scrollY, docScrollWidth: document.documentElement.scrollWidth,
     fullscreen: !!document.fullscreenElement,
     header: rect(q('.site-header')), filmLibrary: rect(q('.film-library')), resumeBanner: rect(q('.resume-banner')),
-    column: rect(q('.watch-column')), heading: rect(q('.watch-heading')),
+    column: rect(q('.player-main')||q('.watch-column')), heading: rect(q('.watch-heading')),
     h1: h1 ? {...rect(h1), fontSize: parseFloat(getComputedStyle(h1).fontSize), lines: h1Lines} : null,
     frame: rect(q('.video-frame')), stage: rect(q('.video-stage')), controls: rect(q('.video-controls')),
     footnote: rect(q('.film-footnote')), captionOverlay: rect(q('.caption-overlay')),
@@ -144,7 +144,7 @@ try {
     await page.screenshot({path: path.join(OUT, `${LABEL}-${tag}-default.png`)});
 
     // Long visible cue at largest text size, settings closed before measuring.
-    await page.getByRole('button', {name: 'Caption settings', exact: true}).click();
+    {const cc=page.getByRole('button', {name: 'Caption settings', exact: true});if(await cc.isVisible())await cc.click();else await page.locator('#caption-settings input[type=radio]:checked').first().focus();}
     if(!(await page.locator('details.readability').evaluate(d=>d.open)))await page.getByText('Appearance', {exact: true}).click();
     await page.getByLabel('Text size', {exact: true}).selectOption('extra-large');
     await page.getByRole('radio', {name: /^Rich/}).check(); // richest wording of the long cue
