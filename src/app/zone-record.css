@@ -389,7 +389,7 @@ body:has(.watch-column) .workspace a,body:has(.watch-column) .film-library a{col
   .video-frame:not(:fullscreen) .time-code{font-size:14px;padding:0 8px;white-space:nowrap}
   .video-frame:not(:fullscreen) .time-code span{color:#b9b9c0}
   .video-frame:not(:fullscreen) .transport select{font-size:14px;min-height:44px;padding:0 4px;max-width:64px}
-  .video-frame:not(:fullscreen) .timeline-track{padding-top:16px}
+  .video-frame:not(:fullscreen) .timeline-track:has(.sound-markers){padding-top:16px}
   /* Calmer rhythm above the picture. */
   .watch-heading h1{font-size:24px;line-height:1.2;margin:0}
   .watch-heading h1 small{display:block;font-size:14px;margin-top:4px}
@@ -397,7 +397,6 @@ body:has(.watch-column) .workspace a,body:has(.watch-column) .film-library a{col
 }
 @media(max-width:700px){
   .video-frame:not(:fullscreen) .video-controls{padding:2px 12px 4px}
-  .video-frame:not(:fullscreen) .timeline-track{padding-top:16px}
   .film-footnote{margin:8px 0 0}
   .research-tools{margin-top:16px}
   .research-tools>summary{row-gap:2px;min-height:52px}
