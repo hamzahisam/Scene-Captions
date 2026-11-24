@@ -5,7 +5,7 @@ import {DEFAULT_PROFILE,resolveCaption,resolveCaptionWindows,captionExpectations
 import type {CaptionCue,CaptionVideo} from '../src/lib/captions.ts';
 import {studySessionSchema} from '../src/lib/study-session.ts';
 const source=videoSchema.parse(JSON.parse(readFileSync('data/source-assisted-captions/big-buck-bunny-controls.json','utf8')));
-const profile={...DEFAULT_PROFILE,detail:3 as const,readingSpeed:20 as const};
+const profile={...DEFAULT_PROFILE,detail:3 as const,readingSpeed:20 as const,adaptive:true};
 function cue(id:string,start:number,end:number,text='x'.repeat(35)):CaptionCue {
  return {...source.cues[0],cue_id:id,start_s:start,end_s:end,scene_load:'quiet',grid:Object.fromEntries([1,2,3].flatMap(d=>[1,2,3].map(e=>[`${d}-${e}`,d===3?text:d===2?'x'.repeat(25):'short'])))};
 }

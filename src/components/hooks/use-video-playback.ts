@@ -2,8 +2,8 @@
 import {createPlaybackClock} from "@/lib/playback-clock";
 import { toggleFullscreen } from "@/lib/fullscreen";
 import { useEffect, useRef, useState } from "react";
-import type { KeyboardEvent } from "react";
-import type { CaptionProfile } from "@/lib/captions";
+import type { ViewerMessage } from "@/lib/viewer-language";
+import { viewerText } from "@/lib/viewer-language";
 import type { StudyEvent } from "@/lib/session";
 
 export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
@@ -14,7 +14,7 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
   const video = useRef<HTMLVideoElement>(null); const frame = useRef<HTMLDivElement>(null);
   const [time, setTime] = useState(0); const [duration, setDuration] = useState(0);
   const [playing, setPlaying] = useState(false); const [muted, setMuted] = useState(false);
-  const [error, setError] = useState(""); const [ready, setReady] = useState(false); const [waiting, setWaiting] = useState(false);
+  const [error, setError] = useState<ViewerMessage | "">(""); const [ready, setReady] = useState(false); const [waiting, setWaiting] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
   useEffect(() => {
     // Metadata may arrive before hydration effects run for a cached local file.
@@ -40,7 +40,7 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
   const fullscreenSource=useRef<"participant"|"system">("participant");
   const actionSource=useRef<"participant"|"system"|"researcher">("participant");const [ended,setEnded]=useState(false);
   function pause(source:"participant"|"system"|"researcher"="participant"){actionSource.current=source;video.current?.pause()}
-  async function play(source:"participant"|"system"|"researcher"="participant"){actionSource.current=source;setEnded(false);try{await video.current?.play();setError("")}catch{actionSource.current="participant";setError("Playback could not start. Try again.")}}
+  async function play(source:"participant"|"system"|"researcher"="participant"){actionSource.current=source;setEnded(false);try{await video.current?.play();setError("")}catch{actionSource.current="participant";setError("startError")}}
   async function toggle() {
     const el = video.current; if (!el) return;
     if(!el.paused)pause();else await play();
@@ -68,18 +68,18 @@ export function useVideoPlayback({ source, seekTo, onTime, onEvent }: {
     onSeeked() { const seconds = video.current?.currentTime || 0; clock.set(seconds);setTime(seconds); onTime(seconds); onEvent({ type: "seek", video_s: seconds,method:pendingSeek.current?.method||"scrub",from_s:pendingSeek.current?.from??seconds,source:pendingSeek.current?.source||"participant" });pendingSeek.current=null; },
     onWaiting() { setWaiting(true); },
     onCanPlay() { setWaiting(false); },
-    onError() { const message="The video could not load. Check your connection and try again.";setError(message);onEvent({type:"error",video_s:video.current?.currentTime||0,message,source:"system"}); },
+    onError() { const message=viewerText("en","loadError");setError("loadError");onEvent({type:"error",video_s:video.current?.currentTime||0,message,source:"system"}); },
 
   };
   function toggleMute() { if (video.current) { video.current.muted = !muted; setMuted(!muted); } }
   function changeRate(value: number) { setPlaybackRate(value); if (video.current) video.current.playbackRate = value; }
   const eventCallback=useRef(onEvent);eventCallback.current=onEvent;
   useEffect(()=>{let prior=false;const change=()=>{const enabled=document.fullscreenElement===frame.current||document.fullscreenElement===video.current;if(enabled!==prior){eventCallback.current({type:"fullscreen",video_s:video.current?.currentTime||0,enabled,source:fullscreenSource.current});prior=enabled;fullscreenSource.current="participant"}};const begin=()=>eventCallback.current({type:"fullscreen",video_s:video.current?.currentTime||0,enabled:true}),end=()=>eventCallback.current({type:"fullscreen",video_s:video.current?.currentTime||0,enabled:false,source:fullscreenSource.current});const el=video.current;document.addEventListener("fullscreenchange",change);el?.addEventListener("webkitbeginfullscreen",begin);el?.addEventListener("webkitendfullscreen",end);return()=>{document.removeEventListener("fullscreenchange",change);el?.removeEventListener("webkitbeginfullscreen",begin);el?.removeEventListener("webkitendfullscreen",end)}},[]);
-  function exitNativeFullscreen(){const el=video.current as (HTMLVideoElement&{webkitDisplayingFullscreen?:boolean;webkitExitFullscreen?:()=>void})|null;if(document.fullscreenElement===el){fullscreenSource.current="system";void document.exitFullscreen().catch(()=>setError("Leave fullscreen to answer the question."))}else if(el?.webkitDisplayingFullscreen&&el.webkitExitFullscreen){fullscreenSource.current="system";el.webkitExitFullscreen()}}
+  function exitNativeFullscreen(){const el=video.current as (HTMLVideoElement&{webkitDisplayingFullscreen?:boolean;webkitExitFullscreen?:()=>void})|null;if(document.fullscreenElement===el){fullscreenSource.current="system";void document.exitFullscreen().catch(()=>setError("leaveFullscreen"))}else if(el?.webkitDisplayingFullscreen&&el.webkitExitFullscreen){fullscreenSource.current="system";el.webkitExitFullscreen()}}
   async function fullscreen() {
     try {
       await toggleFullscreen(frame.current,video.current);
-    } catch { setError("Fullscreen is unavailable in this browser."); }
+    } catch { setError("fullscreenError"); }
   }
   return { video, frame, clock, ended,pause,play,exitNativeFullscreen,time, duration, playing, muted, error, ready, waiting, playbackRate, events, toggle, seek, toggleMute, changeRate, fullscreen };
 }

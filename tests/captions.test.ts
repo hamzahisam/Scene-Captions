@@ -18,7 +18,7 @@ test("baseline and Show Original always preserve the original", () => {
 });
 test("adaptation is cached selection and does not mutate saved preferences", () => {
   const cue = { ...video().cues[0], scene_load: "dense" as const };
-  const profile = { ...DEFAULT_PROFILE };
+  const profile = { ...DEFAULT_PROFILE, adaptive: true };
   assert.equal(resolveCaption(cue, profile, "personalized").text, cue.grid["1-2"]);
   assert.equal(profile.detail, 2);
   assert.equal(resolveCaption(cue, { ...profile, adaptive: false }, "personalized").text, cue.grid["2-2"]);
@@ -59,7 +59,7 @@ test("bundled captions preserve every licensed source interval and simultaneous 
 test("source-derived adaptation discloses its caption-density proxy", () => {
   const bundled = videoSchema.parse(JSON.parse(readFileSync("data/captions/big-buck-bunny.json", "utf8")));
   const cue = bundled.cues.find(cue => cue.scene_load === "dense")!;
-  const selected = resolveCaption(cue, DEFAULT_PROFILE, "personalized");
+  const selected = resolveCaption(cue, { ...DEFAULT_PROFILE, adaptive: true }, "personalized");
   assert.equal(selected.detail, 1);
   assert.match(selected.reason, /several sounds/);
   assert.equal(resolveCaption(cue, { ...DEFAULT_PROFILE, adaptive: false, detail: 3 }, "personalized").detail, 3);
@@ -69,7 +69,7 @@ test("adaptation never exceeds the viewer's detail limit", () => {
   const cue = video().cues[0];
   for (const detail of [1, 2, 3] as const) {
     for (const scene_load of ["quiet", "balanced", "dense"] as const) {
-      const selected = resolveCaption({ ...cue, scene_load }, { ...DEFAULT_PROFILE, detail }, "personalized");
+      const selected = resolveCaption({ ...cue, scene_load }, { ...DEFAULT_PROFILE, detail, adaptive: true }, "personalized");
       assert.ok(selected.detail <= detail, `${scene_load} exceeded detail ${detail}`);
       if(scene_load === "dense") assert.equal(selected.detail, 1);
     }

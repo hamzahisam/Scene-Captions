@@ -1,5 +1,6 @@
 import { characterCount, readingBoundedDetail, readingRate } from "./reading-rate.ts";
 import { z } from "zod";
+import { retainRecurrenceLabel } from "./caption-recurrence.ts";
 
 const LEVELS = [1, 2, 3] as const;
 export type Level = (typeof LEVELS)[number];
@@ -76,7 +77,14 @@ export type CaptionVideo = z.infer<typeof videoSchema>;
 export const profileSchema = z.object({
   detail: z.union([z.literal(1), z.literal(2), z.literal(3)]),
   expression: z.union([z.literal(1), z.literal(2), z.literal(3)]),
-  adaptive: z.boolean(), representation: z.enum(["descriptive", "plain", "onomatopoeic"]),
+  adaptive: z.boolean().default(false),
+  musicWording: z.enum(["source", "descriptive", "mood"]).default("source"),
+  dialoguePosition: z.enum(["together", "top", "bottom"]).default("together"),
+  urduFont: z.enum(["nastaliq", "naskh"]).default("nastaliq"),
+  speakerLabels: z.boolean().default(true),
+  captionLanguage: z.enum(["en", "ur"]).default("en"),
+  width: z.union([z.literal(70), z.literal(80), z.literal(90), z.literal(96)]).default(90),
+  representation: z.enum(["descriptive", "plain", "onomatopoeic"]),
   announceCaptions:z.boolean().default(false),
   markShortened:z.boolean().default(false),
   shortcuts:z.boolean().default(true),pageWideShortcuts:z.boolean().default(false),
@@ -86,22 +94,28 @@ export const profileSchema = z.object({
   size: z.enum(["standard", "large", "extra-large"]), position: z.enum(["bottom", "top"]),
 });
 export type CaptionProfile = z.infer<typeof profileSchema>;
-export const DEFAULT_PROFILE: CaptionProfile = { detail: 2, expression: 2, adaptive: true, representation: "descriptive", size: "large", position: "bottom", readingSpeed:17,typeStyling:true,italicSound:false,backdrop:"solid",textColor:"white",shortcuts:true,pageWideShortcuts:false,announceCaptions:false,markShortened:false };
+export const DEFAULT_PROFILE: CaptionProfile = { musicWording: "source", dialoguePosition: "together", urduFont: "nastaliq", speakerLabels: true, detail: 2, expression: 2, adaptive: false, captionLanguage:"en", width:90, representation: "descriptive", size: "large", position: "bottom", readingSpeed:17,typeStyling:true,italicSound:false,backdrop:"solid",textColor:"white",shortcuts:true,pageWideShortcuts:false,announceCaptions:false,markShortened:false };
 
 export function activeCues(cues: CaptionCue[], seconds: number): CaptionCue[] {
   return cues.filter((cue) => cue.start_s <= seconds && seconds < cue.end_s);
 }
 
-export function resolveCaption(cue: CaptionCue, profile: CaptionProfile, condition: Condition, showOriginal = false, displayDuration = cue.end_s-cue.start_s) {
+export function resolveCaption(cue: CaptionCue, profile: CaptionProfile, condition: Condition, showOriginal = false, displayDuration = cue.end_s-cue.start_s, recurrenceLabel?: string, requireShorter = false) {
   const duration=displayDuration,cap=profile.readingSpeed;
-  const textAt=(detail:Level)=>profile.representation==='plain'?cue.representations.plain:profile.representation==='onomatopoeic'&&cue.representations.onomatopoeic?cue.representations.onomatopoeic:cue.grid[`${detail}-${profile.expression}`];
+  const textAt=(detail:Level)=>retainRecurrenceLabel(profile.representation==='plain'?cue.representations.plain:profile.representation==='onomatopoeic'&&cue.representations.onomatopoeic?cue.representations.onomatopoeic:cue.grid[`${detail}-${profile.expression}`], recurrenceLabel);
   if(condition==='baseline'||showOriginal){const text=cue.reference_text??cue.original_text;return {text,reason:'Original captions',adapted:false,detail:profile.detail,rule:'none',overLimit:readingRate(text,duration)>cap,cps:readingRate(text,duration)};}
   const bounded=readingBoundedDetail(profile.detail,duration,cap,textAt);
   const density=profile.adaptive&&cue.scene_load==='dense';
-  const detail:Level=profile.adaptive?Math.min(bounded.detail,density?1:profile.detail) as Level:profile.detail;
-  const text=textAt(detail),read=profile.adaptive&&bounded.detail<profile.detail;
-  const rule=read&&density?'reading-rate+density':read?'reading-rate':density&&detail<profile.detail?'density':'none';
-  const adapted=detail<profile.detail&&text!==textAt(profile.detail);
+  const proposed = profile.adaptive ? Math.min(bounded.detail, density ? 1 : profile.detail) : profile.detail;
+  const selected = textAt(profile.detail);
+  const detail = (requireShorter && proposed < profile.detail
+    ? LEVELS.find(level => level >= proposed && level < profile.detail
+      && characterCount(textAt(level)) < characterCount(selected)) ?? profile.detail
+    : proposed) as Level;
+  const text = textAt(detail);
+  const read = profile.adaptive && bounded.detail < profile.detail;
+  const adapted = detail < profile.detail && text !== selected;
+  const rule=!adapted?'none':read&&density?'reading-rate+density':read?'reading-rate':density&&detail<profile.detail?'density':'none';
   const reason=adapted?(read&&density?'Shorter to fit the available time and closely spaced sounds':read?'Shorter to fit the available time':'Shorter because several sounds occur close together'):'Your sound settings';
   return {text,reason,adapted,detail,rule,overLimit:readingRate(text,duration)>cap,cps:readingRate(text,duration)};
 }
@@ -112,7 +126,7 @@ export type CaptionWindow = {
 };
 
 /** Derived viewing windows only; source cues and baseline/Original timings stay immutable. */
-export function resolveCaptionWindows(data: CaptionVideo, profile: CaptionProfile, condition: Condition, showOriginal = false, extendDisplay = false): CaptionWindow[] {
+export function resolveCaptionWindows(data: CaptionVideo, profile: CaptionProfile, condition: Condition, showOriginal = false, extendDisplay = false, recurrenceLabels?: ReadonlyMap<string, string>, requireShorter = false): CaptionWindow[] {
   const intervals = [...data.cues,...(data.dialogue || [])];
   return data.cues.map(cue => {
     let ceiling = cue.end_s;
@@ -122,7 +136,7 @@ export function resolveCaptionWindows(data: CaptionVideo, profile: CaptionProfil
       const nextStart = intervals.reduce((next,other)=>other !== cue && other.start_s >= cue.end_s ? Math.min(next,other.start_s) : next,Infinity);
       if (!occupied) ceiling = Math.max(cue.end_s, Math.min(cue.end_s + 1, data.duration_seconds, nextStart - 0.1));
     }
-    const caption = resolveCaption(cue, profile, condition, showOriginal, ceiling - cue.start_s);
+    const caption = resolveCaption(cue, profile, condition, showOriginal, ceiling - cue.start_s, recurrenceLabels?.get(cue.cue_id), requireShorter);
     const display_end_s = Math.max(cue.end_s, Math.min(ceiling, cue.start_s + characterCount(caption.text) / profile.readingSpeed));
     // Recalculate rate against the actual selected-text window, not the available gap.
     const selected = ceiling === cue.end_s ? caption : {...caption, cps: readingRate(caption.text, display_end_s - cue.start_s), overLimit: readingRate(caption.text, display_end_s - cue.start_s) > profile.readingSpeed + 1e-9};

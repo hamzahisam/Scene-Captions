@@ -1,24 +1,78 @@
-'use client';
-import {useMemo} from 'react';
-import {captionExpectations} from '@/lib/captions';
-import type {CaptionVideo,Condition,CaptionProfile,CaptionCue,Level} from '@/lib/captions';
-export function CaptionStyleControls({profile,onChange,conservative,sample,explanation,data,condition="personalized",extendDisplay=false,defaultReadingSpeed}: {defaultReadingSpeed?:15|17|20;data?:CaptionVideo|null;condition?:Condition;extendDisplay?:boolean;profile:CaptionProfile;onChange:(p:CaptionProfile)=>void;conservative:boolean;sample?:CaptionCue;explanation?:string;sceneTagsReady?:boolean;densityBased?:boolean;punctuationOnly?:boolean}) {
- const counts=useMemo(()=>data?captionExpectations(data,profile,condition,false,extendDisplay):null,[data,profile,condition,extendDisplay]);
- return <>
-  <fieldset role="radiogroup" aria-label="Amount of detail" className="amount-options"><legend>Amount of detail</legend>{(['Essential','Balanced','Rich'] as const).map((label,index)=><label key={label}><input type="radio" name="amount" value={index+1} checked={profile.detail===index+1} onChange={()=>onChange({...profile,detail:(index+1) as Level})}/><span>{label}<small>{['Just the sound','Sound and its source','More context'][index]}</small><samp className="level-sample">{sample?.grid[`${index+1}-${profile.expression}`]||['[Music.]','[Calm music plays.]','[Music with a calm feel plays.]'][index]}</samp></span></label>)}</fieldset>
-  <p className="hint level-note">Examples use the sample caption on the video.</p>
-  {counts&&<p className="caption-expectations" role="status">{counts.shortened===0?`All ${counts.total} sounds use your chosen amount; none are shortened.`:`At ${profile.readingSpeed} characters per second, ${['','Essential','Balanced','Rich'][profile.detail]} fits ${counts.total-counts.shortened} of ${counts.total} sounds in this film. The rest are shortened for reading pace or closely spaced sounds.`}</p>}
-  <fieldset role="radiogroup" aria-label="Reading pace" aria-describedby="pace-help" className="seg pace-options"><legend>Reading pace</legend>{([15,17,20] as const).map(n=><label key={n}><input type="radio" name="reading-pace" value={n} checked={profile.readingSpeed===n} onChange={()=>onChange({...profile,readingSpeed:n})}/><span>{n} · {({15:'Slower',17:'Standard',20:'Faster'} as const)[n]}{defaultReadingSpeed===n?" (session default)":""}</span></label>)}</fieldset>
-  <p id="pace-help" className="hint">Characters per second. Choose a comfortable pace; no single reading speed suits everyone.</p>
-  <label className="keep-up"><input type="checkbox" role="switch" aria-describedby="keep-up-help" checked={profile.adaptive} onChange={e=>onChange({...profile,adaptive:e.target.checked})}/> Help me keep up</label>
-  <p id="keep-up-help">Shorter sound captions when needed, within your detail limit.</p>
-  <p className="caption-explanation">{explanation}{profile.markShortened&&" ▿ means a caption was shortened to help you keep up."}</p>
-  <details className="more-sound-options"><summary>More sound options</summary>
-   <fieldset disabled={conservative}><legend>Punctuation inside sound captions</legend>{['None','Full stop','Exclamation'].map((label,i)=><label key={label}><input type="radio" name="punctuation" checked={profile.expression===i+1} onChange={()=>onChange({...profile,expression:(i+1) as Level})}/>{label}<small>{sample?.grid[`${profile.detail}-${i+1}`]||['[Sound]','[Sound.]','[Sound!]'][i]}</small></label>)}</fieldset>
-   <p>An exclamation mark does not mean the sound is louder.</p>{conservative&&<p>Punctuation changes are unavailable for this track.</p>}
-   <label><input type="checkbox" checked={profile.markShortened} onChange={e=>onChange({...profile,markShortened:e.target.checked})}/>Mark shortened captions</label>
-   <label><input type="checkbox" role="switch" checked={profile.typeStyling} onChange={e=>onChange({...profile,typeStyling:e.target.checked})}/>Show sound type styling</label>
-   <label htmlFor="representation">Sound representation</label><select id="representation" value={profile.representation} onChange={e=>onChange({...profile,representation:e.target.value as CaptionProfile['representation']})}><option value="descriptive">Descriptive</option><option value="plain">Plain sound labels</option><option value="onomatopoeic">Onomatopoeia when available</option></select><p>Unavailable sound spellings use descriptive captions.</p>
-  </details>
- </>;
+"use client";
+
+import type { CaptionProfile, Level } from "@/lib/captions";
+import { detailLabels } from "@/lib/viewer-language";
+import { useViewerLanguage } from "./viewer-language";
+
+export function CaptionStyleControls({ profile, onChange, conservative, defaultReadingSpeed }: {
+  profile: CaptionProfile;
+  onChange: (profile: CaptionProfile) => void;
+  conservative: boolean;
+  defaultReadingSpeed?: 15 | 17 | 20;
+}) {
+  const { t, language } = useViewerLanguage();
+  const number = new Intl.NumberFormat(language);
+  return <>
+    <label className="keep-up">
+      <input type="checkbox" role="switch" aria-describedby="keep-up-help" checked={profile.adaptive}
+        onChange={event => onChange({ ...profile, adaptive: event.target.checked })} />
+      {t("adapt")}
+    </label>
+    <p id="keep-up-help" className="hint">{t("adaptHelp")}</p>
+    <fieldset className="amount-options" aria-describedby="detail-mode">
+      <legend>{t("detail")}</legend>
+      {detailLabels.map((label, index) => {
+        const level = (index + 1) as Level;
+        return <label key={label}>
+          <input type="radio" name="amount" value={level} checked={profile.detail === level}
+            onChange={() => onChange({ ...profile, detail: level })} />
+          <span>{t(label)}<small>{t((["essentialHelp", "balancedHelp", "richHelp"] as const)[index])}</small></span>
+        </label>;
+      })}
+    </fieldset>
+    <p id="detail-mode" className="hint">{t(profile.adaptive ? "maxDetail" : "fixedDetail")}</p>
+    {profile.adaptive && <p className="hint">{t("shortenedLegend")}</p>}
+    <details className="more-sound-options">
+      <summary>{t("moreSound")}</summary>
+      <fieldset className="seg pace-options" aria-describedby="pace-help">
+        <legend>{t("readingPace")}</legend>
+        {([15, 17, 20] as const).map((pace, index) => <label key={pace}>
+          <input type="radio" name="reading-pace" value={pace} checked={profile.readingSpeed === pace}
+            onChange={() => onChange({ ...profile, readingSpeed: pace })} />
+          <span>{number.format(pace)} · {t((["slower", "standard", "faster"] as const)[index])}
+            {defaultReadingSpeed === pace && ` (${t("paceDefault")})`}</span>
+        </label>)}
+      </fieldset>
+      <p id="pace-help" className="hint">{t("paceHelp")}</p>
+      <fieldset disabled={conservative}>
+        <legend>{t("punctuation")}</legend>
+        {(["none", "fullStop", "exclamation"] as const).map((label, index) => {
+          const expression = (index + 1) as Level;
+          return <label key={label}>
+            <input type="radio" name="punctuation" checked={profile.expression === expression}
+              onChange={() => onChange({ ...profile, expression })} />{t(label)}
+          </label>;
+        })}
+      </fieldset>
+      <p>{t(conservative ? "punctuationUnavailable" : "punctuationHelp")}</p>
+      <label><input type="checkbox" checked={profile.markShortened}
+        onChange={event => onChange({ ...profile, markShortened: event.target.checked })} />{t("markShortened")}</label>
+      <label><input type="checkbox" role="switch" checked={profile.typeStyling}
+        onChange={event => onChange({ ...profile, typeStyling: event.target.checked })} />{t("typeStyling")}</label>
+      <p>{t("typeHelp")}</p>
+      <label htmlFor="music-wording">{language === "ur" ? "موسیقی کی عبارت" : "Music wording"}</label>
+      <select id="music-wording" value={profile.musicWording} onChange={event => onChange({...profile, musicWording: event.target.value as CaptionProfile["musicWording"]})}>
+        <option value="source">{language === "ur" ? "اصل تفصیل" : "Original description"}</option>
+        <option value="descriptive">{language === "ur" ? "ساز کی تفصیل" : "Instruments and sound"}</option>
+        <option value="mood">{language === "ur" ? "کیفیت" : "Mood"}</option>
+      </select>
+      <p>{language === "ur" ? "متبادل عبارت دستیاب ہونے پر لاگو ہوتی ہے۔" : "Uses prepared alternatives where available. Other music captions retain their source description."}</p>
+      <label htmlFor="representation">{t("representation")}</label>
+      <select id="representation" value={profile.representation}
+        onChange={event => onChange({ ...profile, representation: event.target.value as CaptionProfile["representation"] })}>
+        {(["descriptive", "plain", "onomatopoeic"] as const).map(value => <option key={value} value={value}>{t(value)}</option>)}
+      </select>
+      <p>{t("representationHelp")}</p>
+    </details>
+  </>;
 }

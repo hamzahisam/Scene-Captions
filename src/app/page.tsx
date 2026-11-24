@@ -10,6 +10,11 @@ import soar from "../../data/source-assisted-captions/soar.json";
 import hairLove from "../../data/source-assisted-captions/hair-love.json";
 import { videoSchema } from "@/lib/captions";
 import { sourceAssistedTrackFor } from "@/lib/source-captions";
+import bunnyUrdu from "../../data/caption-translations/ur/big-buck-bunny.json";
+import soarUrdu from "../../data/caption-translations/ur/soar.json";
+import hairUrdu from "../../data/caption-translations/ur/hair-love.json";
+import { urduTrackFor } from "@/lib/caption-translations";
+import { ViewerLanguageProvider } from "@/components/viewer-language";
 import { Header } from "@/components/header";
 import { ScreeningRoom } from "@/components/screening-room";
 
@@ -32,5 +37,16 @@ export default function Home() {
     { data: videoSchema.parse(soar), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/soar.mp4", poster: "/media/soar-poster.jpg", credit: "Alyce Tzue · TheCGBros" },
     { data: videoSchema.parse(hairLove), source: "https://cis0lgq9buszb4na.public.blob.vercel-storage.com/films/hair-love.mp4", poster: "/media/hair-love-poster.jpg", credit: "Sony Pictures Animation · 2019" },
   ];
-  return <><Header /><ScreeningRoom films={films.map(film=>({...film,questions:film.data.video_id==="soar"?questionFileSchema.parse(soarQuestions):undefined,annotations:validateAnnotations(film.sourceAssistedData||film.data,({"big-buck-bunny":bunnyAnnotations,"soar":soarAnnotations,"hair-love":hairAnnotations})[film.data.video_id as "big-buck-bunny"])}))} /></>;
+  const annotations = { "big-buck-bunny": bunnyAnnotations, soar: soarAnnotations, "hair-love": hairAnnotations };
+  const urdu = { "big-buck-bunny": bunnyUrdu, soar: soarUrdu, "hair-love": hairUrdu };
+  return <ViewerLanguageProvider><Header /><ScreeningRoom films={films.map(film => {
+    const source = film.sourceAssistedData ?? film.data;
+    const filmId = source.video_id as keyof typeof urdu;
+    return {
+      ...film,
+      questions: filmId === "soar" ? questionFileSchema.parse(soarQuestions) : undefined,
+      annotations: validateAnnotations(source, annotations[filmId]),
+      urdu: urduTrackFor(source, urdu[filmId]),
+    };
+  })} /></ViewerLanguageProvider>;
 }

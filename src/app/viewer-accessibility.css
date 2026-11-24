@@ -1,0 +1,177 @@
+@font-face {
+  font-family: "Noto Nastaliq Urdu";
+  src: url("/fonts/noto-nastaliq-urdu-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-08FF, U+200C-200F, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+/* The route owns its localized skip link. Research and creator pages retain the root link. */
+body:has(.watch-viewer) > .skip-link { display: none; }
+.watch-viewer [lang="ur"], .watch-viewer:lang(ur) {
+  --urdu-font: "Noto Nastaliq Urdu", "Noto Nastaliq", "DecoType Nastaleeq Urdu", system-ui, sans-serif;
+}
+.watch-viewer:lang(ur), .watch-viewer :lang(ur) {
+  font-family: var(--urdu-font);
+  letter-spacing: normal;
+}
+.watch-viewer:lang(ur) { --font: var(--urdu-font); }
+.watch-viewer:lang(ur) :is(button, label, select, legend, summary, p, small) { line-height: 1.9; }
+.watch-viewer:lang(ur) :is(.caption-settings, .settings-bar, .film-card, .watch-heading, .page-footer p) { text-align: start; }
+.watch-viewer:lang(ur) .rt-grid { --font: system-ui, sans-serif; font-family: var(--font); }
+.watch-viewer:lang(ur) .dock-toggle { font-family: var(--urdu-font); }
+.watch-viewer .film-card:has(input:checked)::after { content: attr(data-watching); }
+.watch-viewer .watch-heading h1 small { margin-inline-start: 0.75rem; }
+@media (max-width: 700px) {
+  .watch-viewer .watch-heading h1 small { margin-inline-start: 0; }
+}
+.watch-viewer :is(button, select, summary) { touch-action: manipulation; }
+
+.viewer-player .video-frame { overflow: visible; }
+.viewer-player .video-stage {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  aspect-ratio: auto;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.viewer-player .viewer-picture {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+  background: #111114;
+}
+.viewer-player .viewer-picture > video {
+  position: static;
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+.viewer-player .video-stage .video-controls {
+  position: static;
+  order: unset;
+  padding: 0.25rem 0.75rem 0.5rem;
+  background: #111114;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+}
+.viewer-player .transport { flex-wrap: wrap; gap: 0.125rem; min-inline-size: 0; }
+.viewer-player .transport-right { margin-inline-start: auto; flex-wrap: wrap; }
+.viewer-player .video-controls .icon-button { min-inline-size: 2.75rem; min-block-size: 2.75rem; }
+.viewer-player .video-frame:not(:fullscreen) .video-controls .help-button { display: inline-flex; }
+.viewer-player .video-frame:not(:fullscreen) .video-controls .cc-button { display: none; }
+.viewer-player .video-frame:fullscreen .video-controls .cc-button { display: inline-flex; }
+.viewer-player .big-play { inset: 0; margin: auto; }
+.viewer-player .viewer-picture:has(.caption-overlay) .big-play { display: none; }
+
+.viewer-player .viewer-picture > .caption-overlay {
+  inset-inline: 0;
+  inline-size: var(--caption-width, 90%);
+  position: absolute;
+  margin-inline: auto;
+  z-index: 2;
+}
+.viewer-player .viewer-picture > .caption-overlay.top { top: 0.5rem; bottom: auto; }
+.viewer-player .viewer-picture > .caption-overlay.bottom { bottom: 0.5rem; top: auto; }
+.viewer-player .caption-overlay p {
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+  padding: 0.15em 0.45em;
+  font-size: clamp(1rem, 2.6cqi, 3.5rem);
+  line-height: 1.4;
+}
+.viewer-player .caption-overlay.large p { font-size: clamp(1.125rem, 3.2cqi, 4.25rem); }
+.viewer-player .caption-overlay.extra-large p { font-size: clamp(1.375rem, 3.8cqi, 5.25rem); }
+.viewer-player .caption-overlay:lang(ur) p { line-height: 2.1; padding-block: 0.3em; font-weight: 500; }
+.viewer-player .caption-overlay .caption-line { display: block; }
+.viewer-player .caption-overlay .sound-type:not(.sound-music) { box-shadow: none; }
+.viewer-player .caption-overlay .sample-label { max-inline-size: 100%; line-height: 1.8; }
+.viewer-player .caption-needs-room > .caption-overlay {
+  position: relative;
+  inset: auto;
+  padding-block: 0.5rem;
+}
+.viewer-player .caption-needs-room > .caption-overlay.top { top: auto; order: -1; }
+.viewer-player .caption-needs-room > .caption-overlay.bottom { bottom: auto; }
+
+.viewer-player-notes { color: #f3f3f5; background: #17171b; }
+.viewer-player-notes:has(.viewer-feedback:empty):not(:has(.viewer-track-notice)) { display: none; }
+.adaptation-feedback, .viewer-track-notice {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.adaptation-marker { font-weight: 650; }
+.viewer-track-notice { border-block-start: 1px solid #515158; }
+
+.viewer-player .caption-settings:not(.docked) {
+  position: static;
+  inset: auto;
+  inline-size: 100%;
+  max-inline-size: none;
+  max-block-size: min(58dvh, 38rem);
+  margin-block-start: 0.5rem;
+}
+.viewer-player .caption-settings :is(button, select, summary) { min-block-size: 2.75rem; }
+.viewer-player .caption-settings select { font-size: max(1rem, 1em); }
+.viewer-player .caption-settings .keep-up { align-items: center; min-block-size: 2.75rem; }
+.viewer-player .caption-language-settings { margin-block: 0.75rem; }
+.viewer-player .caption-language-settings label { display: block; margin-block-start: 0.5rem; }
+.viewer-player .settings-preview { padding-block: 0.75rem; border-block: 1px solid #515158; }
+.viewer-player .settings-preview h3 { font-size: 1rem; }
+.viewer-player .settings-preview p { margin-block: 0.35rem; }
+
+.viewer-player .video-frame:fullscreen { display: flex; flex-direction: column; overflow: auto; background: #111114; }
+.viewer-player .video-frame:fullscreen .video-stage { flex: 1; height: auto; min-block-size: 0; }
+.viewer-player .video-frame:fullscreen .viewer-picture { flex: 1; min-block-size: 0; overflow: auto; }
+.viewer-player .video-frame:fullscreen .viewer-picture > video { aspect-ratio: auto; block-size: 100%; min-block-size: 0; }
+.viewer-player .video-frame:fullscreen .caption-needs-room > video { block-size: 45%; flex: none; }
+.viewer-player .video-frame:fullscreen .video-controls { flex: none; }
+.viewer-player .video-frame:fullscreen .caption-settings { max-block-size: 45dvh; margin: 0; }
+.viewer-player .video-frame:fullscreen .viewer-settings-host:empty { display: none; }
+.viewer-player .video-frame:fullscreen .caption-overlay p { font-size: clamp(1rem, min(2.6cqi, 5dvh), 3.5rem); }
+.viewer-player .video-frame:fullscreen .caption-overlay.large p { font-size: clamp(1.125rem, min(3.2cqi, 6dvh), 4.25rem); }
+.viewer-player .video-frame:fullscreen .caption-overlay.extra-large p { font-size: clamp(1.375rem, min(3.8cqi, 7dvh), 5.25rem); }
+@media (min-width: 800px) {
+  .viewer-player .video-frame:fullscreen.settings-open { flex-direction: row; }
+  .viewer-player .video-frame:fullscreen.settings-open .viewer-settings-host { inline-size: min(36%, 28rem); }
+  .viewer-player .video-frame:fullscreen.settings-open .caption-settings { max-block-size: 100dvh; }
+}
+@media (max-width: 700px) {
+  .viewer-player .video-frame:not(:fullscreen) .transport { flex-wrap: wrap; }
+  .viewer-player .video-frame:not(:fullscreen) .transport-right { margin-inline-start: auto; margin-inline-end: 0; }
+}
+
+@font-face {
+  font-family: "Noto Naskh Arabic";
+  src: url("/fonts/noto-naskh-arabic.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+.viewer-player .caption-overlay.font-naskh:lang(ur) { font-family: "Noto Naskh Arabic", serif; }
+.viewer-player .caption-overlay.font-naskh:lang(ur) p { line-height: 1.65; }
+
+.viewer-player .video-controls { transition: opacity 160ms ease; }
+.viewer-player .controls-idle .video-controls { opacity: 0; pointer-events: none; }
+.viewer-player .controls-idle .viewer-picture { cursor: none; }
+@media (prefers-reduced-motion: reduce) {
+  .viewer-player .video-controls { transition: none; }
+}
+
+/* Resolve Urdu text direction without mirroring the surrounding layout. */
+.watch-viewer:lang(ur) :is(p, label, legend, summary, option, .settings-bar-text, .dock-toggle-label) {
+  unicode-bidi: plaintext;
+}

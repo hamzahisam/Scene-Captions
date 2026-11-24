@@ -106,6 +106,7 @@ export function formatSoundCueText(
     typeStyling?: boolean;
     markShortened?: boolean;
     adapted?: boolean;
+    offscreenLabel?: string;
   }
 ): string {
   const typeStyling = options?.typeStyling ?? true;
@@ -121,7 +122,7 @@ export function formatSoundCueText(
 
   let result = formattedLines.join('\n');
   if (typeStyling && annotation?.offscreen) {
-    result += ' off-screen';
+    result += ` ${options?.offscreenLabel ?? 'off-screen'}`;
   }
   if (options?.markShortened && options?.adapted) {
     result += ' ▿';
